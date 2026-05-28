@@ -33,7 +33,7 @@ const ALGOS = [
   { id: "avc", ordre: 22, titre: "AVC", chapitre: "Neurologie", source: "VD", image: "images/avc.png" },
   { id: "io", ordre: 23, titre: "Voie intra-osseuse", chapitre: "Technique", source: "VD", image: "images/io.png" },
   { id: "avc_annexe", ordre: 24, titre: "AVC Annexe", chapitre: "Neurologie", source: "VD", image: "images/avc_annexe.png"},
-  { id: "antalgie_sat", ordre: 25, titre: "Antalgie_SAT", chapitre: "Douleur", source: "SAT", image: "images/antalgie_sat.png" }
+  { id: "antalgie_sat", ordre: 25, titre: "Antalgie_SAT", chapitre: "Interne", source: "SAT", image: "images/antalgie_sat.png" }
 ];
 
 const DEFAULT_MATERIAL = [
