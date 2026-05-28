@@ -1,15 +1,63 @@
 const CHAPTER_STYLES = {
-  "Urgences vitales": { badge: "background:#fee2e2;color:#b91c1c;border-color:#fecaca;", border: "#fca5a5" },
-  "Neurologie": { badge: "background:#f3e8ff;color:#7e22ce;border-color:#d8b4fe;", border: "#c084fc" },
-  "Douleur": { badge: "background:#dbeafe;color:#1d4ed8;border-color:#93c5fd;", border: "#60a5fa" },
-  "Pédiatrie": { badge: "background:#dcfce7;color:#15803d;border-color:#86efac;", border: "#4ade80" },
-  "Obstétrique": { badge: "background:#fce7f3;color:#be185d;border-color:#f9a8d4;", border: "#f472b6" },
-  "Matériel": { badge: "background:#fef3c7;color:#b45309;border-color:#fcd34d;", border: "#f59e0b" },
-  "Interne": { badge: "background:#e2e8f0;color:#475569;border-color:#cbd5e1;", border: "#94a3b8" }
+  "Urgences vitales": {
+    badge: "background:#fee2e2;color:#b91c1c;border-color:#fecaca;",
+    border: "#fca5a5",
+    background: "#fff1f2"
+  },
+  "Neurologie": {
+    badge: "background:#f3e8ff;color:#7e22ce;border-color:#d8b4fe;",
+    border: "#c084fc",
+    background: "#faf5ff"
+  },
+  "Douleur": {
+    badge: "background:#dbeafe;color:#1d4ed8;border-color:#93c5fd;",
+    border: "#60a5fa",
+    background: "#eff6ff"
+  },
+  "Pédiatrie": {
+    badge: "background:#dcfce7;color:#15803d;border-color:#86efac;",
+    border: "#4ade80",
+    background: "#f0fdf4"
+  },
+  "Obstétrique": {
+    badge: "background:#fce7f3;color:#be185d;border-color:#f9a8d4;",
+    border: "#f472b6",
+    background: "#fdf2f8"
+  },
+  "Respiratoire": {
+    badge: "background:#cffafe;color:#0f766e;border-color:#99f6e4;",
+    border: "#2dd4bf",
+    background: "#ecfeff"
+  },
+  "Cardio": {
+    badge: "background:#fee2e2;color:#b91c1c;border-color:#fca5a5;",
+    border: "#ef4444",
+    background: "#fef2f2"
+  },
+  "Technique": {
+    badge: "background:#ede9fe;color:#6d28d9;border-color:#c4b5fd;",
+    border: "#8b5cf6",
+    background: "#f5f3ff"
+  },
+  "Interne": {
+    badge: "background:#e2e8f0;color:#475569;border-color:#cbd5e1;",
+    border: "#94a3b8",
+    background: "#f8fafc"
+  }
 };
 
+
 const ALGOS = [
-  { id: "acr_arret", ordre: 1, titre: "Abstention / arrêt de réanimation", chapitre: "Urgences vitales", source: "VD", image: "images/acr_arret.png", favori: false },
+  {
+    id: "acr_arret",
+    ordre: 1,
+    titre: "Abstention / arrêt de réanimation",
+    chapitre: "Urgences vitales",
+    source: "VD",
+    image: "images/acr_arret.png",
+    favori: true,
+    resume: "Algorithme d'abstention / arrêt de réanimation.",
+    notesPlaceholder: "Ex. critères locaux, transmission, points d’attention…"},
   { id: "acc_physio", ordre: 2, titre: "Accouchement physiologique", chapitre: "Obstétrique", source: "VD", image: "images/acc_physio.png" },
   { id: "acc_patho1", ordre: 3, titre: "Accouchement pathologique 1", chapitre: "Obstétrique", source: "VD", image: "images/acc_patho1.png" },
   { id: "acc_patho2", ordre: 4, titre: "Accouchement pathologique 2", chapitre: "Obstétrique", source: "VD", image: "images/acc_patho2.png" },
@@ -60,16 +108,22 @@ function readStorage(key, fallback) {
     return fallback;
   }
 }
+
 function writeStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
+
+function chapterStyle(chapter) {
+  return CHAPTER_STYLES[chapter] || CHAPTER_STYLES["Interne"];
+}
+
 function getFavoritesMap() {
-  return readStorage('vd-favorites', {});
+  return readStorage("vd-favorites", {});
 }
 
 function isFavorite(algo) {
   const favorites = getFavoritesMap();
-  if (favorites.hasOwnProperty(algo.id)) {
+  if (Object.prototype.hasOwnProperty.call(favorites, algo.id)) {
     return favorites[algo.id];
   }
   return !!algo.favori;
@@ -78,9 +132,13 @@ function isFavorite(algo) {
 function toggleFavorite(id) {
   const favorites = getFavoritesMap();
   const algo = ALGOS.find((a) => a.id === id);
-  const currentValue = favorites.hasOwnProperty(id) ? favorites[id] : !!algo?.favori;
+  const currentValue = Object.prototype.hasOwnProperty.call(favorites, id)
+    ? favorites[id]
+    : !!algo?.favori;
+
   favorites[id] = !currentValue;
-  writeStorage('vd-favorites', favorites);
+  writeStorage("vd-favorites", favorites);
+
   renderAlgoList();
 
   if (state.view === "algo" && state.selectedAlgoId === id) {
@@ -88,182 +146,223 @@ function toggleFavorite(id) {
   }
 }
 
-function chapterStyle(chapter) {
-  return CHAPTER_STYLES[chapter] || CHAPTER_STYLES["Interne"];
-}
-
 function showScreen(screen) {
   state.view = screen;
-  document.querySelectorAll('.screen').forEach((el) => el.classList.remove('active'));
-  document.getElementById(`screen-${screen}`).classList.add('active');
-  document.querySelectorAll('.nav-btn').forEach((el) => el.classList.remove('active'));
-  document.querySelectorAll(`[data-screen="${screen}"]`).forEach((el) => el.classList.add('active'));
-  if (screen === 'algo') renderAlgo();
-  if (screen === 'materials') renderMaterials();
+
+  document.querySelectorAll(".screen").forEach((el) => el.classList.remove("active"));
+  document.getElementById(`screen-${screen}`).classList.add("active");
+
+  document.querySelectorAll(".nav-btn").forEach((el) => el.classList.remove("active"));
+  document.querySelectorAll(`.nav-btn[data-screen="${screen}"]`).forEach((el) => {
+    el.classList.add("active");
+  });
+
+  if (screen === "algo") renderAlgo();
+  if (screen === "materials") renderMaterials();
+}
+
+function algoCardHTML(algo) {
+  const style = chapterStyle(algo.chapitre);
+  const favorite = isFavorite(algo);
+
+  return `
+    <div class="card algo-item" style="background:${style.background}; border:2px solid ${style.border};">
+      <div class="algo-main-line">
+        <div>
+          <span class="badge" style="${style.badge}">${algo.chapitre}</span>
+          <h3 class="algo-title-small">${algo.ordre}. ${algo.titre}</h3>
+          <p class="subtle">${algo.resume || ""}</p>
+          <p class="subtle small">Source : ${algo.source}</p>
+        </div>
+        <div class="favorite-stack">
+          <button class="favorite-btn ${favorite ? "active" : ""}" data-fav-id="${algo.id}" type="button">
+            ${favorite ? "★" : "☆"}
+          </button>
+          <button class="open-pill" data-open-id="${algo.id}" type="button">Ouvrir</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function bindAlgoCardEvents(container) {
+  container.querySelectorAll("[data-open-id]").forEach((btn) => {
+    btn.addEventListener("click", () => openAlgo(btn.getAttribute("data-open-id")));
+  });
+
+  container.querySelectorAll("[data-fav-id]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleFavorite(btn.getAttribute("data-fav-id"));
+    });
+  });
 }
 
 function renderAlgoList() {
-  const term = document.getElementById('searchInput').value.trim().toLowerCase();
-  const list = document.getElementById('algoList');
+  const term = document.getElementById("searchInput").value.trim().toLowerCase();
 
-  const items = [...ALGOS]
-    .filter((item) =>
-      !term ||
-      [item.titre, item.chapitre, item.resume, item.source]
-        .join(' ')
-        .toLowerCase()
-        .includes(term)
-    )
-    .sort((a, b) => {
-      const favA = isFavorite(a) ? 1 : 0;
-      const favB = isFavorite(b) ? 1 : 0;
+  const filtered = [...ALGOS].filter((item) =>
+    !term ||
+    [item.titre, item.chapitre, item.resume, item.source]
+      .join(" ")
+      .toLowerCase()
+      .includes(term)
+  );
 
-      if (favA !== favB) {
-        return favB - favA; // favoris d'abord
-      }
-      return a.ordre - b.ordre;
-    });
+  const favorites = filtered
+    .filter((a) => isFavorite(a))
+    .sort((a, b) => a.ordre - b.ordre);
 
-  list.innerHTML = items.map((algo) => {
-    const style = chapterStyle(algo.chapitre);
-    const favorite = isFavorite(algo);
+  const others = filtered
+    .filter((a) => !isFavorite(a))
+    .sort((a, b) => a.ordre - b.ordre);
 
-    return `
-      <div class="card algo-item">
-        <div class="algo-main-line">
-          <div style="flex:1;">
-            <span class="badge" style="${style.badge}">${algo.chapitre}</span>
-            <h3 class="algo-title-small">${algo.ordre}. ${algo.titre}</h3>
-            <p class="subtle">${algo.resume}</p>
-            <p class="subtle small">Source : ${algo.source}</p>
-          </div>
+  const favSection = document.getElementById("favoritesSection");
 
-          <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
-            <button class="favorite-btn" data-fav-id="${algo.id}" title="Ajouter aux favoris">
-              ${favorite ? "★" : "☆"}
-            </button>
-            <button class="open-pill" data-open-id="${algo.id}">Ouvrir</button>
-          </div>
-        </div>
+  if (favorites.length) {
+    favSection.innerHTML = `
+      <div class="card">
+        <p class="section-caption">⭐ Mes favoris</p>
+        ${favorites.map(algoCardHTML).join("")}
       </div>
     `;
-  }).join('');
+    bindAlgoCardEvents(favSection);
+  } else {
+    favSection.innerHTML = "";
+  }
 
-  list.querySelectorAll('[data-open-id]').forEach((btn) => {
-    btn.addEventListener('click', () => openAlgo(btn.getAttribute('data-open-id')));
-  });
-
-  list.querySelectorAll('[data-fav-id]').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleFavorite(btn.getAttribute('data-fav-id'));
-    });
-  });
+  const list = document.getElementById("algoList");
+  list.innerHTML = others.map(algoCardHTML).join("");
+  bindAlgoCardEvents(list);
 }
 
 function openAlgo(id) {
   state.selectedAlgoId = id;
-  showScreen('algo');
+  showScreen("algo");
 }
-
 
 function renderAlgo() {
   const algo = ALGOS.find((a) => a.id === state.selectedAlgoId) || ALGOS[0];
   const style = chapterStyle(algo.chapitre);
 
-  document.getElementById('algoBadge').textContent = algo.chapitre;
-  document.getElementById('algoBadge').setAttribute('style', style.badge);
-  document.getElementById('algoTitle').textContent = algo.titre;
-  document.getElementById('algoSource').textContent = algo.source;
-  document.getElementById('algoResume').textContent = algo.resume;
-  document.getElementById('algoCardColor').style.borderColor = style.border;
+  document.getElementById("algoBadge").textContent = algo.chapitre;
+  document.getElementById("algoBadge").setAttribute("style", style.badge);
 
-  const img = document.getElementById('algoImage');
-  const wrap = document.getElementById('algoImageWrap');
-  img.onerror = () => wrap.classList.remove('has-image');
-  img.onload = () => wrap.classList.add('has-image');
+  document.getElementById("algoTitle").textContent = algo.titre;
+  document.getElementById("algoSource").textContent = algo.source;
+  document.getElementById("algoResume").textContent = algo.resume || "";
+
+  const algoCard = document.getElementById("algoCardColor");
+  algoCard.style.borderColor = style.border;
+  algoCard.style.background = style.background;
+
+  const favBtn = document.getElementById("algoFavoriteBtn");
+  favBtn.textContent = isFavorite(algo) ? "★" : "☆";
+  favBtn.classList.toggle("active", isFavorite(algo));
+  favBtn.onclick = () => toggleFavorite(algo.id);
+
+  const img = document.getElementById("algoImage");
+  const wrap = document.getElementById("algoImageWrap");
+
+  img.onerror = () => wrap.classList.remove("has-image");
+  img.onload = () => wrap.classList.add("has-image");
   img.src = algo.image;
 
-  const notes = readStorage('vd-annotations', {});
-  const notesArea = document.getElementById('notesArea');
-  notesArea.placeholder = algo.notesPlaceholder || 'Ajoute ici tes notes personnelles...';
-  notesArea.value = notes[algo.id] || '';
+  const notes = readStorage("vd-annotations", {});
+  const notesArea = document.getElementById("notesArea");
+  notesArea.placeholder = algo.notesPlaceholder || "Ajoute ici tes notes personnelles...";
+  notesArea.value = notes[algo.id] || "";
+
   notesArea.oninput = (e) => {
-    const current = readStorage('vd-annotations', {});
+    const current = readStorage("vd-annotations", {});
     current[algo.id] = e.target.value;
-    writeStorage('vd-annotations', current);
+    writeStorage("vd-annotations", current);
   };
 }
 
 function renderMaterials() {
-  const list = document.getElementById('materialsList');
-  const materials = readStorage('vd-materials', DEFAULT_MATERIAL);
+  const list = document.getElementById("materialsList");
+  const materials = readStorage("vd-materials", DEFAULT_MATERIAL);
+
   list.innerHTML = materials.map((item, index) => `
     <div class="card material-box">
       <div class="material-row">
-        <input type="checkbox" data-check-index="${index}" ${item.checked ? 'checked' : ''} />
+        <input type="checkbox" data-check-index="${index}" ${item.checked ? "checked" : ""} />
         <div style="flex:1;">
           <div class="material-name">${item.label}</div>
-          <input class="input" type="text" data-note-index="${index}" value="${escapeHtml(item.note || '')}" placeholder="Note rapide, quantité, remplacement…" />
+          <input
+            class="input"
+            type="text"
+            data-note-index="${index}"
+            value="${escapeHtml(item.note || "")}"
+            placeholder="Note rapide, quantité, remplacement…"
+          />
         </div>
       </div>
     </div>
-  `).join('');
+  `).join("");
 
-  list.querySelectorAll('[data-check-index]').forEach((el) => {
-    el.addEventListener('change', (e) => {
-      const idx = Number(e.target.getAttribute('data-check-index'));
-      const next = readStorage('vd-materials', DEFAULT_MATERIAL);
+  list.querySelectorAll("[data-check-index]").forEach((el) => {
+    el.addEventListener("change", (e) => {
+      const idx = Number(e.target.getAttribute("data-check-index"));
+      const next = readStorage("vd-materials", DEFAULT_MATERIAL);
       next[idx].checked = e.target.checked;
-      writeStorage('vd-materials', next);
+      writeStorage("vd-materials", next);
     });
   });
-  list.querySelectorAll('[data-note-index]').forEach((el) => {
-    el.addEventListener('input', (e) => {
-      const idx = Number(e.target.getAttribute('data-note-index'));
-      const next = readStorage('vd-materials', DEFAULT_MATERIAL);
+
+  list.querySelectorAll("[data-note-index]").forEach((el) => {
+    el.addEventListener("input", (e) => {
+      const idx = Number(e.target.getAttribute("data-note-index"));
+      const next = readStorage("vd-materials", DEFAULT_MATERIAL);
       next[idx].note = e.target.value;
-      writeStorage('vd-materials', next);
+      writeStorage("vd-materials", next);
     });
   });
 }
 
 function escapeHtml(value) {
   return String(value)
-    .replaceAll('&', '&amp;')
-    .replaceAll('"', '&quot;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;');
+    .replaceAll("&", "&amp;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
 }
 
 function setupEvents() {
-  document.querySelectorAll('[data-screen]').forEach((btn) => {
-    btn.addEventListener('click', () => showScreen(btn.getAttribute('data-screen')));
+  document.querySelectorAll("[data-screen]").forEach((btn) => {
+    btn.addEventListener("click", () => showScreen(btn.getAttribute("data-screen")));
   });
-  document.getElementById('backHome').addEventListener('click', () => showScreen('home'));
-  document.getElementById('searchInput').addEventListener('input', renderAlgoList);
-  document.getElementById('resetMaterials').addEventListener('click', () => {
-    writeStorage('vd-materials', DEFAULT_MATERIAL);
+
+  document.getElementById("backHome").addEventListener("click", () => showScreen("home"));
+  document.getElementById("searchInput").addEventListener("input", renderAlgoList);
+
+  document.getElementById("resetMaterials").addEventListener("click", () => {
+    writeStorage("vd-materials", DEFAULT_MATERIAL);
     renderMaterials();
   });
-  document.getElementById('syncMaterials').addEventListener('click', () => {
-    alert('Bouton réservé pour une future synchronisation avec Google Sheets.');
+
+  document.getElementById("syncMaterials").addEventListener("click", () => {
+    alert("Bouton réservé pour une future synchronisation avec Google Sheets.");
   });
+}
+
+function registerServiceWorker() {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+  }
 }
 
 function init() {
-  if (!localStorage.getItem('vd-materials')) {
-    writeStorage('vd-materials', DEFAULT_MATERIAL);
+  if (!localStorage.getItem("vd-materials")) {
+    writeStorage("vd-materials", DEFAULT_MATERIAL);
   }
+
   setupEvents();
+  registerServiceWorker();
   renderAlgoList();
   renderAlgo();
   renderMaterials();
-  showScreen('home');
+  showScreen("home");
 }
 
-document.addEventListener('DOMContentLoaded', init);
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js');
-}
