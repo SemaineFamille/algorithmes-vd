@@ -9,7 +9,7 @@ const CHAPTER_STYLES = {
 };
 
 const ALGOS = [
-  { id: "acr_arret", ordre: 1, titre: "Abstention / arrêt de réanimation", chapitre: "Urgences vitales", source: "VD", image: "images/acr_arret.png" },
+  { id: "acr_arret", ordre: 1, titre: "Abstention / arrêt de réanimation", chapitre: "Urgences vitales", source: "VD", image: "images/acr_arret.png", favor: false },
   { id: "acc_physio", ordre: 2, titre: "Accouchement physiologique", chapitre: "Obstétrique", source: "VD", image: "images/acc_physio.png" },
   { id: "acc_patho1", ordre: 3, titre: "Accouchement pathologique 1", chapitre: "Obstétrique", source: "VD", image: "images/acc_patho1.png" },
   { id: "acc_patho2", ordre: 4, titre: "Accouchement pathologique 2", chapitre: "Obstétrique", source: "VD", image: "images/acc_patho2.png" },
