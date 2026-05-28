@@ -37,11 +37,13 @@ const ALGOS = [
 ];
 
 const DEFAULT_MATERIAL = [
-  { id: "venflon", label: "Vénflon", checked: false, note: "" },
+  { id: "venflon", label: "Venflon", checked: false, note: "" },
   { id: "tubulure", label: "Tubulure", checked: false, note: "" },
-  { id: "ringer250", label: "Ringer 250 ml", checked: false, note: "" },
+  { id: "ringer", label: "Ringer", checked: false, note: "" },
   { id: "cofix", label: "Cofix", checked: false, note: "" },
   { id: "gants", label: "Gants", checked: false, note: "" },
+  { id: "lunette", label: "Lunette", checked: false, note: "" },
+  { id: "masque 02", label: "Masque 02", checked: false, note: "" },
   { id: "reserve", label: "Réassort / fin de journée", checked: false, note: "" }
 ];
 
