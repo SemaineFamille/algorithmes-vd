@@ -60,6 +60,30 @@ function readStorage(key, fallback) {
 function writeStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
+function getFavoritesMap() {
+  return readStorage('vd-favorites', {});
+}
+
+function isFavorite(algo) {
+  const favorites = getFavoritesMap();
+  if (favorites.hasOwnProperty(algo.id)) {
+    return favorites[algo.id];
+  }
+  return !!algo.favori;
+}
+
+function toggleFavorite(id) {
+  const favorites = getFavoritesMap();
+  const algo = ALGOS.find((a) => a.id === id);
+  const currentValue = favorites.hasOwnProperty(id) ? favorites[id] : !!algo?.favori;
+  favorites[id] = !currentValue;
+  writeStorage('vd-favorites', favorites);
+  renderAlgoList();
+
+  if (state.view === "algo" && state.selectedAlgoId === id) {
+    renderAlgo();
+  }
+}
 
 function chapterStyle(chapter) {
   return CHAPTER_STYLES[chapter] || CHAPTER_STYLES["Interne"];
@@ -78,30 +102,59 @@ function showScreen(screen) {
 function renderAlgoList() {
   const term = document.getElementById('searchInput').value.trim().toLowerCase();
   const list = document.getElementById('algoList');
+
   const items = [...ALGOS]
-    .sort((a, b) => a.ordre - b.ordre)
-    .filter((item) => !term || [item.titre, item.chapitre, item.resume, item.source].join(' ').toLowerCase().includes(term));
+    .filter((item) =>
+      !term ||
+      [item.titre, item.chapitre, item.resume, item.source]
+        .join(' ')
+        .toLowerCase()
+        .includes(term)
+    )
+    .sort((a, b) => {
+      const favA = isFavorite(a) ? 1 : 0;
+      const favB = isFavorite(b) ? 1 : 0;
+
+      if (favA !== favB) {
+        return favB - favA; // favoris d'abord
+      }
+      return a.ordre - b.ordre;
+    });
 
   list.innerHTML = items.map((algo) => {
     const style = chapterStyle(algo.chapitre);
+    const favorite = isFavorite(algo);
+
     return `
-      <button class="card algo-item" data-open-id="${algo.id}">
+      <div class="card algo-item">
         <div class="algo-main-line">
-          <div>
+          <div style="flex:1;">
             <span class="badge" style="${style.badge}">${algo.chapitre}</span>
-            ${algo.favori ? '<span class="badge-star">★</span>' : ''}
             <h3 class="algo-title-small">${algo.ordre}. ${algo.titre}</h3>
             <p class="subtle">${algo.resume}</p>
             <p class="subtle small">Source : ${algo.source}</p>
           </div>
-          <span class="open-pill">Ouvrir</span>
+
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
+            <button class="favorite-btn" data-fav-id="${algo.id}" title="Ajouter aux favoris">
+              ${favorite ? "★" : "☆"}
+            </button>
+            <button class="open-pill" data-open-id="${algo.id}">Ouvrir</button>
+          </div>
         </div>
-      </button>
+      </div>
     `;
   }).join('');
 
   list.querySelectorAll('[data-open-id]').forEach((btn) => {
     btn.addEventListener('click', () => openAlgo(btn.getAttribute('data-open-id')));
+  });
+
+  list.querySelectorAll('[data-fav-id]').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleFavorite(btn.getAttribute('data-fav-id'));
+    });
   });
 }
 
@@ -110,9 +163,11 @@ function openAlgo(id) {
   showScreen('algo');
 }
 
+
 function renderAlgo() {
   const algo = ALGOS.find((a) => a.id === state.selectedAlgoId) || ALGOS[0];
   const style = chapterStyle(algo.chapitre);
+
   document.getElementById('algoBadge').textContent = algo.chapitre;
   document.getElementById('algoBadge').setAttribute('style', style.badge);
   document.getElementById('algoTitle').textContent = algo.titre;
