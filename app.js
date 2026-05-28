@@ -149,6 +149,19 @@ function toggleFavorite(id) {
 function showScreen(screen) {
   state.view = screen;
 
+const title = document.getElementById("mainTitle");
+const sub = document.getElementById("subTitle");
+
+if (screen === "home" || screen === "algo") {
+  title.textContent = "Algorithmes";
+  sub.textContent = "VD";
+}
+
+if (screen === "autre") {
+  title.textContent = "Carnet de poche";
+  sub.textContent = "STAR";
+}
+
   document.querySelectorAll(".screen").forEach((el) => el.classList.remove("active"));
   document.getElementById(`screen-${screen}`).classList.add("active");
 
