@@ -1,17 +1,17 @@
 :root {
   --bg: #eef2f7;
-  -- --text: #122033;  --card: #ffffff;
+  --card: #ffffff;
+  --text: #122033;
   --muted: #637487;
   --line: #d9e3ef;
   --shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
 
-  --radius-xl: 22px;
-  --radius-lg: 18px;
-  --radius-md: 14px;
+  --radius-xl: 24px;
+  --radius-lg: 20px;
 
   --primary: #0f766e;
   --star: #facc15;
-  --star-active: #fbbf24;
+  --star-active: #eab308;
 }
 
 * {
@@ -88,15 +88,14 @@ code {
   border: none;
 }
 
-/* BOUTONS HAUT */
+/* BOUTONS EN HAUT */
 .actions-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin-bottom: 14px;
 }
 
-.actions-grid.single-row {
+.actions-grid-2 {
   grid-template-columns: 1fr 1fr;
 }
 
@@ -141,7 +140,7 @@ code {
   gap: 12px;
 }
 
-/* FAVORIS */
+/* SECTION FAVORIS */
 .section-card {
   background: white;
   border-radius: var(--radius-lg);
@@ -159,7 +158,7 @@ code {
   letter-spacing: 0.04em;
 }
 
-/* CARTES ALGO */
+/* CARTES D'ALGO */
 .algo-card {
   border-radius: var(--radius-lg);
   padding: 14px 16px;
@@ -177,7 +176,7 @@ code {
 
 .algo-card-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
@@ -188,14 +187,14 @@ code {
 }
 
 .algo-title {
-  margin: 10px 0 0;
+  margin: 0;
   font-size: 1.08rem;
   line-height: 1.25;
   font-weight: 800;
   word-break: break-word;
 }
 
-/* Badge */
+/* BADGE */
 .badge {
   display: inline-block;
   border-radius: 999px;
@@ -203,9 +202,10 @@ code {
   font-size: 0.76rem;
   font-weight: 700;
   border: 1px solid transparent;
+  margin-bottom: 8px;
 }
 
-/* Etoile sans cadre */
+/* ETOILES SANS CADRE */
 .favorite-btn {
   border: none;
   background: none;
@@ -258,7 +258,7 @@ code {
 }
 
 .detail-title {
-  margin: 12px 0 14px;
+  margin: 0 0 14px;
   font-size: 1.2rem;
   font-weight: 800;
   line-height: 1.2;
@@ -348,7 +348,7 @@ code {
   margin-bottom: 8px;
 }
 
-/* NAV BAS */
+/* NAVIGATION BASSE */
 .bottom-nav {
   position: fixed;
   left: 50%;
@@ -387,6 +387,6 @@ code {
 }
 
 .nav-btn-star.active {
-  background: #eab308;
+  background: var(--star-active);
   color: #111827;
 }
