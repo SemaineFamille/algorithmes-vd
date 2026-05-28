@@ -1,7 +1,36 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset <section id="screen-vd" class="screen">  <meta charset="UTF-8" />
+<!DOCTYPE html><!DOCTYPE <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algorithmes VD</title>
+  <meta name="theme-color" content="#0f766e" />
+  <link rel="manifest" href="app.webmanifest" />
+  <link rel="apple-touch-icon" href="images/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header id="topbar" class="topbar">
+      <h1 id="mainTitle">Algorithmes</h1>
+    </header>
+
+    <main class="content">
+
+      <!-- ACCUEIL -->
+      <section id="screen-home" class="screen active">
+        <div class="card">
+          <div class="actions-grid">
+            <button class="btn btn-primary" data-screen="vd">Algo VD</button>
+            <button class="btn btn-star" data-screen="star">STAR</button>
+            <button class="btn btn-secondary" data-screen="calculator">Calcul</button>
+            <button class="btn btn-secondary" data-screen="materials">Matériel</button>
+          </div>
+        </div>
+
+        <div id="favoritesSection"></div>
+        <div id="homeVdList" class="list"></div>
+      </section>
+
+      <!-- LISTE ALGO VD -->
+      <section id="screen-vd" class="screen">
         <div id="vdList" class="list"></div>
       </section>
 
@@ -10,11 +39,11 @@
         <div id="starList" class="list"></div>
       </section>
 
-      <!-- DETAIL -->
+      <!-- DETAIL COMMUN -->
       <section id="screen-detail" class="screen">
         <div class="detail-toolbar">
           <button id="backBtn" class="round-btn" type="button">←</button>
-          <button id="detailFavoriteBtn" class="favorite-btn" type="button" aria-label="Favori">☆</button>
+          <button id="detailFavoriteBtn" class="favorite-btn inactive" type="button">☆</button>
         </div>
 
         <div id="detailCard" class="card detail-card">
@@ -23,9 +52,9 @@
 
           <div id="detailImageWrap" class="image-wrap">
             <img id="detailImage" alt="Algorithme" />
-            <div id="detailPlaceholder" class="placeholder-block">
+            <div class="placeholder-block">
               <strong>Image non trouvée</strong>
-              <p>Vérifie le nom du fichier dans <code>app.js</code> et dans le dossier <code>images/</code>.</p>
+              <p>Vérifie le nom dans <code>app.js</code> et dans le dossier <code>images/</code>.</p>
             </div>
           </div>
 
@@ -49,7 +78,7 @@
         <div id="materialsList" class="list"></div>
 
         <div class="card">
-          <div class="actions-grid single-row">
+          <div class="actions-grid actions-grid-2">
             <button id="resetMaterials" class="btn btn-secondary" type="button">Remettre à zéro</button>
             <button id="syncMaterials" class="btn btn-primary" type="button">Synchroniser</button>
           </div>
@@ -69,31 +98,5 @@
   <script src="app.js"></script>
 </body>
 </html>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Algorithmes VD</title>
-  <meta name="theme-color" content="#0f766e" />
-  <link rel="manifest" href="app.webmanifest" />
-  <link rel="apple-touch-icon" href="images/icon-192.png" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="app-shell">
-    <header id="topbar" class="topbar">
-      <h1 id="mainTitle">Algorithmes</h1>
-    </header>
-
-    <main class="content">
-
-      <!-- HOME -->
-      <section id="screen-home" class="screen active">
-        <div class="actions-grid">
-          <button class="btn btn-primary" data-screen="vd">Algo VD</button>
-          <button class="btn btn-star" data-screen="star">STAR</button>
-          <button class="btn btn-secondary" data-screen="calculator">Calcul</button>
-          <button class="btn btn-secondary" data-screen="materials">Matériel</button>
-        </div>
-
-        <div id="favoritesSection"></div>
-      </section>
-
-      <!-- LISTE ALGO VD -->
+<html lang="fr">
+<head>
