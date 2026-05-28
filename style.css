@@ -1,13 +1,13 @@
 :root {
-  --bg: #f6f8fb;
+  --bg: #eef2f7;
   --card: #ffffff;
   --text: #122033;
   --muted: #637487;
   --line: #d9e3ef;
   --shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
 
-  --radius-xl: 24px;
-  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-lg: 20px;
   --radius-md: 14px;
 
   --primary: #0f766e;
@@ -46,7 +46,7 @@ code {
   position: sticky;
   top: 0;
   z-index: 30;
-  padding: 16px;
+  padding: 16px 20px;
   background: rgba(255, 255, 255, 0.94);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(10px);
@@ -82,8 +82,8 @@ code {
 }
 
 .content {
-  padding: 14px;
-  padding-bottom: 96px;
+  padding: 18px;
+  padding-bottom: 104px;
 }
 
 .screen {
@@ -94,13 +94,23 @@ code {
   display: block;
 }
 
+/* ✅ CARTES — plus aérées, plus arrondies */
 .card {
   background: var(--card);
-  border: 1px solid #edf2f7;
-  border-radius: 22px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);  /* ✅ plus doux */
-  padding: 14px;
-  margin-bottom: 14px;
+  border: 1px solid rgba(209, 222, 239, 0.6);
+  border-radius: var(--radius-xl);
+  box-shadow:
+    0 2px 4px rgba(15, 23, 42, 0.04),
+    0 8px 24px rgba(15, 23, 42, 0.07);
+  padding: 18px;
+  margin-bottom: 18px;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow:
+    0 4px 8px rgba(15, 23, 42, 0.06),
+    0 16px 32px rgba(15, 23, 42, 0.10);
 }
 
 .colored-border {
@@ -110,8 +120,8 @@ code {
 .actions-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 12px;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
 .actions-grid .full {
@@ -126,6 +136,11 @@ code {
   font-weight: 700;
   font-size: 1.05rem;
   cursor: pointer;
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
 }
 
 .btn-primary {
@@ -133,9 +148,17 @@ code {
   color: white;
 }
 
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
 .btn-secondary {
   background: #e9eff6;
   color: var(--text);
+}
+
+.btn-secondary:hover {
+  background: #dce6f0;
 }
 
 .full-width {
@@ -153,10 +176,18 @@ code {
 .textarea {
   width: 100%;
   border: 1px solid var(--line);
-  background: white;
+  background: #f8fafc;
   border-radius: var(--radius-lg);
   padding: 13px 14px;
   font-size: 1rem;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: white;
 }
 
 .input {
@@ -168,12 +199,13 @@ code {
   resize: vertical;
 }
 
+/* ✅ LISTE — espacement généreux */
 .list {
   display: grid;
-  gap: 10px;
+  gap: 14px;
 }
 
-/* ✅ LES CARTES D'ALGO */
+/* ✅ CARTES D'ALGO */
 .algo-item {
   width: 100%;
   text-align: left;
@@ -182,7 +214,7 @@ code {
 }
 
 .algo-item:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .algo-main-line {
@@ -213,7 +245,7 @@ code {
 .badge {
   display: inline-block;
   border-radius: 999px;
-  padding: 6px 10px;
+  padding: 6px 12px;
   font-size: 0.78rem;
   font-weight: 700;
   border: 1px solid transparent;
@@ -234,7 +266,7 @@ code {
   color: #64748b;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-weight: 800;
 }
 
@@ -243,7 +275,7 @@ code {
   display: flex;
   gap: 12px;
   align-items: flex-start;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .icon-btn {
@@ -256,6 +288,7 @@ code {
   cursor: pointer;
   font-size: 1.2rem;
   font-weight: 700;
+  flex-shrink: 0;
 }
 
 .algo-title {
@@ -309,26 +342,27 @@ code {
   font-weight: 800;
 }
 
-/* ✅ FAVORIS */
-
-.favorite-btn {.favorite-btn: none;
-  background: transparent;   /* ✅ enlève le carré */
-  color: #facc15;            /* ✅ jaune */
-  font-size: 1.6rem;         /* ✅ étoile plus visible */
+/* ✅ ÉTOILE FAVORI — juste une étoile, sans fond ni bordure */
+.favorite-btn {
+  border: none;
+  background: transparent;
+  padding: 4px 6px;
   cursor: pointer;
-  padding: 4px;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #d1d5db;           /* ⭐ vide = gris clair */
+  transition: color 0.18s ease, transform 0.15s ease;
+  flex-shrink: 0;
 }
-
 
 .favorite-btn:hover {
-  background: #ffedd5;
+  color: #fbbf24;
+  transform: scale(1.15);
 }
-
 
 .favorite-btn.active {
-  color: #facc15;
+  color: #facc15;            /* ⭐ pleine = jaune */
 }
-
 
 .favorite-stack {
   display: flex;
@@ -348,7 +382,7 @@ code {
   cursor: pointer;
 }
 
-/* ✅ BOUTONS FAVORIS EN MODE URGENCE */
+/* ✅ GRILLE URGENCES */
 .emergency-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -359,18 +393,24 @@ code {
 .material-row {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
 }
 
 .material-box {
   background: white;
   border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 12px;
+  border-radius: var(--radius-xl);
+  padding: 16px;
+  transition: box-shadow 0.15s ease;
+}
+
+.material-box:hover {
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
 }
 
 .material-box .input {
   margin-top: 8px;
+  background: #f8fafc;
 }
 
 .material-name {
@@ -387,18 +427,25 @@ code {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
-  padding: 10px;
+  padding: 10px 14px;
   background: rgba(255, 255, 255, 0.96);
   border-top: 1px solid var(--line);
+  backdrop-filter: blur(10px);
 }
 
 .nav-btn {
   border: 0;
   min-height: 54px;
-  border-radius: 16px;
+  border-radius: 18px;
   background: #e9eff6;
   cursor: pointer;
   font-weight: 700;
+  font-size: 0.88rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-btn:hover {
+  background: #d4e0ee;
 }
 
 .nav-btn.active {
@@ -406,7 +453,7 @@ code {
   color: white;
 }
 
-/* ✅ PLUS JOLI SUR GRAND ÉCRAN */
+/* ✅ GRAND ÉCRAN */
 @media (min-width: 700px) {
   .app-shell {
     box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.05);
