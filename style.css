@@ -356,20 +356,21 @@ code {
 .favorite-btn {
   border: none;
   background: transparent;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   cursor: pointer;
-  color: #d1d5db;
-  transition: transform 0.15s ease, color 0.15s ease;
+  line-height: 1;
+  padding: 0;
+  color: #9ca3af;           /* gris clair quand non actif */
+}
+
+.favorite-btn.active {
+  color: #facc15;           /* ✅ jaune */
 }
 
 .favorite-btn:hover {
   color: #facc15;
-  transform: scale(1.2);
 }
 
-.favorite-btn.active {
-  color: #facc15;
-}
 
 .favorite-stack {
   display: flex;
@@ -459,7 +460,10 @@ code {
   background: var(--primary);
   color: white;
 }
-
+.card.algo-item {
+  border-radius: var(--radius-xl);   /* ✅ même arrondi que tes vraies cartes */
+  overflow: hidden;                  /* ✅ évite les coins cassés */
+}
 /* ✅ GRAND ÉCRAN */
 @media (min-width: 700px) {
   .app-shell {
