@@ -165,7 +165,20 @@ function algoCardHTML(algo) {
   const style = chapterStyle(algo.chapitre);
   const favorite = isFavorite(algo);
 
-  return 
+  return  `
+    <div class="algo-card" data-open-id="${algo.id}" style="border-left:4px solid ${style.border};background:${style.background};">
+      <div class="algo-card-header">
+        <span class="badge" style="${style.badge}">${algo.chapitre}</span>
+        <button class="fav-btn ${favorite ? 'active' : ''}" data-fav-id="${algo.id}">
+          ${favorite ? '★' : '☆'}
+        </button>
+      </div>
+      <div class="algo-card-body" data-open-id="${algo.id}">
+        <div class="algo-title">${algo.titre}</div>
+        <div class="algo-resume">${algo.resume || ''}</div>
+      </div>
+    </div>
+  `;
 
 }
 
