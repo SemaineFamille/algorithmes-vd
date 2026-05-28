@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algorithmes VD</title>
+  <meta name="theme-color" content="#0f766e" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>Algorithmes VD + internes</h1>
+        <p>Prototype mobile pour GitHub Pages</p>
+      </div>
+    </header>
+
+    <main class="content">
+      <section id="screen-home" class="screen active">
+        <div class="card">
+          <div class="actions-grid">
+            <button class="btn btn-primary" data-screen="home">Algorithmes</button>
+            <button class="btn btn-secondary" data-screen="calculator">Calcul rapide</button>
+            <button class="btn btn-secondary full" data-screen="materials">Matériel / fin de journée</button>
+          </div>
+          <label class="field-label" for="searchInput">Recherche rapide</label>
+          <input id="searchInput" class="input" type="text" placeholder="Ex. AVC, antalgie, pédiatrie, interne…" />
+        </div>
+
+        <div id="algoList" class="list"></div>
+      </section>
+
+      <section id="screen-algo" class="screen">
+        <div class="algo-header-row">
+          <button id="backHome" class="icon-btn" aria-label="Retour">←</button>
+          <div>
+            <div id="algoBadge" class="badge">Chapitre</div>
+            <h2 id="algoTitle" class="algo-title">Titre</h2>
+            <p id="algoSource" class="subtle">Source</p>
+          </div>
+        </div>
+
+        <div class="card algo-card colored-border" id="algoCardColor">
+          <div class="card-title-row">
+            <span>Algo en image</span>
+          </div>
+          <div id="algoImageWrap" class="image-wrap">
+            <img id="algoImage" alt="Algorithme" />
+            <div id="algoPlaceholder" class="placeholder-block">
+              <strong>Image PDF non encore ajoutée</strong>
+              <p>Ajoute le fichier dans le dossier <code>images/</code> puis renseigne son nom dans <code>app.js</code>.</p>
+            </div>
+          </div>
+          <p id="algoResume" class="subtle"></p>
+        </div>
+
+        <div class="card">
+          <div class="card-title-row">
+            <span>Annotations / posologies / remarques terrain</span>
+          </div>
+          <textarea id="notesArea" class="textarea" placeholder="Ajoute ici tes notes personnelles..."></textarea>
+          <p class="subtle">Les annotations sont stockées localement dans le navigateur de cet appareil.</p>
+        </div>
+      </section>
+
+      <section id="screen-calculator" class="screen">
+        <div class="card">
+          <div class="badge badge-red">À compléter</div>
+          <h2 class="section-title">Calcul rapide</h2>
+          <p class="subtle">Zone prévue pour afficher un calculateur validé par ton protocole.</p>
+          <input class="input" type="text" placeholder="Contexte / type de calcul" />
+          <input class="input" type="text" placeholder="Poids / variable 1" />
+          <input class="input" type="text" placeholder="Âge / variable 2" />
+          <button class="btn btn-primary full-width" type="button">Lancer le calcul</button>
+        </div>
+      </section>
+
+      <section id="screen-materials" class="screen">
+        <div class="card">
+          <div class="badge badge-amber">Checklist</div>
+          <h2 class="section-title">Matériel / consommables</h2>
+          <p class="subtle">Tu peux modifier la liste dans <code>app.js</code>.</p>
+        </div>
+        <div id="materialsList" class="list"></div>
+        <div class="card">
+          <div class="actions-grid">
+            <button id="resetMaterials" class="btn btn-secondary">Remettre à zéro</button>
+            <button id="syncMaterials" class="btn btn-primary">Synchroniser</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-screen="home">Accueil</button>
+      <button class="nav-btn" data-screen="algo">Algo</button>
+      <button class="nav-btn" data-screen="calculator">Calcul</button>
+      <button class="nav-btn" data-screen="materials">Matériel</button>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
