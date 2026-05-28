@@ -1,18 +1,15 @@
-const CACHE_NAME = 'algo-v2';
-
 self.addEventListener('install', (event) => {
-  self.skipWaiting();
-});
-
-self.addEventListener('activate', (event) => {
-  caches.keys().then((names) => {
-    for (let name of names) {
-      caches.delete(name);
-    }
-  });
+  self', (event) => {  self.skipWaiting();
+  event.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(keys.map((key) => caches.delete(key)))
+    )
+  );
   self.clients.claim();
 });
 
 self.addEventListener('fetch', (event) => {
   event.respondWith(fetch(event.request));
 });
+});
+
