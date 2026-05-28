@@ -353,15 +353,21 @@ code {
 }
 
 /* ✅ ÉTOILE FAVORI — juste une étoile, sans fond ni bordure */
+
 .favorite-btn {
   border: none;
-  background: transparent;
+  background: none;        /* ✅ supprime tout fond */
+  padding: 0;              /* ✅ enlève le cadre invisible */
+  margin: 0;
   font-size: 1.4rem;
+  line-height: 1;          /* ✅ évite le carré vertical */
   cursor: pointer;
-  line-height: 1;
-  padding: 0;
-  color: #9ca3af;           /* gris clair quand non actif */
+  
+  display: inline;         /* ✅ IMPORTANT : plus de bloc */
+  
+  color: inherit;          /* ✅ laisse l’emoji gérer la couleur */
 }
+
 
 .favorite-btn.active {
   color: #facc15;           /* ✅ jaune */
