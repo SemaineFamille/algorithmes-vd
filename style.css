@@ -439,7 +439,7 @@ code {
   bottom: 0;
   width: min(480px, 100%);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 8px;
   padding: 10px 14px;
   background: rgba(255, 255, 255, 0.96);
