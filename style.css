@@ -310,27 +310,25 @@ code {
 }
 
 /* ✅ FAVORIS */
-.favorite-btn {
-  border: 0;
-  background: #fff7ed;
-  color: #d97706;
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
+
+.favorite-btn {.favorite-btn: none;
+  background: transparent;   /* ✅ enlève le carré */
+  color: #facc15;            /* ✅ jaune */
+  font-size: 1.6rem;         /* ✅ étoile plus visible */
   cursor: pointer;
-  font-size: 1.25rem;
-  font-weight: 700;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+  padding: 4px;
 }
+
 
 .favorite-btn:hover {
   background: #ffedd5;
 }
 
+
 .favorite-btn.active {
-  background: #ffedd5;
-  color: #b45309;
+  color: #facc15;
 }
+
 
 .favorite-stack {
   display: flex;
