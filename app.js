@@ -171,12 +171,12 @@ function algoCardHTML(algo) {
         <div>
           <span class="badge" style="${style.badge}">${algo.chapitre}</span>
           <h3 class="algo-title-small">${algo.ordre}. ${algo.titre}</h3>
-          <p class="subtle">${algo.resume || ""}</p>
+          <p class="subtle">${algo.resume || ''}</p>
           <p class="subtle small">Source : ${algo.source}</p>
         </div>
         <div class="favorite-stack">
-          <button class="favorite-btn ${favorite ? "active" : ""}" data-fav-id="${algo.id}" type="button">
-            ${favorite ? "★" : "☆"}
+          <button class="favorite-btn ${favorite ? 'active' : ''}" data-fav-id="${algo.id}" type="button">
+            ${favorite ? '★' : '☆'}
           </button>
           <button class="open-pill" data-open-id="${algo.id}" type="button">Ouvrir</button>
         </div>
@@ -184,7 +184,6 @@ function algoCardHTML(algo) {
     </div>
   `;
 }
-
 function bindAlgoCardEvents(container) {
   container.querySelectorAll("[data-open-id]").forEach((btn) => {
     btn.addEventListener("click", () => openAlgo(btn.getAttribute("data-open-id")));
