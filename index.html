@@ -6,10 +6,8 @@
   <title>Algorithmes VD</title>
   <meta name="theme-color" content="#0f766e" />
   <link rel="stylesheet" href="style.css" />
-<link rel="manifest" href="app.webmanifest">
-<meta name="theme-color" content="#0f766e">
-<link rel="apple-touch-icon" href="images/icon-192.png">
-
+  <link rel="manifest" href="app.webmanifest" />
+  <link rel="apple-touch-icon" href="images/icon-192.png" />
 </head>
 <body>
   <div class="app-shell">
@@ -32,6 +30,7 @@
           <input id="searchInput" class="input" type="text" placeholder="Ex. AVC, antalgie, pédiatrie, interne…" />
         </div>
 
+        <div id="favoritesSection"></div>
         <div id="algoList" class="list"></div>
       </section>
 
@@ -43,6 +42,7 @@
             <h2 id="algoTitle" class="algo-title">Titre</h2>
             <p id="algoSource" class="subtle">Source</p>
           </div>
+          <button id="algoFavoriteBtn" class="favorite-btn" type="button" title="Favori">☆</button>
         </div>
 
         <div class="card algo-card colored-border" id="algoCardColor">
