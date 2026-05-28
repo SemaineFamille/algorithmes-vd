@@ -4,11 +4,9 @@
   --text: #122033;
   --muted: #637487;
   --line: #d9e3ef;
-  --shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
 
   --radius-xl: 28px;
   --radius-lg: 20px;
-  --radius-md: 14px;
 
   --primary: #0f766e;
 }
@@ -21,19 +19,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: Inter, Arial, Helvetica, sans-serif;
-}
-
-button,
-input,
-textarea {
-  font: inherit;
-}
-
-code {
-  background: #f1f5f9;
-  padding: 0 4px;
-  border-radius: 6px;
+  font-family: Inter, Arial, sans-serif;
 }
 
 .app-shell {
@@ -42,18 +28,11 @@ code {
   min-height: 100vh;
 }
 
+/* ✅ HEADER */
 .topbar {
-  position: sticky;
-  top: 0;
-  z-index: 30;
   padding: 16px 20px;
-  background: rgba(255, 255, 255, 0.94);
+  background: white;
   border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
 }
 
 .topbar h1 {
@@ -64,23 +43,9 @@ code {
 .topbar p {
   margin: 4px 0 0;
   color: var(--muted);
-  font-size: 0.92rem;
 }
 
-.hidden {
-  display: none !important;
-}
-
-.install-btn {
-  border: 0;
-  border-radius: 16px;
-  padding: 11px 14px;
-  font-weight: 700;
-  cursor: pointer;
-  background: #0f766e;
-  color: #fff;
-}
-
+/* ✅ CONTENU */
 .content {
   padding: 18px;
   padding-bottom: 104px;
@@ -94,50 +59,28 @@ code {
   display: block;
 }
 
-/* ✅ CARTES — plus aérées, plus arrondies */
-
-.card {.card-radius: var(--radius-lg);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  border: none;
-  padding: 16px;
-  margin-bottom: 16px;
-}
-
-
-.card:hover {
-  box-shadow:
-    0 4px 8px rgba(15, 23, 42, 0.06),
-    0 16px 32px rgba(15, 23, 42, 0.10);
-}
-
-.colored-border {
-  border-width: 2px;
-}
-
-.actions-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.actions-grid .full {
-  grid-column: 1 / -1;
-}
-
-.btn {
-  border: 0;
+/* ✅ CARTES */
+.card {
+  background: var(--card);
   border-radius: var(--radius-lg);
-  min-height: 70px;
-  padding: 12px 16px;
-  font-weight: 700;
-  font-size: 1.05rem;
-  cursor: pointer;
-  transition: transform 0.12s ease, filter 0.12s ease;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
-.btn:active {
-  transform: scale(0.97);
+/* ✅ LISTE */
+.list {
+  display: grid;
+  gap: 12px;
+}
+
+/* ✅ BOUTONS */
+.btn {
+  border: none;
+  border-radius: var(--radius-lg);
+  min-height: 65px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .btn-primary {
@@ -145,297 +88,81 @@ code {
   color: white;
 }
 
-.btn-primary:hover {
-  filter: brightness(1.08);
-}
-
 .btn-secondary {
   background: #e9eff6;
-  color: var(--text);
 }
 
-.btn-secondary:hover {
-  background: #dce6f0;
-}
-
-.full-width {
-  width: 100%;
-}
-
-.field-label {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.input,
-.textarea {
-  width: 100%;
-  border: 1px solid var(--line);
-  background: #f8fafc;
-  border-radius: var(--radius-lg);
-  padding: 13px 14px;
-  font-size: 1rem;
-  transition: border-color 0.15s ease, background 0.15s ease;
-}
-
-.input:focus,
-.textarea:focus {
-  outline: none;
-  border-color: var(--primary);
-  background: white;
-}
-
-.input {
-  margin-top: 6px;
-}
-
-.textarea {
-  min-height: 220px;
-  resize: vertical;
-}
-
-/* ✅ LISTE — espacement généreux */
-.list {
-  display: grid;
-  gap: 14px;
-}
-
-/* ✅ CARTES D'ALGO — identiques aux .btn du haut */
-
-.algo-item {.algo-item var(--radius-lg);
-  padding: 16px;
-  cursor: pointer;
-  transition: transform 0.1s ease, filter 0.1s ease;
-}
-
+/* ✅ CARTES ALGO (IMPORTANT) */
 .card.algo-item {
   border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.1s ease;
 }
 
-
-.algo-item:hover {
-  filter: brightness(0.96);
-}
-
-.algo-item:active {.algo-item:: scale(0.97);
-}
-
-.algo-item:active {
-  transform: scale(0.97);            /* même que .btn:active */
-  filter: brightness(0.92);
+.card.algo-item:active {
+  transform: scale(0.97);
 }
 
 .algo-main-line {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
 }
 
 .algo-title-small {
-  margin: 10px 0 6px;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 800;
-  line-height: 1.2;
 }
 
 .subtle {
   color: var(--muted);
-  font-size: 0.98rem;
-  margin: 6px 0 0;
-  line-height: 1.35;
+  font-size: 0.9rem;
 }
 
-.subtle.small {
-  font-size: 0.82rem;
-}
-
+/* ✅ BADGE */
 .badge {
-  display: inline-block;
   border-radius: 999px;
-  padding: 6px 12px;
-  font-size: 0.78rem;
+  padding: 4px 10px;
+  font-size: 0.8rem;
   font-weight: 700;
-  border: 1px solid transparent;
 }
 
-.badge-red {
-  background: #fee2e2;
-  color: #b91c1c;
-}
-
-.badge-amber {
-  background: #fef3c7;
-  color: #b45309;
-}
-
-.section-caption {
-  font-size: 0.82rem;
-  color: #64748b;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0 0 12px;
-  font-weight: 800;
-}
-
-/* ✅ BOUTON RETOUR */
-.algo-header-row {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  margin-bottom: 14px;
-}
-
-.icon-btn {
-  border: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 16px;
-  background: #0f766e;
-  color: white;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.algo-title {
-  margin: 10px 0 0;
-  font-size: 1.25rem;
-  font-weight: 800;
-}
-
-.card-title-row {
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-/* ✅ IMAGE FULL PROTOCOLE */
-.image-wrap {
-  min-height: 58vh;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  border: none;
-  background: #000;
-}
-
-.image-wrap img {
-  width: 100%;
-  display: none;
-  height: auto;
-}
-
-.image-wrap.has-image img {
-  display: block;
-}
-
-.image-wrap.has-image .placeholder-block {
-  display: none;
-}
-
-.placeholder-block {
-  min-height: 58vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 24px;
-  color: white;
-}
-
-.section-title {
-  margin: 10px 0 6px;
-  font-size: 1.15rem;
-  font-weight: 800;
-}
-
-/* ✅ ÉTOILE FAVORI — juste une étoile, sans fond ni bordure */
-
+/* ✅ ÉTOILE (PARFAITE VERSION) */
 .favorite-btn {
   border: none;
-  background: transparent;
+  background: none;
   padding: 0;
   margin: 0;
-  font-size: 1.5rem;
-  line-height: 1;
+  font-size: 1.4rem;
   cursor: pointer;
 
-  color: inherit;
-
-  /* ✅ SUPPRIME le carré noir mobile */
-  outline: none;
   -webkit-tap-highlight-color: transparent;
-  box-shadow: none;
+  outline: none;
 }
 
 .favorite-btn:focus {
   outline: none;
 }
 
-
+/* ✅ IMPORTANT : on laisse l’emoji gérer la couleur */
 .favorite-btn.active {
-  color: #facc15;           /* ✅ jaune */
+  transform: scale(1.1);
 }
 
-.favorite-btn:hover {
-  color: #facc15;
-}
-
-
+/* ✅ ALIGNEMENT */
 .favorite-stack {
   display: flex;
   flex-direction: column;
-  gap: 6px;
   align-items: flex-end;
+  gap: 6px;
 }
 
 .open-pill {
   background: #f1f5f9;
-  color: #475569;
   border-radius: 14px;
-  font-size: 0.78rem;
-  padding: 8px 10px;
-  white-space: nowrap;
-  border: 0;
-  cursor: pointer;
-}
-
-/* ✅ GRILLE URGENCES */
-.emergency-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-/* ✅ MATERIEL */
-.material-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.material-box {
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-xl);
-  padding: 16px;
-  transition: box-shadow 0.15s ease;
-}
-
-.material-box:hover {
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
-}
-
-.material-box .input {
-  margin-top: 8px;
-  background: #f8fafc;
-}
-
-.material-name {
-  font-weight: 700;
+  padding: 6px 10px;
+  font-size: 0.75rem;
 }
 
 /* ✅ NAVIGATION BASSE */
@@ -445,41 +172,25 @@ code {
   transform: translateX(-50%);
   bottom: 0;
   width: min(480px, 100%);
+  
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+
   gap: 8px;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.96);
+  padding: 10px;
+  background: white;
   border-top: 1px solid var(--line);
-  backdrop-filter: blur(10px);
 }
 
 .nav-btn {
-  border: 0;
-  min-height: 54px;
-  border-radius: 18px;
+  border: none;
+  border-radius: var(--radius-lg);
   background: #e9eff6;
-  cursor: pointer;
   font-weight: 700;
-  font-size: 0.88rem;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.nav-btn:hover {
-  background: #d4e0ee;
+  cursor: pointer;
 }
 
 .nav-btn.active {
   background: var(--primary);
   color: white;
-}
-.card.algo-item {
-  border-radius: var(--radius-xl);   /* ✅ même arrondi que tes vraies cartes */
-  overflow: hidden;                  /* ✅ évite les coins cassés */
-}
-/* ✅ GRAND ÉCRAN */
-@media (min-width: 700px) {
-  .app-shell {
-    box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.05);
-  }
 }
