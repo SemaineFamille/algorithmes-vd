@@ -9,72 +9,29 @@ const CHAPTER_STYLES = {
 };
 
 const ALGOS = [
-  {
-    id: "avc",
-    ordre: 1,
-    titre: "AVC",
-    chapitre: "Neurologie",
-    source: "PDF VD p. 26-27",
-    resume: "Symptômes observés ≤ 8 heures ou au réveil, G-FAST et orientation filière AVC.",
-    image: "images/avc.png",
-    notesPlaceholder: "Ex. liste anticoagulants, autonomie de base, proches à appeler…",
-    favori: true
-  },
-  {
-    id: "antalgie",
-    ordre: 2,
-    titre: "Antalgie",
-    chapitre: "Douleur",
-    source: "PDF VD p. 13",
-    resume: "Patient ≥ 30 kg, EVA ≥ 3, exclure SCA, fentanyl ou morphine selon critères.",
-    image: "images/antalgie.png",
-    notesPlaceholder: "Ex. posologies terrain, précautions sujet âgé, antiémétique du service…",
-    favori: true
-  },
-  {
-    id: "acr-bls",
-    ordre: 3,
-    titre: "Arrêt cardio-respiratoire adulte / BLS",
-    chapitre: "Urgences vitales",
-    source: "PDF VD p. 14",
-    resume: "Débuter RCP, analyser rythme chocable/non chocable, défibrillation si indiquée.",
-    image: "images/acr-bls.png",
-    notesPlaceholder: "Ex. briefing équipe, matériel à préparer, rappel local…",
-    favori: true
-  },
-  {
-    id: "detresse-pedia",
-    ordre: 4,
-    titre: "Détresse respiratoire non traumatique pédiatrique",
-    chapitre: "Pédiatrie",
-    source: "PDF VD p. 23",
-    resume: "Oxygène, respect position spontanée, salbutamol ou adrénaline selon présentation.",
-    image: "images/detresse-pedia.png",
-    notesPlaceholder: "Ex. nébulisation disponible, astuces matériel pédiatrique…",
-    favori: false
-  },
-  {
-    id: "accouchement",
-    ordre: 5,
-    titre: "Accouchement physiologique",
-    chapitre: "Obstétrique",
-    source: "PDF VD p. 6",
-    resume: "Accouchement imminent, soins mère / nouveau-né, surveillance et transport.",
-    image: "images/accouchement.png",
-    notesPlaceholder: "Ex. matériel de naissance à préparer, points d’anticipation…",
-    favori: false
-  },
-  {
-    id: "algo-interne-1",
-    ordre: 6,
-    titre: "Algo interne – exemple",
-    chapitre: "Interne",
-    source: "Interne",
-    resume: "Emplacement réservé pour vos algorithmes internes classés selon vos priorités.",
-    image: "images/interne-exemple.png",
-    notesPlaceholder: "Ex. particularités du service, numéros utiles, adaptations terrain…",
-    favori: false
-  }
+  { id: "acr_arret", ordre: 1, titre: "Abstention / arrêt de réanimation", chapitre: "Urgences vitales", source: "VD", image: "images/acr_arret.png" },
+  { id: "acc_physio", ordre: 2, titre: "Accouchement physiologique", chapitre: "Obstétrique", source: "VD", image: "images/acc_physio.png" },
+  { id: "acc_patho1", ordre: 3, titre: "Accouchement pathologique 1", chapitre: "Obstétrique", source: "VD", image: "images/acc_patho1.png" },
+  { id: "acc_patho2", ordre: 4, titre: "Accouchement pathologique 2", chapitre: "Obstétrique", source: "VD", image: "images/acc_patho2.png" },
+  { id: "eclampsie", ordre: 5, titre: "Pré-éclampsie / éclampsie", chapitre: "Obstétrique", source: "VD", image: "images/eclampsie.png" },
+  { id: "pph", ordre: 6, titre: "Hémorragie post-partum", chapitre: "Obstétrique", source: "VD", image: "images/pph.png" },
+  { id: "cordon", ordre: 7, titre: "Circulaire du cordon", chapitre: "Obstétrique", source: "VD", image: "images/cordon.png" },
+  { id: "anaphylaxie", ordre: 8, titre: "Réaction anaphylactique", chapitre: "Urgences vitales", source: "VD", image: "images/anaphylaxie.png" },
+  { id: "antalgie", ordre: 9, titre: "Antalgie", chapitre: "Douleur", source: "VD", image: "images/antalgie.png" },
+  { id: "acr_bls", ordre: 10, titre: "ACR adulte / BLS", chapitre: "Urgences vitales", source: "VD", image: "images/acr_bls.png" },
+  { id: "acr_als", ordre: 11, titre: "ACR adulte / ALS", chapitre: "Urgences vitales", source: "VD", image: "images/acr_als.png" },
+  { id: "acr_pedia", ordre: 12, titre: "ACR pédiatrique", chapitre: "Pédiatrie", source: "VD", image: "images/acr_pedia.png" },
+  { id: "nn", ordre: 13, titre: "Réanimation nouveau-né", chapitre: "Pédiatrie", source: "VD", image: "images/nn.png" },
+  { id: "brulures", ordre: 14, titre: "Brûlures", chapitre: "Urgences", source: "VD", image: "images/brulures.png" },
+  { id: "conv_adulte", ordre: 15, titre: "Convulsions adulte", chapitre: "Neurologie", source: "VD", image: "images/conv_adulte.png" },
+  { id: "conv_pedia", ordre: 16, titre: "Convulsions pédiatriques", chapitre: "Pédiatrie", source: "VD", image: "images/conv_pedia.png" },
+  { id: "sca", ordre: 17, titre: "Douleurs thoraciques (SCA)", chapitre: "Cardio", source: "VD", image: "images/sca.png" },
+  { id: "resp_adulte", ordre: 18, titre: "Détresse respiratoire adulte", chapitre: "Respiratoire", source: "VD", image: "images/resp_adulte.png" },
+  { id: "resp_pedia", ordre: 19, titre: "Détresse respiratoire pédiatrique", chapitre: "Pédiatrie", source: "VD", image: "images/resp_pedia.png" },
+  { id: "choc", ordre: 20, titre: "État de choc", chapitre: "Urgences vitales", source: "VD", image: "images/choc.png" },
+  { id: "coma", ordre: 21, titre: "Trouble de conscience adulte", chapitre: "Neurologie", source: "VD", image: "images/coma.png" },
+  { id: "avc", ordre: 22, titre: "AVC", chapitre: "Neurologie", source: "VD", image: "images/avc.png" },
+  { id: "io", ordre: 23, titre: "Voie intra-osseuse", chapitre: "Technique", source: "VD", image: "images/io.png" }
 ];
 
 const DEFAULT_MATERIAL = [
