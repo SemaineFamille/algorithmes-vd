@@ -1,52 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Algo</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <meta charset <section id="screen-vd" class="screen">  <meta charset="UTF-8" />
+        <div id="vdList" class="list"></div>
+      </section>
 
-<body>
-<div class="app-shell">
+      <!-- LISTE STAR -->
+      <section id="screen-star" class="screen">
+        <div id="starList" class="list"></div>
+      </section>
 
-  <!-- HEADER -->
-  <header id="header" class="topbar">
-    <h1 id="mainTitle">Algorithmes</h1>
-  </header>
-
-  <main class="content">
-
-    <!-- 🔷 HOME -->
-    <section id="screen-home" class="screen active">
-      <div class="card">
-        <div class="actions-grid">
-          <button class="btn btn-primary" data-screen="home">Algo VD</button>
-          <button class="btn btn-yellow" data-screen="autre">STAR</button>
-          <button class="btn" data-screen="calculator">Calcul</button>
-          <button class="btn" data-screen="materials">Matériel</button>
+      <!-- DETAIL -->
+      <section id="screen-detail" class="screen">
+        <div class="detail-toolbar">
+          <button id="backBtn" class="round-btn" type="button">←</button>
+          <button id="detailFavoriteBtn" class="favorite-btn" type="button" aria-label="Favori">☆</button>
         </div>
-      </div>
 
-      <div id="algoList" class="list"></div>
-    </section>
+        <div id="detailCard" class="card detail-card">
+          <div id="detailBadge" class="badge">Chapitre</div>
+          <h2 id="detailTitle" class="detail-title">Titre</h2>
 
-    <!-- 🔷 STAR -->
-    <section id="screen-autre" class="screen">
-      <div id="autreList" class="list"></div>
-    </section>
+          <div id="detailImageWrap" class="image-wrap">
+            <img id="detailImage" alt="Algorithme" />
+            <div id="detailPlaceholder" class="placeholder-block">
+              <strong>Image non trouvée</strong>
+              <p>Vérifie le nom du fichier dans <code>app.js</code> et dans le dossier <code>images/</code>.</p>
+            </div>
+          </div>
 
-  </main>
+          <textarea id="detailNotes" class="textarea" placeholder="Ajoute ici tes notes personnelles..."></textarea>
+        </div>
+      </section>
 
-  <!-- NAV -->
-  <nav class="bottom-nav">
-    <button class="nav-btn active" data-screen="home">Accueil</button>
-    <button class="nav-btn" data-screen="algo">Algo VD</button>
-    <button class="nav-btn star" data-screen="autre">STAR</button>
-    <button class="nav-btn" data-screen="materials">Matériel</button>
-  </nav>
+      <!-- CALCUL -->
+      <section id="screen-calculator" class="screen">
+        <div class="card">
+          <h2 class="section-title">Calcul</h2>
+          <input class="input" type="text" placeholder="Contexte / type de calcul" />
+          <input class="input" type="text" placeholder="Poids / variable 1" />
+          <input class="input" type="text" placeholder="Âge / variable 2" />
+          <button class="btn btn-primary full-width" type="button">Lancer</button>
+        </div>
+      </section>
 
-</div>
+      <!-- MATERIEL -->
+      <section id="screen-materials" class="screen">
+        <div id="materialsList" class="list"></div>
 
-<script src="app.js"></script>
+        <div class="card">
+          <div class="actions-grid single-row">
+            <button id="resetMaterials" class="btn btn-secondary" type="button">Remettre à zéro</button>
+            <button id="syncMaterials" class="btn btn-primary" type="button">Synchroniser</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-screen="home">Accueil</button>
+      <button class="nav-btn" data-screen="vd">Algo VD</button>
+      <button class="nav-btn nav-btn-star" data-screen="star">STAR</button>
+      <button class="nav-btn" data-screen="materials">Matériel</button>
+    </nav>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algorithmes VD</title>
+  <meta name="theme-color" content="#0f766e" />
+  <link rel="manifest" href="app.webmanifest" />
+  <link rel="apple-touch-icon" href="images/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header id="topbar" class="topbar">
+      <h1 id="mainTitle">Algorithmes</h1>
+    </header>
+
+    <main class="content">
+
+      <!-- HOME -->
+      <section id="screen-home" class="screen active">
+        <div class="actions-grid">
+          <button class="btn btn-primary" data-screen="vd">Algo VD</button>
+          <button class="btn btn-star" data-screen="star">STAR</button>
+          <button class="btn btn-secondary" data-screen="calculator">Calcul</button>
+          <button class="btn btn-secondary" data-screen="materials">Matériel</button>
+        </div>
+
+        <div id="favoritesSection"></div>
+      </section>
+
+      <!-- LISTE ALGO VD -->
