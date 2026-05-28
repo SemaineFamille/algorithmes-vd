@@ -205,16 +205,27 @@ code {
   gap: 14px;
 }
 
-/* ✅ CARTES D'ALGO */
+/* ✅ CARTES D'ALGO — identiques aux .btn du haut */
 .algo-item {
   width: 100%;
   text-align: left;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: 0;
+  border-radius: var(--radius-lg);   /* même que .btn */
+  padding: 16px 18px;
+  display: block;
+  font-weight: 700;
+  transition: transform 0.12s ease, filter 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .algo-item:hover {
-  transform: translateY(-2px);
+  filter: brightness(0.96);
+}
+
+.algo-item:active {
+  transform: scale(0.97);            /* même que .btn:active */
+  filter: brightness(0.92);
 }
 
 .algo-main-line {
