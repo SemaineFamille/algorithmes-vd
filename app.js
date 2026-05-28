@@ -165,21 +165,24 @@ function algoCardHTML(algo) {
   const style = chapterStyle(algo.chapitre);
   const favorite = isFavorite(algo);
 
-  return  `
-    <div class="algo-card" data-open-id="${algo.id}" style="border-left:4px solid ${style.border};background:${style.background};">
-      <div class="algo-card-header">
+  return `
+    <button
+      class="algo-item"
+      data-open-id="${algo.id}"
+      style="border-left: 4px solid ${style.border}; background: ${style.background};"
+    >
+      <div class="algo-main-line">
         <span class="badge" style="${style.badge}">${algo.chapitre}</span>
-        <button class="fav-btn ${favorite ? 'active' : ''}" data-fav-id="${algo.id}">
-          ${favorite ? '★' : '☆'}
-        </button>
+        <button
+          class="favorite-btn ${favorite ? 'active' : ''}"
+          data-fav-id="${algo.id}"
+          type="button"
+        >${favorite ? '★' : '☆'}</button>
       </div>
-      <div class="algo-card-body" data-open-id="${algo.id}">
-        <div class="algo-title">${algo.titre}</div>
-        <div class="algo-resume">${algo.resume || ''}</div>
-      </div>
-    </div>
+      <div class="algo-title-small">${algo.titre}</div>
+      <p class="subtle small">${algo.resume || ''}</p>
+    </button>
   `;
-
 }
 
 function bindAlgoCardEvents(container) {
