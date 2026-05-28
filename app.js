@@ -170,7 +170,7 @@ function algoCardHTML(algo) {
       <div class="algo-card-header">
         <span class="badge" style="${style.badge}">${algo.chapitre}</span>
         <button class="fav-btn ${favorite ? 'active' : ''}" data-fav-id="${algo.id}">
-          ${favorite ? '★' : '☆'}
+          ${favorite ? '🌟' : '⭐'}
         </button>
       </div>
       <div class="algo-card-body" data-open-id="${algo.id}">
