@@ -32,7 +32,8 @@ const ALGOS = [
   { id: "coma", ordre: 21, titre: "Trouble de conscience adulte", chapitre: "Neurologie", source: "VD", image: "images/coma.png" },
   { id: "avc", ordre: 22, titre: "AVC", chapitre: "Neurologie", source: "VD", image: "images/avc.png" },
   { id: "io", ordre: 23, titre: "Voie intra-osseuse", chapitre: "Technique", source: "VD", image: "images/io.png" },
-  { id: "avc_annexe", ordre: 24, titre: "AVC Annexe", chapitre: "Neurologie", source: "VD", image: "images/avc_annexe.png" }
+  { id: "avc_annexe", ordre: 24, titre: "AVC Annexe", chapitre: "Neurologie", source: "VD", image: "images/avc_annexe.png"},
+  { id: "antalgie_sat", ordre: 25, titre: "Antalgie_SAT", chapitre: "Douleur", source: "SAT", image: "images/antalgie_sat.png" }
 ];
 
 const DEFAULT_MATERIAL = [
