@@ -195,3 +195,19 @@ code { background: #f1f5f9; padding: 0 4px; border-radius: 6px; }
 @media (min-width: 700px) {
   .app-shell { box-shadow: 0 0 0 1px rgba(15,23,42,0.05); }
 }
+.favorite-btn {
+  border: 0;
+  background: #fff7ed;
+  color: #d97706;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+.favorite-btn:hover {
+  background: #ffedd5;
+}
