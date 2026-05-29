@@ -859,20 +859,20 @@ function showScreen(screen) {
 
   if (screen === "home") {
     renderHomeFavorites();
-    renderHomeVdList();
+    // Ne réafficher la liste que si pas de recherche en cours
+    const searchVal = document.getElementById("searchInput")?.value || "";
+    if (!searchVal.trim()) {
+      renderHomeVdList();
+    } else {
+      // Relance la recherche avec la valeur actuelle
+      setupSearchHandler({ target: { value: searchVal } });
+    }
   }
-  if (screen === "vd") {
-    renderList("vd", "vdList");
-  }
-  if (screen === "star") {
-    renderList("star", "starList");
-  }
-  if (screen === "detail") {
-    renderDetail();
-  }
-  if (screen === "materials") {
-    renderMaterials();
-  }
+  if (screen === "vd") renderList("vd", "vdList");
+  if (screen === "star") renderList("star", "starList");
+  if (screen === "detail") renderDetail();
+  if (screen === "materials") renderMaterials();
+}
 }
 
 function setupEvents() {
@@ -916,26 +916,6 @@ function init() {
 
  
 }
-function filterHomeList(search) {
-  const container = document.getElementById("homeVdList");
-  if (!container) return;
 
-  const term = search.toLowerCase().trim();
-
-  const filtered = VD_ALGOS
-    .filter((item) => {
-      return (
-        item.titre.toLowerCase().includes(term) ||
-        item.chapitre.toLowerCase().includes(term)
-      );
-    })
-    .sort((a, b) => a.ordre - b.ordre);
-
-  container.innerHTML = filtered
-    .map((item) => cardHTML(item, "vd"))
-    .join("");
-
-  bindCardEvents(container);
-}
 document.addEventListener("DOMContentLoaded", init);
 
