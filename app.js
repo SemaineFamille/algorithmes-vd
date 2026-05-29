@@ -13,11 +13,7 @@ const CHAPTER_STYLES = {
     badge: "background:#dbeafe;color:#1d4ed8;border-color:#93c5fd;",
     border: "#60a5fa",
     background: "#eff6ff"
-  },
-  "Pédiatrie": {
-    badge: "background:#dcfce7;color:#15803d;border-color:#86efac;",
-    border: "#4ade80",
-    background: "#f0fdf4"
+
   },
   "Obstétrique": {
     badge: "background:#fce7f3;color:#be185d;border-color:#f9a8d4;",
@@ -43,7 +39,34 @@ const CHAPTER_STYLES = {
     badge: "background:#e2e8f0;color:#475569;border-color:#cbd5e1;",
     border: "#94a3b8",
     background: "#f8fafc"
+  },
+  
+"Maladie": {
+    badge: "background:#bfdbfe;color:#1e3a8a;border-color:#60a5fa;",
+    border: "#3b82f6",
+    background: "#eff6ff"
+  },
+  "Traumatique": {
+    badge: "background:#bbf7d0;color:#166534;border-color:#4ade80;",
+    border: "#22c55e",
+    background: "#f0fdf4"
+  },
+  "Pédiatrie": {
+    badge: "background:#fef08a;color:#854d0e;border-color:#facc15;",
+    border: "#eab308",
+    background: "#fefce8"
+  },
+  "Obstétrique/Gynécologie": {
+    badge: "background:#fbcfe8;color:#9d174d;border-color:#f472b6;",
+    border: "#ec4899",
+    background: "#fdf2f8"
+  },
+  "Autre": {
+    badge: "background:#e5e7eb;color:#4b5563;border-color:#9ca3af;",
+    border: "#6b7280",
+    background: "#f9fafb"
   }
+
 };
 
 const VD_ALGOS = [
