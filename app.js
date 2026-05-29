@@ -194,11 +194,20 @@ const STAR_ALGOS = [
     titre: "Suspicion d’AVC",
     chapitre: "Maladie",
     source: "STAR",
-    images: ["images/suspicion_avc.png","images/suspicion_avc_2.png"],
+    image:"images/suspicion_avc.png",
     favori: false,
     notesPlaceholder: "Ex. heure de début, anticoagulants, filière AVC…"
   },
-  
+   {
+    id: "suspicion_avc_2",
+    ordre: 10,
+    titre: "Suspicion d’AVC_2",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/suspicion_avc_2.png",
+    favori: false,
+    notesPlaceholder: "Ex. heure de début, anticoagulants, filière AVC…"
+  },
   {
     id: "reaction_anaphylactique",
     ordre: 12,
