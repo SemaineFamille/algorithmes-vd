@@ -2,12 +2,20 @@
   "name": "Algorithmes VD",
   "short_name": "Algo VD",
   "description": "Consultation mobile des algorithmes VD et internes.",
-  "start_url": "./",
+  "start_url": "/algorithmes-vd/",
   "display": "standalone",
   "background_color": "#f6f8fb",
   "theme_color": "#0f766e",
   "icons": [
-    { "src": "images/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "images/icon-512.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "/algorithmes-vd/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/algorithmes-vd/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
   ]
 }
