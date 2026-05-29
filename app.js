@@ -236,7 +236,7 @@ const STAR_ALGOS = [
     titre: "Brûlures",
     chapitre: "Traumatique",
     source: "STAR",
-    image: "images/brulures.png",
+    image: "images/brulures_STAR.png",
     favori: false,
     notesPlaceholder: "Ex. refroidissement, surface, pansement, surveillance…"
   },
