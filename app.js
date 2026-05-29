@@ -72,7 +72,7 @@ const VD_ALGOS = [
   { id: "avc_annexe", ordre: 24, titre: "AVC Annexe", chapitre: "Neurologie", source: "VD", image: "images/avc_annexe.png", favori: false, notesPlaceholder: "Ex. Rankin, checklist filière…" },
   { id: "antalgie_sat", ordre: 25, titre: "Antalgie SAT", chapitre: "Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
   { id: "labo", ordre: 26, titre: "Valeur Laboratoire", chapitre: "Interne", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "molecules", ordre: 27, titre: "Molécules Antalgie", chapitre: "Interne", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" }
+  { id: "molecules", ordre: 27, titre: "Molécules Antalgie", chapitre: "Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" }
 ];
 
 const STAR_ALGOS = [
