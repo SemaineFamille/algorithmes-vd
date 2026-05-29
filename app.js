@@ -129,6 +129,16 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. RCP, défibrillation, adrénaline, causes réversibles…"
   },
   {
+   id: "acr_shema",
+    ordre: 4,
+    titre: "Shema ALS",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/shema_ALS.png",
+    favori: false,
+    notesPlaceholder: "Ex. RCP, défibrillation, adrénaline, causes réversibles…"
+  },
+  {
     id: "intra_osseuse",
     ordre: 5,
     titre: "Intra-osseuse",
@@ -164,7 +174,7 @@ const STAR_ALGOS = [
     titre: "Convulsion adulte",
     chapitre: "Maladie",
     source: "STAR",
-    image: "images/convulsion_adulte.png",
+    image: "images/conv_adulte_star.png",
     favori: false,
     notesPlaceholder: "Ex. benzodiazépines, glycémie, durée de crise…"
   },
@@ -185,6 +195,16 @@ const STAR_ALGOS = [
     chapitre: "Maladie",
     source: "STAR",
     image: "images/suspicion_avc.png",
+    favori: false,
+    notesPlaceholder: "Ex. heure de début, anticoagulants, filière AVC…"
+  },
+  {
+    id: "suspicion_avc_2",
+    ordre: 11,
+    titre: "Suspicion d’AVC",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/suspicion_avc_2.png",
     favori: false,
     notesPlaceholder: "Ex. heure de début, anticoagulants, filière AVC…"
   },
@@ -217,6 +237,16 @@ const STAR_ALGOS = [
     chapitre: "Traumatique",
     source: "STAR",
     image: "images/brulures.png",
+    favori: false,
+    notesPlaceholder: "Ex. refroidissement, surface, pansement, surveillance…"
+  },
+   {
+    id: "brulures",
+    ordre: 16,
+    titre: "Brûlures",
+    chapitre: "Traumatique",
+    source: "STAR",
+    image: "images/brulure.png",
     favori: false,
     notesPlaceholder: "Ex. refroidissement, surface, pansement, surveillance…"
   },
@@ -269,6 +299,16 @@ const STAR_ALGOS = [
     chapitre: "Pédiatrie",
     source: "STAR",
     image: "images/acr_pediatrique.png",
+    favori: false,
+    notesPlaceholder: "Ex. RCP, doses, matériel pédiatrique…"
+  },
+    {
+    id: "dilutions_acr_pediatrique",
+    ordre: 22,
+    titre: "Arrêt cardio-respiratoire pédiatrique",
+    chapitre: "Pédiatrie",
+    source: "STAR",
+    image: "images/dilutions_acr_pediatrique.png",
     favori: false,
     notesPlaceholder: "Ex. RCP, doses, matériel pédiatrique…"
   },
@@ -325,6 +365,26 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. manœuvres, chronologie, aide demandée…"
   },
   {
+    id: "aide_memoire_Mc_Roberts",
+    ordre: 28,
+    titre: "Aide-mémoire Dystocie des épaules",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/aide_memoire_Mc_Roberts.png",
+    favori: false,
+    notesPlaceholder: "Ex. manœuvres, chronologie, aide demandée…"
+  },
+  {
+    id: "aide_memoire_Menticoglu",
+    ordre: 29,
+    titre: "Aide-mémoire Dystocie des épaules",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/aide_memoire_Menticoglu.png",
+    favori: false,
+    notesPlaceholder: "Ex. manœuvres, chronologie, aide demandée…"
+  },
+  {
     id: "accouchement_pathologique_2",
     ordre: 30,
     titre: "Accouchement pathologique 2",
@@ -341,6 +401,46 @@ const STAR_ALGOS = [
     chapitre: "Obstétrique/Gynécologie",
     source: "STAR",
     image: "images/aide_memoire_accouchement_siege.png",
+    favori: false,
+    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
+  },
+   {
+    id: "aide_memoire_accouchement_Dos",
+    ordre: 32,
+    titre: "Aide-mémoire Accouchement en siège",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/aide_memoire_accouchement_dos.png",
+    favori: false,
+    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
+  },
+   {
+    id: "aide_memoire_accouchement_jambes",
+    ordre: 33,
+    titre: "Aide-mémoire Accouchement en siège",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/aide_memoire_accouchement_jambes.png",
+    favori: false,
+    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
+  },
+   {
+    id: "aide_memoire_accouchement_bras",
+    ordre: 34,
+    titre: "Aide-mémoire Accouchement en siège",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/aide_memoire_accouchement_bras.png",
+    favori: false,
+    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
+  },
+   {
+    id: "aide_memoire_accouchement_tete",
+    ordre: 35,
+    titre: "Aide-mémoire Accouchement en siège",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/aide_memoire_accouchement_tete.png",
     favori: false,
     notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
   },
@@ -386,13 +486,33 @@ const STAR_ALGOS = [
     favori: false,
     notesPlaceholder: "Ex. rôle leader, coordination, sécurité, communication…"
   },
+   {
+    id: "aide_memoire_evenement_particulier_majeur",
+    ordre: 40,
+    titre: "Aide-mémoire évènement particulier/majeur",
+    chapitre: "Particuliers/Autres",
+    source: "STAR",
+    image: "images/aide_memoire_evenement_particulier_majeur.png",
+    favori: false,
+    notesPlaceholder: "Ex. rôle leader, coordination, sécurité, communication…"
+  },
   {
     id: "aide_memoire_evenement_particulier_majeur_pre_trieur",
-    ordre: 40,
+    ordre: 41,
     titre: "Aide-mémoire évènement particulier/majeur Pré-trieur",
     chapitre: "Particuliers/Autres",
     source: "STAR",
     image: "images/aide_memoire_evenement_particulier_majeur_pre_trieur.png",
+    favori: false,
+    notesPlaceholder: "Ex. tri, flux, sécurité, priorisation…"
+  },
+   {
+    id: "aide_memoire_SAP",
+    ordre: 42,
+    titre: "Aide-mémoire SAP",
+    chapitre: "Particuliers/Autres",
+    source: "STAR",
+    image: "images/aide_memoire_sap.png",
     favori: false,
     notesPlaceholder: "Ex. tri, flux, sécurité, priorisation…"
   },
