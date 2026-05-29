@@ -305,7 +305,7 @@ const STAR_ALGOS = [
     {
     id: "dilutions_acr_pediatrique",
     ordre: 22,
-    titre: "Arrêt cardio-respiratoire pédiatrique",
+    titre: "Dilutions ACR pédiatrique",
     chapitre: "Pédiatrie",
     source: "STAR",
     image: "images/dilutions_acr_pediatrique.png",
@@ -367,7 +367,7 @@ const STAR_ALGOS = [
   {
     id: "aide_memoire_Mc_Roberts",
     ordre: 28,
-    titre: "Aide-mémoire Dystocie des épaules",
+    titre: "Aide-mémoire MC Roberts",
     chapitre: "Obstétrique/Gynécologie",
     source: "STAR",
     image: "images/aide_memoire_Mc_Roberts.png",
@@ -377,7 +377,7 @@ const STAR_ALGOS = [
   {
     id: "aide_memoire_Menticoglu",
     ordre: 29,
-    titre: "Aide-mémoire Dystocie des épaules",
+    titre: "Aide-mémoire Menticoglu",
     chapitre: "Obstétrique/Gynécologie",
     source: "STAR",
     image: "images/aide_memoire_Menticoglu.png",
@@ -407,7 +407,7 @@ const STAR_ALGOS = [
    {
     id: "aide_memoire_accouchement_Dos",
     ordre: 32,
-    titre: "Aide-mémoire Accouchement en siège",
+    titre: "Aide-mémoire Accouchement en siège, Dos",
     chapitre: "Obstétrique/Gynécologie",
     source: "STAR",
     image: "images/aide_memoire_accouchement_dos.png",
@@ -417,7 +417,7 @@ const STAR_ALGOS = [
    {
     id: "aide_memoire_accouchement_jambes",
     ordre: 33,
-    titre: "Aide-mémoire Accouchement en siège",
+    titre: "Aide-mémoire Accouchement en siège, Jambes",
     chapitre: "Obstétrique/Gynécologie",
     source: "STAR",
     image: "images/aide_memoire_accouchement_jambes.png",
@@ -427,7 +427,7 @@ const STAR_ALGOS = [
    {
     id: "aide_memoire_accouchement_bras",
     ordre: 34,
-    titre: "Aide-mémoire Accouchement en siège",
+    titre: "Aide-mémoire Accouchement en siège, Bras",
     chapitre: "Obstétrique/Gynécologie",
     source: "STAR",
     image: "images/aide_memoire_accouchement_bras.png",
@@ -437,7 +437,7 @@ const STAR_ALGOS = [
    {
     id: "aide_memoire_accouchement_tete",
     ordre: 35,
-    titre: "Aide-mémoire Accouchement en siège",
+    titre: "Aide-mémoire Accouchement en siège; Tête",
     chapitre: "Obstétrique/Gynécologie",
     source: "STAR",
     image: "images/aide_memoire_accouchement_tete.png",
