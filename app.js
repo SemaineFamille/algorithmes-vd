@@ -241,9 +241,9 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. refroidissement, surface, pansement, surveillance…"
   },
    {
-    id: "brulures",
+    id: "brulures _degre",
     ordre: 16,
-    titre: "Brûlures",
+    titre: "Brûlures Degré",
     chapitre: "Traumatique",
     source: "STAR",
     image: "images/brulure.png",
