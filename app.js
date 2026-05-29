@@ -74,35 +74,338 @@ const VD_ALGOS = [
   { id: "labo", ordre: 26, titre: "Valeur Laboratoire", chapitre: "Interne", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
   { id: "molecules", ordre: 27, titre: "Molécules Antalgie", chapitre: "Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" }
 ];
-
 const STAR_ALGOS = [
-  { id: "amd_antalgie", ordre: 2, titre: "AMD Antalgie", chapitre: "Antalgie", source: "STAR", image: "amd.png", favori: false, notesPlaceholder: "Ex. matériel de naissance, points d’anticipation…" },
-  { id: "brulure", ordre: 3, titre: "Bûlures", chapitre: "Technique", source: "STAR", image: "brulure.png", favori: false, notesPlaceholder: "Ex. points d’attention…" },
-  { id: "fumee", ordre: 4, titre: "Exposition aux fumées", chapitre: "Respiratoire", source: "STAR", image: "fumee.png", favori: false, notesPlaceholder: "Ex. points d’attention…" },
-  { id: "rachis", ordre: 5, titre: "Immobilisation du rachis", chapitre: "Technique", source: "STAR", image: "rachis.png", favori: false, notesPlaceholder: "Ex. Labetalol, MgSO4, conduite locale…" },
-  { id: "pph", ordre: 6, titre: "Hémorragie post-partum", chapitre: "Obstétrique", source: "VD", image: "images/pph.png", favori: false, notesPlaceholder: "Ex. points de surveillance…" },
-  { id: "cordon", ordre: 7, titre: "Circulaire du cordon", chapitre: "Obstétrique", source: "VD", image: "images/cordon.png", favori: false, notesPlaceholder: "Ex. conduite locale…" },
-  { id: "anaphylaxie", ordre: 8, titre: "Réaction anaphylactique", chapitre: "Urgences vitales", source: "VD", image: "images/anaphylaxie.png", favori: false, notesPlaceholder: "Ex. adrénaline, surveillance…" },
-  { id: "antalgie", ordre: 9, titre: "Antalgie", chapitre: "Antalgie", source: "VD", image: "images/antalgie.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
-  { id: "acr_bls", ordre: 10, titre: "ACR adulte / BLS", chapitre: "Urgences vitales", source: "VD", image: "images/acr_bls.png", favori: false, notesPlaceholder: "Ex. checklist équipe, matériel, points de briefing…" },
-  { id: "acr_als", ordre: 11, titre: "ACR adulte / ALS", chapitre: "Urgences vitales", source: "VD", image: "images/acr_als.png", favori: false, notesPlaceholder: "Ex. adrénaline, amiodarone, causes réversibles…" },
-  { id: "acr_pedia", ordre: 12, titre: "ACR pédiatrique", chapitre: "Pédiatrie", source: "VD", image: "images/acr_pedia.png", favori: false, notesPlaceholder: "Ex. doses, matériel pédiatrique…" },
-  { id: "nn", ordre: 13, titre: "Réanimation nouveau-né", chapitre: "Pédiatrie", source: "VD", image: "images/nn.png", favori: false, notesPlaceholder: "Ex. matériel, température, ventilation…" },
-  { id: "brulures", ordre: 14, titre: "Brûlures", chapitre: "Urgences vitales", source: "VD", image: "images/brulures.png", favori: false, notesPlaceholder: "Ex. refroidissement, pansement, surveillance…" },
-  { id: "conv_adulte", ordre: 15, titre: "Convulsions adulte", chapitre: "Neurologie", source: "VD", image: "images/conv_adulte.png", favori: false, notesPlaceholder: "Ex. midazolam, clonazépam…" },
-  { id: "conv_pedia", ordre: 16, titre: "Convulsions pédiatriques", chapitre: "Pédiatrie", source: "VD", image: "images/conv_ped_star.png", favori: false, notesPlaceholder: "Ex. glycémie, température, refroidissement…" },
-  { id: "sca", ordre: 17, titre: "Douleurs thoraciques (SCA)", chapitre: "Cardio", source: "VD", image: "images/sca.png", favori: false, notesPlaceholder: "Ex. ECG 12 dérivations, ASA, nitrés…" },
-  { id: "resp_adulte", ordre: 18, titre: "Détresse respiratoire adulte", chapitre: "Respiratoire", source: "VD", image: "images/resp_adulte.png", favori: false, notesPlaceholder: "Ex. O2, salbutamol, CPAP…" },
-  { id: "resp_pedia", ordre: 19, titre: "Détresse respiratoire pédiatrique", chapitre: "Pédiatrie", source: "VD", image: "images/resp_pedia.png", favori: false, notesPlaceholder: "Ex. nébulisation, respect position spontanée…" },
-  { id: "choc", ordre: 20, titre: "État de choc", chapitre: "Urgences vitales", source: "VD", image: "images/choc.png", favori: false, notesPlaceholder: "Ex. RL, TA cible, TXA…" },
-  { id: "coma", ordre: 21, titre: "Trouble de conscience adulte", chapitre: "Neurologie", source: "VD", image: "images/coma.png", favori: false, notesPlaceholder: "Ex. glucose, naloxone, thiamine…" },
-  { id: "avc", ordre: 22, titre: "AVC", chapitre: "Neurologie", source: "VD", image: "images/avc.png", favori: true, notesPlaceholder: "Ex. anticoagulants, heure de début, proches à prévenir…" },
-  { id: "io", ordre: 23, titre: "Voie intra-osseuse", chapitre: "Technique", source: "VD", image: "images/io.png", favori: false, notesPlaceholder: "Ex. indications, contre-indications, surveillance…" },
-  { id: "avc_annexe", ordre: 24, titre: "AVC Annexe", chapitre: "Neurologie", source: "VD", image: "images/avc_annexe.png", favori: false, notesPlaceholder: "Ex. Rankin, checklist filière…" },
-  { id: "antalgie_sat", ordre: 25, titre: "Antalgie SAT", chapitre: "Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "labo", ordre: 26, titre: "Valeur Laboratoire", chapitre: "Interne", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "molecules", ordre: 27, titre: "Molécules Antalgie", chapitre: "Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" }
+  // Maladie
+  {
+    id: "detresse_respiratoire_adulte",
+    ordre: 1,
+    titre: "Détresse respiratoire adulte",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/detresse_respiratoire_adulte.png",
+    favori: false,
+    notesPlaceholder: "Ex. O2, bronchodilatateurs, ventilation, surveillance…"
+  },
+  {
+    id: "abstention_arret_reanimation",
+    ordre: 2,
+    titre: "Abstention/arrêt de réanimation",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/abstention_arret_reanimation.png",
+    favori: false,
+    notesPlaceholder: "Ex. critères, contexte, transmission, traçabilité…"
+  },
+  {
+    id: "acr_adulte",
+    ordre: 3,
+    titre: "Arrêt cardiorespiratoire adulte",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/acr_adulte.png",
+    favori: false,
+    notesPlaceholder: "Ex. RCP, défibrillation, adrénaline, causes réversibles…"
+  },
+  {
+    id: "intra_osseuse",
+    ordre: 5,
+    titre: "Intra-osseuse",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/intra_osseuse.png",
+    favori: false,
+    notesPlaceholder: "Ex. indications, contre-indications, surveillance…"
+  },
+  {
+    id: "douleur_thoracique_sca",
+    ordre: 6,
+    titre: "Douleur thoracique (SCA)",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/douleur_thoracique_sca.png",
+    favori: false,
+    notesPlaceholder: "Ex. ECG 12 dérivations, ASA, nitrés, surveillance…"
+  },
+  {
+    id: "etat_de_choc",
+    ordre: 7,
+    titre: "Etat de choc",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/etat_de_choc.png",
+    favori: false,
+    notesPlaceholder: "Ex. remplissage, TA cible, TXA, surveillance…"
+  },
+  {
+    id: "convulsion_adulte",
+    ordre: 8,
+    titre: "Convulsion adulte",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/convulsion_adulte.png",
+    favori: false,
+    notesPlaceholder: "Ex. benzodiazépines, glycémie, durée de crise…"
+  },
+  {
+    id: "trouble_conscience_adulte",
+    ordre: 9,
+    titre: "Trouble de la conscience adulte",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/trouble_conscience_adulte.png",
+    favori: false,
+    notesPlaceholder: "Ex. glucose, GCS, naloxone, surveillance…"
+  },
+  {
+    id: "suspicion_avc",
+    ordre: 10,
+    titre: "Suspicion d’AVC",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/suspicion_avc.png",
+    favori: false,
+    notesPlaceholder: "Ex. heure de début, anticoagulants, filière AVC…"
+  },
+  {
+    id: "reaction_anaphylactique",
+    ordre: 12,
+    titre: "Réaction anaphylactique",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/reaction_anaphylactique.png",
+    favori: false,
+    notesPlaceholder: "Ex. adrénaline, O2, remplissage, surveillance…"
+  },
+  {
+    id: "antalgie",
+    ordre: 13,
+    titre: "Antalgie",
+    chapitre: "Maladie",
+    source: "STAR",
+    image: "images/antalgie.png",
+    favori: false,
+    notesPlaceholder: "Ex. EVA/algoplus, posologies, contre-indications…"
+  },
+
+  // Traumatique
+  {
+    id: "brulures",
+    ordre: 15,
+    titre: "Brûlures",
+    chapitre: "Traumatique",
+    source: "STAR",
+    image: "images/brulures.png",
+    favori: false,
+    notesPlaceholder: "Ex. refroidissement, surface, pansement, surveillance…"
+  },
+  {
+    id: "exposition_fumees",
+    ordre: 17,
+    titre: "Exposition aux fumées",
+    chapitre: "Traumatique",
+    source: "STAR",
+    image: "images/exposition_fumees.png",
+    favori: false,
+    notesPlaceholder: "Ex. O2, CO, contexte incendie, surveillance…"
+  },
+  {
+    id: "immobilisation_rachis",
+    ordre: 18,
+    titre: "Immobilisation du rachis",
+    chapitre: "Traumatique",
+    source: "STAR",
+    image: "images/immobilisation_rachis.png",
+    favori: false,
+    notesPlaceholder: "Ex. critères, extraction, collier, matelas…"
+  },
+
+  // Pédiatrie
+  {
+    id: "aide_memoire_pediatrique_parametres",
+    ordre: 19,
+    titre: "Aide-mémoire pédiatrique (paramètres)",
+    chapitre: "Pédiatrie",
+    source: "STAR",
+    image: "images/aide_memoire_pediatrique_parametres.png",
+    favori: false,
+    notesPlaceholder: "Ex. constantes, poids estimé, tailles de matériel…"
+  },
+  {
+    id: "detresse_respiratoire_pediatrique",
+    ordre: 20,
+    titre: "Détresse respiratoire pédiatrique",
+    chapitre: "Pédiatrie",
+    source: "STAR",
+    image: "images/detresse_respiratoire_pediatrique.png",
+    favori: false,
+    notesPlaceholder: "Ex. O2, nébulisation, position spontanée, surveillance…"
+  },
+  {
+    id: "acr_pediatrique",
+    ordre: 21,
+    titre: "Arrêt cardio-respiratoire pédiatrique",
+    chapitre: "Pédiatrie",
+    source: "STAR",
+    image: "images/acr_pediatrique.png",
+    favori: false,
+    notesPlaceholder: "Ex. RCP, doses, matériel pédiatrique…"
+  },
+  {
+    id: "soins_reanimation_nouveau_ne",
+    ordre: 23,
+    titre: "Soins et réanimation du nouveau-né",
+    chapitre: "Pédiatrie",
+    source: "STAR",
+    image: "images/soins_reanimation_nouveau_ne.png",
+    favori: false,
+    notesPlaceholder: "Ex. température, ventilation, FC, matériel…"
+  },
+  {
+    id: "convulsion_trouble_conscience_pediatrique",
+    ordre: 24,
+    titre: "Convulsion et trouble de l’état de conscience pédiatrique",
+    chapitre: "Pédiatrie",
+    source: "STAR",
+    image: "images/convulsion_trouble_conscience_pediatrique.png",
+    favori: false,
+    notesPlaceholder: "Ex. glycémie, température, causes, traitement…"
+  },
+
+  // Obstétrique / Gynécologie
+  {
+    id: "accouchement_physiologique",
+    ordre: 25,
+    titre: "Accouchement physiologique",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/accouchement_physiologique.png",
+    favori: false,
+    notesPlaceholder: "Ex. matériel, surveillance, délivrance, nouveau-né…"
+  },
+  {
+    id: "accouchement_pathologique_1",
+    ordre: 26,
+    titre: "Accouchement pathologique 1",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/accouchement_pathologique_1.png",
+    favori: false,
+    notesPlaceholder: "Ex. points d’anticipation, complications, conduite…"
+  },
+  {
+    id: "aide_memoire_dystocie_epaules",
+    ordre: 27,
+    titre: "Aide-mémoire Dystocie des épaules",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/aide_memoire_dystocie_epaules.png",
+    favori: false,
+    notesPlaceholder: "Ex. manœuvres, chronologie, aide demandée…"
+  },
+  {
+    id: "accouchement_pathologique_2",
+    ordre: 30,
+    titre: "Accouchement pathologique 2",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/accouchement_pathologique_2.png",
+    favori: false,
+    notesPlaceholder: "Ex. complications, surveillance materno-fœtale…"
+  },
+  {
+    id: "aide_memoire_accouchement_siege",
+    ordre: 31,
+    titre: "Aide-mémoire Accouchement en siège",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/aide_memoire_accouchement_siege.png",
+    favori: false,
+    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
+  },
+  {
+    id: "circulaire_cordon",
+    ordre: 36,
+    titre: "Circulaire du cordon",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/circulaire_cordon.png",
+    favori: false,
+    notesPlaceholder: "Ex. conduite locale, dégagement, surveillance…"
+  },
+  {
+    id: "pre_eclampsie_eclampsie",
+    ordre: 37,
+    titre: "Pré-éclampsie/éclampsie",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/pre_eclampsie_eclampsie.png",
+    favori: false,
+    notesPlaceholder: "Ex. TA, MgSO4, signes de gravité, conduite…"
+  },
+  {
+    id: "hemorragie_post_partum_primaire",
+    ordre: 38,
+    titre: "Hémorragie post-partum primaire",
+    chapitre: "Obstétrique/Gynécologie",
+    source: "STAR",
+    image: "images/hemorragie_post_partum_primaire.png",
+    favori: false,
+    notesPlaceholder: "Ex. massage utérin, saignement, TXA, surveillance…"
+  },
+
+  // Particuliers / Autres
+  {
+    id: "aide_memoire_evenement_particulier_majeur_leader",
+    ordre: 39,
+    titre: "Aide-mémoire évènement particulier/majeur Leader",
+    chapitre: "Particuliers/Autres",
+    source: "STAR",
+    image: "images/aide_memoire_evenement_particulier_majeur_leader.png",
+    favori: false,
+    notesPlaceholder: "Ex. rôle leader, coordination, sécurité, communication…"
+  },
+  {
+    id: "aide_memoire_evenement_particulier_majeur_pre_trieur",
+    ordre: 40,
+    titre: "Aide-mémoire évènement particulier/majeur Pré-trieur",
+    chapitre: "Particuliers/Autres",
+    source: "STAR",
+    image: "images/aide_memoire_evenement_particulier_majeur_pre_trieur.png",
+    favori: false,
+    notesPlaceholder: "Ex. tri, flux, sécurité, priorisation…"
+  },
+  {
+    id: "aide_memoire_renfort_psycho_social",
+    ordre: 43,
+    titre: "Aide-mémoire renfort psycho-social",
+    chapitre: "Particuliers/Autres",
+    source: "STAR",
+    image: "images/aide_memoire_renfort_psycho_social.png",
+    favori: false,
+    notesPlaceholder: "Ex. ressources, critères, relais, accompagnement…"
+  },
+  {
+    id: "aide_memoire_babyrescue",
+    ordre: 44,
+    titre: "Aide-mémoire babyrescue",
+    chapitre: "Particuliers/Autres",
+    source: "STAR",
+    image: "images/aide_memoire_babyrescue.png",
+    favori: false,
+    notesPlaceholder: "Ex. matériel, procédure, points d’attention…"
+  },
+  {
+    id: "aide_memoire_debriefing_etudiantes",
+    ordre: 45,
+    titre: "Aide-mémoire débriefing étudiant.es",
+    chapitre: "Particuliers/Autres",
+    source: "STAR",
+    image: "images/aide_memoire_debriefing_etudiantes.png",
+    favori: false,
+    notesPlaceholder: "Ex. points de débriefing, apprentissages, feedback…"
+  }
 ];
+
 
 const DEFAULT_MATERIAL = [
   { id: "venflon", label: "Venflon", checked: false, note: "" },
