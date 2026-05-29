@@ -697,6 +697,30 @@ function renderList(source, containerId) {
 function renderHomeVdList() {
   renderList("vd", "homeVdList");
 }
+function setupSearch() {
+  const input = document.getElementById("searchInput");
+  if (!input) return;
+
+  input.addEventListener("input", (e) => {
+    const search = e.target.value.toLowerCase().trim();
+
+    const filtered = VD_ALGOS.filter((item) => {
+      return (
+        item.titre.toLowerCase().includes(search) ||
+        item.chapitre.toLowerCase().includes(search)
+      );
+    });
+
+    const container = document.getElementById("homeVdList");
+
+    container.innerHTML = filtered
+      .sort((a, b) => a.ordre - b.ordre)
+      .map((item) => cardHTML(item, "vd"))
+      .join("");
+
+    bindCardEvents(container);
+  });
+}
 
 function openDetail(source, id) {
   state.detailSource = source;
@@ -875,6 +899,7 @@ function init() {
   }
 
   setupEvents();
+  setupSearch();
   registerServiceWorker();
   showScreen("home");
 }
