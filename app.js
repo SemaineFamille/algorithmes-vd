@@ -697,25 +697,52 @@ function renderList(source, containerId) {
 function renderHomeVdList() {
   renderList("vd", "homeVdList");
 }
+function normalizeText(text) {
+  return String(text || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
 function setupSearch() {
   const input = document.getElementById("searchInput");
   if (!input) return;
 
   input.addEventListener("input", (e) => {
-    const search = e.target.value.toLowerCase().trim();
+    const search = normalizeText(e.target.value.trim());
 
-    const filtered = VD_ALGOS.filter((item) => {
+    const allAlgos = [
+      ...VD_ALGOS.map((item) => ({ ...item, sourceType: "vd" })),
+      ...STAR_ALGOS.map((item) => ({ ...item, sourceType: "star" }))
+    ];
+
+    const filtered = allAlgos.filter((item) => {
+      const notes = readStorage(`notes:${item.sourceType}:${item.id}`, "");
+
       return (
-        item.titre.toLowerCase().includes(search) ||
-        item.chapitre.toLowerCase().includes(search)
+        normalizeText(item.titre).includes(search) ||
+        normalizeText(item.chapitre).includes(search) ||
+        normalizeText(item.source).includes(search) ||
+        normalizeText(notes).includes(search)
       );
     });
 
     const container = document.getElementById("homeVdList");
 
+    if (filtered.length === 0) {
+      container.innerHTML = `
+        <div class="card">
+          <p style="text-align:center; opacity:0.7;">
+            Aucun résultat trouvé 🔎
+          </p>
+        </div>
+      `;
+      return;
+    }
+
     container.innerHTML = filtered
       .sort((a, b) => a.ordre - b.ordre)
-      .map((item) => cardHTML(item, "vd"))
+      .map((item) => cardHTML(item, item.sourceType))
       .join("");
 
     bindCardEvents(container);
