@@ -705,16 +705,21 @@ function normalizeText(text) {
 }
 
 function setupSearchHandler(e) {
-  const search = normalizeText(e.target.value);
+  const search = normalizeText(e.target.value.trim());
+
+  // Si vide, réaffiche la liste normale
+  if (!search) {
+    renderHomeVdList();
+    return;
+  }
 
   const all = [
-    ...VD_ALGOS.map(x => ({...x, sourceType:"vd"})),
-    ...STAR_ALGOS.map(x => ({...x, sourceType:"star"}))
+    ...VD_ALGOS.map(x => ({ ...x, sourceType: "vd" })),
+    ...STAR_ALGOS.map(x => ({ ...x, sourceType: "star" }))
   ];
 
   const filtered = all.filter(item => {
     const notes = readStorage(`notes:${item.sourceType}:${item.id}`, "");
-
     return (
       normalizeText(item.titre).includes(search) ||
       normalizeText(item.chapitre).includes(search) ||
@@ -723,7 +728,6 @@ function setupSearchHandler(e) {
   });
 
   const container = document.getElementById("homeVdList");
-
   container.innerHTML = filtered.length
     ? filtered.map(i => cardHTML(i, i.sourceType)).join("")
     : `<div class="card"><p style="text-align:center;opacity:0.7;">Aucun résultat 🔎</p></div>`;
@@ -891,9 +895,7 @@ function setupEvents() {
   document.getElementById("syncMaterials")?.addEventListener("click", () => {
     alert("Synchronisation à brancher plus tard.");
   });
-  document.getElementById("searchInput")?.addEventListener("input", (e) => {
-  filterHomeList(e.target.value);
-});
+  document.getElementById("searchInput")?.addEventListener("input", setupSearchHandler);
 }
 
 function registerServiceWorker() {
@@ -912,10 +914,7 @@ function init() {
 
   showScreen("home");
 
-  // 🔥 important : attendre le rendu DOM
-  setTimeout(() => {
-    setupSearch();
-  }, 0);
+ 
 }
 function filterHomeList(search) {
   const container = document.getElementById("homeVdList");
