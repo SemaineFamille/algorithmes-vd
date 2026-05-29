@@ -1,4 +1,52 @@
-const CHAPTER_STYLES = {const CHAPTER_STYLESret.png", favori: true, notesPlaceholder: "Ex. critères locaux, transmission, points d’attention…" },
+const CHAPTER_STYLES = {
+  "Urgences vitales": {
+    badge: "background:#fee2e2;color:#b91c1c;border-color:#fecaca;",
+    border: "#fca5a5",
+    background: "#fff1f2"
+  },
+  "Neurologie": {
+    badge: "background:#f3e8ff;color:#7e22ce;border-color:#d8b4fe;",
+    border: "#c084fc",
+    background: "#faf5ff"
+  },
+  "Douleur": {
+    badge: "background:#dbeafe;color:#1d4ed8;border-color:#93c5fd;",
+    border: "#60a5fa",
+    background: "#eff6ff"
+  },
+  "Pédiatrie": {
+    badge: "background:#dcfce7;color:#15803d;border-color:#86efac;",
+    border: "#4ade80",
+    background: "#f0fdf4"
+  },
+  "Obstétrique": {
+    badge: "background:#fce7f3;color:#be185d;border-color:#f9a8d4;",
+    border: "#f472b6",
+    background: "#fdf2f8"
+  },
+  "Respiratoire": {
+    badge: "background:#cffafe;color:#0f766e;border-color:#99f6e4;",
+    border: "#2dd4bf",
+    background: "#ecfeff"
+  },
+  "Cardio": {
+    badge: "background:#fee2e2;color:#b91c1c;border-color:#fca5a5;",
+    border: "#ef4444",
+    background: "#fef2f2"
+  },
+  "Technique": {
+    badge: "background:#ede9fe;color:#6d28d9;border-color:#c4b5fd;",
+    border: "#8b5cf6",
+    background: "#f5f3ff"
+  },
+  "Interne": {
+    badge: "background:#e2e8f0;color:#475569;border-color:#cbd5e1;",
+    border: "#94a3b8",
+    background: "#f8fafc"
+  }
+};
+
+const VD_ALGOS = [
   { id: "acc_physio", ordre: 2, titre: "Accouchement physiologique", chapitre: "Obstétrique", source: "VD", image: "images/acc_physio.png", favori: false, notesPlaceholder: "Ex. matériel de naissance, points d’anticipation…" },
   { id: "acc_patho1", ordre: 3, titre: "Accouchement pathologique 1", chapitre: "Obstétrique", source: "VD", image: "images/acc_patho1.png", favori: false, notesPlaceholder: "Ex. points d’attention…" },
   { id: "acc_patho2", ordre: 4, titre: "Accouchement pathologique 2", chapitre: "Obstétrique", source: "VD", image: "images/acc_patho2.png", favori: false, notesPlaceholder: "Ex. points d’attention…" },
@@ -356,53 +404,5 @@ function init() {
   registerServiceWorker();
   showScreen("home");
 }
-
 document.addEventListener("DOMContentLoaded", init);
-  "Urgences vitales": {
-    badge: "background:#fee2e2;color:#b91c1c;border-color:#fecaca;",
-    border: "#fca5a5",
-    background: "#fff1f2"
-  },
-  "Neurologie": {
-    badge: "background:#f3e8ff;color:#7e22ce;border-color:#d8b4fe;",
-    border: "#c084fc",
-    background: "#faf5ff"
-  },
-  "Douleur": {
-    badge: "background:#dbeafe;color:#1d4ed8;border-color:#93c5fd;",
-    border: "#60a5fa",
-    background: "#eff6ff"
-  },
-  "Pédiatrie": {
-    badge: "background:#dcfce7;color:#15803d;border-color:#86efac;",
-    border: "#4ade80",
-    background: "#f0fdf4"
-  },
-  "Obstétrique": {
-    badge: "background:#fce7f3;color:#be185d;border-color:#f9a8d4;",
-    border: "#f472b6",
-    background: "#fdf2f8"
-  },
-  "Respiratoire": {
-    badge: "background:#cffafe;color:#0f766e;border-color:#99f6e4;",
-    border: "#2dd4bf",
-    background: "#ecfeff"
-  },
-  "Cardio": {
-    badge: "background:#fee2e2;color:#b91c1c;border-color:#fca5a5;",
-    border: "#ef4444",
-    background: "#fef2f2"
-  },
-  "Technique": {
-    badge: "background:#ede9fe;color:#6d28d9;border-color:#c4b5fd;",
-    border: "#8b5cf6",
-    background: "#f5f3ff"
-  },
-  "Interne": {
-    badge: "background:#fef9c3;color:#854d0e;border-color:#fde047;",
-    border: "#facc15",
-    background: "#fffde8"
-  }
-};
 
-const VD_ALGOS = [
