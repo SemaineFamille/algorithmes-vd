@@ -407,7 +407,7 @@ const STAR_ALGOS = [
    {
     id: "aide_memoire_accouchement_Dos",
     ordre: 32,
-    titre: "Aide-mémoire Accouchement en siège, Dos",
+    titre: "Aide-mémoire Accouchement, Dos",
     chapitre: "Obstétrique/Gynécologie",
     source: "STAR",
     image: "images/aide_memoire_accouchement_dos.png",
@@ -417,7 +417,7 @@ const STAR_ALGOS = [
    {
     id: "aide_memoire_accouchement_jambes",
     ordre: 33,
-    titre: "Aide-mémoire Accouchement en siège, Jambes",
+    titre: "Aide-mémoire Accouchement, Jambes",
     chapitre: "Obstétrique/Gynécologie",
     source: "STAR",
     image: "images/aide_memoire_accouchement_jambes.png",
@@ -427,7 +427,7 @@ const STAR_ALGOS = [
    {
     id: "aide_memoire_accouchement_bras",
     ordre: 34,
-    titre: "Aide-mémoire Accouchement en siège, Bras",
+    titre: "Aide-mémoire Accouchement, Bras",
     chapitre: "Obstétrique/Gynécologie",
     source: "STAR",
     image: "images/aide_memoire_accouchement_bras.png",
@@ -437,7 +437,7 @@ const STAR_ALGOS = [
    {
     id: "aide_memoire_accouchement_tete",
     ordre: 35,
-    titre: "Aide-mémoire Accouchement en siège; Tête",
+    titre: "Aide-mémoire Accouchement, Tête",
     chapitre: "Obstétrique/Gynécologie",
     source: "STAR",
     image: "images/aide_memoire_accouchement_tete.png",
