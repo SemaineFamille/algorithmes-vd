@@ -201,7 +201,7 @@ const STAR_ALGOS = [
   {
     id: "suspicion_avc_2",
     ordre: 11,
-    titre: "Suspicion d’AVC",
+    titre: "Suspicion d’AVC_2",
     chapitre: "Maladie",
     source: "STAR",
     image: "images/suspicion_avc_2.png",
