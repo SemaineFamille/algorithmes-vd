@@ -13,7 +13,6 @@ const CHAPTER_STYLES = {
     badge: "background:#dbeafe;color:#1d4ed8;border-color:#93c5fd;",
     border: "#60a5fa",
     background: "#eff6ff"
-
   },
   "Obstétrique": {
     badge: "background:#fce7f3;color:#be185d;border-color:#f9a8d4;",
@@ -200,12 +199,12 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. adrénaline, O2, remplissage, surveillance…"
   },
   {
-    id: "antalgie",
+    id: "amd_antalgie",
     ordre: 13,
     titre: "Antalgie",
     chapitre: "Maladie",
     source: "STAR",
-    image: "images/antalgie.png",
+    image: "images/amd.png",
     favori: false,
     notesPlaceholder: "Ex. EVA/algoplus, posologies, contre-indications…"
   },
