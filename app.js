@@ -926,9 +926,14 @@ function init() {
   }
 
   setupEvents();
-  setupSearch();
   registerServiceWorker();
+
   showScreen("home");
+
+  // 🔥 important : attendre le rendu DOM
+  setTimeout(() => {
+    setupSearch();
+  }, 0);
 }
 function filterHomeList(search) {
   const container = document.getElementById("homeVdList");
