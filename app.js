@@ -54,8 +54,8 @@ const VD_ALGOS = [
   { id: "pph", ordre: 6, titre: "Hémorragie post-partum", chapitre: "Obstétrique", source: "VD", image: "images/pph.png", favori: false, notesPlaceholder: "Ex. points de surveillance…" },
   { id: "cordon", ordre: 7, titre: "Circulaire du cordon", chapitre: "Obstétrique", source: "VD", image: "images/cordon.png", favori: false, notesPlaceholder: "Ex. conduite locale…" },
   { id: "anaphylaxie", ordre: 8, titre: "Réaction anaphylactique", chapitre: "Urgences vitales", source: "VD", image: "images/anaphylaxie.png", favori: false, notesPlaceholder: "Ex. adrénaline, surveillance…" },
-  { id: "antalgie", ordre: 9, titre: "Antalgie", chapitre: "Antalgie", source: "VD", image: "images/antalgie.png", favori: true, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
-  { id: "acr_bls", ordre: 10, titre: "ACR adulte / BLS", chapitre: "Urgences vitales", source: "VD", image: "images/acr_bls.png", favori: true, notesPlaceholder: "Ex. checklist équipe, matériel, points de briefing…" },
+  { id: "antalgie", ordre: 9, titre: "Antalgie", chapitre: "Antalgie", source: "VD", image: "images/antalgie.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
+  { id: "acr_bls", ordre: 10, titre: "ACR adulte / BLS", chapitre: "Urgences vitales", source: "VD", image: "images/acr_bls.png", favori: false, notesPlaceholder: "Ex. checklist équipe, matériel, points de briefing…" },
   { id: "acr_als", ordre: 11, titre: "ACR adulte / ALS", chapitre: "Urgences vitales", source: "VD", image: "images/acr_als.png", favori: false, notesPlaceholder: "Ex. adrénaline, amiodarone, causes réversibles…" },
   { id: "acr_pedia", ordre: 12, titre: "ACR pédiatrique", chapitre: "Pédiatrie", source: "VD", image: "images/acr_pedia.png", favori: false, notesPlaceholder: "Ex. doses, matériel pédiatrique…" },
   { id: "nn", ordre: 13, titre: "Réanimation nouveau-né", chapitre: "Pédiatrie", source: "VD", image: "images/nn.png", favori: false, notesPlaceholder: "Ex. matériel, température, ventilation…" },
@@ -76,8 +76,32 @@ const VD_ALGOS = [
 ];
 
 const STAR_ALGOS = [
-  { id: "amd", ordre: 1, titre: "AMD", chapitre: "Antalgie", source: "STAR", image: "amd.png", favori: false, notesPlaceholder: "Notes STAR…" },
-  { id: "brulure", ordre: 2, titre: "Brulure", chapitre: "Interne", source: "STAR", image: "brulure.png", favori: false, notesPlaceholder: "Notes STAR…" }
+  { id: "amd_antalgie", ordre: 2, titre: "AMD Antalgie", chapitre: "Antalgie", source: "STAR", image: "amd.png", favori: false, notesPlaceholder: "Ex. matériel de naissance, points d’anticipation…" },
+  { id: "brulure", ordre: 3, titre: "Bûlures", chapitre: "Technique", source: "STAR", image: "brulure.png", favori: false, notesPlaceholder: "Ex. points d’attention…" },
+  { id: "fumee", ordre: 4, titre: "Exposition aux fumées", chapitre: "Respiratoire", source: "STAR", image: "fumee.png", favori: false, notesPlaceholder: "Ex. points d’attention…" },
+  { id: "rachis", ordre: 5, titre: "Immobilisation du rachis", chapitre: "Technique", source: "STAR", image: "rachis.png", favori: false, notesPlaceholder: "Ex. Labetalol, MgSO4, conduite locale…" },
+  { id: "pph", ordre: 6, titre: "Hémorragie post-partum", chapitre: "Obstétrique", source: "VD", image: "images/pph.png", favori: false, notesPlaceholder: "Ex. points de surveillance…" },
+  { id: "cordon", ordre: 7, titre: "Circulaire du cordon", chapitre: "Obstétrique", source: "VD", image: "images/cordon.png", favori: false, notesPlaceholder: "Ex. conduite locale…" },
+  { id: "anaphylaxie", ordre: 8, titre: "Réaction anaphylactique", chapitre: "Urgences vitales", source: "VD", image: "images/anaphylaxie.png", favori: false, notesPlaceholder: "Ex. adrénaline, surveillance…" },
+  { id: "antalgie", ordre: 9, titre: "Antalgie", chapitre: "Antalgie", source: "VD", image: "images/antalgie.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
+  { id: "acr_bls", ordre: 10, titre: "ACR adulte / BLS", chapitre: "Urgences vitales", source: "VD", image: "images/acr_bls.png", favori: false, notesPlaceholder: "Ex. checklist équipe, matériel, points de briefing…" },
+  { id: "acr_als", ordre: 11, titre: "ACR adulte / ALS", chapitre: "Urgences vitales", source: "VD", image: "images/acr_als.png", favori: false, notesPlaceholder: "Ex. adrénaline, amiodarone, causes réversibles…" },
+  { id: "acr_pedia", ordre: 12, titre: "ACR pédiatrique", chapitre: "Pédiatrie", source: "VD", image: "images/acr_pedia.png", favori: false, notesPlaceholder: "Ex. doses, matériel pédiatrique…" },
+  { id: "nn", ordre: 13, titre: "Réanimation nouveau-né", chapitre: "Pédiatrie", source: "VD", image: "images/nn.png", favori: false, notesPlaceholder: "Ex. matériel, température, ventilation…" },
+  { id: "brulures", ordre: 14, titre: "Brûlures", chapitre: "Urgences vitales", source: "VD", image: "images/brulures.png", favori: false, notesPlaceholder: "Ex. refroidissement, pansement, surveillance…" },
+  { id: "conv_adulte", ordre: 15, titre: "Convulsions adulte", chapitre: "Neurologie", source: "VD", image: "images/conv_adulte.png", favori: false, notesPlaceholder: "Ex. midazolam, clonazépam…" },
+  { id: "conv_pedia", ordre: 16, titre: "Convulsions pédiatriques", chapitre: "Pédiatrie", source: "VD", image: "images/conv_ped_star.png", favori: false, notesPlaceholder: "Ex. glycémie, température, refroidissement…" },
+  { id: "sca", ordre: 17, titre: "Douleurs thoraciques (SCA)", chapitre: "Cardio", source: "VD", image: "images/sca.png", favori: false, notesPlaceholder: "Ex. ECG 12 dérivations, ASA, nitrés…" },
+  { id: "resp_adulte", ordre: 18, titre: "Détresse respiratoire adulte", chapitre: "Respiratoire", source: "VD", image: "images/resp_adulte.png", favori: false, notesPlaceholder: "Ex. O2, salbutamol, CPAP…" },
+  { id: "resp_pedia", ordre: 19, titre: "Détresse respiratoire pédiatrique", chapitre: "Pédiatrie", source: "VD", image: "images/resp_pedia.png", favori: false, notesPlaceholder: "Ex. nébulisation, respect position spontanée…" },
+  { id: "choc", ordre: 20, titre: "État de choc", chapitre: "Urgences vitales", source: "VD", image: "images/choc.png", favori: false, notesPlaceholder: "Ex. RL, TA cible, TXA…" },
+  { id: "coma", ordre: 21, titre: "Trouble de conscience adulte", chapitre: "Neurologie", source: "VD", image: "images/coma.png", favori: false, notesPlaceholder: "Ex. glucose, naloxone, thiamine…" },
+  { id: "avc", ordre: 22, titre: "AVC", chapitre: "Neurologie", source: "VD", image: "images/avc.png", favori: true, notesPlaceholder: "Ex. anticoagulants, heure de début, proches à prévenir…" },
+  { id: "io", ordre: 23, titre: "Voie intra-osseuse", chapitre: "Technique", source: "VD", image: "images/io.png", favori: false, notesPlaceholder: "Ex. indications, contre-indications, surveillance…" },
+  { id: "avc_annexe", ordre: 24, titre: "AVC Annexe", chapitre: "Neurologie", source: "VD", image: "images/avc_annexe.png", favori: false, notesPlaceholder: "Ex. Rankin, checklist filière…" },
+  { id: "antalgie_sat", ordre: 25, titre: "Antalgie SAT", chapitre: "Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+  { id: "labo", ordre: 26, titre: "Valeur Laboratoire", chapitre: "Interne", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+  { id: "molecules", ordre: 27, titre: "Molécules Antalgie", chapitre: "Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" }
 ];
 
 const DEFAULT_MATERIAL = [
