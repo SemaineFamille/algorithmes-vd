@@ -1,7 +1,12 @@
-<!DOCTYPE html><!DOCTYPE <meta charset="UTF-8" />
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Algorithmes VD</title>
+
   <meta name="theme-color" content="#0f766e" />
+
   <link rel="manifest" href="app.webmanifest" />
   <link rel="apple-touch-icon" href="images/icon-192.png" />
   <link rel="stylesheet" href="style.css" />
@@ -24,7 +29,15 @@
             <button class="btn btn-secondary" data-screen="materials">Matériel</button>
           </div>
         </div>
-
+<section id="screen-home" class="screen active">
+  <div class="card">
+  <input
+    id="searchInput"
+    class="input"
+    type="text"
+    placeholder="Rechercher un algorithme..."
+  />
+</div>
         <div id="favoritesSection"></div>
         <div id="homeVdList" class="list"></div>
       </section>
@@ -95,8 +108,6 @@
     </nav>
   </div>
 
-  <script src="app.js"></script>
+   <script src="app.js"></script>
 </body>
 </html>
-<html lang="fr">
-<head>
