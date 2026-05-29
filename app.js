@@ -76,8 +76,8 @@ const VD_ALGOS = [
 ];
 
 const STAR_ALGOS = [
-  { id: "star_1", ordre: 1, titre: "STAR 1", chapitre: "Interne", source: "STAR", image: "images/star_1.png", favori: false, notesPlaceholder: "Notes STAR…" },
-  { id: "star_2", ordre: 2, titre: "STAR 2", chapitre: "Interne", source: "STAR", image: "images/star_2.png", favori: false, notesPlaceholder: "Notes STAR…" }
+  { id: "amd", ordre: 1, titre: "AMD", chapitre: "Antalgie", source: "STAR", image: "amd.png", favori: false, notesPlaceholder: "Notes STAR…" },
+  { id: "star", ordre: 2, titre: "STAR 2", chapitre: "Interne", source: "STAR", image: "images/star_2.png", favori: false, notesPlaceholder: "Notes STAR…" }
 ];
 
 const DEFAULT_MATERIAL = [
