@@ -858,6 +858,9 @@ function setupEvents() {
   document.getElementById("syncMaterials")?.addEventListener("click", () => {
     alert("Synchronisation à brancher plus tard.");
   });
+  document.getElementById("searchInput")?.addEventListener("input", (e) => {
+  filterHomeList(e.target.value);
+});
 }
 
 function registerServiceWorker() {
@@ -874,6 +877,27 @@ function init() {
   setupEvents();
   registerServiceWorker();
   showScreen("home");
+}
+function filterHomeList(search) {
+  const container = document.getElementById("homeVdList");
+  if (!container) return;
+
+  const term = search.toLowerCase().trim();
+
+  const filtered = VD_ALGOS
+    .filter((item) => {
+      return (
+        item.titre.toLowerCase().includes(term) ||
+        item.chapitre.toLowerCase().includes(term)
+      );
+    })
+    .sort((a, b) => a.ordre - b.ordre);
+
+  container.innerHTML = filtered
+    .map((item) => cardHTML(item, "vd"))
+    .join("");
+
+  bindCardEvents(container);
 }
 document.addEventListener("DOMContentLoaded", init);
 
