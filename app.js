@@ -704,49 +704,31 @@ function normalizeText(text) {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
-function setupSearch() {
-  const input = document.getElementById("searchInput");
-  if (!input) return;
+function setupSearchHandler(e) {
+  const search = normalizeText(e.target.value);
 
-  input.addEventListener("input", (e) => {
-    const search = normalizeText(e.target.value.trim());
+  const all = [
+    ...VD_ALGOS.map(x => ({...x, sourceType:"vd"})),
+    ...STAR_ALGOS.map(x => ({...x, sourceType:"star"}))
+  ];
 
-    const allAlgos = [
-      ...VD_ALGOS.map((item) => ({ ...item, sourceType: "vd" })),
-      ...STAR_ALGOS.map((item) => ({ ...item, sourceType: "star" }))
-    ];
+  const filtered = all.filter(item => {
+    const notes = readStorage(`notes:${item.sourceType}:${item.id}`, "");
 
-    const filtered = allAlgos.filter((item) => {
-      const notes = readStorage(`notes:${item.sourceType}:${item.id}`, "");
-
-      return (
-        normalizeText(item.titre).includes(search) ||
-        normalizeText(item.chapitre).includes(search) ||
-        normalizeText(item.source).includes(search) ||
-        normalizeText(notes).includes(search)
-      );
-    });
-
-    const container = document.getElementById("homeVdList");
-
-    if (filtered.length === 0) {
-      container.innerHTML = `
-        <div class="card">
-          <p style="text-align:center; opacity:0.7;">
-            Aucun résultat trouvé 🔎
-          </p>
-        </div>
-      `;
-      return;
-    }
-
-    container.innerHTML = filtered
-      .sort((a, b) => a.ordre - b.ordre)
-      .map((item) => cardHTML(item, item.sourceType))
-      .join("");
-
-    bindCardEvents(container);
+    return (
+      normalizeText(item.titre).includes(search) ||
+      normalizeText(item.chapitre).includes(search) ||
+      normalizeText(notes).includes(search)
+    );
   });
+
+  const container = document.getElementById("homeVdList");
+
+  container.innerHTML = filtered.length
+    ? filtered.map(i => cardHTML(i, i.sourceType)).join("")
+    : `<div class="card"><p style="text-align:center;opacity:0.7;">Aucun résultat 🔎</p></div>`;
+
+  bindCardEvents(container);
 }
 
 function openDetail(source, id) {
