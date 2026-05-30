@@ -1,19 +1,12 @@
 const CACHE = "algo-vd-v1";
-const ASSETS = [
-  "/algorithmes-vd/",
-  "/algorithmes-vd/index.html",
-  "/algorithmes-vd/app.js",
-  "/algorithmes-vd/style.css",
-  "/algorithmes-vd/app.webmanifest",
+const IMAGES = [
   "/algorithmes-vd/images/icon-192.png",
   "/algorithmes-vd/images/icon-512.png"
 ];
 
-// Installation : mise en cache des fichiers essentiels
+// Installation : on met en cache uniquement les icônes
 self.addEventListener("install", (e) => {
-  e.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(ASSETS))
-  );
+  e.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(IMAGES)));
   self.skipWaiting();
 });
 
@@ -27,9 +20,11 @@ self.addEventListener("activate", (e) => {
   self.clients.claim();
 });
 
-// Fetch : cache en priorité, réseau en fallback
+// Fetch : images depuis le cache, tout le reste depuis le réseau
 self.addEventListener("fetch", (e) => {
-  e.respondWith(
-    caches.match(e.request).then((cached) => cached || fetch(e.request))
-  );
+  if (e.request.destination === "image") {
+    e.respondWith(
+      caches.match(e.request).then((cached) => cached || fetch(e.request))
+    );
+  }
 });
