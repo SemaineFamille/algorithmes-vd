@@ -9,7 +9,7 @@ const CHAPTER_STYLES = {
     border: "#c084fc",
     background: "#faf5ff"
   },
-  "Antalgie": {
+  "Respiratoire": {
     badge: "background:#dbeafe;color:#1d4ed8;border-color:#93c5fd;",
     border: "#60a5fa",
     background: "#eff6ff"
@@ -19,7 +19,7 @@ const CHAPTER_STYLES = {
     border: "#f472b6",
     background: "#fdf2f8"
   },
-  "Respiratoire": {
+  "Antalgie": {
     badge: "background:#cffafe;color:#0f766e;border-color:#99f6e4;",
     border: "#2dd4bf",
     background: "#ecfeff"
@@ -85,7 +85,7 @@ const VD_ALGOS = [
   { id: "conv_adulte", ordre: 15, titre: "Convulsions adulte", chapitre: "Neurologie", source: "VD", image: "images/conv_adulte.png", favori: false, notesPlaceholder: "Ex. midazolam, clonazépam…" },
   { id: "conv_pedia", ordre: 16, titre: "Convulsions pédiatriques", chapitre: "Pédiatrie", source: "VD", image: "images/conv_ped_star.png", favori: false, notesPlaceholder: "Ex. glycémie, température, refroidissement…" },
   { id: "sca", ordre: 17, titre: "Douleurs thoraciques (SCA)", chapitre: "Cardio", source: "VD", image: "images/sca.png", favori: false, notesPlaceholder: "Ex. ECG 12 dérivations, ASA, nitrés…" },
-  { id: "resp_adulte", ordre: 18, titre: "Détresse respiratoire adulte", chapitre: "Respiratoire", source: "VD", image: "images/resp_adulte.png", favori: false, notesPlaceholder: "Ex. O2, salbutamol, CPAP…" },
+  { id: "resp_adulte", ordre: 18, titre: "Détresse respiratoire adulte", chapitre: "Maladie", source: "VD", image: "images/resp_adulte.png", favori: false, notesPlaceholder: "Ex. O2, salbutamol, CPAP…" },
   { id: "resp_pedia", ordre: 19, titre: "Détresse respiratoire pédiatrique", chapitre: "Pédiatrie", source: "VD", image: "images/resp_pedia.png", favori: false, notesPlaceholder: "Ex. nébulisation, respect position spontanée…" },
   { id: "choc", ordre: 20, titre: "État de choc", chapitre: "Maladie", source: "VD", image: "images/choc.png", favori: false, notesPlaceholder: "Ex. RL, TA cible, TXA…" },
   { id: "coma", ordre: 21, titre: "Trouble de conscience adulte", chapitre: "Maladie", source: "VD", image: "images/coma.png", favori: false, notesPlaceholder: "Ex. glucose, naloxone, thiamine…" },
