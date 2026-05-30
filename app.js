@@ -93,7 +93,7 @@ const VD_ALGOS = [
   { id: "io", ordre: 23, titre: "Voie intra-osseuse", chapitre: "Technique", source: "VD", image: "images/io.png", favori: false, notesPlaceholder: "Ex. indications, contre-indications, surveillance…" },
   { id: "avc_annexe", ordre: 24, titre: "AVC Annexe", chapitre: "Neurologie", source: "VD", image: "images/avc_annexe.png", favori: false, notesPlaceholder: "Ex. Rankin, checklist filière…" },
   { id: "antalgie_sat", ordre: 25, titre: "Antalgie SAT", chapitre: "Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "labo", ordre: 26, titre: "Valeur Laboratoire", chapitre: "Interne", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+  { id: "labo", ordre: 26, titre: "Valeur Laboratoire", chapitre: "Autre", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
   { id: "molecules", ordre: 27, titre: "Molécules Antalgie", chapitre: "Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
    { id: "antalgie_tcs", ordre: 28, titre: "Antalgie TCS", chapitre: "Antalgie", source: "TCS", image: "images/antalgie_tcs.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
    { id: "antalgie_tcs_ped", ordre: 29, titre: "Antalgie TCS Ped", chapitre: "Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
