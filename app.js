@@ -97,7 +97,7 @@ const VD_ALGOS = [
   { id: "molecules", ordre: 27, titre: "Molécules Antalgie", chapitre: "Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
    { id: "antalgie_tcs", ordre: 28, titre: "Antalgie TCS", chapitre: "Antalgie", source: "TCS", image: "images/antalgie_tcs.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
    { id: "antalgie_tcs_ped", ordre: 29, titre: "Antalgie TCS Ped", chapitre: "Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  { id: "toxidrome", ordre: 30, titre: "Toxidrome", chapitre: "Neurologie", source: "Autre", image: "images/toxidrome.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"}
+  { id: "toxidrome", ordre: 30, titre: "Toxidrome", chapitre: "Neurologie", source: "Autre", image: "images/Toxidrome.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"}
 ];
 const STAR_ALGOS = [
   // Maladie
