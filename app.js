@@ -873,7 +873,6 @@ function showScreen(screen) {
   if (screen === "detail") renderDetail();
   if (screen === "materials") renderMaterials();
 }
-}
 
 function setupEvents() {
   document.querySelectorAll("[data-screen]").forEach((el) => {
