@@ -99,7 +99,6 @@ const VD_ALGOS = [
    { id: "antalgie_tcs_ped", ordre: 29, titre: "Antalgie TCS Ped", chapitre: "Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "toxidrome", ordre: 30, titre: "Toxidrome", chapitre: "Neurologie", source: "Autre", image: "images/toxidrome.png", favori: false, notesPlaceholder:}
 ];
-];
 const STAR_ALGOS = [
   // Maladie
   {
