@@ -39,7 +39,12 @@ const CHAPTER_STYLES = {
     border: "#94a3b8",
     background: "#f8fafc"
   },
-  
+    
+  "Pédiatrie": {
+    badge: "background:#fef08a;color:#854d0e;border-color:#facc15;",
+    border: "#eab308",
+    background: "#fefce8"
+  },
 "Maladie 🌟": {
     badge: "background:#bfdbfe;color:#1e3a8a;border-color:#60a5fa;",
     border: "#3b82f6",
