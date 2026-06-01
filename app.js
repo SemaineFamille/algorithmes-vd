@@ -575,6 +575,7 @@ const DEFAULT_MATERIAL = [
   { id: "reserve", label: "Réassort / fin de journée", checked: false, note: "" }
 ];
 
+
 const state = {
   screen: "home",
   previousScreen: "home",
@@ -603,6 +604,13 @@ function getListBySource(source) {
   return source === "star" ? STAR_ALGOS : VD_ALGOS;
 }
 
+function getAllAlgos() {
+  return [
+    ...VD_ALGOS.map(item => ({ ...item, sourceType: "vd" })),
+    ...STAR_ALGOS.map(item => ({ ...item, sourceType: "star" }))
+  ];
+}
+
 function getFavMap() {
   return readStorage("favorites-map", {});
 }
@@ -614,9 +622,11 @@ function favKey(source, id) {
 function isFavorite(source, item) {
   const favs = getFavMap();
   const key = favKey(source, item.id);
+
   if (Object.prototype.hasOwnProperty.call(favs, key)) {
     return favs[key];
   }
+
   return !!item.favori;
 }
 
@@ -625,11 +635,25 @@ function toggleFavorite(source, id) {
   const list = getListBySource(source);
   const item = list.find((x) => x.id === id);
   const key = favKey(source, id);
-  const current = Object.prototype.hasOwnProperty.call(favs, key) ? favs[key] : !!item?.favori;
+  const current = Object.prototype.hasOwnProperty.call(favs, key)
+    ? favs[key]
+    : !!item?.favori;
+
   favs[key] = !current;
   writeStorage("favorites-map", favs);
 
-  renderHomeFavorites();
+  // Rafraîchir l’accueil
+  if (state.screen === "home") {
+    const searchVal = document.getElementById("searchInput")?.value || "";
+    if (searchVal.trim()) {
+      runHomeSearch(searchVal);
+    } else {
+      renderHomeFavorites();
+      clearHomeSearchResults();
+    }
+  }
+
+  // Rafraîchir les listes
   if (state.screen === "vd") renderList("vd", "vdList");
   if (state.screen === "star") renderList("star", "starList");
   if (state.screen === "detail") renderDetail();
@@ -680,20 +704,23 @@ function renderHomeFavorites() {
     ...STAR_ALGOS.map((item) => ({ item, source: "star" }))
   ];
 
-  const favorites = all.filter(({ item, source }) => isFavorite(source, item));
+  const favorites = all
+    .filter(({ item, source }) => isFavorite(source, item))
+    .sort((a, b) => a.item.ordre - b.item.ordre);
 
   if (!favorites.length) {
-    favoritesSection.innerHTML = "";
+    favoritesSection.innerHTML = `
+      <div class="card">
+        <p style="text-align:center;opacity:0.7;">Aucun favori ⭐</p>
+      </div>
+    `;
     return;
   }
 
   favoritesSection.innerHTML = `
     <div class="section-card">
       <p class="section-caption">⭐ Mes favoris</p>
-      ${favorites
-        .sort((a, b) => a.item.ordre - b.item.ordre)
-        .map(({ item, source }) => cardHTML(item, source))
-        .join("")}
+      ${favorites.map(({ item, source }) => cardHTML(item, source)).join("")}
     </div>
   `;
 
@@ -704,14 +731,21 @@ function renderList(source, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const list = getListBySource(source).slice().sort((a, b) => a.ordre - b.ordre);
+  const list = getListBySource(source)
+    .slice()
+    .sort((a, b) => a.ordre - b.ordre);
+
   container.innerHTML = list.map((item) => cardHTML(item, source)).join("");
   bindCardEvents(container);
 }
 
-function renderHomeVdList() {
-  renderList("vd", "homeVdList");
+function clearHomeSearchResults() {
+  const container = document.getElementById("homeVdList");
+  if (container) {
+    container.innerHTML = "";
+  }
 }
+
 function normalizeText(text) {
   return String(text || "")
     .toLowerCase()
@@ -719,35 +753,52 @@ function normalizeText(text) {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
-function setupSearchHandler(e) {
-  const search = normalizeText(e.target.value.trim());
+function runHomeSearch(rawValue) {
+  const search = normalizeText(rawValue.trim());
+  const favoritesSection = document.getElementById("favoritesSection");
+  const container = document.getElementById("homeVdList");
 
-  // Si vide, réaffiche la liste normale
+  if (!container || !favoritesSection) return;
+
+  // Si vide : on montre les favoris et on vide les résultats
   if (!search) {
-    renderHomeVdList();
+    favoritesSection.style.display = "";
+    renderHomeFavorites();
+    clearHomeSearchResults();
     return;
   }
 
-  const all = [
-    ...VD_ALGOS.map(x => ({ ...x, sourceType: "vd" })),
-    ...STAR_ALGOS.map(x => ({ ...x, sourceType: "star" }))
-  ];
+  // Si recherche active : on masque les favoris
+  favoritesSection.style.display = "none";
 
-  const filtered = all.filter(item => {
+  const all = getAllAlgos();
+
+  const filtered = all.filter((item) => {
     const notes = readStorage(`notes:${item.sourceType}:${item.id}`, "");
     return (
       normalizeText(item.titre).includes(search) ||
       normalizeText(item.chapitre).includes(search) ||
+      normalizeText(item.source).includes(search) ||
       normalizeText(notes).includes(search)
     );
   });
 
-  const container = document.getElementById("homeVdList");
+  filtered.sort((a, b) => a.ordre - b.ordre);
+
   container.innerHTML = filtered.length
-    ? filtered.map(i => cardHTML(i, i.sourceType)).join("")
+    ? `
+      <div class="section-card">
+        <p class="section-caption">🔎 Résultats</p>
+        ${filtered.map((item) => cardHTML(item, item.sourceType)).join("")}
+      </div>
+    `
     : `<div class="card"><p style="text-align:center;opacity:0.7;">Aucun résultat 🔎</p></div>`;
 
   bindCardEvents(container);
+}
+
+function setupSearchHandler(e) {
+  runHomeSearch(e.target.value);
 }
 
 function openDetail(source, id) {
@@ -773,10 +824,12 @@ function renderDetail() {
   const favBtn = document.getElementById("detailFavoriteBtn");
 
   if (title) title.textContent = item.titre;
+
   if (badge) {
     badge.textContent = item.chapitre;
     badge.setAttribute("style", style.badge);
   }
+
   if (card) {
     card.style.background = style.background;
     card.style.border = `2px solid ${style.border}`;
@@ -873,16 +926,18 @@ function showScreen(screen) {
   updateHeaderAndNav(screen);
 
   if (screen === "home") {
-    renderHomeFavorites();
-    // Ne réafficher la liste que si pas de recherche en cours
     const searchVal = document.getElementById("searchInput")?.value || "";
-    if (!searchVal.trim()) {
-      renderHomeVdList();
+
+    if (searchVal.trim()) {
+      runHomeSearch(searchVal);
     } else {
-      // Relance la recherche avec la valeur actuelle
-      setupSearchHandler({ target: { value: searchVal } });
+      const favoritesSection = document.getElementById("favoritesSection");
+      if (favoritesSection) favoritesSection.style.display = "";
+      renderHomeFavorites();
+      clearHomeSearchResults();
     }
   }
+
   if (screen === "vd") renderList("vd", "vdList");
   if (screen === "star") renderList("star", "starList");
   if (screen === "detail") renderDetail();
@@ -909,6 +964,7 @@ function setupEvents() {
   document.getElementById("syncMaterials")?.addEventListener("click", () => {
     alert("Synchronisation à brancher plus tard.");
   });
+
   document.getElementById("searchInput")?.addEventListener("input", setupSearchHandler);
 }
 
@@ -925,11 +981,9 @@ function init() {
 
   setupEvents();
   registerServiceWorker();
-
   showScreen("home");
-
- 
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
 
