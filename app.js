@@ -42,9 +42,9 @@ const CHAPTER_STYLES = {
     background: "#fefce8"
   },
   "Pédiatrie 🌟": {
-    badge: "background:#fde047;color:#78350f;border-color:#eab308;",
-    border: "#a16207",
-    background: "#fef9c3"
+     badge: "background:#fef08a;color:#854d0e;border-color:#facc15;",
+    border: "#ca8a04",
+    background: "#fefce8"
   },
 
   // 🟣 NEURO (violet foncé → bien différent maintenant)
