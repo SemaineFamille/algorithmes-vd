@@ -56,7 +56,7 @@ const CHAPTER_STYLES = {
 
   // 🌸 ANTALGIE (nouvelle couleur distincte)
   
-"💉Antalgie": {
+"Antalgie": {
   
  badge: "background:#f9a8d4;color:#831843;border-color:#f472b6;",
   border: "#db2777",
@@ -103,7 +103,7 @@ const VD_ALGOS = [
   { id: "pph", ordre: 36, titre: "Hémorragie post-partum", chapitre: "Obstétrique/Gynécologie", source: "VD", image: "images/pph.png", favori: false, notesPlaceholder: "Ex. points de surveillance…" },
   { id: "cordon", ordre: 37, titre: "Circulaire du cordon", chapitre: "Obstétrique/Gynécologie", source: "VD", image: "images/cordon.png", favori: false, notesPlaceholder: "Ex. conduite locale…" },
   { id: "anaphylaxie", ordre: 8, titre: "Réaction anaphylactique", chapitre: "Maladie", source: "VD", image: "images/anaphylaxie.png", favori: false, notesPlaceholder: "Ex. adrénaline, surveillance…" },
-  { id: "antalgie", ordre: 1, titre: "Antalgie VD", chapitre: "💉Antalgie", source: "VD", image: "images/antalgie.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
+  { id: "antalgie", ordre: 1, titre: "Antalgie VD", chapitre: "Antalgie", source: "VD", image: "images/antalgie.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
   { id: "acr_bls", ordre: 10, titre: "ACR adulte / BLS", chapitre: "Maladie", source: "VD", image: "images/acr_bls.png", favori: false, notesPlaceholder: "Ex. checklist équipe, matériel, points de briefing…" },
   { id: "acr_als", ordre: 11, titre: "ACR adulte / ALS", chapitre: "Maladie", source: "VD", image: "images/acr_als.png", favori: false, notesPlaceholder: "Ex. adrénaline, amiodarone, causes réversibles…" },
   { id: "acr_pedia", ordre: 12, titre: "ACR pédiatrique", chapitre: "Pédiatrie", source: "VD", image: "images/acr_pedia.png", favori: false, notesPlaceholder: "Ex. doses, matériel pédiatrique…" },
@@ -119,11 +119,11 @@ const VD_ALGOS = [
   { id: "avc", ordre: 22, titre: "AVC", chapitre: "Neurologie", source: "VD", image: "images/avc.png", favori: true, notesPlaceholder: "Ex. anticoagulants, heure de début, proches à prévenir…" },
   { id: "io", ordre: 24, titre: "Voie intra-osseuse", chapitre: "Technique", source: "VD", image: "images/io.png", favori: false, notesPlaceholder: "Ex. indications, contre-indications, surveillance…" },
   { id: "avc_annexe", ordre: 23, titre: "AVC Annexe", chapitre: "Neurologie", source: "VD", image: "images/avc_annexe.png", favori: false, notesPlaceholder: "Ex. Rankin, checklist filière…" },
-  { id: "antalgie_sat", ordre: 5, titre: "Antalgie SAT", chapitre: "💉Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+  { id: "antalgie_sat", ordre: 5, titre: "Antalgie SAT", chapitre: "Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
   { id: "labo", ordre: 26, titre: "Valeur Laboratoire", chapitre: "Autre", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "molecules", ordre: 4, titre: "Molécules Antalgie", chapitre: "💉Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-   { id: "antalgie_tcs", ordre: 2, titre: "Antalgie TCS", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
-   { id: "antalgie_tcs_ped", ordre: 3, titre: "Antalgie TCS Ped", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
+  { id: "molecules", ordre: 4, titre: "Molécules Antalgie", chapitre: "Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+   { id: "antalgie_tcs", ordre: 2, titre: "Antalgie TCS", chapitre: "Antalgie", source: "TCS", image: "images/antalgie_tcs.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
+   { id: "antalgie_tcs_ped", ordre: 3, titre: "Antalgie TCS Ped", chapitre: "Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "toxidrome", ordre: 30, titre: "Toxidrome", chapitre: "Neurologie", source: "Autre", image: "images/Toxidrome.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"}
 ];
 const STAR_ALGOS = [
