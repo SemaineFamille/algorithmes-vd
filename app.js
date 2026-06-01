@@ -96,7 +96,7 @@ const VD_ALGOS = [
   { id: "brulures", ordre: 14, titre: "Brûlures", chapitre: "Traumatique", source: "VD", image: "images/brulures.png", favori: false, notesPlaceholder: "Ex. refroidissement, pansement, surveillance…" },
   { id: "conv_adulte", ordre: 15, titre: "Convulsions adulte", chapitre: "Neurologie", source: "VD", image: "images/conv_adulte.png", favori: false, notesPlaceholder: "Ex. midazolam, clonazépam…" },
   { id: "conv_pedia", ordre: 16, titre: "Convulsions pédiatriques", chapitre: "Pédiatrie", source: "VD", image: "images/conv_ped_star.png", favori: false, notesPlaceholder: "Ex. glycémie, température, refroidissement…" },
-  { id: "sca", ordre: 17, titre: "Douleurs thoraciques (SCA)", chapitre: "Cardio", source: "VD", image: "images/sca.png", favori: false, notesPlaceholder: "Ex. ECG 12 dérivations, ASA, nitrés…" },
+  { id: "sca", ordre: 17, titre: "Douleurs thoraciques (SCA)", chapitre: "Maladie", source: "VD", image: "images/sca.png", favori: false, notesPlaceholder: "Ex. ECG 12 dérivations, ASA, nitrés…" },
   { id: "resp_adulte", ordre: 18, titre: "Détresse respiratoire adulte", chapitre: "Maladie", source: "VD", image: "images/resp_adulte.png", favori: false, notesPlaceholder: "Ex. O2, salbutamol, CPAP…" },
   { id: "resp_pedia", ordre: 19, titre: "Détresse respiratoire pédiatrique", chapitre: "Pédiatrie", source: "VD", image: "images/resp_pedia.png", favori: false, notesPlaceholder: "Ex. nébulisation, respect position spontanée…" },
   { id: "choc", ordre: 20, titre: "État de choc", chapitre: "Maladie", source: "VD", image: "images/choc.png", favori: false, notesPlaceholder: "Ex. RL, TA cible, TXA…" },
