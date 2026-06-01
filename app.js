@@ -57,9 +57,10 @@ const CHAPTER_STYLES = {
   // 🟠 ANTALGIE (nouvelle couleur distincte)
   
 "💉Antalgie ": {
-  badge: "background:#99f6e4;color:#134e4a;border-color:#2dd4bf;",
-  border: "#0d9488",
-  background: "#ecfeff"
+  
+ badge: "background:#fecdd3;color:#881337;border-color:#fb7185;",
+  border: "#be123c",
+  background: "#fff1f2"
 },
 
   // 🩶 INTERNE
