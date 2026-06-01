@@ -1,85 +1,98 @@
 const CHAPTER_STYLES = {
-  "Urgences vitales": {
-    badge: "background:#fee2e2;color:#b91c1c;border-color:#fecaca;",
-    border: "#fca5a5",
-    background: "#fff1f2"
-  },
-  "Neurologie": {
-    badge: "background:#f3e8ff;color:#7e22ce;border-color:#d8b4fe;",
-    border: "#c084fc",
-    background: "#faf5ff"
-  },
-  "Maladie": {
-    badge: "background:#dbeafe;color:#1d4ed8;border-color:#93c5fd;",
-    border: "#60a5fa",
-    background: "#eff6ff"
-  },
-   
-  "Traumatique": {
-    badge: "background:#bbf7d0;color:#166534;border-color:#4ade80;",
-    border: "#22c55e",
-    background: "#f0fdf4"
- },
-      
+  // 🔴 GYNÉCO / OBSTÉTRIQUE
   "Obstétrique/Gynécologie": {
-    badge: "background:#fce7f3;color:#be185d;border-color:#f9a8d4;",
-    border: "#f472b6",
-    background: "#fdf2f8"
-  },
-  "Antalgie": {
-    badge: "background:#cffafe;color:#0f766e;border-color:#99f6e4;",
-    border: "#2dd4bf",
-    background: "#ecfeff"
-  },
-  "Cardio": {
-    badge: "background:#fee2e2;color:#b91c1c;border-color:#fca5a5;",
-    border: "#ef4444",
+    badge: "background:#fecaca;color:#7f1d1d;border-color:#f87171;",
+    border: "#dc2626",
     background: "#fef2f2"
   },
-  "Technique": {
-    badge: "background:#ede9fe;color:#6d28d9;border-color:#c4b5fd;",
-    border: "#8b5cf6",
-    background: "#f5f3ff"
+  "Obstétrique/Gynécologie 🌟": {
+    badge: "background:#fda4af;color:#7f1d1d;border-color:#fb7185;",
+    border: "#e11d48",
+    background: "#fff1f2"
   },
-  "Interne": {
-    badge: "background:#e2e8f0;color:#475569;border-color:#cbd5e1;",
-    border: "#94a3b8",
-    background: "#f8fafc"
-  },
-    
-  "Pédiatrie": {
-    badge: "background:#fef08a;color:#854d0e;border-color:#facc15;",
-    border: "#eab308",
-    background: "#fefce8"
-  },
-"Maladie 🌟": {
+
+  // 🔵 MALADIE
+  "Maladie": {
     badge: "background:#bfdbfe;color:#1e3a8a;border-color:#60a5fa;",
-    border: "#3b82f6",
+    border: "#2563eb",
     background: "#eff6ff"
   },
-  "Traumatique 🌟": {
-    badge: "background:#bbf7d0;color:#166534;border-color:#4ade80;",
-    border: "#22c55e",
-    background: "#f0fdf4"
+  "Maladie 🌟": {
+    badge: "background:#93c5fd;color:#1e40af;border-color:#3b82f6;",
+    border: "#1d4ed8",
+    background: "#dbeafe"
   },
-  "Pédiatrie 🌟": {
+
+  // 🟢 TRAUMATIQUE
+  "Traumatique": {
+    badge: "background:#bbf7d0;color:#065f46;border-color:#34d399;",
+    border: "#059669",
+    background: "#ecfdf5"
+  },
+  "Traumatique 🌟": {
+    badge: "background:#86efac;color:#065f46;border-color:#22c55e;",
+    border: "#047857",
+    background: "#dcfce7"
+  },
+
+  // 🟡 PÉDIATRIE
+  "Pédiatrie": {
     badge: "background:#fef08a;color:#854d0e;border-color:#facc15;",
-    border: "#eab308",
+    border: "#ca8a04",
     background: "#fefce8"
   },
-  "Obstétrique/Gynécologie 🌟": {
-    badge: "background:#fbcfe8;color:#9d174d;border-color:#f472b6;",
-    border: "#ec4899",
-    background: "#fdf2f8"
+  "Pédiatrie 🌟": {
+    badge: "background:#fde047;color:#78350f;border-color:#eab308;",
+    border: "#a16207",
+    background: "#fef9c3"
+  },
+
+  // 🟣 NEURO (violet foncé → bien différent maintenant)
+  "Neurologie": {
+    badge: "background:#ddd6fe;color:#4c1d95;border-color:#a78bfa;",
+    border: "#7c3aed",
+    background: "#f5f3ff"
+  },
+
+  // 🟠 ANTALGIE (nouvelle couleur distincte)
+  "Antalgie": {
+    badge: "background:#fed7aa;color:#7c2d12;border-color:#fb923c;",
+    border: "#ea580c",
+    background: "#fff7ed"
+  },
+
+  // 🩶 INTERNE
+  "Interne": {
+    badge: "background:#e2e8f0;color:#334155;border-color:#cbd5f5;",
+    border: "#64748b",
+    background: "#f8fafc"
+  },
+
+  // 🔷 TECHNIQUE (plus violet → bleu-gris)
+  "Technique": {
+    badge: "background:#e0f2fe;color:#075985;border-color:#7dd3fc;",
+    border: "#0284c7",
+    background: "#f0f9ff"
+  },
+
+  // ⚫ AUTRES
+  "Autre": {
+    badge: "background:#e5e7eb;color:#374151;border-color:#9ca3af;",
+    border: "#6b7280",
+    background: "#f9fafb"
   },
   "Autre 🌟": {
-    badge: "background:#e5e7eb;color:#4b5563;border-color:#9ca3af;",
+    badge: "background:#d1d5db;color:#1f2933;border-color:#9ca3af;",
+    border: "#4b5563",
+    background: "#f3f4f6"
+  },
+
+  "Particuliers/Autres 🌟": {
+    badge: "background:#e5e7eb;color:#374151;border-color:#9ca3af;",
     border: "#6b7280",
     background: "#f9fafb"
   }
-
 };
-
 const VD_ALGOS = [
   { id: "acc_physio", ordre: 2, titre: "Accouchement physiologique", chapitre: "Obstétrique/Gynécologie", source: "VD", image: "images/acc_physio.png", favori: false, notesPlaceholder: "Ex. matériel de naissance, points d’anticipation…" },
   { id: "acc_patho1", ordre: 3, titre: "Accouchement pathologique 1", chapitre: "Obstétrique/Gynécologie", source: "VD", image: "images/acc_patho1.png", favori: false, notesPlaceholder: "Ex. points d’attention…" },
