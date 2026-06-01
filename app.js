@@ -58,9 +58,11 @@ const CHAPTER_STYLES = {
   
 "💉Antalgie ": {
   
- badge: "background:#fecdd3;color:#881337;border-color:#fb7185;",
-  border: "#be123c",
-  background: "#fff1f2"
+ badge: 
+badge: "background:#f0abfc;color:#701a75;border-color:#d946ef;",
+  border: "#a21caf",
+  background: "#fdf4ff"
+
 },
 
   // 🩶 INTERNE
