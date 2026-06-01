@@ -1,9 +1,8 @@
 const CACHE = "algo-vd-v1";
 const IMAGES = [
-  "/algorithmes-vd/images/icon-192.png",
-  "/algorithmes-vd/images/icon-512.png"
+  "images/icon-192.png",
+  "images/icon-512.png"
 ];
-
 // Installation : on met en cache uniquement les icônes
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(IMAGES)));
