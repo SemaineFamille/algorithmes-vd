@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,7 +8,7 @@
 
   <meta name="theme-color" content="#0f766e" />
 
-<link rel="manifest" href="app.webmanifest" />
+  <link rel="manifest" href="app.webmanifest" />
   <link rel="apple-touch-icon" href="images/icon-192.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -19,33 +20,36 @@
 
     <main class="content">
 
-  <!-- ACCUEIL -->
-<section id="screen-home" class="screen active">
-  <div class="card">
-    <div class="actions-grid">
-      <button class="btn btn-primary" data-screen="vd">Algo VD</button>
-      <button class="btn btn-star" data-screen="star">STAR</button>
-      <button class="btn btn-secondary" data-screen="calculator">Calcul</button>
-      <button class="btn btn-secondary" data-screen="materials">Matériel</button>
-    </div>
-  </div>
+      <!-- ACCUEIL -->
+      <section id="screen-home" class="screen active">
+        <div class="card">
+          <div class="actions-grid">
+            <button class="btn btn-primary" data-screen="vd">Algo VD</button>
+            <button class="btn btn-star" data-screen="star">STAR</button>
+            <button class="btn btn-secondary" data-screen="calculator">Calcul</button>
+            <button class="btn btn-secondary" data-screen="materials">Matériel</button>
+          </div>
+        </div>
 
-  <!-- 🔎 RECHERCHE -->
-  <div class="card">
-    <div class="search-box">
-      <span class="search-icon">🔎</span>
-      <input id="searchInput" class="input search-input"
-        type="text"
-        placeholder="Rechercher un algorithme ou une note..."
-      />
-    </div>
-  </div>
- <!-- Favoris -->
-   <div id="favoritesSection"></div>
- <!-- Résultats de recherche -->
-  <div id="homeVdList" class="list"></div>
- 
-</section>
+        <!-- 🔎 RECHERCHE -->
+        <div class="card">
+          <div class="search-box">
+            <span class="search-icon">🔎</span>
+            <input
+              id="searchInput"
+              class="input search-input"
+              type="text"
+              placeholder="Rechercher un algorithme ou une note..."
+            />
+          </div>
+        </div>
+
+        <!-- Favoris -->
+        <div id="favoritesSection"></div>
+
+        <!-- Résultats de recherche -->
+        <div id="homeVdList" class="list"></div>
+      </section>
 
       <!-- LISTE ALGO VD -->
       <section id="screen-vd" class="screen">
@@ -76,7 +80,11 @@
             </div>
           </div>
 
-          <textarea id="detailNotes" class="textarea" placeholder="Ajoute ici tes notes personnelles..."></textarea>
+          <textarea
+            id="detailNotes"
+            class="textarea"
+            placeholder="Ajoute ici tes notes personnelles..."
+          ></textarea>
         </div>
       </section>
 
@@ -113,6 +121,6 @@
     </nav>
   </div>
 
-   <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
