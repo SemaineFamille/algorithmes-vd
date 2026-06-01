@@ -54,7 +54,7 @@ const CHAPTER_STYLES = {
     background: "#f5f3ff"
   },
 
-  // 🟠 ANTALGIE (nouvelle couleur distincte)
+  // 🌸 ANTALGIE (nouvelle couleur distincte)
   
 "💉Antalgie ": {
   
