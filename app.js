@@ -14,6 +14,13 @@ const CHAPTER_STYLES = {
     border: "#60a5fa",
     background: "#eff6ff"
   },
+   
+  "Traumatique": {
+    badge: "background:#bbf7d0;color:#166534;border-color:#4ade80;",
+    border: "#22c55e",
+    background: "#f0fdf4"
+ },
+      
   "Obstétrique/Gynécologie": {
     badge: "background:#fce7f3;color:#be185d;border-color:#f9a8d4;",
     border: "#f472b6",
