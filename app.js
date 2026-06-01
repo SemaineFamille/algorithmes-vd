@@ -248,8 +248,8 @@ const STAR_ALGOS = [
   {
     id: "brulures",
     ordre: 15,
-    titre: "Brûlures 🌟",
-    chapitre: "Traumatique",
+    titre: "Brûlures",
+    chapitre: "Traumatique 🌟",
     source: "STAR",
     image: "images/brulures_STAR.png",
     favori: false,
