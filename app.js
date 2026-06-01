@@ -57,10 +57,9 @@ const CHAPTER_STYLES = {
   // 🌸 ANTALGIE (nouvelle couleur distincte)
   
 "Antalgie": {
-  
- badge: "background:#f9a8d4;color:#831843;border-color:#f472b6;",
-  border: "#db2777",
-  background: "#fdf2f8"
+badge: "background:#99f6e4;color:#134e4a;border-color:#2dd4bf;",
+  border: "#0d9488",
+  background: "#ecfeff"
 },
 
   // 🩶 INTERNE
