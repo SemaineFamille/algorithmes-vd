@@ -249,8 +249,8 @@ const STAR_ALGOS = [
   {
     id: "amd_antalgie",
     ordre: 13,
-    titre: "Antalgie 🌟",
-    chapitre: "Maladie",
+    titre: "Antalgie",
+    chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/amd.png",
     favori: false,
