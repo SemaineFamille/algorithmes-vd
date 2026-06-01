@@ -60,9 +60,7 @@ const CHAPTER_STYLES = {
   badge: "background:#99f6e4;color:#134e4a;border-color:#2dd4bf;",
   border: "#0d9488",
   background: "#ecfeff"
-}
-
-
+},
 
   // 🩶 INTERNE
   "Interne": {
