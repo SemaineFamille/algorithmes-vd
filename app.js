@@ -611,8 +611,10 @@ function writeStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
+
 function chapterStyle(chapter) {
-  return CHAPTER_STYLES[chapter] || CHAPTER_STYLES["Interne"];
+  const clean = String(chapter).trim();
+  return CHAPTER_STYLES[clean] || CHAPTER_STYLES["Interne"];
 }
 
 function getListBySource(source) {
