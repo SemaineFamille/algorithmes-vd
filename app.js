@@ -100,30 +100,30 @@ const VD_ALGOS = [
   { id: "acc_patho2", ordre: 34, titre: "Accouchement pathologique 2", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/acc_patho2.png", favori: false, notesPlaceholder: "Ex. points d’attention…" },
   { id: "eclampsie", ordre: 35, titre: "Pré-éclampsie / éclampsie", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/eclampsie.png", favori: false, notesPlaceholder: "Ex. Labetalol, MgSO4, conduite locale…" },
   { id: "pph", ordre: 36, titre: "🩸Hémorragie post-partum", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/pph.png", favori: false, notesPlaceholder: "Ex. points de surveillance…" },
-  { id: "cordon", ordre: 37, titre: "🪢Circulaire du cordon", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/cordon.png", favori: false, notesPlaceholder: "Ex. conduite locale…" },
-  { id: "anaphylaxie", ordre: 8, titre: "Réaction anaphylactique🥵", chapitre: "Maladie🤒", source: "VD", image: "images/anaphylaxie.png", favori: false, notesPlaceholder: "Ex. adrénaline, surveillance…" },
+  { id: "cordon", ordre: 37, titre: "🪢 Circulaire du cordon", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/cordon.png", favori: false, notesPlaceholder: "Ex. conduite locale…" },
+  { id: "anaphylaxie", ordre: 8, titre: "Réaction anaphylactique 🥵", chapitre: "Maladie🤒", source: "VD", image: "images/anaphylaxie.png", favori: false, notesPlaceholder: "Ex. adrénaline, surveillance…" },
   { id: "antalgie", ordre: 1, titre: "Antalgie VD", chapitre: "💉Antalgie", source: "VD", image: "images/antalgie.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
-  { id: "acr_bls", ordre: 10, titre: "ACR adulte / BLS🫀", chapitre: "Maladie🤒", source: "VD", image: "images/acr_bls.png", favori: false, notesPlaceholder: "Ex. checklist équipe, matériel, points de briefing…" },
-  { id: "acr_als", ordre: 11, titre: "ACR adulte / ALS🫀", chapitre: "Maladie🤒", source: "VD", image: "images/acr_als.png", favori: false, notesPlaceholder: "Ex. adrénaline, amiodarone, causes réversibles…" },
-  { id: "acr_pedia", ordre: 12, titre: "ACR pédiatrique🫀", chapitre: "Pédiatrie👶", source: "VD", image: "images/acr_pedia.png", favori: false, notesPlaceholder: "Ex. doses, matériel pédiatrique…" },
-  { id: "nn", ordre: 13, titre: "Réanimation nouveau-né", chapitre: "Pédiatrie👶", source: "VD", image: "images/nn.png", favori: false, notesPlaceholder: "Ex. matériel, température, ventilation…" },
-  { id: "brulures", ordre: 14, titre: "🥵Brûlures🌡️", chapitre: "Trauma 🤕", source: "VD", image: "images/brulures.png", favori: false, notesPlaceholder: "Ex. refroidissement, pansement, surveillance…" },
-  { id: "conv_adulte", ordre: 6, titre: "😵‍💫Convulsions adulte🫨", chapitre: "Neuro🧠", source: "VD", image: "images/conv_adulte.png", favori: false, notesPlaceholder: "Ex. midazolam, clonazépam…" },
-  { id: "conv_pedia", ordre: 7, titre: "😵‍💫Convulsions pédiatriques🫨", chapitre: "Pédiatrie👶", source: "VD", image: "images/conv_ped_star.png", favori: false, notesPlaceholder: "Ex. glycémie, température, refroidissement…" },
+  { id: "acr_bls", ordre: 10, titre: "ACR adulte / BLS 🫀", chapitre: "Maladie🤒", source: "VD", image: "images/acr_bls.png", favori: false, notesPlaceholder: "Ex. checklist équipe, matériel, points de briefing…" },
+  { id: "acr_als", ordre: 11, titre: "ACR adulte / ALS 🫀", chapitre: "Maladie🤒", source: "VD", image: "images/acr_als.png", favori: false, notesPlaceholder: "Ex. adrénaline, amiodarone, causes réversibles…" },
+  { id: "acr_pedia", ordre: 12, titre: "ACR pédiatrique 🫀", chapitre: "Pédiatrie👶", source: "VD", image: "images/acr_pedia.png", favori: false, notesPlaceholder: "Ex. doses, matériel pédiatrique…" },
+  { id: "nn", ordre: 13, titre: "🍼 Réanimation nouveau-né", chapitre: "Pédiatrie👶", source: "VD", image: "images/nn.png", favori: false, notesPlaceholder: "Ex. matériel, température, ventilation…" },
+  { id: "brulures", ordre: 14, titre: "🥵 Brûlures 🌡️", chapitre: "Trauma 🤕", source: "VD", image: "images/brulures.png", favori: false, notesPlaceholder: "Ex. refroidissement, pansement, surveillance…" },
+  { id: "conv_adulte", ordre: 6, titre: "😵‍💫 Convulsions adulte 🫨", chapitre: "Neuro🧠", source: "VD", image: "images/conv_adulte.png", favori: false, notesPlaceholder: "Ex. midazolam, clonazépam…" },
+  { id: "conv_pedia", ordre: 7, titre: "😵‍💫 Convulsions pédiatriques 🌡️", chapitre: "Pédiatrie👶", source: "VD", image: "images/conv_ped_star.png", favori: false, notesPlaceholder: "Ex. glycémie, température, refroidissement…" },
   { id: "sca", ordre: 17, titre: "Douleurs thoraciques 🫀 (SCA)", chapitre: "Maladie🤒", source: "VD", image: "images/sca.png", favori: false, notesPlaceholder: "Ex. ECG 12 dérivations, ASA, nitrés…" },
   { id: "resp_adulte", ordre: 18, titre: "Détresse respiratoire adulte 🫁", chapitre: "Maladie🤒", source: "VD", image: "images/resp_adulte.png", favori: false, notesPlaceholder: "Ex. O2, salbutamol, CPAP…" },
-  { id: "resp_pedia", ordre: 19, titre: "🫁Détresse respiratoire 👶pédiatrique", chapitre: "Pédiatrie👶", source: "VD", image: "images/resp_pedia.png", favori: false, notesPlaceholder: "Ex. nébulisation, respect position spontanée…" },
+  { id: "resp_pedia", ordre: 19, titre: "🫁 Détresse respiratoire 👶 pédiatrique", chapitre: "Pédiatrie👶", source: "VD", image: "images/resp_pedia.png", favori: false, notesPlaceholder: "Ex. nébulisation, respect position spontanée…" },
   { id: "choc", ordre: 20, titre: "État de choc", chapitre: "Maladie🤒", source: "VD", image: "images/choc.png", favori: false, notesPlaceholder: "Ex. RL, TA cible, TXA…" },
-  { id: "coma", ordre: 21, titre: "Trouble de la conscience adulte 😵‍💫", chapitre: "Maladie🤒", source: "VD", image: "images/coma.png", favori: false, notesPlaceholder: "Ex. glucose, naloxone, thiamine…" },
-  { id: "avc", ordre: 22, titre: "😵AVC", chapitre: "Neuro🧠", source: "VD", image: "images/avc.png", favori: true, notesPlaceholder: "Ex. anticoagulants, heure de début, proches à prévenir…" },
-  { id: "io", ordre: 24, titre: "🦴Voie intra-osseuse", chapitre: "Technique", source: "VD", image: "images/io.png", favori: false, notesPlaceholder: "Ex. indications, contre-indications, surveillance…" },
-  { id: "avc_annexe", ordre: 23, titre: "😵AVC Annexe", chapitre: "Neuro🧠", source: "VD", image: "images/avc_annexe.png", favori: false, notesPlaceholder: "Ex. Rankin, checklist filière…" },
+  { id: "coma", ordre: 21, titre: "😴 Trouble de la conscience adulte 😵‍💫", chapitre: "Maladie🤒", source: "VD", image: "images/coma.png", favori: false, notesPlaceholder: "Ex. glucose, naloxone, thiamine…" },
+  { id: "avc", ordre: 22, titre: "😵 AVC", chapitre: "Neuro🧠", source: "VD", image: "images/avc.png", favori: true, notesPlaceholder: "Ex. anticoagulants, heure de début, proches à prévenir…" },
+  { id: "io", ordre: 24, titre: "🦴 Voie intra-osseuse", chapitre: "Technique", source: "VD", image: "images/io.png", favori: false, notesPlaceholder: "Ex. indications, contre-indications, surveillance…" },
+  { id: "avc_annexe", ordre: 23, titre: "😵 AVC Annexe", chapitre: "Neuro🧠", source: "VD", image: "images/avc_annexe.png", favori: false, notesPlaceholder: "Ex. Rankin, checklist filière…" },
   { id: "antalgie_sat", ordre: 5, titre: "Antalgie SAT", chapitre: "💉Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "labo", ordre: 26, titre: "Valeur Laboratoire🧪", chapitre: "Autre", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "molecules", ordre: 4, titre: "💊Molécules Antalgie", chapitre: "💉Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+  { id: "labo", ordre: 26, titre: "Valeur Laboratoire 🧪", chapitre: "Autre", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+  { id: "molecules", ordre: 4, titre: "💊 Molécules Antalgie", chapitre: "💉Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
    { id: "antalgie_tcs", ordre: 2, titre: "Antalgie TCS", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
-   { id: "antalgie_tcs_ped", ordre: 3, titre: "Antalgie TCS Ped👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  { id: "toxidrome", ordre: 30, titre: "Toxidrome💊", chapitre: "Neuro🧠", source: "Autre", image: "images/Toxidrome.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"}
+   { id: "antalgie_tcs_ped", ordre: 3, titre: "Antalgie TCS Ped 👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
+  { id: "toxidrome", ordre: 30, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", image: "images/Toxidrome.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"}
 ];
 const STAR_ALGOS = [
   // Maladie
@@ -140,7 +140,7 @@ const STAR_ALGOS = [
   {
     id: "abstention_arret_reanimation",
     ordre: 2,
-    titre: "🪦Abstention/arrêt de réanimation☠️",
+    titre: "🪦 Abstention/arrêt de réanimation ☠️",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/abstention_arret_reanimation.png",
@@ -170,7 +170,7 @@ const STAR_ALGOS = [
   {
     id: "intra_osseuse",
     ordre: 5,
-    titre: "🦴Intra-osseuse",
+    titre: "🦴 Intra-osseuse",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/intra_osseuse.png",
@@ -190,7 +190,7 @@ const STAR_ALGOS = [
   {
     id: "etat_de_choc",
     ordre: 7,
-    titre: "🤒Etat de choc",
+    titre: "🤒 Etat de choc",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/etat_de_choc.png",
@@ -220,7 +220,7 @@ const STAR_ALGOS = [
   {
     id: "suspicion_avc",
     ordre: 10,
-    titre: "🧠 Suspicion d’AVC😵",
+    titre: "🧠 Suspicion d’AVC 😵",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image:"images/suspicion_avc.png",
@@ -250,7 +250,7 @@ const STAR_ALGOS = [
   {
     id: "amd_antalgie",
     ordre: 13,
-    titre: "💉Antalgie💉",
+    titre: "💉 Antalgie 💊",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/amd.png",
@@ -262,7 +262,7 @@ const STAR_ALGOS = [
   {
     id: "brulures",
     ordre: 15,
-    titre: "🥵 Brûlures🌡️",
+    titre: "🥵 Brûlures 🌡️",
     chapitre: "🤕Traumatique 🌟",
     source: "STAR",
     image: "images/brulures_STAR.png",
@@ -272,7 +272,7 @@ const STAR_ALGOS = [
    {
     id: "brulures _degre",
     ordre: 16,
-    titre: "🥵 Brûlures Degré🌡️",
+    titre: "🥵 Brûlures Degré 🌡️",
     chapitre: "🤕Traumatique 🌟",
     source: "STAR",
     image: "images/brulure.png",
@@ -282,7 +282,7 @@ const STAR_ALGOS = [
   {
     id: "exposition_fumees",
     ordre: 17,
-    titre: "💨Exposition aux fumées💨",
+    titre: "💨 Exposition aux fumées 💨",
     chapitre: "🤕Traumatique 🌟",
     source: "STAR",
     image: "images/exposition_fumees.png",
@@ -292,7 +292,7 @@ const STAR_ALGOS = [
   {
     id: "immobilisation_rachis",
     ordre: 18,
-    titre: "Immobilisation du rachis🛹",
+    titre: "Immobilisation du rachis 🛹",
     chapitre: "🤕Traumatique 🌟",
     source: "STAR",
     image: "images/immobilisation_rachis.png",
@@ -304,7 +304,7 @@ const STAR_ALGOS = [
   {
     id: "aide_memoire_pediatrique_parametres",
     ordre: 19,
-    titre: "🍼Aide-mémoire pédiatrique (paramètres)",
+    titre: "🍼 Aide-mémoire pédiatrique (paramètres)",
     chapitre: "👶Pédiatrie 🌟",
     source: "STAR",
     image: "images/aide_memoire_pediatrique_parametres.png",
@@ -314,7 +314,7 @@ const STAR_ALGOS = [
   {
     id: "detresse_respiratoire_pediatrique",
     ordre: 20,
-    titre: "🫁Détresse respiratoire pédiatrique",
+    titre: "🫁 Détresse respiratoire pédiatrique 👶",
     chapitre: "👶Pédiatrie 🌟",
     source: "STAR",
     image: "images/detresse_respiratoire_pediatrique.png",
@@ -324,7 +324,7 @@ const STAR_ALGOS = [
   {
     id: "acr_pediatrique",
     ordre: 21,
-    titre: "🫀Arrêt cardio-respiratoire pédiatrique",
+    titre: "🫀 Arrêt cardio-respiratoire pédiatrique",
     chapitre: "👶Pédiatrie 🌟",
     source: "STAR",
     image: "images/acr_pediatrique.png",
@@ -334,7 +334,7 @@ const STAR_ALGOS = [
     {
     id: "dilutions_acr_pediatrique",
     ordre: 22,
-    titre: "🫀Dilutions ACR pédiatrique",
+    titre: "🫀 Dilutions ACR pédiatrique",
     chapitre: "👶Pédiatrie 🌟",
     source: "STAR",
     image: "images/dilutions_acr_pediatrique.png",
@@ -344,7 +344,7 @@ const STAR_ALGOS = [
   {
     id: "soins_reanimation_nouveau_ne",
     ordre: 23,
-    titre: "🍼Soins et réanimation du nouveau-né",
+    titre: "🍼 Soins et réanimation du nouveau-né",
     chapitre: "👶Pédiatrie 🌟",
     source: "STAR",
     image: "images/soins_reanimation_nouveau_ne.png",
@@ -354,7 +354,7 @@ const STAR_ALGOS = [
   {
     id: "convulsion_trouble_conscience_pediatrique",
     ordre: 24,
-    titre: "😵‍💫Convulsion et trouble de l’état de conscience pédiatrique🌡️",
+    titre: "😵‍💫 Convulsion et trouble de l’état de conscience pédiatrique 🌡️",
     chapitre: "👶Pédiatrie 🌟",
     source: "STAR",
     image: "images/convulsion_trouble_conscience_pediatrique.png",
@@ -496,7 +496,7 @@ const STAR_ALGOS = [
   {
     id: "hemorragie_post_partum_primaire",
     ordre: 38,
-    titre: "🩸Hémorragie post-partum primaire🫃🏼",
+    titre: "🩸 Hémorragie post-partum primaire🫃🏼",
     chapitre: "Obstétrique/Gynécologie 🌟",
     source: "STAR",
     image: "images/hemorragie_post_partum_primaire.png",
@@ -508,7 +508,7 @@ const STAR_ALGOS = [
   {
     id: "aide_memoire_evenement_particulier_majeur_leader",
     ordre: 39,
-    titre: "💥Aide-mémoire évènement particulier/majeur Leader",
+    titre: "💥 Aide-mémoire évènement particulier/majeur Leader",
     chapitre: "Particuliers/Autres 🌟",
     source: "STAR",
     image: "images/aide_memoire_evenement_particulier_majeur_leader.png",
@@ -518,7 +518,7 @@ const STAR_ALGOS = [
    {
     id: "aide_memoire_evenement_particulier_majeur",
     ordre: 40,
-    titre: "💥Aide-mémoire évènement particulier/majeur",
+    titre: "💥 Aide-mémoire évènement particulier/majeur",
     chapitre: "Particuliers/Autres 🌟",
     source: "STAR",
     image: "images/aide_memoire_evenement_particulier_majeur.png",
@@ -528,7 +528,7 @@ const STAR_ALGOS = [
   {
     id: "aide_memoire_evenement_particulier_majeur_pre_trieur",
     ordre: 41,
-    titre: "💥Aide-mémoire évènement particulier/majeur Pré-trieur",
+    titre: "💥 Aide-mémoire évènement particulier/majeur Pré-trieur",
     chapitre: "Particuliers/Autres 🌟",
     source: "STAR",
     image: "images/aide_memoire_evenement_particulier_majeur_pre_trieur.png",
@@ -538,7 +538,7 @@ const STAR_ALGOS = [
    {
     id: "aide_memoire_SAP",
     ordre: 42,
-    titre: "💥Aide-mémoire SAP",
+    titre: "💥 Aide-mémoire SAP",
     chapitre: "Particuliers/Autres 🌟",
     source: "STAR",
     image: "images/aide_memoire_sap.png",
@@ -558,7 +558,7 @@ const STAR_ALGOS = [
   {
     id: "aide_memoire_babyrescue",
     ordre: 44,
-    titre: "👶Aide-mémoire babyrescue🚑",
+    titre: "👶 Aide-mémoire babyrescue 🚑",
     chapitre: "Particuliers/Autres 🌟",
     source: "STAR",
     image: "images/aide_memoire_babyrescue.png",
@@ -568,7 +568,7 @@ const STAR_ALGOS = [
   {
     id: "aide_memoire_debriefing_etudiantes",
     ordre: 45,
-    titre: "🎓Aide-mémoire débriefing étudiant.es🎓",
+    titre: "🎓 Aide-mémoire débriefing étudiant.es 🎓",
     chapitre: "Particuliers/Autres 🌟",
     source: "STAR",
     image: "images/aide_memoire_debriefing_etudiantes.png",
