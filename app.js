@@ -24,7 +24,7 @@ const CHAPTER_STYLES = {
   },
 
   // 🟢 TRAUMATIQUE
-  "Traumatique": {
+  "Trauma 🤕": {
     badge: "background:#bbf7d0;color:#065f46;border-color:#34d399;",
     border: "#059669",
     background: "#ecfdf5"
@@ -107,7 +107,7 @@ const VD_ALGOS = [
   { id: "acr_als", ordre: 11, titre: "ACR adulte / ALS🫀", chapitre: "Maladie", source: "VD", image: "images/acr_als.png", favori: false, notesPlaceholder: "Ex. adrénaline, amiodarone, causes réversibles…" },
   { id: "acr_pedia", ordre: 12, titre: "ACR pédiatrique🫀", chapitre: "Pédiatrie👶", source: "VD", image: "images/acr_pedia.png", favori: false, notesPlaceholder: "Ex. doses, matériel pédiatrique…" },
   { id: "nn", ordre: 13, titre: "Réanimation nouveau-né", chapitre: "Pédiatrie👶", source: "VD", image: "images/nn.png", favori: false, notesPlaceholder: "Ex. matériel, température, ventilation…" },
-  { id: "brulures", ordre: 14, titre: "Brûlures", chapitre: "Traumatique", source: "VD", image: "images/brulures.png", favori: false, notesPlaceholder: "Ex. refroidissement, pansement, surveillance…" },
+  { id: "brulures", ordre: 14, titre: "🥵Brûlures", chapitre: "Trauma 🤕", source: "VD", image: "images/brulures.png", favori: false, notesPlaceholder: "Ex. refroidissement, pansement, surveillance…" },
   { id: "conv_adulte", ordre: 6, titre: "Convulsions adulte", chapitre: "Neuro🧠", source: "VD", image: "images/conv_adulte.png", favori: false, notesPlaceholder: "Ex. midazolam, clonazépam…" },
   { id: "conv_pedia", ordre: 7, titre: "Convulsions pédiatriques", chapitre: "Pédiatrie👶", source: "VD", image: "images/conv_ped_star.png", favori: false, notesPlaceholder: "Ex. glycémie, température, refroidissement…" },
   { id: "sca", ordre: 17, titre: "Douleurs thoraciques 🫀 (SCA)", chapitre: "Maladie", source: "VD", image: "images/sca.png", favori: false, notesPlaceholder: "Ex. ECG 12 dérivations, ASA, nitrés…" },
