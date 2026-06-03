@@ -128,9 +128,9 @@ const VD_ALGOS = [
 const STAR_ALGOS = [
   // Maladie
   {
-    id: " 🫁 detresse_respiratoire_adulte",
+    id: "detresse_respiratoire_adulte",
     ordre: 1,
-    titre: "Détresse respiratoire adulte",
+    titre: "🫁 Détresse respiratoire adulte",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/detresse_respiratoire_adulte.png",
@@ -140,7 +140,7 @@ const STAR_ALGOS = [
   {
     id: "abstention_arret_reanimation",
     ordre: 2,
-    titre: "Abstention/arrêt de réanimation",
+    titre: "🪦Abstention/arrêt de réanimation☠️",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/abstention_arret_reanimation.png",
@@ -148,9 +148,9 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. critères, contexte, transmission, traçabilité…"
   },
   {
-    id: "🫀 acr_adulte",
+    id: "acr_adulte",
     ordre: 3,
-    titre: "Arrêt cardiorespiratoire adulte",
+    titre: "🫀 Arrêt cardiorespiratoire adulte",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/acr_adulte.png",
@@ -158,9 +158,9 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. RCP, défibrillation, adrénaline, causes réversibles…"
   },
   {
-   id: "🫀 acr_shema",
+   id: "acr_shema",
     ordre: 4,
-    titre: "Shema ALS",
+    titre: "🫀 Shema ALS",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/shema_ALS.png",
@@ -178,9 +178,9 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. indications, contre-indications, surveillance…"
   },
   {
-    id: "🫀 douleur_thoracique_sca",
+    id: "douleur_thoracique_sca",
     ordre: 6,
-    titre: "Douleur thoracique (SCA)",
+    titre: "🫀 Douleur thoracique (SCA)",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/douleur_thoracique_sca.png",
