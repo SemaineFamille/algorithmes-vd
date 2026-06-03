@@ -29,7 +29,7 @@ const CHAPTER_STYLES = {
     border: "#059669",
     background: "#ecfdf5"
   },
-  "Traumatique 🌟": {
+  "🤕Traumatique 🌟": {
     badge: "background:#86efac;color:#065f46;border-color:#22c55e;",
     border: "#047857",
     background: "#dcfce7"
@@ -198,9 +198,9 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. remplissage, TA cible, TXA, surveillance…"
   },
   {
-    id: "😵‍💫 convulsion_adulte",
+    id: "convulsion_adulte",
     ordre: 8,
-    titre: "Convulsion adulte",
+    titre: "😵‍💫 Convulsion adulte",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/conv_adulte_star.png",
@@ -208,9 +208,9 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. benzodiazépines, glycémie, durée de crise…"
   },
   {
-    id: "😵‍💫 trouble_conscience_adulte",
+    id: "trouble_conscience_adulte",
     ordre: 9,
-    titre: "Trouble de la conscience adulte",
+    titre: "😵‍💫 Trouble de la conscience adulte",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/trouble_conscience_adulte.png",
@@ -218,9 +218,9 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. glucose, GCS, naloxone, surveillance…"
   },
   {
-    id: "🧠 suspicion_avc",
+    id: "suspicion_avc",
     ordre: 10,
-    titre: "Suspicion d’AVC",
+    titre: "🧠 Suspicion d’AVC",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image:"images/suspicion_avc.png",
@@ -228,9 +228,9 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. heure de début, anticoagulants, filière AVC…"
   },
    {
-    id: "🧠 suspicion_avc_2",
+    id: "suspicion_avc_2",
     ordre: 10,
-    titre: "Suspicion d’AVC_2",
+    titre: "🧠 Suspicion d’AVC_2",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/suspicion_avc_2.png",
@@ -238,9 +238,9 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. heure de début, anticoagulants, filière AVC…"
   },
   {
-    id: "🥵 reaction_anaphylactique",
+    id: "reaction_anaphylactique",
     ordre: 12,
-    titre: "Réaction anaphylactique",
+    titre: "🥵 Réaction anaphylactique",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/reaction_anaphylactique.png",
@@ -263,7 +263,7 @@ const STAR_ALGOS = [
     id: "brulures",
     ordre: 15,
     titre: "🥵 Brûlures",
-    chapitre: "Traumatique 🌟",
+    chapitre: "🤕Traumatique 🌟",
     source: "STAR",
     image: "images/brulures_STAR.png",
     favori: false,
@@ -273,7 +273,7 @@ const STAR_ALGOS = [
     id: "brulures _degre",
     ordre: 16,
     titre: "🥵 Brûlures Degré",
-    chapitre: "Traumatique 🌟",
+    chapitre: "🤕Traumatique 🌟",
     source: "STAR",
     image: "images/brulure.png",
     favori: false,
@@ -283,7 +283,7 @@ const STAR_ALGOS = [
     id: "exposition_fumees",
     ordre: 17,
     titre: "💨Exposition aux fumées💨",
-    chapitre: "Traumatique 🌟",
+    chapitre: "🤕Traumatique 🌟",
     source: "STAR",
     image: "images/exposition_fumees.png",
     favori: false,
@@ -293,7 +293,7 @@ const STAR_ALGOS = [
     id: "immobilisation_rachis",
     ordre: 18,
     titre: "Immobilisation du rachis",
-    chapitre: "Traumatique 🌟",
+    chapitre: "🤕Traumatique 🌟",
     source: "STAR",
     image: "images/immobilisation_rachis.png",
     favori: false,
@@ -508,7 +508,7 @@ const STAR_ALGOS = [
   {
     id: "aide_memoire_evenement_particulier_majeur_leader",
     ordre: 39,
-    titre: "Aide-mémoire évènement particulier/majeur Leader",
+    titre: "💥Aide-mémoire évènement particulier/majeur Leader",
     chapitre: "Particuliers/Autres 🌟",
     source: "STAR",
     image: "images/aide_memoire_evenement_particulier_majeur_leader.png",
@@ -518,7 +518,7 @@ const STAR_ALGOS = [
    {
     id: "aide_memoire_evenement_particulier_majeur",
     ordre: 40,
-    titre: "Aide-mémoire évènement particulier/majeur",
+    titre: "💥Aide-mémoire évènement particulier/majeur",
     chapitre: "Particuliers/Autres 🌟",
     source: "STAR",
     image: "images/aide_memoire_evenement_particulier_majeur.png",
@@ -528,7 +528,7 @@ const STAR_ALGOS = [
   {
     id: "aide_memoire_evenement_particulier_majeur_pre_trieur",
     ordre: 41,
-    titre: "Aide-mémoire évènement particulier/majeur Pré-trieur",
+    titre: "💥Aide-mémoire évènement particulier/majeur Pré-trieur",
     chapitre: "Particuliers/Autres 🌟",
     source: "STAR",
     image: "images/aide_memoire_evenement_particulier_majeur_pre_trieur.png",
@@ -538,7 +538,7 @@ const STAR_ALGOS = [
    {
     id: "aide_memoire_SAP",
     ordre: 42,
-    titre: "Aide-mémoire SAP",
+    titre: "💥Aide-mémoire SAP",
     chapitre: "Particuliers/Autres 🌟",
     source: "STAR",
     image: "images/aide_memoire_sap.png",
