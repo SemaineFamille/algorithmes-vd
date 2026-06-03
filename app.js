@@ -114,7 +114,7 @@ const VD_ALGOS = [
   { id: "resp_adulte", ordre: 18, titre: "Détresse respiratoire adulte 🫁", chapitre: "Maladie", source: "VD", image: "images/resp_adulte.png", favori: false, notesPlaceholder: "Ex. O2, salbutamol, CPAP…" },
   { id: "resp_pedia", ordre: 19, titre: "Détresse respiratoire 🫁 pédiatrique", chapitre: "Pédiatrie👶", source: "VD", image: "images/resp_pedia.png", favori: false, notesPlaceholder: "Ex. nébulisation, respect position spontanée…" },
   { id: "choc", ordre: 20, titre: "État de choc", chapitre: "Maladie", source: "VD", image: "images/choc.png", favori: false, notesPlaceholder: "Ex. RL, TA cible, TXA…" },
-  { id: "coma", ordre: 21, titre: "Trouble de conscience adulte 😵‍💫", chapitre: "Maladie", source: "VD", image: "images/coma.png", favori: false, notesPlaceholder: "Ex. glucose, naloxone, thiamine…" },
+  { id: "coma", ordre: 21, titre: "Trouble de la conscience adulte 😵‍💫", chapitre: "Maladie", source: "VD", image: "images/coma.png", favori: false, notesPlaceholder: "Ex. glucose, naloxone, thiamine…" },
   { id: "avc", ordre: 22, titre: "AVC", chapitre: "Neuro🧠", source: "VD", image: "images/avc.png", favori: true, notesPlaceholder: "Ex. anticoagulants, heure de début, proches à prévenir…" },
   { id: "io", ordre: 24, titre: "Voie intra-osseuse", chapitre: "Technique", source: "VD", image: "images/io.png", favori: false, notesPlaceholder: "Ex. indications, contre-indications, surveillance…" },
   { id: "avc_annexe", ordre: 23, titre: "AVC Annexe", chapitre: "Neuro🧠", source: "VD", image: "images/avc_annexe.png", favori: false, notesPlaceholder: "Ex. Rankin, checklist filière…" },
