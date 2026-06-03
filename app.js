@@ -41,7 +41,7 @@ const CHAPTER_STYLES = {
     border: "#ca8a04",
     background: "#fefce8"
   },
-  "Pédiatrie 🌟": {
+  "👶Pédiatrie 🌟": {
      badge: "background:#fef08a;color:#854d0e;border-color:#facc15;",
     border: "#ca8a04",
     background: "#fefce8"
@@ -128,7 +128,7 @@ const VD_ALGOS = [
 const STAR_ALGOS = [
   // Maladie
   {
-    id: "detresse_respiratoire_adulte",
+    id: " 🫁 detresse_respiratoire_adulte",
     ordre: 1,
     titre: "Détresse respiratoire adulte",
     chapitre: "Maladie 🌟",
@@ -148,7 +148,7 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. critères, contexte, transmission, traçabilité…"
   },
   {
-    id: "acr_adulte",
+    id: "🫀 acr_adulte",
     ordre: 3,
     titre: "Arrêt cardiorespiratoire adulte",
     chapitre: "Maladie 🌟",
@@ -158,7 +158,7 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. RCP, défibrillation, adrénaline, causes réversibles…"
   },
   {
-   id: "acr_shema",
+   id: "🫀 acr_shema",
     ordre: 4,
     titre: "Shema ALS",
     chapitre: "Maladie 🌟",
@@ -178,7 +178,7 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. indications, contre-indications, surveillance…"
   },
   {
-    id: "douleur_thoracique_sca",
+    id: "🫀 douleur_thoracique_sca",
     ordre: 6,
     titre: "Douleur thoracique (SCA)",
     chapitre: "Maladie 🌟",
@@ -198,7 +198,7 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. remplissage, TA cible, TXA, surveillance…"
   },
   {
-    id: "convulsion_adulte",
+    id: "😵‍💫 convulsion_adulte",
     ordre: 8,
     titre: "Convulsion adulte",
     chapitre: "Maladie 🌟",
@@ -208,7 +208,7 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. benzodiazépines, glycémie, durée de crise…"
   },
   {
-    id: "trouble_conscience_adulte",
+    id: "😵‍💫 trouble_conscience_adulte",
     ordre: 9,
     titre: "Trouble de la conscience adulte",
     chapitre: "Maladie 🌟",
@@ -218,7 +218,7 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. glucose, GCS, naloxone, surveillance…"
   },
   {
-    id: "suspicion_avc",
+    id: "🧠 suspicion_avc",
     ordre: 10,
     titre: "Suspicion d’AVC",
     chapitre: "Maladie 🌟",
@@ -228,7 +228,7 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. heure de début, anticoagulants, filière AVC…"
   },
    {
-    id: "suspicion_avc_2",
+    id: "🧠 suspicion_avc_2",
     ordre: 10,
     titre: "Suspicion d’AVC_2",
     chapitre: "Maladie 🌟",
@@ -238,7 +238,7 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. heure de début, anticoagulants, filière AVC…"
   },
   {
-    id: "reaction_anaphylactique",
+    id: "🥵 reaction_anaphylactique",
     ordre: 12,
     titre: "Réaction anaphylactique",
     chapitre: "Maladie 🌟",
@@ -250,7 +250,7 @@ const STAR_ALGOS = [
   {
     id: "amd_antalgie",
     ordre: 13,
-    titre: "Antalgie",
+    titre: "💉Antalgie💉",
     chapitre: "Maladie 🌟",
     source: "STAR",
     image: "images/amd.png",
@@ -262,7 +262,7 @@ const STAR_ALGOS = [
   {
     id: "brulures",
     ordre: 15,
-    titre: "Brûlures",
+    titre: "🥵 Brûlures",
     chapitre: "Traumatique 🌟",
     source: "STAR",
     image: "images/brulures_STAR.png",
@@ -272,7 +272,7 @@ const STAR_ALGOS = [
    {
     id: "brulures _degre",
     ordre: 16,
-    titre: "Brûlures Degré",
+    titre: "🥵 Brûlures Degré",
     chapitre: "Traumatique 🌟",
     source: "STAR",
     image: "images/brulure.png",
@@ -282,7 +282,7 @@ const STAR_ALGOS = [
   {
     id: "exposition_fumees",
     ordre: 17,
-    titre: "Exposition aux fumées",
+    titre: "💨Exposition aux fumées💨",
     chapitre: "Traumatique 🌟",
     source: "STAR",
     image: "images/exposition_fumees.png",
@@ -305,7 +305,7 @@ const STAR_ALGOS = [
     id: "aide_memoire_pediatrique_parametres",
     ordre: 19,
     titre: "Aide-mémoire pédiatrique (paramètres)",
-    chapitre: "Pédiatrie 🌟",
+    chapitre: "👶Pédiatrie 🌟",
     source: "STAR",
     image: "images/aide_memoire_pediatrique_parametres.png",
     favori: false,
@@ -314,8 +314,8 @@ const STAR_ALGOS = [
   {
     id: "detresse_respiratoire_pediatrique",
     ordre: 20,
-    titre: "Détresse respiratoire pédiatrique",
-    chapitre: "Pédiatrie 🌟",
+    titre: "🫁Détresse respiratoire pédiatrique",
+    chapitre: "👶Pédiatrie 🌟",
     source: "STAR",
     image: "images/detresse_respiratoire_pediatrique.png",
     favori: false,
@@ -324,8 +324,8 @@ const STAR_ALGOS = [
   {
     id: "acr_pediatrique",
     ordre: 21,
-    titre: "Arrêt cardio-respiratoire pédiatrique",
-    chapitre: "Pédiatrie 🌟",
+    titre: "🫀Arrêt cardio-respiratoire pédiatrique",
+    chapitre: "👶Pédiatrie 🌟",
     source: "STAR",
     image: "images/acr_pediatrique.png",
     favori: false,
@@ -334,8 +334,8 @@ const STAR_ALGOS = [
     {
     id: "dilutions_acr_pediatrique",
     ordre: 22,
-    titre: "Dilutions ACR pédiatrique",
-    chapitre: "Pédiatrie 🌟",
+    titre: "🫀Dilutions ACR pédiatrique",
+    chapitre: "👶Pédiatrie 🌟",
     source: "STAR",
     image: "images/dilutions_acr_pediatrique.png",
     favori: false,
@@ -345,7 +345,7 @@ const STAR_ALGOS = [
     id: "soins_reanimation_nouveau_ne",
     ordre: 23,
     titre: "Soins et réanimation du nouveau-né",
-    chapitre: "Pédiatrie 🌟",
+    chapitre: "👶Pédiatrie 🌟",
     source: "STAR",
     image: "images/soins_reanimation_nouveau_ne.png",
     favori: false,
@@ -354,8 +354,8 @@ const STAR_ALGOS = [
   {
     id: "convulsion_trouble_conscience_pediatrique",
     ordre: 24,
-    titre: "Convulsion et trouble de l’état de conscience pédiatrique",
-    chapitre: "Pédiatrie 🌟",
+    titre: "😵‍💫Convulsion et trouble de l’état de conscience pédiatrique",
+    chapitre: "👶Pédiatrie 🌟",
     source: "STAR",
     image: "images/convulsion_trouble_conscience_pediatrique.png",
     favori: false,
@@ -558,7 +558,7 @@ const STAR_ALGOS = [
   {
     id: "aide_memoire_babyrescue",
     ordre: 44,
-    titre: "Aide-mémoire babyrescue",
+    titre: "👶Aide-mémoire babyrescue🚑",
     chapitre: "Particuliers/Autres 🌟",
     source: "STAR",
     image: "images/aide_memoire_babyrescue.png",
@@ -568,7 +568,7 @@ const STAR_ALGOS = [
   {
     id: "aide_memoire_debriefing_etudiantes",
     ordre: 45,
-    titre: "Aide-mémoire débriefing étudiant.es",
+    titre: "🎓Aide-mémoire débriefing étudiant.es🎓",
     chapitre: "Particuliers/Autres 🌟",
     source: "STAR",
     image: "images/aide_memoire_debriefing_etudiantes.png",
