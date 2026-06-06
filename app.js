@@ -582,14 +582,19 @@ const DEFAULT_MATERIAL = [
   { id: "venflon", label: "Venflon", checked: false, note: "" },
   { id: "tubulure", label: "Tubulure", checked: false, note: "" },
   { id: "ringer", label: "Ringer", checked: false, note: "" },
+  { id: "veca", label: "Veca C", checked: false, note: "" },
   { id: "cofix", label: "Cofix", checked: false, note: "" },
   { id: "seringue", label: "Seringue", checked: false, note: "" },
   { id: "lunette", label: "Lunette", checked: false, note: "" },
   { id: "masque02", label: "Masque O2", checked: false, note: "" },
   { id: "bouchon", label: "Bouchons", checked: false, note: "" },
   { id: "aiguille", label: "Aiguille", checked: false, note: "" },
+  { id: "compresse", label: "Compresse", checked: false, note: "" },
+  { id: "embout_in", label: "Embout IN", checked: false, note: "" },
   { id: "fentanyl", label: "Fentanyl", checked: false, note: "" },
   { id: "morphine", label: "Morphine", checked: false, note: "" },
+  { id: "aspirine", label: "Aspirine", checked: false, note: "" },
+  { id: "paracetamol", label: "Paracetamol", checked: false, note: "" },
   { id: "reserve", label: "Réassort / fin de journée", checked: false, note: "" }
 ];
 
