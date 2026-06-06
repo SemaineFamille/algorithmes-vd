@@ -906,40 +906,70 @@ function renderMaterials() {
 
   const materials = readStorage("materials-list", DEFAULT_MATERIAL);
 
-  materialsList.innerHTML = materials.map((item, index) => `
-    <div class="material-item">
-      <div class="material-row">
-        <input type="checkbox" data-check-index="${index}" ${item.checked ? "checked" : ""} />
-        <div style="flex:1;">
-          <div class="material-name">${item.label}</div>
-         <textarea
-  class="input material-note"
-  data-note-index="${index}"
-  placeholder="Note rapide…"
-  rows="3"
->${escapeHtml(item.note || "")}</textarea>
-        </div>
-      </div>
+  const categories = {};
+
+  materials.forEach((item, index) => {
+    if (!categories[item.category]) {
+      categories[item.category] = [];
+    }
+
+    categories[item.category].push({ ...item, index });
+  });
+
+  materialsList.innerHTML = Object.entries(categories)
+    .map(([category, items]) => `
+      <details class="material-category">
+        <summary>${category}</summary>
+
+        ${items.map(item => `
+          <div class="material-item">
+
+            <div class="material-row">
+              <input
+                type="checkbox"
+                data-check-index="${item.index}"
+                ${item.checked ? "checked" : ""}
+              />
+
+              <div style="flex:1;">
+                <div class="material-name">${item.label}</div>
+              </div>
+            </div>
+
+          </div>
+        `).join("")}
+
+      </details>
+    `)
+    .join("");
+
+  materialsList.innerHTML += `
+    <div class="card" style="margin-top:15px;">
+      <div class="material-name">📝 Notes libres</div>
+
+      <textarea
+        id="materialsFreeText"
+        class="input"
+        rows="6"
+        placeholder="Ajouter ici le matériel non listé..."
+      >${localStorage.getItem("materials-free-text") || ""}</textarea>
     </div>
-  `).join("");
+  `;
 
   materialsList.querySelectorAll("[data-check-index]").forEach((el) => {
     el.addEventListener("change", (e) => {
-      const idx = Number(e.target.getAttribute("data-check-index"));
+      const idx = Number(e.target.dataset.checkIndex);
       const next = readStorage("materials-list", DEFAULT_MATERIAL);
       next[idx].checked = e.target.checked;
       writeStorage("materials-list", next);
     });
   });
 
-  materialsList.querySelectorAll("[data-note-index]").forEach((el) => {
-    el.addEventListener("input", (e) => {
-      const idx = Number(e.target.getAttribute("data-note-index"));
-      const next = readStorage("materials-list", DEFAULT_MATERIAL);
-      next[idx].note = e.target.value;
-      writeStorage("materials-list", next);
+  document
+    .getElementById("materialsFreeText")
+    ?.addEventListener("input", (e) => {
+      localStorage.setItem("materials-free-text", e.target.value);
     });
-  });
 }
 
 function escapeHtml(value) {
