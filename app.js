@@ -579,23 +579,23 @@ const STAR_ALGOS = [
 
 
 const DEFAULT_MATERIAL = [
-  { id: "venflon", label: "Venflon", checked: false, note: "" },
-  { id: "tubulure", label: "Tubulure", checked: false, note: "" },
-  { id: "ringer", label: "Ringer", checked: false, note: "" },
-  { id: "veca", label: "Veca C", checked: false, note: "" },
-  { id: "cofix", label: "Cofix", checked: false, note: "" },
-  { id: "seringue", label: "Seringue", checked: false, note: "" },
-  { id: "lunette", label: "Lunette", checked: false, note: "" },
-  { id: "masque02", label: "Masque O2", checked: false, note: "" },
-  { id: "bouchon", label: "Bouchons", checked: false, note: "" },
-  { id: "aiguille", label: "Aiguille", checked: false, note: "" },
-  { id: "compresse", label: "Compresse", checked: false, note: "" },
-  { id: "embout_in", label: "Embout IN", checked: false, note: "" },
-  { id: "fentanyl", label: "Fentanyl", checked: false, note: "" },
-  { id: "morphine", label: "Morphine", checked: false, note: "" },
-  { id: "aspirine", label: "Aspirine", checked: false, note: "" },
-  { id: "paracetamol", label: "Paracetamol", checked: false, note: "" },
-  { id: "reserve", label: "Réassort / fin de journée", checked: false, note: "" }
+  { category: "💉 VVP", id: "venflon", label: "Venflon", checked: false, note: "" },
+  { category: "💉 VVP", id: "veca", label: "Veca C", checked: false, note: "" },
+  { category: "💉 VVP", id: "cofix", label: "Cofix", checked: false, note: "" },
+  { category: "💉 VVP", id: "tubulure", label: "Tubulure", checked: false, note: "" },
+
+  { category: "💊 Médicaments", id: "fentanyl", label: "Fentanyl", checked: false, note: "" },
+  { category: "💊 Médicaments", id: "morphine", label: "Morphine", checked: false, note: "" },
+  { category: "💊 Médicaments", id: "aspirine", label: "Aspirine", checked: false, note: "" },
+  { category: "💊 Médicaments", id: "paracetamol", label: "Paracétamol", checked: false, note: "" },
+
+  { category: "🩹 Petit matériel", id: "compresse", label: "Compresse", checked: false, note: "" },
+  { category: "🩹 Petit matériel", id: "lunette", label: "Lunette O₂", checked: false, note: "" },
+  { category: "🩹 Petit matériel", id: "masque02", label: "Masque O₂", checked: false, note: "" },
+  { category: "🩹 Petit matériel", id: "aiguille", label: "Aiguille", checked: false, note: "" },
+  { category: "🩹 Petit matériel", id: "bouchon", label: "Bouchons", checked: false, note: "" },
+
+  { category: "📦 Divers", id: "reserve", label: "Réassort / fin de journée", checked: false, note: "" }
 ];
 
 
@@ -872,25 +872,7 @@ function renderDetail() {
     notes.placeholder = item.notesPlaceholder || "Ajoute ici tes notes…";
     notes.oninput = (e) => writeStorage(storeKey, e.target.value);
   }
-const DEFAULT_MATERIAL = [
-  { category: "💉 VVP", id: "venflon", label: "Venflon", checked: false, note: "" },
-  { category: "💉 VVP", id: "veca", label: "Veca C", checked: false, note: "" },
-  { category: "💉 VVP", id: "cofix", label: "Cofix", checked: false, note: "" },
-  { category: "💉 VVP", id: "tubulure", label: "Tubulure", checked: false, note: "" },
 
-  { category: "💊 Médicaments", id: "fentanyl", label: "Fentanyl", checked: false, note: "" },
-  { category: "💊 Médicaments", id: "morphine", label: "Morphine", checked: false, note: "" },
-  { category: "💊 Médicaments", id: "aspirine", label: "Aspirine", checked: false, note: "" },
-  { category: "💊 Médicaments", id: "paracetamol", label: "Paracétamol", checked: false, note: "" },
-
-  { category: "🩹 Petit matériel", id: "compresse", label: "Compresse", checked: false, note: "" },
-  { category: "🩹 Petit matériel", id: "lunette", label: "Lunette O₂", checked: false, note: "" },
-  { category: "🩹 Petit matériel", id: "masque02", label: "Masque O₂", checked: false, note: "" },
-  { category: "🩹 Petit matériel", id: "aiguille", label: "Aiguille", checked: false, note: "" },
-  { category: "🩹 Petit matériel", id: "bouchon", label: "Bouchons", checked: false, note: "" },
-
-  { category: "📦 Divers", id: "reserve", label: "Réassort / fin de journée", checked: false, note: "" }
-];
   const isFav = isFavorite(state.detailSource, item);
   if (favBtn) {
     favBtn.textContent = isFav ? "⭐" : "☆";
