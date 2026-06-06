@@ -917,8 +917,17 @@ function renderMaterials() {
                 ${item.checked ? "checked" : ""}
               />
 
-              <div style="flex:1;">
-                <div class="material-name">${item.label}</div>
+             <div style="flex:1;">
+  <div class="material-name">${item.label}</div>
+
+  <input
+    class="input"
+    type="text"
+    data-note-index="${item.index}"
+    value="${item.note || ""}"
+    placeholder="Quantité, taille…"
+  />
+</div>
               </div>
             </div>
 
