@@ -313,6 +313,13 @@ code {
   border-color: var(--primary);
   background: white;
 }
+.material-note {
+  width: 100%;
+  min-height: 70px;
+  resize: vertical;
+  white-space: pre-wrap;
+  box-sizing: border-box;
+}
 
 .textarea {
   min-height: 180px;
