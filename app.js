@@ -896,7 +896,11 @@ function renderMaterials() {
 
   const materials = readStorage("materials-list", DEFAULT_MATERIAL);
   const freeText = localStorage.getItem("materials-free-text") || "";
-
+// ✅ mémorise les catégories ouvertes AVANT de reconstruire
+const openedCategories = new Set(
+  [...document.querySelectorAll(".material-category[open]")]
+    .map(el => el.querySelector("summary")?.textContent)
+);
   const categories = {};
 
   materials.forEach((item, index) => {
@@ -917,7 +921,7 @@ function renderMaterials() {
   materialsList.innerHTML =
     Object.entries(categories)
       .map(([category, data]) => `
-        <details class="material-category">
+        <details class="material-category" ${openedCategories.has(category) ? "open" : ""}>
           <summary>${category}${data.checkedCount > 0 ? ` (${data.checkedCount})` : ""}</summary>
 
           ${data.items.map(item => `
