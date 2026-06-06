@@ -970,7 +970,7 @@ function renderMaterials() {
       next[idx].checked = e.target.checked;
       writeStorage("materials-list", next);
 
-      // Re-render pour mettre à jour le compteur dans le titre de la catégorie
+      // Pour mettre à jour le compteur de la catégorie
       renderMaterials();
     });
   });
@@ -1004,6 +1004,7 @@ function escapeHtml(value) {
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;");
 }
+
 
 function updateHeaderAndNav(screen) {
   const topbar = document.getElementById("topbar");
