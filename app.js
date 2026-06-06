@@ -605,6 +605,7 @@ const DEFAULT_MATERIAL = [
   { category: "🩹 Petit matériel", id: "embout_in", label: "Embout IN", checked: false, note: "" },
 
   { category: "📦 Divers", id: "reserve", label: "Réassort / fin de journée", checked: false, note: "" },
+  { category: "📦 Divers", id: "eau", label: "Bouteille d'eau", checked: false, note: "" },
   { category: "📦 Divers", id: "sharpsafe", label: "Sharp Safe", checked: false, note: "" }
 ];
 
