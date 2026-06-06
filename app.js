@@ -591,15 +591,17 @@ const DEFAULT_MATERIAL = [
   { category: "💊 Médicaments", id: "morphine", label: "Morphine", checked: false, note: "" },
   { category: "💊 Médicaments", id: "aspirine", label: "Aspirine", checked: false, note: "" },
   { category: "💊 Médicaments", id: "paracetamol", label: "Paracétamol", checked: false, note: "" },
+  { category: "💊 Médicaments", id: "txa", label: "TXA", checked: false, note: "" },
 
   { category: "🫁 Oxygène", id: "lunette", label: "Lunette O₂", checked: false, note: ""  },
   { category: "🫁 Oxygène", id: "masque02", label: "Masque O₂", checked: false, note: ""  },
-  { category: "🫁 Oxygène", id: "embout_in", label: "Embout IN", checked: false, note: ""  },
+  { category: "🫁 Oxygène", id: "nebu", label: "Nébulisation", checked: false, note: ""  },
 
   { category: "🩹 Petit matériel", id: "compresse", label: "Compresse", checked: false, note: "" },
   { category: "🩹 Petit matériel", id: "aiguille", label: "Aiguille", checked: false, note: "" },
   { category: "🩹 Petit matériel", id: "bouchon", label: "Bouchons", checked: false, note: "" },
   { category: "🩹 Petit matériel", id: "seringue", label: "Seringue", checked: false, note: "" },
+  { category: "🩹 Petit matériel", id: "embout_in", label: "Embout IN", checked: false, note: "" },
 
   { category: "📦 Divers", id: "reserve", label: "Réassort / fin de journée", checked: false, note: "" }
 ];
