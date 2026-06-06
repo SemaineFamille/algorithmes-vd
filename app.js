@@ -585,6 +585,7 @@ const DEFAULT_MATERIAL = [
   { category: "💉 VVP", id: "veca", label: "Veca C", checked: false, note: "" },
   { category: "💉 VVP", id: "cofix", label: "Cofix", checked: false, note: "" },
   { category: "💉 VVP", id: "tubulure", label: "Tubulure", checked: false, note: "" },
+  { category: "💉 VVP", id: "tampon_oh", label: "Tampon OH", checked: false, note: "" },
 
   { category: "💊 Médicaments", id: "fentanyl", label: "Fentanyl", checked: false, note: "" },
   { category: "💊 Médicaments", id: "morphine", label: "Morphine", checked: false, note: "" },
@@ -598,6 +599,7 @@ const DEFAULT_MATERIAL = [
   { category: "🩹 Petit matériel", id: "compresse", label: "Compresse", checked: false, note: "" },
   { category: "🩹 Petit matériel", id: "aiguille", label: "Aiguille", checked: false, note: "" },
   { category: "🩹 Petit matériel", id: "bouchon", label: "Bouchons", checked: false, note: "" },
+  { category: "🩹 Petit matériel", id: "seringue", label: "Seringue", checked: false, note: "" },
 
   { category: "📦 Divers", id: "reserve", label: "Réassort / fin de journée", checked: false, note: "" }
 ];
