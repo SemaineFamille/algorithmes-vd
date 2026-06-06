@@ -950,7 +950,7 @@ const openedCategories = new Set(
                     type="text"
                     data-note-index="${item.index}"
                     value="${escapeHtml(item.note || "")}"
-                    placeholder="Quantité, taille…"
+                    placeholder="Quantité, taille, numéro de lot…"
                   />
                 </div>
               </div>
