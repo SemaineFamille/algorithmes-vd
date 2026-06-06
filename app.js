@@ -889,7 +889,12 @@ function renderMaterials() {
         <input type="checkbox" data-check-index="${index}" ${item.checked ? "checked" : ""} />
         <div style="flex:1;">
           <div class="material-name">${item.label}</div>
-          <input class="input" type="text" data-note-index="${index}" value="${escapeHtml(item.note || "")}" placeholder="Note rapide…" />
+         <textarea
+  class="input material-note"
+  data-note-index="${index}"
+  placeholder="Note rapide…"
+  rows="3"
+>${escapeHtml(item.note || "")}</textarea>
         </div>
       </div>
     </div>
