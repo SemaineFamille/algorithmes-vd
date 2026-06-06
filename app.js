@@ -585,6 +585,7 @@ const DEFAULT_MATERIAL = [
   { category: "💉 VVP", id: "veca", label: "Veca C", checked: false, note: "" },
   { category: "💉 VVP", id: "cofix", label: "Cofix", checked: false, note: "" },
   { category: "💉 VVP", id: "tubulure", label: "Tubulure", checked: false, note: "" },
+  { category: "💉 VVP", id: "ringer", label: "Ringer", checked: false, note: "" },
   { category: "💉 VVP", id: "tampon_oh", label: "Tampon OH", checked: false, note: "" },
 
   { category: "💊 Médicaments", id: "fentanyl", label: "Fentanyl", checked: false, note: "" },
