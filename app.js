@@ -1075,10 +1075,15 @@ function setupEvents() {
     showScreen(state.previousScreen || "home");
   });
 
-  document.getElementById("resetMaterials")?.addEventListener("click", () => {
-    writeStorage("materials-list", DEFAULT_MATERIAL);
-    renderMaterials();
-  });
+document.getElementById("resetMaterials")?.addEventListener("click", () => {
+  // Reset du matériel
+  writeStorage("materials-list", DEFAULT_MATERIAL);
+
+  // ✅ Reset des notes libres
+  localStorage.removeItem("materials-free-text");
+
+  renderMaterials();
+});
 
   document.getElementById("syncMaterials")?.addEventListener("click", () => {
     alert("Synchronisation à brancher plus tard.");
