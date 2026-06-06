@@ -951,14 +951,14 @@ function renderMaterials() {
     </div>
   `;
 
-  materialsList.querySelectorAll("[data-check-index]").forEach((el) => {
-    el.addEventListener("change", (e) => {
-      const idx = Number(e.target.dataset.checkIndex);
-      const next = readStorage("materials-list", DEFAULT_MATERIAL);
-      next[idx].checked = e.target.checked;
-      writeStorage("materials-list", next);
-    });
+ materialsList.querySelectorAll("[data-note-index]").forEach((el) => {
+  el.addEventListener("input", (e) => {
+    const idx = Number(e.target.dataset.noteIndex);
+    const next = readStorage("materials-list", DEFAULT_MATERIAL);
+    next[idx].note = e.target.value;
+    writeStorage("materials-list", next);
   });
+});
 
   document
     .getElementById("materialsFreeText")
