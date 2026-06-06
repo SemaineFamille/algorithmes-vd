@@ -889,6 +889,7 @@ function renderDetail() {
   }
 }
 
+
 function renderMaterials() {
   const materialsList = document.getElementById("materialsList");
   if (!materialsList) return;
@@ -958,6 +959,7 @@ function renderMaterials() {
         >${escapeHtml(freeText)}</textarea>
       </div>
     `;
+
 
   // Sauvegarde des checkbox
   materialsList.querySelectorAll("[data-check-index]").forEach((el) => {
