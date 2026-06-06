@@ -899,13 +899,20 @@ function renderMaterials() {
 
   const categories = {};
 
-  materials.forEach((item, index) => {
-    if (!categories[item.category]) {
-      categories[item.category] = [];
-    }
+materials.forEach((item, index) => {
+  if (!categories[item.category]) {
+    categories[item.category] = {
+      items: [],
+      checkedCount: 0
+    };
+  }
 
-    categories[item.category].push({ ...item, index });
-  });
+  categories[item.category].items.push({ ...item, index });
+
+  if (item.checked) {
+    categories[item.category].checkedCount++;
+  }
+});
 
   materialsList.innerHTML = Object.entries(categories)
     .map(([category, items]) => `
