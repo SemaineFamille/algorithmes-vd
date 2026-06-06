@@ -1,5 +1,3 @@
-localStorage.removeItem("materials-list");
-
 const CHAPTER_STYLES = {
   // 🔴 GYNÉCO / OBSTÉTRIQUE
   "Obstétrique/Gynécologie🤰": {
@@ -896,91 +894,111 @@ function renderMaterials() {
   if (!materialsList) return;
 
   const materials = readStorage("materials-list", DEFAULT_MATERIAL);
+  const freeText = localStorage.getItem("materials-free-text") || "";
 
   const categories = {};
 
-materials.forEach((item, index) => {
-  if (!categories[item.category]) {
-    categories[item.category] = {
-      items: [],
-      checkedCount: 0
-    };
-  }
+  materials.forEach((item, index) => {
+    if (!categories[item.category]) {
+      categories[item.category] = {
+        items: [],
+        checkedCount: 0
+      };
+    }
 
-  categories[item.category].items.push({ ...item, index });
+    categories[item.category].items.push({ ...item, index });
 
-  if (item.checked) {
-    categories[item.category].checkedCount++;
-  }
-});
+    if (item.checked) {
+      categories[item.category].checkedCount++;
+    }
+  });
 
-  materialsList.innerHTML = Object.entries(categories)
-    .map(([category, items]) => `
-      <details class="material-category">
-        <summary>${category}</summary>
+  materialsList.innerHTML =
+    Object.entries(categories)
+      .map(([category, data]) => `
+        <details class="material-category">
+          <summary>${category}${data.checkedCount > 0 ? ` (${data.checkedCount})` : ""}</summary>
 
-        ${items.map(item => `
-          <div class="material-item">
+          ${data.items.map(item => `
+            <div class="material-item">
+              <div class="material-row">
+                <input
+                  type="checkbox"
+                  data-check-index="${item.index}"
+                  ${item.checked ? "checked" : ""}
+                />
 
-            <div class="material-row">
-              <input
-                type="checkbox"
-                data-check-index="${item.index}"
-                ${item.checked ? "checked" : ""}
-              />
+                <div style="flex:1;">
+                  <div class="material-name">${escapeHtml(item.label)}</div>
 
-             <div style="flex:1;">
-  <div class="material-name">${item.label}</div>
-
-  <input
-    class="input"
-    type="text"
-    data-note-index="${item.index}"
-    value="${item.note || ""}"
-    placeholder="Quantité, taille…"
-  />
-</div>
+                  <input
+                    class="input"
+                    type="text"
+                    data-note-index="${item.index}"
+                    value="${escapeHtml(item.note || "")}"
+                    placeholder="Quantité, taille…"
+                  />
+                </div>
               </div>
             </div>
+          `).join("")}
+        </details>
+      `)
+      .join("")
+    +
+    `
+      <div class="card" style="margin-top:15px;">
+        <div class="material-name">📝 Notes libres</div>
 
-          </div>
-        `).join("")}
+        <textarea
+          id="materialsFreeText"
+          class="input"
+          rows="6"
+          placeholder="Ajouter ici le matériel non listé..."
+        >${escapeHtml(freeText)}</textarea>
+      </div>
+    `;
 
-      </details>
-    `)
-    .join("");
+  // Sauvegarde des checkbox
+  materialsList.querySelectorAll("[data-check-index]").forEach((el) => {
+    el.addEventListener("change", (e) => {
+      const idx = Number(e.target.dataset.checkIndex);
+      const next = readStorage("materials-list", DEFAULT_MATERIAL);
 
-  materialsList.innerHTML += `
-    <div class="card" style="margin-top:15px;">
-      <div class="material-name">📝 Notes libres</div>
+      if (!next[idx]) return;
 
-      <textarea
-        id="materialsFreeText"
-        class="input"
-        rows="6"
-        placeholder="Ajouter ici le matériel non listé..."
-      >${localStorage.getItem("materials-free-text") || ""}</textarea>
-    </div>
-  `;
+      next[idx].checked = e.target.checked;
+      writeStorage("materials-list", next);
 
- materialsList.querySelectorAll("[data-note-index]").forEach((el) => {
-  el.addEventListener("input", (e) => {
-    const idx = Number(e.target.dataset.noteIndex);
-    const next = readStorage("materials-list", DEFAULT_MATERIAL);
-    next[idx].note = e.target.value;
-    writeStorage("materials-list", next);
+      // Re-render pour mettre à jour le compteur dans le titre de la catégorie
+      renderMaterials();
+    });
   });
-});
 
-  document
-    .getElementById("materialsFreeText")
-    ?.addEventListener("input", (e) => {
+  // Sauvegarde des notes par matériel
+  materialsList.querySelectorAll("[data-note-index]").forEach((el) => {
+    el.addEventListener("input", (e) => {
+      const idx = Number(e.target.dataset.noteIndex);
+      const next = readStorage("materials-list", DEFAULT_MATERIAL);
+
+      if (!next[idx]) return;
+
+      next[idx].note = e.target.value;
+      writeStorage("materials-list", next);
+    });
+  });
+
+  // Sauvegarde de la note libre
+  const freeTextEl = document.getElementById("materialsFreeText");
+  if (freeTextEl) {
+    freeTextEl.addEventListener("input", (e) => {
       localStorage.setItem("materials-free-text", e.target.value);
     });
+  }
 }
 
 function escapeHtml(value) {
-  return String(value)
+  return String(value ?? "")
     .replaceAll("&", "&amp;")
     .replaceAll('"', "&quot;")
     .replaceAll("<", "&lt;")
