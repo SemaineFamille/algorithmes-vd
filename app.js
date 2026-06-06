@@ -1,3 +1,5 @@
+localStorage.removeItem("materials-list");
+
 const CHAPTER_STYLES = {
   // 🔴 GYNÉCO / OBSTÉTRIQUE
   "Obstétrique/Gynécologie🤰": {
