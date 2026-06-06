@@ -583,9 +583,13 @@ const DEFAULT_MATERIAL = [
   { id: "tubulure", label: "Tubulure", checked: false, note: "" },
   { id: "ringer", label: "Ringer", checked: false, note: "" },
   { id: "cofix", label: "Cofix", checked: false, note: "" },
-  { id: "gants", label: "Gants", checked: false, note: "" },
+  { id: "seringue", label: "Seringue", checked: false, note: "" },
   { id: "lunette", label: "Lunette", checked: false, note: "" },
   { id: "masque02", label: "Masque O2", checked: false, note: "" },
+  { id: "bouchon", label: "Bouchons", checked: false, note: "" },
+  { id: "aiguille", label: "Aiguille", checked: false, note: "" },
+  { id: "fentanyl", label: "Fentanyl", checked: false, note: "" },
+  { id: "morphine", label: "Morphine", checked: false, note: "" },
   { id: "reserve", label: "Réassort / fin de journée", checked: false, note: "" }
 ];
 
