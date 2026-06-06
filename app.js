@@ -590,7 +590,9 @@ const DEFAULT_MATERIAL = [
   { category: "💊 Médicaments", id: "morphine", label: "Morphine", checked: false, note: "" },
   { category: "💊 Médicaments", id: "aspirine", label: "Aspirine", checked: false, note: "" },
   { category: "💊 Médicaments", id: "paracetamol", label: "Paracétamol", checked: false, note: "" },
+  { category: "💊 Médicaments", id: "adre", label: "Adrénaline", checked: false, note: "" },
   { category: "💊 Médicaments", id: "txa", label: "TXA", checked: false, note: "" },
+  { category: "💊 Médicaments", id: "ondansetron", label: "Ondansetron", checked: false, note: "" },
 
   { category: "🫁 Oxygène", id: "lunette", label: "Lunette O₂", checked: false, note: ""  },
   { category: "🫁 Oxygène", id: "masque02", label: "Masque O₂", checked: false, note: ""  },
@@ -602,7 +604,8 @@ const DEFAULT_MATERIAL = [
   { category: "🩹 Petit matériel", id: "seringue", label: "Seringue", checked: false, note: "" },
   { category: "🩹 Petit matériel", id: "embout_in", label: "Embout IN", checked: false, note: "" },
 
-  { category: "📦 Divers", id: "reserve", label: "Réassort / fin de journée", checked: false, note: "" }
+  { category: "📦 Divers", id: "reserve", label: "Réassort / fin de journée", checked: false, note: "" },
+  { category: "📦 Divers", id: "sharpsafe", label: "Sharp Safe", checked: false, note: "" }
 ];
 
 
