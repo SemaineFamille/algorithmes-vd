@@ -360,7 +360,27 @@ code {
   padding: 14px;
   box-shadow: var(--shadow);
 }
+.material-category {
+  margin-bottom: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+}
 
+.material-category summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 12px;
+  background: var(--card-bg);
+  border-radius: 12px;
+}
+
+.material-category[open] summary {
+  margin-bottom: 8px;
+}
+
+.material-category .material-item {
+  padding-left: 10px;
+}
 .material-row {
   display: flex;
   align-items: flex-start;
