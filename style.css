@@ -64,6 +64,24 @@ code {
   color: var(--star);
 }
 
+.btn-autre {
+  background: #f3e8ff;
+  color: #6b21a8;
+  border: 1px solid #d8b4fe;
+}
+
+.nav-btn-autre {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+.nav-btn-autre.active {
+  background: #9333ea;
+  color: white;
+}
+
+
+
 /* CONTENU */
 .content {
   padding: 16px;
