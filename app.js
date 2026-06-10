@@ -125,6 +125,15 @@ const VD_ALGOS = [
    { id: "antalgie_tcs_ped", ordre: 3, titre: "Antalgie TCS Ped 👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "toxidrome", ordre: 30, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", image: "images/Toxidrome.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"}
 ];
+
+const Autre = [
+ 
+  { id: "antalgie_sat", ordre: 1, titre: "Antalgie SAT", chapitre: "💉Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+  { id: "labo", ordre: 2, titre: "Valeur Laboratoire 🧪", chapitre: "Autre", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+  { id: "molecules", ordre: 3, titre: "💊 Molécules Antalgie", chapitre: "💉Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+  { id: "toxidrome", ordre: 4, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", image: "images/Toxidrome.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"}
+];
+
 const STAR_ALGOS = [
   // Maladie
   {
@@ -643,6 +652,7 @@ function getListBySource(source) {
 function getAllAlgos() {
   return [
     ...VD_ALGOS.map(item => ({ ...item, sourceType: "vd" })),
+    ...AUTRE.map(item => ({ ...item, sourceType: "AUTRE" })),
     ...STAR_ALGOS.map(item => ({ ...item, sourceType: "star" }))
   ];
 }
@@ -692,6 +702,7 @@ function toggleFavorite(source, id) {
   // Rafraîchir les listes
   if (state.screen === "vd") renderList("vd", "vdList");
   if (state.screen === "star") renderList("star", "starList");
+  if (state.screen === "autre") renderList("autre", "autreList");
   if (state.screen === "detail") renderDetail();
 }
 
@@ -737,6 +748,7 @@ function renderHomeFavorites() {
 
   const all = [
     ...VD_ALGOS.map((item) => ({ item, source: "vd" })),
+     ...AUTRE.map((item) => ({ item, source: "autre" })),
     ...STAR_ALGOS.map((item) => ({ item, source: "star" }))
   ];
 
@@ -1059,6 +1071,7 @@ function showScreen(screen) {
 
   if (screen === "vd") renderList("vd", "vdList");
   if (screen === "star") renderList("star", "starList");
+   if (screen === "autre") renderList("autre", "autreList");
   if (screen === "detail") renderDetail();
   if (screen === "materials") renderMaterials();
 }
