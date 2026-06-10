@@ -26,7 +26,7 @@
           <div class="actions-grid">
             <button class="btn btn-primary" data-screen="vd">Algo VD</button>
             <button class="btn btn-star" data-screen="star">STAR</button>
-            <button class="btn btn-secondary" data-screen="calculator">Calcul</button>
+            <button class="btn btn-autre" data-screen="autre">Autre</button>
             <button class="btn btn-secondary" data-screen="materials">Matériel</button>
           </div>
         </div>
@@ -61,6 +61,11 @@
         <div id="starList" class="list"></div>
       </section>
 
+        <!-- LISTE Autre -->
+      <section id="screen-autre" class="screen">
+        <div id="autreList" class="list"></div>
+      </section>
+
       <!-- DETAIL COMMUN -->
       <section id="screen-detail" class="screen">
         <div class="detail-toolbar">
@@ -88,16 +93,6 @@
         </div>
       </section>
 
-      <!-- CALCUL -->
-      <section id="screen-calculator" class="screen">
-        <div class="card">
-          <h2 class="section-title">Calcul</h2>
-          <input class="input" type="text" placeholder="Contexte / type de calcul" />
-          <input class="input" type="text" placeholder="Poids / variable 1" />
-          <input class="input" type="text" placeholder="Âge / variable 2" />
-          <button class="btn btn-primary full-width" type="button">Lancer</button>
-        </div>
-      </section>
 
       <!-- MATERIEL -->
       <section id="screen-materials" class="screen">
@@ -116,6 +111,7 @@
       <button class="nav-btn active" data-screen="home">Accueil</button>
       <button class="nav-btn" data-screen="vd">Algo VD</button>
       <button class="nav-btn nav-btn-star" data-screen="star">STAR</button>
+      <button class="nav-btn nav-btn-autre" data-screen="star">Autre</button>
       <button class="nav-btn" data-screen="materials">Matériel</button>
     </nav>
   </div>
