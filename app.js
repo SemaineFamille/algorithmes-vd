@@ -596,6 +596,7 @@ const DEFAULT_MATERIAL = [
   { category: "💊 Médicaments", id: "adre", label: "Adrénaline", checked: false, note: "" },
   { category: "💊 Médicaments", id: "txa", label: "TXA", checked: false, note: "" },
   { category: "💊 Médicaments", id: "ondansetron", label: "Ondansetron", checked: false, note: "" },
+  { category: "💊 Médicaments", id: "ketamine", label: "Kétamine", checked: false, note: "" },
 
   { category: "🫁 Oxygène", id: "lunette", label: "Lunette O₂", checked: false, note: ""  },
   { category: "🫁 Oxygène", id: "masque02", label: "Masque O₂", checked: false, note: ""  },
