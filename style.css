@@ -98,10 +98,12 @@ body.theme-vd .topbar {
   color: white;
 }
 
+
 body.theme-star .topbar {
-  background: #eab308;
-  color: #422006;
+  background: #facc15; /* jaune plus clair */
+  color: #1f2937; /* texte gris foncé lisible */
 }
+
 
 body.theme-autre .topbar {
   background: #9333ea;
@@ -133,7 +135,7 @@ body.theme-vd .nav-btn.active {
 }
 
 body.theme-star .nav-btn.active {
-  background: #eab308;
+  background: #facc15;
   color: #422006;
 }
 
