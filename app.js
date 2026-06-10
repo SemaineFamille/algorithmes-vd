@@ -128,10 +128,11 @@ const VD_ALGOS = [
 
 const Autre = [
  
-  { id: "antalgie_sat", ordre: 1, titre: "Antalgie SAT", chapitre: "💉Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+  
   { id: "labo", ordre: 2, titre: "Valeur Laboratoire 🧪", chapitre: "Autre", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
   { id: "molecules", ordre: 3, titre: "💊 Molécules Antalgie", chapitre: "💉Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "toxidrome", ordre: 4, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", image: "images/Toxidrome.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"}
+  { id: "toxidrome", ordre: 4, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", image: "images/Toxidrome.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"},
+  { id: "glasgow", ordre: 5, titre: "Glasgow 😵‍💫", chapitre: "Neuro🧠", source: "Autre", image: "images/GCS.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"}
 ];
 
 const STAR_ALGOS = [
