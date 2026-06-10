@@ -1125,6 +1125,7 @@ function updateHeaderAndNav(screen) {
 
 function showScreen(screen) {
   state.screen = screen;
+  applyTheme(screen);
   updateHeaderAndNav(screen);
 
   if (screen === "home") {
