@@ -119,18 +119,16 @@ const VD_ALGOS = [
   { id: "io", ordre: 24, titre: "🦴 Voie intra-osseuse", chapitre: "Technique", source: "VD", image: "images/io.png", favori: false, notesPlaceholder: "Ex. indications, contre-indications, surveillance…" },
   { id: "avc_annexe", ordre: 23, titre: "😵 AVC Annexe", chapitre: "Neuro🧠", source: "VD", image: "images/avc_annexe.png", favori: false, notesPlaceholder: "Ex. Rankin, checklist filière…" },
   { id: "antalgie_sat", ordre: 5, titre: "Antalgie SAT", chapitre: "💉Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "labo", ordre: 26, titre: "Valeur Laboratoire 🧪", chapitre: "Autre", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "molecules", ordre: 4, titre: "💊 Molécules Antalgie", chapitre: "💉Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
    { id: "antalgie_tcs", ordre: 2, titre: "Antalgie TCS", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
-   { id: "antalgie_tcs_ped", ordre: 3, titre: "Antalgie TCS Ped 👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  { id: "toxidrome", ordre: 30, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", image: "images/Toxidrome.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"}
+   { id: "antalgie_tcs_ped", ordre: 3, titre: "Antalgie TCS Ped 👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" }
+ 
 ];
 
-const Autre = [
+const AUTRE = [
  
   
   { id: "labo", ordre: 2, titre: "Valeur Laboratoire 🧪", chapitre: "Autre", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "molecules", ordre: 3, titre: "💊 Molécules Antalgie", chapitre: "💉Antalgie", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+  { id: "molecules", ordre: 3, titre: "💊 Molécules Antalgie", chapitre: "Autre", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
   { id: "toxidrome", ordre: 4, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", image: "images/Toxidrome.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"},
   { id: "glasgow", ordre: 5, titre: "Glasgow 😵‍💫", chapitre: "Neuro🧠", source: "Autre", image: "images/GCS.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"}
 ];
@@ -646,14 +644,25 @@ function chapterStyle(chapter) {
   return CHAPTER_STYLES[clean] || CHAPTER_STYLES["Interne"];
 }
 
+
 function getListBySource(source) {
-  return source === "star" ? STAR_ALGOS : VD_ALGOS;
+  switch (source) {
+    case "vd":
+      return VD_ALGOS;
+    case "star":
+      return STAR_ALGOS;
+    case "autre":
+      return AUTRE;
+    default:
+      return [];
+  }
 }
+
 
 function getAllAlgos() {
   return [
     ...VD_ALGOS.map(item => ({ ...item, sourceType: "vd" })),
-    ...AUTRE.map(item => ({ ...item, sourceType: "AUTRE" })),
+    ...AUTRE.map(item => ({ ...item, sourceType: "autre" })),
     ...STAR_ALGOS.map(item => ({ ...item, sourceType: "star" }))
   ];
 }
