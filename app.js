@@ -1053,14 +1053,52 @@ function updateHeaderAndNav(screen) {
   document.querySelectorAll(".nav-btn").forEach((el) => el.classList.remove("active"));
   document.querySelector(`.nav-btn[data-screen="${screen}"]`)?.classList.add("active");
 
+  // 🎯 Gestion des titres
+  let pageTitle = "Algorithmes";
+
+  switch (screen) {
+    case "home":
+      pageTitle = "Algorithmes";
+      break;
+
+    case "vd":
+      pageTitle = "Algo VD";
+      break;
+
+    case "star":
+      pageTitle = "Carnet de poche";
+      break;
+
+    case "autre":
+      pageTitle = "Autre";
+      break;
+
+    case "materials":
+      pageTitle = "Matériel";
+      break;
+
+    case "detail":
+      // Cas spécial détail
+      if (state.detailSource === "star") {
+        pageTitle = "Carnet de poche";
+      } else if (state.detailSource === "vd") {
+        pageTitle = "Algo VD";
+      } else if (state.detailSource === "autre") {
+        pageTitle = "Autre";
+      }
+      break;
+  }
+
+  if (title) title.textContent = pageTitle;
+
+  // 🎨 Mode STAR (couleur spéciale)
   if (screen === "star" || (screen === "detail" && state.detailSource === "star")) {
     topbar?.classList.add("star-mode");
-    if (title) title.textContent = "Carnet de poche";
   } else {
     topbar?.classList.remove("star-mode");
-    if (title) title.textContent = "Algorithmes";
   }
 }
+
 
 function showScreen(screen) {
   state.screen = screen;
