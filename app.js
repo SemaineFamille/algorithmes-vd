@@ -637,7 +637,30 @@ function readStorage(key, fallback) {
 function writeStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
+function applyTheme(screen) {
+  document.body.classList.remove(
+    "theme-vd",
+    "theme-star",
+    "theme-autre",
+    "theme-materials"
+  );
 
+  if (screen === "vd" || (screen === "detail" && state.detailSource === "vd")) {
+    document.body.classList.add("theme-vd");
+  }
+
+  if (screen === "star" || (screen === "detail" && state.detailSource === "star")) {
+    document.body.classList.add("theme-star");
+  }
+
+  if (screen === "autre" || (screen === "detail" && state.detailSource === "autre")) {
+    document.body.classList.add("theme-autre");
+  }
+
+  if (screen === "materials") {
+    document.body.classList.add("theme-materials");
+  }
+}
 
 function chapterStyle(chapter) {
   const clean = String(chapter).trim();
