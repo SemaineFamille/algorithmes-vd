@@ -1291,7 +1291,7 @@ const chocDose1 = poids * 2;
     </div>
 
    <div class="med-result med-choc">
-  🟧 Choc 2 J/kg puis 4 J/kg<br>
+  ⚡ Choc 2 J/kg puis 4 J/kg<br>
   1er choc : ${chocDose1.toFixed(0)} J<br>
   2ème choc : ${chocDose2.toFixed(0)} J
 </div>
