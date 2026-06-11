@@ -925,6 +925,9 @@ function renderDetail() {
   const list = getListBySource(state.detailSource);
   const item = list.find((x) => x.id === state.selectedId) || list[0];
   if (!item) return;
+ if (special) {
+  special.innerHTML = "";
+}
   if (item.id === "calcul_pedia") {
 
   const card = document.getElementById("detailCard");
@@ -960,6 +963,7 @@ function renderDetail() {
   const wrap = document.getElementById("detailImageWrap");
   const notes = document.getElementById("detailNotes");
   const favBtn = document.getElementById("detailFavoriteBtn");
+  const special = document.getElementById("specialContent");
 
   if (title) title.textContent = item.titre;
 
@@ -978,7 +982,34 @@ function renderDetail() {
     img.onerror = () => wrap.classList.remove("has-image");
     img.src = item.image;
   }
+if (item.id === "calcul_pedia") {
 
+  document.getElementById("detailImageWrap").style.display = "none";
+  document.getElementById("detailNotes").style.display = "none";
+
+  special.innerHTML = `
+    <input
+      type="number"
+      id="poidsPedia"
+      class="input"
+      placeholder="Poids en kg"
+      step="0.1"
+      min="0"
+    >
+
+    <div id="resultatsPedia"></div>
+  `;
+
+  document
+    .getElementById("poidsPedia")
+    .addEventListener("input", calculPedia);
+
+} else {
+
+  document.getElementById("detailImageWrap").style.display = "";
+  document.getElementById("detailNotes").style.display = "";
+
+}
   if (notes) {
     const storeKey = `notes:${state.detailSource}:${item.id}`;
     notes.value = readStorage(storeKey, "");
