@@ -716,6 +716,35 @@ function toggleFavorite(source, id) {
   const favs = getFavMap();
   const list = getListBySource(source);
   const item = list.find((x) => x.id === id);
+  if (item.id === "calcul_pedia") {
+
+  document.getElementById("detailTitle").textContent =
+    "💉 Calcul rapide pédiatrique";
+
+  document.getElementById("detailBadge").textContent =
+    "Pédiatrie";
+
+  document.getElementById("detailCard").innerHTML = `
+    <h2>💉 Calcul rapide pédiatrique</h2>
+
+    <input
+      type="number"
+      id="poidsPedia"
+      class="input"
+      placeholder="Poids en kg"
+      step="0.1"
+      min="0"
+    >
+
+    <div id="resultatsPedia"></div>
+  `;
+
+  document
+    .getElementById("poidsPedia")
+    .addEventListener("input", calculPedia);
+
+  return;
+}
   const key = favKey(source, id);
   const current = Object.prototype.hasOwnProperty.call(favs, key)
     ? favs[key]
