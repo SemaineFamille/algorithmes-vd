@@ -1189,7 +1189,94 @@ function init() {
   if (!localStorage.getItem("materials-list")) {
     writeStorage("materials-list", DEFAULT_MATERIAL);
   }
+function calculPedia() {
 
+  const poids = parseFloat(
+    document.getElementById("poidsPedia").value
+  );
+
+  const resultats = document.getElementById("resultatsPedia");
+
+  if (!poids || poids <= 0) {
+    resultats.innerHTML = "";
+    return;
+  }
+
+  const amioDose = poids * 5;
+  const amioMax = poids * 15;
+  const amioVol = amioDose / 50;
+
+  const adreDose = poids * 0.01;
+  const adreVol = adreDose;
+
+  const glucoseDose = poids * 0.4;
+  const glucoseVol = glucoseDose / 0.2;
+
+  const txaDose = poids * 15;
+  const txaVol = txaDose / 100;
+
+  const liquidesVol = poids * 20;
+
+  const rivotrilDose = Math.min(
+    poids * 0.01,
+    0.5
+  );
+
+  const rivotrilVol = rivotrilDose;
+
+  resultats.innerHTML = `
+
+    <div class="med-result med-amio">
+      🟦 Amiodarone<br>
+      Dose : ${amioDose.toFixed(1)} mg<br>
+      Volume : ${amioVol.toFixed(2)} ml<br>
+      Dose max : ${amioMax.toFixed(1)} mg
+    </div>
+
+    <div class="med-result med-adre">
+      🟥 Adrénaline<br>
+      Dose : ${adreDose.toFixed(2)} mg<br>
+      Volume : ${adreVol.toFixed(2)} ml
+    </div>
+
+    <div class="med-result med-glucose">
+      🟨 Glucose G20%<br>
+      Dose : ${glucoseDose.toFixed(1)} g<br>
+      Volume : ${glucoseVol.toFixed(0)} ml
+    </div>
+
+    <div class="med-result med-txa">
+      🟩 TXA<br>
+      Dose : ${txaDose.toFixed(0)} mg<br>
+      Volume : ${txaVol.toFixed(2)} ml
+    </div>
+
+    <div class="med-result med-liquides">
+      💧 Liquides<br>
+      Volume : ${liquidesVol.toFixed(0)} ml
+    </div>
+
+    <div class="med-result med-rivotril">
+      🟪 Rivotril<br>
+      Dose : ${rivotrilDose.toFixed(2)} mg<br>
+      Volume : ${rivotrilVol.toFixed(2)} ml<br>
+      Dose max : 0.50 mg
+    </div>
+  `;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const poidsInput =
+    document.getElementById("poidsPedia");
+
+  if (poidsInput) {
+    poidsInput.addEventListener(
+      "input",
+      calculPedia
+    );
+  }
+});
   setupEvents();
   registerServiceWorker();
   showScreen("home");
