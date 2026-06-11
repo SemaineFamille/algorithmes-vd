@@ -1245,13 +1245,12 @@ function calculPedia() {
   const rivotrilDose = Math.min(
     poids * 0.01,
     0.5;
-  
-  const chocDose1 = poids * 2;
-  const chocDose2 = poids * 4;
   );
-
   const rivotrilVol = rivotrilDose;
-
+  
+const chocDose1 = poids * 2;
+  const chocDose2 = poids * 4;
+  
   resultats.innerHTML = `
 
     <div class="med-result med-amio">
