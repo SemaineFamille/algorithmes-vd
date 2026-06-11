@@ -1244,8 +1244,9 @@ function calculPedia() {
 
   const rivotrilDose = Math.min(
     poids * 0.01,
-    0.5
-    const chocDose1 = poids * 2;
+    0.5;
+  
+  const chocDose1 = poids * 2;
   const chocDose2 = poids * 4;
   );
 
