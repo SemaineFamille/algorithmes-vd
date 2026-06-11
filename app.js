@@ -1245,6 +1245,8 @@ function calculPedia() {
   const rivotrilDose = Math.min(
     poids * 0.01,
     0.5
+    const chocDose1 = poids * 2;
+  const chocDose2 = poids * 4;
   );
 
   const rivotrilVol = rivotrilDose;
@@ -1286,6 +1288,12 @@ function calculPedia() {
       Dose : ${rivotrilDose.toFixed(2)} mg<br>
       Volume : ${rivotrilVol.toFixed(2)} ml<br>
       Dose max : 0.50 mg
+    </div>
+
+     <div class="med-result med-choc">
+      🟩 Choc 2J/kg puis 4J/kg<br>
+      1er choc : ${chocDose1.toFixed(0)} J<br>
+      2ème choc : ${chocDose2.toFixed(2)} J
     </div>
   `;
 }
