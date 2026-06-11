@@ -1184,11 +1184,6 @@ function registerServiceWorker() {
     navigator.serviceWorker.register("sw.js").catch(() => {});
   }
 }
-
-function init() {
-  if (!localStorage.getItem("materials-list")) {
-    writeStorage("materials-list", DEFAULT_MATERIAL);
-  }
 function calculPedia() {
 
   const poids = parseFloat(
@@ -1277,6 +1272,11 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 });
+function init() {
+  if (!localStorage.getItem("materials-list")) {
+    writeStorage("materials-list", DEFAULT_MATERIAL);
+  }
+
   setupEvents();
   registerServiceWorker();
   showScreen("home");
