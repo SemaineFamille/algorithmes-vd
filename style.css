@@ -568,3 +568,38 @@ body.theme-materials .nav-btn.active {
   background: var(--star-active);
   color: #111827;
 }
+.med-card {
+  margin-top: 1rem;
+}
+
+.med-result {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 500;
+}
+
+.med-amio {
+  background: #2563eb;
+}
+
+.med-adre {
+  background: #dc2626;
+}
+
+.med-glucose {
+  background: #ca8a04;
+}
+
+.med-txa {
+  background: #16a34a;
+}
+
+.med-liquides {
+  background: #0891b2;
+}
+
+.med-rivotril {
+  background: #9333ea;
+}
