@@ -1279,6 +1279,11 @@ function init() {
 
   setupEvents();
   registerServiceWorker();
+  const poidsInput = document.getElementById("poidsPedia");
+
+if (poidsInput) {
+  poidsInput.addEventListener("input", calculPedia);
+}
   showScreen("home");
 }
 
