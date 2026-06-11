@@ -925,6 +925,7 @@ function renderDetail() {
   const list = getListBySource(state.detailSource);
   const item = list.find((x) => x.id === state.selectedId) || list[0];
   if (!item) return;
+  const special = document.getElementById("specialContent");
  if (special) {
   special.innerHTML = "";
 }
@@ -963,7 +964,7 @@ function renderDetail() {
   const wrap = document.getElementById("detailImageWrap");
   const notes = document.getElementById("detailNotes");
   const favBtn = document.getElementById("detailFavoriteBtn");
-  const special = document.getElementById("specialContent");
+  
 
   if (title) title.textContent = item.titre;
 
