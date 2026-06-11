@@ -925,6 +925,31 @@ function renderDetail() {
   const list = getListBySource(state.detailSource);
   const item = list.find((x) => x.id === state.selectedId) || list[0];
   if (!item) return;
+  if (item.id === "calcul_pedia") {
+
+  const card = document.getElementById("detailCard");
+
+  card.innerHTML = `
+    <h2>💉 Calcul rapide pédiatrique</h2>
+
+    <input
+      type="number"
+      id="poidsPedia"
+      class="input"
+      placeholder="Poids en kg"
+      step="0.1"
+      min="0"
+    >
+
+    <div id="resultatsPedia"></div>
+  `;
+
+  document
+    .getElementById("poidsPedia")
+    .addEventListener("input", calculPedia);
+
+  return;
+}
 
   const style = chapterStyle(item.chapitre);
 
