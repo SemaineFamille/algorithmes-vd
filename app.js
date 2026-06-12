@@ -1294,7 +1294,7 @@ if (poids < 10) {
 
     <div class="med-result med-liquides">
       💧 Liquides<br>
-      ${liquidesVol.toFixed(0)} ml
+      Volume max: ${liquidesVol.toFixed(0)} ml
     </div>
 
     <div class="med-result med-rivotril">
