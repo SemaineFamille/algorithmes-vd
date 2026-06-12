@@ -1251,7 +1251,7 @@ function registerServiceWorker() {
 function calculPedia() {
 
   const poids = parseFloat(
-    document.getElementById("poidsPedia").value
+  
     document.getElementById("poidsPedia").value = 20;
 document.getElementById("poidsPedia").oninput();
   );
