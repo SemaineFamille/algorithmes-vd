@@ -929,31 +929,7 @@ function renderDetail() {
  if (special) {
   special.innerHTML = "";
 }
-  if (item.id === "calcul_pedia") {
 
-  const card = document.getElementById("detailCard");
-
-  card.innerHTML = `
-    <h2>💉 Calcul rapide pédiatrique</h2>
-
-    <input
-      type="number"
-      id="poidsPedia"
-      class="input"
-      placeholder="Poids en kg"
-      step="0.1"
-      min="0"
-    >
-
-    <div id="resultatsPedia"></div>
-  `;
-
-  document
-    .getElementById("poidsPedia")
-    .addEventListener("input", calculPedia);
-
-  return;
-}
 
   const style = chapterStyle(item.chapitre);
 
@@ -985,31 +961,32 @@ function renderDetail() {
   }
 if (item.id === "calcul_pedia") {
 
-  document.getElementById("detailImageWrap").style.display = "none";
-  document.getElementById("detailNotes").style.display = "none";
+  document.getElementById("detailImageWrap").style.display = "";
+  document.getElementById("detailNotes").style.display = "";
 
   special.innerHTML = `
-    <input
-      type="number"
-      id="poidsPedia"
-      class="input"
-      placeholder="Poids en kg"
-      step="0.1"
-      min="0"
-    >
+    <div class="med-card-inner">
 
-    <div id="resultatsPedia"></div>
+      <input
+        type="number"
+        id="poidsPedia"
+        class="input"
+        placeholder="Poids en kg"
+        step="0.1"
+        min="0"
+        oninput="calculPedia()"
+      >
+
+      <div id="resultatsPedia"></div>
+
+    </div>
   `;
-
-  document
-    .getElementById("poidsPedia")
-    .addEventListener("input", calculPedia);
 
 } else {
 
   document.getElementById("detailImageWrap").style.display = "";
   document.getElementById("detailNotes").style.display = "";
-
+  special.innerHTML = "";
 }
   if (notes) {
     const storeKey = `notes:${state.detailSource}:${item.id}`;
