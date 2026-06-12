@@ -716,35 +716,7 @@ function toggleFavorite(source, id) {
   const favs = getFavMap();
   const list = getListBySource(source);
   const item = list.find((x) => x.id === id);
-  if (item.id === "calcul_pedia") {
-
-  document.getElementById("detailTitle").textContent =
-    "💉 Calcul rapide pédiatrique";
-
-  document.getElementById("detailBadge").textContent =
-    "Pédiatrie";
-
-  document.getElementById("detailCard").innerHTML = `
-    <h2>💉 Calcul rapide pédiatrique</h2>
-
-    <input
-      type="number"
-      id="poidsPedia"
-      class="input"
-      placeholder="Poids en kg"
-      step="0.1"
-      min="0"
-    >
-
-    <div id="resultatsPedia"></div>
-  `;
-
-  document
-    .getElementById("poidsPedia")
-    .addEventListener("input", calculPedia);
-
-  return;
-}
+ 
   const key = favKey(source, id);
   const current = Object.prototype.hasOwnProperty.call(favs, key)
     ? favs[key]
@@ -961,8 +933,6 @@ function renderDetail() {
   }
 if (item.id === "calcul_pedia") {
 
-  document.getElementById("detailImageWrap").style.display = "";
-  document.getElementById("detailNotes").style.display = "";
 
   special.innerHTML = `
     <div class="med-card-inner">
@@ -1252,8 +1222,7 @@ function calculPedia() {
 
   const poids = parseFloat(
   
-    document.getElementById("poidsPedia").value = 20;
-document.getElementById("poidsPedia").oninput();
+    document.getElementById("poidsPedia").value 
   );
 
   const resultats = document.getElementById("resultatsPedia");
@@ -1334,18 +1303,7 @@ const chocDose1 = poids * 2;
   `;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
 
-  const poidsInput =
-    document.getElementById("poidsPedia");
-
-  if (poidsInput) {
-    poidsInput.addEventListener(
-      "input",
-      calculPedia
-    );
-  }
-});
 function init() {
   if (!localStorage.getItem("materials-list")) {
     writeStorage("materials-list", DEFAULT_MATERIAL);
@@ -1353,11 +1311,7 @@ function init() {
 
   setupEvents();
   registerServiceWorker();
-  const poidsInput = document.getElementById("poidsPedia");
 
-if (poidsInput) {
-  poidsInput.addEventListener("input", calculPedia);
-}
   showScreen("home");
 }
 
