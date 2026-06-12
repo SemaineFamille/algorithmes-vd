@@ -1234,6 +1234,18 @@ window.calculPedia = function () {
 
   const adreDose = poids * 0.01;
   const adreVol = adreDose;
+  
+let dilutionText = "";
+let volCalc = 0;
+
+if (poids < 10) {
+  dilutionText = "Dilution : 5 mg dans 100 ml (50 µg/ml)";
+  volCalc = 1;
+} else {
+  dilutionText = "Dilution : 10 mg dans 100 ml (100 µg/ml)";
+  volCalc = poids * 0.1;
+}
+
 
   const glucoseDose = poids * 0.4;
   const glucoseVol = glucoseDose / 0.2;
@@ -1256,11 +1268,13 @@ window.calculPedia = function () {
       Max : ${amioMax.toFixed(1)} mg
     </div>
 
-    <div class="med-result med-adre">
-      🟥 Adrénaline<br>
-      Dose : ${adreDose.toFixed(3)} mg<br>
-      Volume : ${adreVol.toFixed(3)} ml
-    </div>
+   <div class="med-result med-adre">
+  🟥 Adrénaline<br>
+  Dose : ${adreDose.toFixed(3)} mg<br>
+  Volume : ${adreVol.toFixed(3)} ml<br>
+  ${dilutionText}<br>
+  Volume recommandé : ${volCalc.toFixed(2)} ml
+</div>
 
     <div class="med-result med-glucose">
       🟨 Glucose<br>
