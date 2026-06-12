@@ -1218,7 +1218,7 @@ function registerServiceWorker() {
     navigator.serviceWorker.register("sw.js").catch(() => {});
   }
 }
-function calculPedia() {
+window.calculPedia = function () {
  
   const poids = Number(document.getElementById("poidsPedia").value);
   const resultats = document.getElementById("resultatsPedia");
