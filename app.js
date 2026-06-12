@@ -1219,6 +1219,8 @@ function registerServiceWorker() {
   }
 }
 function calculPedia() {
+  console.log("OK calcul déclenché");
+}
   const poids = Number(document.getElementById("poidsPedia").value);
   const resultats = document.getElementById("resultatsPedia");
 
