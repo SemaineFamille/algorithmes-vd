@@ -1271,9 +1271,9 @@ if (poids < 10) {
    <div class="med-result med-adre">
   🟥 Adrénaline<br>
   Dose : ${adreDose.toFixed(3)} mg<br>
-  Volume : ${adreVol.toFixed(3)} ml<br>
+  Volume non dilué : ${adreVol.toFixed(3)} ml<br>
   ${dilutionText}<br>
-  Volume recommandé : ${volCalc.toFixed(2)} ml
+  Volume recommandé (dilué) : ${volCalc.toFixed(2)} ml
 </div>
 
     <div class="med-result med-glucose">
