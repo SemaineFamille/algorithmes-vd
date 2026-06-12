@@ -1219,12 +1219,7 @@ function registerServiceWorker() {
   }
 }
 function calculPedia() {
-
-  const poids = parseFloat(
-  
-    document.getElementById("poidsPedia").value 
-  );
-
+  const poids = Number(document.getElementById("poidsPedia").value);
   const resultats = document.getElementById("resultatsPedia");
 
   if (!poids || poids <= 0) {
@@ -1247,59 +1242,52 @@ function calculPedia() {
 
   const liquidesVol = poids * 20;
 
-  const rivotrilDose = Math.min(
-    poids * 0.01,
-    0.5
-  );
-  const rivotrilVol = rivotrilDose;
-  
-const chocDose1 = poids * 2;
-  const chocDose2 = poids * 4;
-  
-  resultats.innerHTML = `
+  const rivotrilDose = Math.min(poids * 0.01, 0.5);
 
+  const chocDose1 = poids * 2;
+  const chocDose2 = poids * 4;
+
+  resultats.innerHTML = `
     <div class="med-result med-amio">
-      🟦 Amiodarone 150mg/3ml<br>
+      🟦 Amiodarone<br>
       Dose : ${amioDose.toFixed(1)} mg<br>
       Volume : ${amioVol.toFixed(2)} ml<br>
-      Dose max : ${amioMax.toFixed(1)} mg
+      Max : ${amioMax.toFixed(1)} mg
     </div>
 
     <div class="med-result med-adre">
-      🟥 Adrénaline 10mg/10ml<br>
-      Dose : ${adreDose.toFixed(2)} mg<br>
-      Volume : ${adreVol.toFixed(2)} ml
+      🟥 Adrénaline<br>
+      Dose : ${adreDose.toFixed(3)} mg<br>
+      Volume : ${adreVol.toFixed(3)} ml
     </div>
 
     <div class="med-result med-glucose">
-      🟨 Glucose G20%<br>
+      🟨 Glucose<br>
       Dose : ${glucoseDose.toFixed(1)} g<br>
       Volume : ${glucoseVol.toFixed(0)} ml
     </div>
 
     <div class="med-result med-txa">
-      🟩 TXA 1g/10ml<br>
+      🟩 TXA<br>
       Dose : ${txaDose.toFixed(0)} mg<br>
       Volume : ${txaVol.toFixed(2)} ml
     </div>
 
     <div class="med-result med-liquides">
       💧 Liquides<br>
-      Volume max : ${liquidesVol.toFixed(0)} ml
+      ${liquidesVol.toFixed(0)} ml
     </div>
 
     <div class="med-result med-rivotril">
-      🟪 Rivotril 1mg/1ml<br>
-      Dose : ${rivotrilDose.toFixed(2)} mg<br>
-      Volume : ${rivotrilVol.toFixed(2)} ml<br>
-      Dose max : 0.50 mg
+      🟪 Rivotril<br>
+      Dose : ${rivotrilDose.toFixed(2)} mg
     </div>
 
-   <div class="med-result med-choc">
-  ⚡ Choc 2 J/kg puis 4 J/kg<br>
-  1er choc : ${chocDose1.toFixed(0)} J<br>
-  2ème choc : ${chocDose2.toFixed(0)} J
-</div>
+    <div class="med-result med-choc">
+      ⚡ Choc<br>
+      1er : ${chocDose1.toFixed(0)} J<br>
+      2e : ${chocDose2.toFixed(0)} J
+    </div>
   `;
 }
 
