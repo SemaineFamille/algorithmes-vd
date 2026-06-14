@@ -732,7 +732,8 @@ function toggleFavorite(source, id) {
       runHomeSearch(searchVal);
     } else {
       renderHomeFavorites();
-      clearHomeSearchResults();
+renderHomeNotes();
+clearHomeSearchResults();
     }
   }
 
@@ -811,7 +812,29 @@ function renderHomeFavorites() {
 
   bindCardEvents(favoritesSection);
 }
+function renderHomeNotes() {
+  const container = document.getElementById("homeNotesSection");
+  if (!container) return;
 
+  const note = localStorage.getItem("home-free-note") || "";
+
+  container.innerHTML = `
+    <div class="section-card">
+      <p class="section-caption">📝 Notes rapides</p>
+
+      <textarea
+        id="homeFreeNote"
+        class="input"
+        rows="6"
+        placeholder="Écrire ici..."
+      >${escapeHtml(note)}</textarea>
+    </div>
+  `;
+
+  document.getElementById("homeFreeNote")?.addEventListener("input", (e) => {
+    localStorage.setItem("home-free-note", e.target.value);
+  });
+}
 function renderList(source, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -1144,6 +1167,8 @@ function updateHeaderAndNav(screen) {
         pageTitle = "Algo VD";
       } else if (state.detailSource === "autre") {
         pageTitle = "Autre";
+
+    
       }
       break;
   }
