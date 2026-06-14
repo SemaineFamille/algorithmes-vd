@@ -1198,6 +1198,7 @@ function showScreen(screen) {
       const favoritesSection = document.getElementById("favoritesSection");
       if (favoritesSection) favoritesSection.style.display = "";
       renderHomeFavorites();
+       renderHomeNotes();
       clearHomeSearchResults();
     }
   }
