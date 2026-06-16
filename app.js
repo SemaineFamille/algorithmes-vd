@@ -927,7 +927,7 @@ if (special) {
 }
 
 if (special && item.id === "antalgie_sat") {
-  special.innerHTML = `
+  special.innerHTML = 
     <div class="card med-card">
       <h3>💉 Calculs Antalgie</h3>
 
@@ -953,7 +953,7 @@ if (special && item.id === "antalgie_sat") {
 
       <div id="resultatsAntalgie"></div>
     </div>
-  `;
+  ;
 }
 
 
@@ -989,7 +989,7 @@ special.innerHTML = "";
 
 if (item.id === "calcul_pedia") {
 
-  special.innerHTML = `
+  special.innerHTML = 
     <div class="med-card-inner">
 
       <input
