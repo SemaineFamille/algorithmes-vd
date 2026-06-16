@@ -1,4 +1,4 @@
-
+console.log("APP VERSION 16-06-2026 16h00");
 const CHAPTER_STYLES = {
   // 🔴 GYNÉCO / OBSTÉTRIQUE
   "Obstétrique/Gynécologie🤰": {
