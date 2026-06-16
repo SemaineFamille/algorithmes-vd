@@ -1055,7 +1055,7 @@ if (item.id === "calcul_pedia") {
       : "30 mg";
   }
 
-  resultats.innerHTML = `
+  resultats.innerHTML = 
     <div class="med-box fentanyl">
       <strong>Fentanyl</strong><br>
       Charge : ${fentCharge.toFixed(0)} µg (${(fentCharge / 50).toFixed(2)} ml)<br>
