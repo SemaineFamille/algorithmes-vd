@@ -1562,55 +1562,83 @@ window.calculAntalgieTCS = function () {
 
   if (!resultats) return;
 
-  if (!poids || poids <= 0) {
+  if (isNaN(poids) || poids <= 0) {
     resultats.innerHTML = "";
     return;
   }
-const fentCharge = poids;
-  const fentRappel = poids * 0.5;
-  const fentMax = poids * 5;
 
-  const morphCharge = poids * 0.1;
-  const morphRappel = poids * 0.05;
-  const morphMax = 10 
+  const isSenior = !isNaN(age) && age >= 65;
 
-  const esoMG = "40 mg"
-  const esoML = "100 ml"
+  // ✅ FENTANYL (divisé par 2 si ≥ 65 ans)
+  let fentCharge = poids;
+  let fentRappel = poids * 0.5;
+  let fentMax = poids * 5;
 
- let ketorolac = "";
+  if (isSenior) {
+    fentCharge /= 2;
+    fentRappel /= 2;
+    fentMax /= 2;
+  }
+
+  // ✅ MORPHINE (divisé par 2 si ≥ 65 ans)
+  let morphCharge = poids * 0.1;
+  let morphRappel = poids * 0.05;
+  let morphMax = 10;
+
+  if (isSenior) {
+    morphCharge /= 2;
+    morphRappel /= 2;
+    morphMax /= 2;
+  }
+
+  // ✅ KETOROLAC (UNIQUEMENT AGE)
+  let ketorolac = "";
 
   if (!isNaN(age) && age > 0) {
-    ketorolac = (poids < 50 || age > 65)
-      ? "15 mg"
-      : "30 mg";
+    ketorolac = age >= 65 ? "15 mg" : "30 mg";
   }
+
+  // ✅ ESOMEPRAZOL (dose unique)
+  const esoMG = "40 mg";
+  const esoML = "100 ml";
+
+  // ✅ METHOXYFLURANE (ajout demandé)
+  const methoxy = "3 ml (dose unique)";
+
   resultats.innerHTML = `
     <div class="med-box fentanyl">
       <strong>Fentanyl</strong><br>
       Charge : ${fentCharge.toFixed(0)} µg (${(fentCharge / 50).toFixed(2)} ml)<br>
       Rappel : ${fentRappel.toFixed(0)} µg (${(fentRappel / 50).toFixed(2)} ml)<br>
+      Max : ${fentMax.toFixed(0)} µg<br>
+      ${isSenior ? "<em>⚠️ Dose réduite ≥ 65 ans</em>" : ""}
     </div>
 
     <div class="med-box morphine">
       <strong>Morphine</strong><br>
       Charge : ${morphCharge.toFixed(1)} mg (${morphCharge.toFixed(1)} ml)<br>
       Rappel : ${morphRappel.toFixed(1)} mg (${morphRappel.toFixed(1)} ml)<br>
-      Max : ${morphMax.toFixed(1)} mg (${morphMax.toFixed(1)} ml)
+      Max : ${morphMax.toFixed(1)} mg<br>
+      ${isSenior ? "<em>⚠️ Dose réduite ≥ 65 ans</em>" : ""}
     </div>
 
-     <div class="med-box ketorolac">
+    <div class="med-box ketorolac">
       <strong>Ketorolac</strong><br>
       ${ketorolac || "Entrer l'âge"}
     </div>
-    
- <div class="med-box esomeprazol">
-      <strong>Esoméprazol</strong><br>
-      ${esoMg ? `${esoMg} (${esoMl})` : "Poids < 30 kg"}
-    </div>
-    
 
-   
-    `;
+    <div class="med-box esomeprazol">
+      <strong>Esoméprazol</strong><br>
+      ${esoMG} (${esoML})<br>
+      <em>Dose unique</em>
+    </div>
+
+    <div class="med-box methoxy">
+      <strong>Méthoxyflurane</strong><br>
+      ${methoxy}
+    </div>
+  `;
+
 };
 
 function init() {
