@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 16-06-2026 18h02");
+console.log("APP VERSION 16-06-2026 18h10");
 
 
 const CHAPTER_STYLES = {
@@ -1026,6 +1026,7 @@ function renderSpecialContent(item, special) {
           placeholder="Âge (ans)"
           step="1"
           min="0"
+          oninput="calculAntalgieTCS()"
         >
 
       <div id="resultatsAntalgieTCS"></div>
