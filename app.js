@@ -1315,7 +1315,7 @@ window.calculPedia = function () {
       🟥 Adrénaline<br>
       Dose : ${adreDose.toFixed(3)} mg<br>
       Volume non dilué : ${adreVol.toFixed(3)} ml<br>
-      ${dilationText}<br>
+      ${dilutionText}<br>
       Volume recommandé (dilué) : ${volCalc.toFixed(2)} ml
     </div>
 
