@@ -4,7 +4,9 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 16-06-2026 17h30");
+console.log("APP VERSION 16-06-2026 17h35");
+
+
 const CHAPTER_STYLES = {
   // 🔴 GYNÉCO / OBSTÉTRIQUE
   "Obstétrique/Gynécologie🤰": {
