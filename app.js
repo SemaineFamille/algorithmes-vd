@@ -1524,16 +1524,8 @@ const fentCharge = poids;
       ${metaMg ? `${metaMg} (${metaMl})` : "Poids < 30 kg"}
     </div>
 
-    <div class="med-box midazolam">
-      <strong>Midazolam</strong><br>
-      0.5 mg à 2 mg
-    </div>
-
-    <div class="med-box ketorolac">
-      <strong>Ketorolac</strong><br>
-      ${ketorolac || "Entrer l'âge"}
-    </div>
-  `;
+   
+    `;
 };
 function init() {
   if (!localStorage.getItem("materials-list")) {
