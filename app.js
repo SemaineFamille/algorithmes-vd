@@ -978,7 +978,27 @@ function renderSpecialContent(item, special) {
     document.getElementById("poidsAntalgie")?.addEventListener("input", calculAntalgie);
     document.getElementById("ageAntalgie")?.addEventListener("input", calculAntalgie);
   }
+  if (special && item.id === "antalgie_star") {
+  special.innerHTML = `
+    <div class="card med-card">
+      <h3>💉 Calculs Antalgie STAR</h3>
+
+      <input
+        type="number"
+        id="poidsAntalgieStar"
+        class="input"
+        placeholder="Poids en kg"
+        step="0.1"
+        min="0"
+        oninput="calculAntalgieStar()"
+      >
+
+      <div id="resultatsAntalgieStar"></div>
+    </div>
+  `;
 }
+}
+
 
 
 function renderDetail() {
@@ -1440,7 +1460,81 @@ window.calculAntalgie = function () {
     </div>
   `;
 };
+window.calculAntalgieStar = function () {
 
+  const poids = Number(
+    document.getElementById("poidsAntalgieStar")?.value
+  );
+
+  const resultats = document.getElementById(
+    "resultatsAntalgieStar"
+  );
+
+  if (!resultats) return;
+
+  if (!poids || poids <= 0) {
+    resultats.innerHTML = "";
+    return;
+  }
+const fentCharge = poids;
+  const fentRappel = poids * 0.5;
+
+  const morphCharge = poids * 0.1;
+  const morphRappel = poids * 0.05;
+  const morphMax = 20 
+  
+  const ketaCharge = poids * 0.3;
+  const ketaRappel = poids * 0.1;
+  const ketaMax = poids * 0.4
+
+  let metaMg = "";
+  let metaMl = "";
+
+  if (poids >= 30 && poids <= 50) {
+    metaMg = "500 mg";
+    metaMl = "1 ml";
+  } else if (poids > 50) {
+    metaMg = "1000 mg";
+    metaMl = "2 ml";
+  }
+
+  resultats.innerHTML = `
+    <div class="med-box fentanyl">
+      <strong>Fentanyl</strong><br>
+      Charge : ${fentCharge.toFixed(0)} µg (${(fentCharge / 50).toFixed(2)} ml)<br>
+      Rappel : ${fentRappel.toFixed(0)} µg (${(fentRappel / 50).toFixed(2)} ml)<br>
+    </div>
+
+    <div class="med-box morphine">
+      <strong>Morphine</strong><br>
+      Charge : ${morphCharge.toFixed(1)} mg (${morphCharge.toFixed(1)} ml)<br>
+      Rappel : ${morphRappel.toFixed(1)} mg (${morphRappel.toFixed(1)} ml)<br>
+      Max : ${morphMax.toFixed(1)} mg (${morphMax.toFixed(1)} ml)
+    </div>
+
+    <div class="med-box ketamine">
+      <strong>Kétamine</strong><br>
+      Charge : ${ketaCharge.toFixed(1)} mg (${(ketaCharge / 10).toFixed(2)} ml)<br>
+      Rappel : ${ketaRappel.toFixed(1)} mg (${(ketaRappel / 10).toFixed(2)} ml)<br>
+      Max : ${ketaMax.toFixed(1)} mg (${(ketaMax / 10).toFixed(2)} ml)
+    </div>
+
+    <div class="med-box metamizole">
+      <strong>Métamizole</strong><br>
+      ${metaMg ? `${metaMg} (${metaMl})` : "Poids < 30 kg"}
+    </div>
+
+    <div class="med-box midazolam">
+      <strong>Midazolam</strong><br>
+      0.5 mg à 2 mg
+    </div>
+
+    <div class="med-box ketorolac">
+      <strong>Ketorolac</strong><br>
+      ${ketorolac || "Entrer l'âge"}
+    </div>
+  `;
+};
 function init() {
   if (!localStorage.getItem("materials-list")) {
     writeStorage("materials-list", DEFAULT_MATERIAL);
