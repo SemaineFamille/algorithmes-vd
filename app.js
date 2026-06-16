@@ -1,4 +1,3 @@
-
 /**
  * Algorithmes terrain
  * Développé par : Mélanie Weil
@@ -958,7 +957,7 @@ function renderSpecialContent(item, special) {
   if (item.id === "antalgie_sat") {
     special.innerHTML = `
       <div class="card med-card">
-        <h3>💉 Calculs Antalgie</h3>
+        <h3>💉 Calculs Antalgie SAT</h3>
 
         <input
           type="number"
@@ -1001,6 +1000,25 @@ function renderSpecialContent(item, special) {
       >
 
       <div id="resultatsAntalgieStar"></div>
+    </div>
+  `;
+}
+  if (special && item.id === "antalgie_tcs") {
+  special.innerHTML = `
+    <div class="card med-card">
+      <h3>💉 Calculs Antalgie TCS</h3>
+
+      <input
+        type="number"
+        id="poidsAntalgieTCS"
+        class="input"
+        placeholder="Poids en kg"
+        step="0.1"
+        min="0"
+        oninput="calculAntalgieStar()"
+      >
+
+      <div id="resultatsAntalgieTCS"></div>
     </div>
   `;
 }
@@ -1504,6 +1522,7 @@ const fentCharge = poids;
     metaMg = "1000 mg";
     metaMl = "2 ml";
   }
+  
 
   resultats.innerHTML = `
     <div class="med-box fentanyl">
@@ -1534,6 +1553,66 @@ const fentCharge = poids;
    
     `;
 };
+
+window.calculAntalgieTCS = function () {
+
+  const poids = Number(document.getElementById("poidsAntalgieTCS")?.value);
+  const age = Number(document.getElementById("ageAntalgieTCS")?.value);
+  const resultats = document.getElementById("resultatsAntalgieTCS");
+
+  if (!resultats) return;
+
+  if (!poids || poids <= 0) {
+    resultats.innerHTML = "";
+    return;
+  }
+const fentCharge = poids;
+  const fentRappel = poids * 0.5;
+  const fentMax = poids * 5;
+
+  const morphCharge = poids * 0.1;
+  const morphRappel = poids * 0.05;
+  const morphMax = 10 
+
+  const esoMG = "40 mg"
+  const esoML = "100 ml"
+
+ let ketorolac = "";
+
+  if (!isNaN(age) && age > 0) {
+    ketorolac = (poids < 50 || age > 65)
+      ? "15 mg"
+      : "30 mg";
+  }
+  resultats.innerHTML = `
+    <div class="med-box fentanyl">
+      <strong>Fentanyl</strong><br>
+      Charge : ${fentCharge.toFixed(0)} µg (${(fentCharge / 50).toFixed(2)} ml)<br>
+      Rappel : ${fentRappel.toFixed(0)} µg (${(fentRappel / 50).toFixed(2)} ml)<br>
+    </div>
+
+    <div class="med-box morphine">
+      <strong>Morphine</strong><br>
+      Charge : ${morphCharge.toFixed(1)} mg (${morphCharge.toFixed(1)} ml)<br>
+      Rappel : ${morphRappel.toFixed(1)} mg (${morphRappel.toFixed(1)} ml)<br>
+      Max : ${morphMax.toFixed(1)} mg (${morphMax.toFixed(1)} ml)
+    </div>
+
+     <div class="med-box ketorolac">
+      <strong>Ketorolac</strong><br>
+      ${ketorolac || "Entrer l'âge"}
+    </div>
+    
+ <div class="med-box esomeprazol">
+      <strong>Esoméprazol</strong><br>
+      ${esoMg ? `${esoMg} (${esoMl})` : "Poids < 30 kg"}
+    </div>
+    
+
+   
+    `;
+};
+
 function init() {
   if (!localStorage.getItem("materials-list")) {
     writeStorage("materials-list", DEFAULT_MATERIAL);
