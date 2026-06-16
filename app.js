@@ -1,3 +1,4 @@
+
 const CHAPTER_STYLES = {
   // 🔴 GYNÉCO / OBSTÉTRIQUE
   "Obstétrique/Gynécologie🤰": {
@@ -42,25 +43,24 @@ const CHAPTER_STYLES = {
     background: "#fefce8"
   },
   "👶Pédiatrie 🌟": {
-     badge: "background:#fef08a;color:#854d0e;border-color:#facc15;",
+    badge: "background:#fef08a;color:#854d0e;border-color:#facc15;",
     border: "#ca8a04",
     background: "#fefce8"
   },
 
-  // 🟣 NEURO (violet foncé → bien différent maintenant)
+  // 🟣 NEURO
   "Neuro🧠": {
     badge: "background:#ddd6fe;color:#4c1d95;border-color:#a78bfa;",
     border: "#7c3aed",
     background: "#f5f3ff"
   },
 
-  // 🌸 ANTALGIE (nouvelle couleur distincte)
-  
-"💉Antalgie": {
-badge: "background:#99f6e4;color:#134e4a;border-color:#2dd4bf;",
-  border: "#0d9488",
-  background: "#ecfeff"
-},
+  // 🌸 ANTALGIE
+  "💉Antalgie": {
+    badge: "background:#99f6e4;color:#134e4a;border-color:#2dd4bf;",
+    border: "#0d9488",
+    background: "#ecfeff"
+  },
 
   // 🩶 INTERNE
   "Interne": {
@@ -69,13 +69,12 @@ badge: "background:#99f6e4;color:#134e4a;border-color:#2dd4bf;",
     background: "#f8fafc"
   },
 
-  // 🔷 TECHNIQUE (plus violet → bleu-gris)
+  // 🔷 AUTRE
   "Autre": {
     badge: "background:#e0f2fe;color:#075985;border-color:#7dd3fc;",
     border: "#0284c7",
     background: "#f0f9ff"
   },
-
 
   "Autre 🌟": {
     badge: "background:#d1d5db;color:#1f2933;border-color:#9ca3af;",
@@ -89,6 +88,7 @@ badge: "background:#99f6e4;color:#134e4a;border-color:#2dd4bf;",
     background: "#f9fafb"
   }
 };
+
 const VD_ALGOS = [
   { id: "acc_physio", ordre: 32, titre: "Accouchement physiologique", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/acc_physio.png", favori: false, notesPlaceholder: "Ex. matériel de naissance, points d’anticipation…" },
   { id: "acc_patho1", ordre: 33, titre: "Accouchement pathologique 1", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/acc_patho1.png", favori: false, notesPlaceholder: "Ex. points d’attention…" },
@@ -113,24 +113,21 @@ const VD_ALGOS = [
   { id: "avc", ordre: 21, titre: "😵 AVC", chapitre: "Neuro🧠", source: "VD", image: "images/avc.png", favori: true, notesPlaceholder: "Ex. anticoagulants, heure de début, proches à prévenir…" },
   { id: "io", ordre: 24, titre: "🦴 Voie intra-osseuse", chapitre: "Autre", source: "VD", image: "images/io.png", favori: false, notesPlaceholder: "Ex. indications, contre-indications, surveillance…" },
   { id: "avc_annexe", ordre: 22, titre: "😵 AVC Annexe", chapitre: "Neuro🧠", source: "VD", image: "images/avc_annexe.png", favori: false, notesPlaceholder: "Ex. Rankin, checklist filière…" }
- 
 ];
 
 const AUTRE = [
- 
-  
   { id: "labo", ordre: 21, titre: "Valeur Laboratoire 🧪", chapitre: "Autre", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
   { id: "molecules", ordre: 22, titre: "💊 Molécules Antalgie", chapitre: "Autre", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "toxidrome", ordre: 11, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", image: "images/Toxidrome.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"},
-  { id: "glasgow", ordre: 12, titre: "Glasgow 😵‍💫", chapitre: "Neuro🧠", source: "Autre", image: "images/GCS.png", favori: false, notesPlaceholder:"Ex. posologies terrain, antiémétique, poids…"},
+  { id: "toxidrome", ordre: 11, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", image: "images/Toxidrome.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
+  { id: "glasgow", ordre: 12, titre: "Glasgow 😵‍💫", chapitre: "Neuro🧠", source: "Autre", image: "images/GCS.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "antalgie_sat", ordre: 1, titre: "Antalgie SAT", chapitre: "💉Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-   { id: "antalgie_tcs", ordre: 2, titre: "Antalgie TCS", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
-   { id: "antalgie_tcs_ped", ordre: 3, titre: "Antalgie TCS Ped 👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
+  { id: "antalgie_tcs", ordre: 2, titre: "Antalgie TCS", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
+  { id: "antalgie_tcs_ped", ordre: 3, titre: "Antalgie TCS Ped 👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "aeioutip", ordre: 24, titre: "AEIOU TIPS😴", chapitre: "Autre", source: "Moi", image: "images/AEIOUTIPS.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "befast", ordre: 13, titre: "Be FAST 😵", chapitre: "Neuro🧠", source: "Moi", image: "images/Befast.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "breathing", ordre: 23, titre: "Breathing 🫁", chapitre: "Autre", source: "Moi", image: "images/breathing.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "pastel", ordre: 30, titre: "PASTEL 👶", chapitre: "Pédiatrie👶", source: "Moi", image: "images/pastel.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  {id: "calcul_pedia",ordre: 40, titre: "💉 Calcul rapide pédiatrique",  chapitre: "Pédiatrie👶",  source: "Moi",  image: "images/calcul_pedia.png",  favori: false,  notesPlaceholder: ""},
+  { id: "calcul_pedia", ordre: 40, titre: "💉 Calcul rapide pédiatrique", chapitre: "Pédiatrie👶", source: "Moi", image: "images/calcul_pedia.png", favori: false, notesPlaceholder: "" }
 ];
 
 const STAR_ALGOS = [
@@ -166,7 +163,7 @@ const STAR_ALGOS = [
     notesPlaceholder: "Ex. RCP, défibrillation, adrénaline, causes réversibles…"
   },
   {
-   id: "acr_shema",
+    id: "acr_shema",
     ordre: 4,
     titre: "🫀 Shema ALS",
     chapitre: "Maladie 🌟",
@@ -231,11 +228,11 @@ const STAR_ALGOS = [
     titre: "🧠 Suspicion d’AVC 😵",
     chapitre: "Maladie 🌟",
     source: "STAR",
-    image:"images/suspicion_avc.png",
+    image: "images/suspicion_avc.png",
     favori: false,
     notesPlaceholder: "Ex. heure de début, anticoagulants, filière AVC…"
   },
-   {
+  {
     id: "suspicion_avc_2",
     ordre: 10,
     titre: "🧠 Suspicion d’AVC_2",
@@ -277,8 +274,8 @@ const STAR_ALGOS = [
     favori: false,
     notesPlaceholder: "Ex. refroidissement, surface, pansement, surveillance…"
   },
-   {
-    id: "brulures _degre",
+  {
+    id: "brulures_degre",
     ordre: 16,
     titre: "🥵 Brûlures Degré 🌡️",
     chapitre: "🤕Traumatique 🌟",
@@ -339,7 +336,7 @@ const STAR_ALGOS = [
     favori: false,
     notesPlaceholder: "Ex. RCP, doses, matériel pédiatrique…"
   },
-    {
+  {
     id: "dilutions_acr_pediatrique",
     ordre: 22,
     titre: "🫀 Dilutions ACR pédiatrique",
@@ -441,7 +438,7 @@ const STAR_ALGOS = [
     favori: false,
     notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
   },
-   {
+  {
     id: "aide_memoire_accouchement_Dos",
     ordre: 32,
     titre: "Aide-mémoire Accouchement, Dos🫃🏼",
@@ -451,7 +448,7 @@ const STAR_ALGOS = [
     favori: false,
     notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
   },
-   {
+  {
     id: "aide_memoire_accouchement_jambes",
     ordre: 33,
     titre: "Aide-mémoire Accouchement, Jambes🫃🏼",
@@ -461,7 +458,7 @@ const STAR_ALGOS = [
     favori: false,
     notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
   },
-   {
+  {
     id: "aide_memoire_accouchement_bras",
     ordre: 34,
     titre: "Aide-mémoire Accouchement, Bras🫃🏼",
@@ -471,7 +468,7 @@ const STAR_ALGOS = [
     favori: false,
     notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
   },
-   {
+  {
     id: "aide_memoire_accouchement_tete",
     ordre: 35,
     titre: "Aide-mémoire Accouchement, Tête🫃🏼",
@@ -523,7 +520,7 @@ const STAR_ALGOS = [
     favori: false,
     notesPlaceholder: "Ex. rôle leader, coordination, sécurité, communication…"
   },
-   {
+  {
     id: "aide_memoire_evenement_particulier_majeur",
     ordre: 40,
     titre: "💥 Aide-mémoire évènement particulier/majeur",
@@ -543,7 +540,7 @@ const STAR_ALGOS = [
     favori: false,
     notesPlaceholder: "Ex. tri, flux, sécurité, priorisation…"
   },
-   {
+  {
     id: "aide_memoire_SAP",
     ordre: 42,
     titre: "💥 Aide-mémoire SAP",
@@ -585,7 +582,6 @@ const STAR_ALGOS = [
   }
 ];
 
-
 const DEFAULT_MATERIAL = [
   { category: "💉 VVP", id: "venflon", label: "Venflon", checked: false, note: "" },
   { category: "💉 VVP", id: "veca", label: "Veca C", checked: false, note: "" },
@@ -600,13 +596,13 @@ const DEFAULT_MATERIAL = [
   { category: "💊 Médicaments", id: "paracetamol", label: "Paracétamol", checked: false, note: "" },
   { category: "💊 Médicaments", id: "adre", label: "Adrénaline", checked: false, note: "" },
   { category: "💊 Médicaments", id: "txa", label: "TXA", checked: false, note: "" },
-  { category: "💊 Médicaments", id: "ondansetron", label: "Ondansetron", checked: false, note: "" },
+  { category: "💊 Médicaments", id: "ondansetron", label: "Ondansétron", checked: false, note: "" },
   { category: "💊 Médicaments", id: "ketamine", label: "Kétamine", checked: false, note: "" },
   { category: "💊 Médicaments", id: "midazolam", label: "Midazolam", checked: false, note: "" },
 
-  { category: "🫁 Oxygène", id: "lunette", label: "Lunette O₂", checked: false, note: ""  },
-  { category: "🫁 Oxygène", id: "masque02", label: "Masque O₂", checked: false, note: ""  },
-  { category: "🫁 Oxygène", id: "nebu", label: "Nébulisation", checked: false, note: ""  },
+  { category: "🫁 Oxygène", id: "lunette", label: "Lunette O₂", checked: false, note: "" },
+  { category: "🫁 Oxygène", id: "masque02", label: "Masque O₂", checked: false, note: "" },
+  { category: "🫁 Oxygène", id: "nebu", label: "Nébulisation", checked: false, note: "" },
 
   { category: "🩹 Petit matériel", id: "compresse", label: "Compresse", checked: false, note: "" },
   { category: "🩹 Petit matériel", id: "aiguille", label: "Aiguille", checked: false, note: "" },
@@ -619,7 +615,6 @@ const DEFAULT_MATERIAL = [
   { category: "📦 Divers", id: "sharpsafe", label: "Sharp Safe", checked: false, note: "" },
   { category: "📦 Divers", id: "moltex", label: "Moltex", checked: false, note: "" }
 ];
-
 
 const state = {
   screen: "home",
@@ -640,6 +635,7 @@ function readStorage(key, fallback) {
 function writeStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
+
 function applyTheme(screen) {
   document.body.classList.remove(
     "theme-vd",
@@ -670,7 +666,6 @@ function chapterStyle(chapter) {
   return CHAPTER_STYLES[clean] || CHAPTER_STYLES["Interne"];
 }
 
-
 function getListBySource(source) {
   switch (source) {
     case "vd":
@@ -683,7 +678,6 @@ function getListBySource(source) {
       return [];
   }
 }
-
 
 function getAllAlgos() {
   return [
@@ -715,8 +709,8 @@ function isFavorite(source, item) {
 function toggleFavorite(source, id) {
   const favs = getFavMap();
   const list = getListBySource(source);
-  const item = list.find((x) => x.id === id);
- 
+  const item = list.find(x => x.id === id);
+
   const key = favKey(source, id);
   const current = Object.prototype.hasOwnProperty.call(favs, key)
     ? favs[key]
@@ -732,8 +726,8 @@ function toggleFavorite(source, id) {
       runHomeSearch(searchVal);
     } else {
       renderHomeFavorites();
-renderHomeNotes();
-clearHomeSearchResults();
+      renderHomeNotes();
+      clearHomeSearchResults();
     }
   }
 
@@ -752,8 +746,8 @@ function cardHTML(item, source) {
     <div class="algo-card" data-open-source="${source}" data-open-id="${item.id}" style="background:${style.background}; border:2px solid ${style.border};">
       <div class="algo-card-row">
         <div class="algo-card-left">
-          <span class="badge" style="${style.badge}">${item.chapitre}</span>
-          <div class="algo-title">${item.titre}</div>
+          <span class="badge" style="${style.badge}">${escapeHtml(item.chapitre)}</span>
+          <div class="algo-title">${escapeHtml(item.titre)}</div>
         </div>
         <button class="favorite-btn ${favorite ? "active" : "inactive"}" data-fav-source="${source}" data-fav-id="${item.id}" type="button">
           ${favorite ? "⭐" : "☆"}
@@ -766,14 +760,14 @@ function cardHTML(item, source) {
 function bindCardEvents(container) {
   if (!container) return;
 
-  container.querySelectorAll("[data-open-id]").forEach((el) => {
+  container.querySelectorAll("[data-open-id]").forEach(el => {
     el.addEventListener("click", () => {
       openDetail(el.getAttribute("data-open-source"), el.getAttribute("data-open-id"));
     });
   });
 
-  container.querySelectorAll("[data-fav-id]").forEach((el) => {
-    el.addEventListener("click", (e) => {
+  container.querySelectorAll("[data-fav-id]").forEach(el => {
+    el.addEventListener("click", e => {
       e.stopPropagation();
       toggleFavorite(el.getAttribute("data-fav-source"), el.getAttribute("data-fav-id"));
     });
@@ -785,9 +779,9 @@ function renderHomeFavorites() {
   if (!favoritesSection) return;
 
   const all = [
-    ...VD_ALGOS.map((item) => ({ item, source: "vd" })),
-     ...AUTRE.map((item) => ({ item, source: "autre" })),
-    ...STAR_ALGOS.map((item) => ({ item, source: "star" }))
+    ...VD_ALGOS.map(item => ({ item, source: "vd" })),
+    ...AUTRE.map(item => ({ item, source: "autre" })),
+    ...STAR_ALGOS.map(item => ({ item, source: "star" }))
   ];
 
   const favorites = all
@@ -812,6 +806,7 @@ function renderHomeFavorites() {
 
   bindCardEvents(favoritesSection);
 }
+
 function renderHomeNotes() {
   const container = document.getElementById("homeNotesSection");
   if (!container) return;
@@ -831,10 +826,11 @@ function renderHomeNotes() {
     </div>
   `;
 
-  document.getElementById("homeFreeNote")?.addEventListener("input", (e) => {
+  document.getElementById("homeFreeNote")?.addEventListener("input", e => {
     localStorage.setItem("home-free-note", e.target.value);
   });
 }
+
 function renderList(source, containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -843,7 +839,7 @@ function renderList(source, containerId) {
     .slice()
     .sort((a, b) => a.ordre - b.ordre);
 
-  container.innerHTML = list.map((item) => cardHTML(item, source)).join("");
+  container.innerHTML = list.map(item => cardHTML(item, source)).join("");
   bindCardEvents(container);
 }
 
@@ -881,7 +877,7 @@ function runHomeSearch(rawValue) {
 
   const all = getAllAlgos();
 
-  const filtered = all.filter((item) => {
+  const filtered = all.filter(item => {
     const notes = readStorage(`notes:${item.sourceType}:${item.id}`, "");
     return (
       normalizeText(item.titre).includes(search) ||
@@ -897,7 +893,7 @@ function runHomeSearch(rawValue) {
     ? `
       <div class="section-card">
         <p class="section-caption">🔎 Résultats</p>
-        ${filtered.map((item) => cardHTML(item, item.sourceType)).join("")}
+        ${filtered.map(item => cardHTML(item, item.sourceType)).join("")}
       </div>
     `
     : `<div class="card"><p style="text-align:center;opacity:0.7;">Aucun résultat 🔎</p></div>`;
@@ -916,46 +912,73 @@ function openDetail(source, id) {
   showScreen("detail");
 }
 
+function renderSpecialContent(item, special) {
+  if (!special) return;
+
+  special.innerHTML = "";
+
+  if (item.id === "calcul_pedia") {
+    special.innerHTML = `
+      <div class="card med-card">
+        <h3>💉 Calcul rapide pédiatrique</h3>
+
+        <div class="med-card-inner">
+          <input
+            type="number"
+            id="poidsPedia"
+            class="input"
+            placeholder="Poids en kg"
+            step="0.1"
+            min="0"
+            oninput="calculPedia()"
+          >
+
+          <div id="resultatsPedia"></div>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  if (item.id === "antalgie_sat") {
+    special.innerHTML = `
+      <div class="card med-card">
+        <h3>💉 Calculs Antalgie</h3>
+
+        <input
+          type="number"
+          id="poidsAntalgie"
+          class="input"
+          placeholder="Poids en kg"
+          step="0.1"
+          min="0"
+          oninput="calculAntalgie()"
+        >
+
+        <input
+          type="number"
+          id="ageAntalgie"
+          class="input"
+          placeholder="Âge (ans)"
+          step="1"
+          min="0"
+          oninput="calculAntalgie()"
+        >
+
+        <div id="resultatsAntalgie"></div>
+      </div>
+    `;
+  }
+}
+
 function renderDetail() {
   const list = getListBySource(state.detailSource);
-  const item = list.find((x) => x.id === state.selectedId) || list[0];
+  const item = list.find(x => x.id === state.selectedId);
+
   if (!item) return;
-const special = document.getElementById("specialContent");
 
-if (special) {
-  special.innerHTML = "";
-}
-
-if (special && item.id === "antalgie_sat") {
-  special.innerHTML = 
-    <div class="card med-card">
-      <h3>💉 Calculs Antalgie</h3>
-
-      <input
-        type="number"
-        id="poidsAntalgie"
-        class="input"
-        placeholder="Poids en kg"
-        step="0.1"
-        min="0"
-        oninput="calculAntalgie()"
-      >
-
-      <input
-        type="number"
-        id="ageAntalgie"
-        class="input"
-        placeholder="Âge (ans)"
-        step="1"
-        min="0"
-        oninput="calculAntalgie()"
-      >
-
-      <div id="resultatsAntalgie"></div>
-    </div>
-  ;
-}
-
+  const special = document.getElementById("specialContent");
+  renderSpecialContent(item, special);
 
   const style = chapterStyle(item.chapitre);
 
@@ -966,7 +989,6 @@ if (special && item.id === "antalgie_sat") {
   const wrap = document.getElementById("detailImageWrap");
   const notes = document.getElementById("detailNotes");
   const favBtn = document.getElementById("detailFavoriteBtn");
-  
 
   if (title) title.textContent = item.titre;
 
@@ -981,125 +1003,17 @@ if (special && item.id === "antalgie_sat") {
   }
 
   if (img && wrap) {
+    wrap.classList.remove("has-image");
     img.onload = () => wrap.classList.add("has-image");
     img.onerror = () => wrap.classList.remove("has-image");
     img.src = item.image;
   }
-special.innerHTML = "";
 
-if (item.id === "calcul_pedia") {
-
-  special.innerHTML = 
-    <div class="med-card-inner">
-
-      <input
-        type="number"
-        id="poidsPedia"
-        class="input"
-        placeholder="Poids en kg"
-        step="0.1"
-        min="0"
-        oninput="calculPedia()"
-      >
-
-      <div id="resultatsPedia"></div>
-
-    </div>
-  `;
-
-} else if (item.id === "antalgie_sat") {
-
-  special.innerHTML = `
-    window.calculAntalgie = function () {
-
-  const poids = Number(document.getElementById("poidsAntalgie")?.value);
-  const age = Number(document.getElementById("ageAntalgie")?.value);
-
-  const resultats = document.getElementById("resultatsAntalgie");
-
-  if (!resultats) return;
-
-  if (!poids || poids <= 0) {
-    resultats.innerHTML = "";
-    return;
-  }
-
-  const fentCharge = poids;
-  const fentRappel = poids * 0.5;
-  const fentMax = Math.min(poids * 4, 400);
-
-  const morphCharge = poids * 0.1;
-  const morphRappel = poids * 0.05;
-  const morphMax = Math.min(poids * 0.2, 20);
-
-  const ketaCharge = poids * 0.5;
-  const ketaRappel = poids * 0.25;
-  const ketaMax = poids;
-
-  let metaMg = "";
-  let metaMl = "";
-
-  if (poids >= 30 && poids <= 50) {
-    metaMg = "500 mg";
-    metaMl = "1 ml";
-  } else if (poids > 50) {
-    metaMg = "1000 mg";
-    metaMl = "2 ml";
-  }
-
-  let ketorolac = "";
-
-  if (age > 0) {
-    ketorolac = (poids < 50 || age > 65)
-      ? "15 mg"
-      : "30 mg";
-  }
-
-  resultats.innerHTML = 
-    <div class="med-box fentanyl">
-      <strong>Fentanyl</strong><br>
-      Charge : ${fentCharge.toFixed(0)} µg (${(fentCharge / 50).toFixed(2)} ml)<br>
-      Rappel : ${fentRappel.toFixed(0)} µg (${(fentRappel / 50).toFixed(2)} ml)<br>
-      Max : ${fentMax.toFixed(0)} µg (${(fentMax / 50).toFixed(2)} ml)
-    </div>
-
-    <div class="med-box morphine">
-      <strong>Morphine</strong><br>
-      Charge : ${morphCharge.toFixed(1)} mg (${morphCharge.toFixed(1)} ml)<br>
-      Rappel : ${morphRappel.toFixed(1)} mg (${morphRappel.toFixed(1)} ml)<br>
-      Max : ${morphMax.toFixed(1)} mg (${morphMax.toFixed(1)} ml)
-    </div>
-
-    <div class="med-box ketamine">
-      <strong>Kétamine</strong><br>
-      Charge : ${ketaCharge.toFixed(1)} mg (${(ketaCharge / 10).toFixed(2)} ml)<br>
-      Rappel : ${ketaRappel.toFixed(1)} mg (${(ketaRappel / 10).toFixed(2)} ml)<br>
-      Max : ${ketaMax.toFixed(1)} mg (${(ketaMax / 10).toFixed(2)} ml)
-    </div>
-
-    <div class="med-box metamizole">
-      <strong>Métamizole</strong><br>
-      ${metaMg ? `${metaMg} (${metaMl})` : "Poids < 30 kg"}
-    </div>
-
-    <div class="med-box midazolam">
-      <strong>Midazolam</strong><br>
-      0.5 mg à 2 mg
-    </div>
-
-    <div class="med-box ketorolac">
-      <strong>Ketorolac</strong><br>
-      ${ketorolac || "Entrer l'âge"}
-    </div>
-  `;
-};
-  `;
-}
   if (notes) {
     const storeKey = `notes:${state.detailSource}:${item.id}`;
     notes.value = readStorage(storeKey, "");
     notes.placeholder = item.notesPlaceholder || "Ajoute ici tes notes…";
-    notes.oninput = (e) => writeStorage(storeKey, e.target.value);
+    notes.oninput = e => writeStorage(storeKey, e.target.value);
   }
 
   const isFav = isFavorite(state.detailSource, item);
@@ -1111,7 +1025,6 @@ if (item.id === "calcul_pedia") {
   }
 }
 
-
 function renderMaterials() {
   const materialsList = document.getElementById("materialsList");
   if (!materialsList) return;
@@ -1119,11 +1032,11 @@ function renderMaterials() {
   const materials = readStorage("materials-list", DEFAULT_MATERIAL);
   const freeText = localStorage.getItem("materials-free-text") || "";
 
-// mémorise les catégories ouvertes
-const openedCategories = new Set(
-  [...document.querySelectorAll(".material-category[open]")]
-    .map(el => el.dataset.category)
-);
+  // mémorise les catégories ouvertes
+  const openedCategories = new Set(
+    [...document.querySelectorAll(".material-category[open]")]
+      .map(el => el.dataset.category)
+  );
 
   const categories = {};
 
@@ -1146,9 +1059,10 @@ const openedCategories = new Set(
     Object.entries(categories)
       .map(([category, data]) => `
         <details
-  class="material-category" 
-  data-category="${category}"
-  ${openedCategories.has(category) ? "open" : ""}>
+          class="material-category"
+          data-category="${category}"
+          ${openedCategories.has(category) ? "open" : ""}
+        >
           <summary>${category}${data.checkedCount > 0 ? ` (${data.checkedCount})` : ""}</summary>
 
           ${data.items.map(item => `
@@ -1176,8 +1090,7 @@ const openedCategories = new Set(
           `).join("")}
         </details>
       `)
-      .join("")
-    +
+      .join("") +
     `
       <div class="card" style="margin-top:15px;">
         <div class="material-name">📝 Notes libres</div>
@@ -1191,10 +1104,9 @@ const openedCategories = new Set(
       </div>
     `;
 
-
   // Sauvegarde des checkbox
-  materialsList.querySelectorAll("[data-check-index]").forEach((el) => {
-    el.addEventListener("change", (e) => {
+  materialsList.querySelectorAll("[data-check-index]").forEach(el => {
+    el.addEventListener("change", e => {
       const idx = Number(e.target.dataset.checkIndex);
       const next = readStorage("materials-list", DEFAULT_MATERIAL);
 
@@ -1209,8 +1121,8 @@ const openedCategories = new Set(
   });
 
   // Sauvegarde des notes par matériel
-  materialsList.querySelectorAll("[data-note-index]").forEach((el) => {
-    el.addEventListener("input", (e) => {
+  materialsList.querySelectorAll("[data-note-index]").forEach(el => {
+    el.addEventListener("input", e => {
       const idx = Number(e.target.dataset.noteIndex);
       const next = readStorage("materials-list", DEFAULT_MATERIAL);
 
@@ -1224,7 +1136,7 @@ const openedCategories = new Set(
   // Sauvegarde de la note libre
   const freeTextEl = document.getElementById("materialsFreeText");
   if (freeTextEl) {
-    freeTextEl.addEventListener("input", (e) => {
+    freeTextEl.addEventListener("input", e => {
       localStorage.setItem("materials-free-text", e.target.value);
     });
   }
@@ -1234,22 +1146,21 @@ function escapeHtml(value) {
   return String(value ?? "")
     .replaceAll("&", "&amp;")
     .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;");
 }
-
 
 function updateHeaderAndNav(screen) {
   const topbar = document.getElementById("topbar");
   const title = document.getElementById("mainTitle");
 
-  document.querySelectorAll(".screen").forEach((el) => el.classList.remove("active"));
+  document.querySelectorAll(".screen").forEach(el => el.classList.remove("active"));
   document.getElementById(`screen-${screen}`)?.classList.add("active");
 
-  document.querySelectorAll(".nav-btn").forEach((el) => el.classList.remove("active"));
+  document.querySelectorAll(".nav-btn").forEach(el => el.classList.remove("active"));
   document.querySelector(`.nav-btn[data-screen="${screen}"]`)?.classList.add("active");
 
-  // 🎯 Gestion des titres
   let pageTitle = "Algorithmes";
 
   switch (screen) {
@@ -1274,29 +1185,24 @@ function updateHeaderAndNav(screen) {
       break;
 
     case "detail":
-      // Cas spécial détail
       if (state.detailSource === "star") {
         pageTitle = "Carnet de poche";
       } else if (state.detailSource === "vd") {
         pageTitle = "Algo VD";
       } else if (state.detailSource === "autre") {
         pageTitle = "Autre";
-
-    
       }
       break;
   }
 
   if (title) title.textContent = pageTitle;
 
-  // 🎨 Mode STAR (couleur spéciale)
   if (screen === "star" || (screen === "detail" && state.detailSource === "star")) {
     topbar?.classList.add("star-mode");
   } else {
     topbar?.classList.remove("star-mode");
   }
 }
-
 
 function showScreen(screen) {
   state.screen = screen;
@@ -1312,20 +1218,20 @@ function showScreen(screen) {
       const favoritesSection = document.getElementById("favoritesSection");
       if (favoritesSection) favoritesSection.style.display = "";
       renderHomeFavorites();
-       renderHomeNotes();
+      renderHomeNotes();
       clearHomeSearchResults();
     }
   }
 
   if (screen === "vd") renderList("vd", "vdList");
   if (screen === "star") renderList("star", "starList");
-   if (screen === "autre") renderList("autre", "autreList");
+  if (screen === "autre") renderList("autre", "autreList");
   if (screen === "detail") renderDetail();
   if (screen === "materials") renderMaterials();
 }
 
 function setupEvents() {
-  document.querySelectorAll("[data-screen]").forEach((el) => {
+  document.querySelectorAll("[data-screen]").forEach(el => {
     el.addEventListener("click", () => {
       const screen = el.getAttribute("data-screen");
       showScreen(screen);
@@ -1336,15 +1242,11 @@ function setupEvents() {
     showScreen(state.previousScreen || "home");
   });
 
-document.getElementById("resetMaterials")?.addEventListener("click", () => {
-  // Reset du matériel
-  writeStorage("materials-list", DEFAULT_MATERIAL);
-
-  // ✅ Reset des notes libres
-  localStorage.removeItem("materials-free-text");
-
-  renderMaterials();
-});
+  document.getElementById("resetMaterials")?.addEventListener("click", () => {
+    writeStorage("materials-list", DEFAULT_MATERIAL);
+    localStorage.removeItem("materials-free-text");
+    renderMaterials();
+  });
 
   document.getElementById("syncMaterials")?.addEventListener("click", () => {
     alert("Synchronisation à brancher plus tard.");
@@ -1358,12 +1260,14 @@ function registerServiceWorker() {
     navigator.serviceWorker.register("sw.js").catch(() => {});
   }
 }
+
 window.calculPedia = function () {
- 
-  const poids = Number(document.getElementById("poidsPedia").value);
+  const poids = Number(document.getElementById("poidsPedia")?.value);
   const resultats = document.getElementById("resultatsPedia");
 
-  if (!poids || poids <= 0) {
+  if (!resultats) return;
+
+  if (isNaN(poids) || poids <= 0) {
     resultats.innerHTML = "";
     return;
   }
@@ -1374,22 +1278,17 @@ window.calculPedia = function () {
 
   const adreDose = poids * 0.01;
   const adreVol = adreDose;
-  
 
-let dilutionText = "";
-let volCalc = 0;
+  let dilutionText = "";
+  let volCalc = 0;
 
-if (poids < 10) {
-  // dilution personnalisée
-  dilutionText = `Dilution : ${poids} mg dans 100 ml (soit ${poids * 10} µg/ml)`;
-  volCalc = 1;
-} else {
-  // dilution standard
-  dilutionText = "Dilution : 10 mg dans 100 ml (100 µg/ml)";
-  volCalc = poids * 0.1;
-}
-
-
+  if (poids < 10) {
+    dilutionText = `Dilution : ${poids} mg dans 100 ml (soit ${poids * 10} µg/ml)`;
+    volCalc = 1;
+  } else {
+    dilutionText = "Dilution : 10 mg dans 100 ml (100 µg/ml)";
+    volCalc = poids * 0.1;
+  }
 
   const glucoseDose = poids * 0.4;
   const glucoseVol = glucoseDose / 0.2;
@@ -1412,13 +1311,13 @@ if (poids < 10) {
       Max : ${amioMax.toFixed(1)} mg
     </div>
 
-   <div class="med-result med-adre">
-  🟥 Adrénaline<br>
-  Dose : ${adreDose.toFixed(3)} mg<br>
-  Volume non dilué : ${adreVol.toFixed(3)} ml<br>
-  ${dilutionText}<br>
-  Volume recommandé (dilué) : ${volCalc.toFixed(2)} ml
-</div>
+    <div class="med-result med-adre">
+      🟥 Adrénaline<br>
+      Dose : ${adreDose.toFixed(3)} mg<br>
+      Volume non dilué : ${adreVol.toFixed(3)} ml<br>
+      ${dilationText}<br>
+      Volume recommandé (dilué) : ${volCalc.toFixed(2)} ml
+    </div>
 
     <div class="med-result med-glucose">
       🟨 Glucose<br>
@@ -1434,7 +1333,7 @@ if (poids < 10) {
 
     <div class="med-result med-liquides">
       💧 Liquides<br>
-      Volume max: ${liquidesVol.toFixed(0)} ml
+      Volume max : ${liquidesVol.toFixed(0)} ml
     </div>
 
     <div class="med-result med-rivotril">
@@ -1448,17 +1347,16 @@ if (poids < 10) {
       2e : ${chocDose2.toFixed(0)} J
     </div>
   `;
-}
-window.calculAntalgie = function () {
+};
 
+window.calculAntalgie = function () {
   const poids = Number(document.getElementById("poidsAntalgie")?.value);
   const age = Number(document.getElementById("ageAntalgie")?.value);
-
   const resultats = document.getElementById("resultatsAntalgie");
 
   if (!resultats) return;
 
-  if (!poids || poids <= 0) {
+  if (isNaN(poids) || poids <= 0) {
     resultats.innerHTML = "";
     return;
   }
@@ -1488,7 +1386,7 @@ window.calculAntalgie = function () {
 
   let ketorolac = "";
 
-  if (age > 0) {
+  if (!isNaN(age) && age > 0) {
     ketorolac = (poids < 50 || age > 65)
       ? "15 mg"
       : "30 mg";
@@ -1540,10 +1438,7 @@ function init() {
 
   setupEvents();
   registerServiceWorker();
-
   showScreen("home");
 }
 
 document.addEventListener("DOMContentLoaded", init);
-
-
