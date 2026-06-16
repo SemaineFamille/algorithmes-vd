@@ -1017,8 +1017,16 @@ function renderSpecialContent(item, special) {
         placeholder="Poids en kg"
         step="0.1"
         min="0"
-        oninput="calculAntalgieStar()"
+        oninput="calculAntalgieTCS()"
       >
+      <input
+          type="number"
+          id="ageAntalgieTCS"
+          class="input"
+          placeholder="Âge (ans)"
+          step="1"
+          min="0"
+        >
 
       <div id="resultatsAntalgieTCS"></div>
     </div>
