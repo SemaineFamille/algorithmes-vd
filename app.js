@@ -917,6 +917,7 @@ function renderSpecialContent(item, special) {
 
   special.innerHTML = "";
 
+  // ✅ CALCUL PÉDIATRIQUE
   if (item.id === "calcul_pedia") {
     special.innerHTML = `
       <div class="card med-card">
@@ -930,16 +931,23 @@ function renderSpecialContent(item, special) {
             placeholder="Poids en kg"
             step="0.1"
             min="0"
-            oninput="calculPedia()"
           >
 
           <div id="resultatsPedia"></div>
         </div>
       </div>
     `;
+
+    // 🔥 IMPORTANT : attacher l'événement ici
+    const input = document.getElementById("poidsPedia");
+    if (input) {
+      input.addEventListener("input", calculPedia);
+    }
+
     return;
   }
 
+  // ✅ ANTALGIE (déjà OK)
   if (item.id === "antalgie_sat") {
     special.innerHTML = `
       <div class="card med-card">
@@ -952,7 +960,6 @@ function renderSpecialContent(item, special) {
           placeholder="Poids en kg"
           step="0.1"
           min="0"
-          oninput="calculAntalgie()"
         >
 
         <input
@@ -962,14 +969,17 @@ function renderSpecialContent(item, special) {
           placeholder="Âge (ans)"
           step="1"
           min="0"
-          oninput="calculAntalgie()"
         >
 
         <div id="resultatsAntalgie"></div>
       </div>
     `;
+
+    document.getElementById("poidsAntalgie")?.addEventListener("input", calculAntalgie);
+    document.getElementById("ageAntalgie")?.addEventListener("input", calculAntalgie);
   }
 }
+
 
 function renderDetail() {
   const list = getListBySource(state.detailSource);
