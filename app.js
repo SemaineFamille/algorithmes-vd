@@ -978,7 +978,7 @@ function renderSpecialContent(item, special) {
     document.getElementById("poidsAntalgie")?.addEventListener("input", calculAntalgie);
     document.getElementById("ageAntalgie")?.addEventListener("input", calculAntalgie);
   }
-  if (special && item.id === "amd_star") {
+  if (special && item.id === "amd_antalgie") {
   special.innerHTML = `
     <div class="card med-card">
       <h3>💉 Calculs Antalgie STAR</h3>
