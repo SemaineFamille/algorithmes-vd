@@ -1,7 +1,7 @@
 
 /**
  * Algorithmes terrain
- * Développé par : Ton Nom
+ * Développé par : Mélanie Weil
  * © 2026 – Tous droits réservés
  */
 
