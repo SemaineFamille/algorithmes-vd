@@ -1673,6 +1673,7 @@ window.calculAntalgieTCS = function () {
 
 };
 
+
 function init() {
   if (!localStorage.getItem("materials-list")) {
     writeStorage("materials-list", DEFAULT_MATERIAL);
@@ -1681,6 +1682,12 @@ function init() {
   setupEvents();
   registerServiceWorker();
   showScreen("home");
+
+  // ✅ MAJ bouton 🔒 / 🔓
+  const btn = document.querySelector("#topbar button");
+  if (btn) {
+    btn.textContent = isMe ? "🔓" : "🔒";
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
