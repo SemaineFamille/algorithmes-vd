@@ -1691,9 +1691,4 @@ function init() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.querySelector("#topbar button");
-  if (isMe && btn) {
-    btn.textContent = "🔓";
-  }
-});
+
