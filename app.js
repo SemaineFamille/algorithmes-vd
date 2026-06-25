@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 26-06-2026 13h25");
+console.log("APP VERSION 26-06-2026 13h35");
 
 
 const CHAPTER_STYLES = {
@@ -151,7 +151,14 @@ const AUTRE_FILTERED = AUTRE.filter(algo => {
 // ✅ On remplace le contenu de AUTRE
 AUTRE.length = 0;
 AUTRE.push(...AUTRE_FILTERED);
+const isMe = localStorage.getItem("me") === "true";
 
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector("#topbar button");
+  if (isMe && btn) {
+    btn.textContent = "🔓"; // ouvert si activé
+  }
+});
 
 const STAR_ALGOS = [
   // Maladie
