@@ -137,6 +137,31 @@ const AUTRE = [
   { id: "pastel", ordre: 30, titre: "PASTEL 👶", chapitre: "Pédiatrie👶", source: "Moi", image: "images/pastel.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "calcul_pedia", ordre: 40, titre: "💉 Calcul rapide pédiatrique", chapitre: "Pédiatrie👶", source: "Moi", image: "images/calcul_pedia.png", favori: false, notesPlaceholder: "" }
 ];
+// 🔐 Mode perso (activé seulement sur TON appareil)
+const isMe = localStorage.getItem("me") === "true";
+
+// 👀 Filtrage des algos visibles
+const AUTRE_VISIBLE = AUTRE.filter(algo => {
+  if (algo.source === "SAT" && !isMe) {
+    return false;
+  }
+  return true;
+});
+// ✅ on remplace AUTRE par la version filtrée
+AUTRE.length = 0;
+AUTRE.push(...AUTRE_FILTERED);
+
+const isMe = localStorage.getItem("me") === "true";
+
+const AUTRE_FILTERED = AUTRE.filter(algo => {
+  if (algo.source === "SAT" && !isMe) {
+    return false;
+  }
+  return true;
+});
+
+AUTRE.length = 0;
+AUTRE.push(...AUTRE_FILTERED);
 
 const STAR_ALGOS = [
   // Maladie
