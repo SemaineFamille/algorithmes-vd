@@ -645,7 +645,14 @@ const state = {
   detailSource: "vd",
   selectedId: null
 };
-
+function unlock() {
+  const code = prompt("Code ?");
+  if (code === "2019") {
+    localStorage.setItem("me", "true");
+    alert("Mode perso activé !");
+    location.reload();
+  }
+}
 function readStorage(key, fallback) {
   try {
     const raw = localStorage.getItem(key);
