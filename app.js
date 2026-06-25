@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 26-06-2026 14h10");
+console.log("APP VERSION 26-06-2026 15h40");
 
 
 const CHAPTER_STYLES = {
@@ -1690,5 +1690,6 @@ function init() {
     btn.textContent = isMe ? "🔓" : "🔒";
   }
 }
+document.addEventListener("DOMContentLoaded", init);
 
 
