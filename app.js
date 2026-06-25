@@ -1683,4 +1683,9 @@ function init() {
   showScreen("home");
 }
 
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector("#topbar button");
+  if (isMe && btn) {
+    btn.textContent = "🔓";
+  }
+});
