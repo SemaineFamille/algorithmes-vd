@@ -141,6 +141,7 @@ const AUTRE = [
 const isMe = localStorage.getItem("me") === "true";
 
 // 👀 Filtrage des algos visibles (on supprime SAT pour les collègues)
+
 const AUTRE_FILTERED = AUTRE.filter(algo => {
   if (algo.source === "SAT" && !isMe) {
     return false;
@@ -148,9 +149,9 @@ const AUTRE_FILTERED = AUTRE.filter(algo => {
   return true;
 });
 
-// ✅ On remplace le contenu de AUTRE
 AUTRE.length = 0;
 AUTRE.push(...AUTRE_FILTERED);
+
 
 const STAR_ALGOS = [
   // Maladie
