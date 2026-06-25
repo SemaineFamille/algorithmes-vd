@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 26-06-2026 13h52");
+console.log("APP VERSION 26-06-2026 14h10");
 
 
 const CHAPTER_STYLES = {
