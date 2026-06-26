@@ -1317,7 +1317,7 @@ function showScreen(screen) {
   if (screen === "materials") renderMaterials();
 if (screen === "star") {
   if (!isMe) return; // 🚫 bloque les collègues
-  renderList("star", "starList");
+  renderList("star", "starList");}
 
 }
 
@@ -1693,6 +1693,14 @@ function init() {
     btn.textContent = isMe ? "🔓" : "🔒";
   }
 }
+
+// ✅ cacher STAR pour les collègues
+if (!isMe) {
+  document.querySelectorAll('[data-screen="star"]').forEach(el => {
+    el.style.display = "none";
+  });
+}
+
 document.addEventListener("DOMContentLoaded", init);
 
 
