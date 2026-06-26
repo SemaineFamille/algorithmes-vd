@@ -1,4 +1,4 @@
-const CACHE = "algo-vd-v1";
+const CACHE_NAME = 'algo-vd-cache-v3';
 const IMAGES = [
   "images/icon-192.png",
   "images/icon-512.png"
