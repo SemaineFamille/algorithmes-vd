@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 26-06-2026 10h46");
+console.log("APP VERSION 26-06-2026 11h00");
 
 
 const CHAPTER_STYLES = {
@@ -647,20 +647,23 @@ const state = {
 };
 function unlock() {
   const code = prompt("Code ?");
-  if (code === "2019") {
+  if (code !== "2019") return;
+
+  const isMe = localStorage.getItem("me") === "true";
+
+  if (isMe) {
+    // 🔒 désactiver
+    localStorage.removeItem("me");
+    alert("Mode perso désactivé");
+  } else {
+    // 🔓 activer
     localStorage.setItem("me", "true");
-    alert("Mode perso activé !");
-    location.reload();
+    alert("Mode perso activé");
   }
+
+  location.reload();
 }
-function readStorage(key, fallback) {
-  try {
-    const raw = localStorage.getItem(key);
-    return raw ? JSON.parse(raw) : fallback;
-  } catch {
-    return fallback;
-  }
-}
+
 
 function writeStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
