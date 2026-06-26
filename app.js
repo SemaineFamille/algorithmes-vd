@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 26-06-2026 15h40");
+console.log("APP VERSION 26-06-2026 10h46");
 
 
 const CHAPTER_STYLES = {
@@ -1312,10 +1312,13 @@ function showScreen(screen) {
   }
 
   if (screen === "vd") renderList("vd", "vdList");
-  if (screen === "star") renderList("star", "starList");
-  if (screen === "autre") renderList("autre", "autreList");
+    if (screen === "autre") renderList("autre", "autreList");
   if (screen === "detail") renderDetail();
   if (screen === "materials") renderMaterials();
+if (screen === "star") {
+  if (!isMe) return; // 🚫 bloque les collègues
+  renderList("star", "starList");
+
 }
 
 function setupEvents() {
