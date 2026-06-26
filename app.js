@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 26-06-2026 11h00");
+console.log("APP VERSION 26-06-2026 11h15");
 
 
 const CHAPTER_STYLES = {
@@ -151,7 +151,21 @@ const AUTRE_FILTERED = AUTRE.filter(algo => {
 
 AUTRE.length = 0;
 AUTRE.push(...AUTRE_FILTERED);
+// 🔐 Mode perso (stocké localement sur ton appareil)
+const isMe = localStorage.getItem("me") === "true";
+const canSeeStar = isMe;
 
+// 👀 Filtrage des algos visibles dans "Autre"
+// On masque SAT pour les collègues
+const AUTRE_FILTERED = AUTRE.filter(algo => {
+  if (algo.source === "SAT" && !isMe) {
+    return false;
+  }
+  return true;
+});
+
+AUTRE.length = 0;
+AUTRE.push(...AUTRE_FILTERED);
 
 const STAR_ALGOS = [
   // Maladie
@@ -646,9 +660,9 @@ const state = {
   selectedId: null
 };
 function unlock() {
-  const isMe = localStorage.getItem("me") === "true";
+  const currentlyMe = localStorage.getItem("me") === "true";
 
-  if (isMe) {
+  if (currentlyMe) {
     const confirmOff = confirm("Désactiver le mode perso ?");
     if (confirmOff) {
       localStorage.removeItem("me");
@@ -663,7 +677,18 @@ function unlock() {
     location.reload();
   }
 }
+function readStorage(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch {
+    return fallback;
+  }
+}
 
+function writeStorage(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
 
 function writeStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
@@ -704,7 +729,7 @@ function getListBySource(source) {
     case "vd":
       return VD_ALGOS;
     case "star":
-      return STAR_ALGOS;
+      return canSeeStar ? STAR_ALGOS : [];
     case "autre":
       return AUTRE;
     default:
@@ -712,13 +737,15 @@ function getListBySource(source) {
   }
 }
 
+
 function getAllAlgos() {
   return [
     ...VD_ALGOS.map(item => ({ ...item, sourceType: "vd" })),
     ...AUTRE.map(item => ({ ...item, sourceType: "autre" })),
-    ...STAR_ALGOS.map(item => ({ ...item, sourceType: "star" }))
+    ...(canSeeStar ? STAR_ALGOS.map(item => ({ ...item, sourceType: "star" })) : [])
   ];
 }
+
 
 function getFavMap() {
   return readStorage("favorites-map", {});
@@ -811,11 +838,12 @@ function renderHomeFavorites() {
   const favoritesSection = document.getElementById("favoritesSection");
   if (!favoritesSection) return;
 
-  const all = [
-    ...VD_ALGOS.map(item => ({ item, source: "vd" })),
-    ...AUTRE.map(item => ({ item, source: "autre" })),
-    ...STAR_ALGOS.map(item => ({ item, source: "star" }))
-  ];
+const all = [
+  ...VD_ALGOS.map(item => ({ item, source: "vd" })),
+  ...AUTRE.map(item => ({ item, source: "autre" })),
+  ...(canSeeStar ? STAR_ALGOS.map(item => ({ item, source: "star" })) : [])
+];
+
 
   const favorites = all
     .filter(({ item, source }) => isFavorite(source, item))
@@ -1296,6 +1324,11 @@ function updateHeaderAndNav(screen) {
 }
 
 function showScreen(screen) {
+  // 🚫 Si STAR est demandé mais non autorisé, on renvoie à l'accueil
+  if (screen === "star" && !canSeeStar) {
+    screen = "home";
+  }
+
   state.screen = screen;
   applyTheme(screen);
   updateHeaderAndNav(screen);
@@ -1315,13 +1348,10 @@ function showScreen(screen) {
   }
 
   if (screen === "vd") renderList("vd", "vdList");
-    if (screen === "autre") renderList("autre", "autreList");
+  if (screen === "autre") renderList("autre", "autreList");
   if (screen === "detail") renderDetail();
   if (screen === "materials") renderMaterials();
-if (screen === "star") {
-  if (!isMe) return; // 🚫 bloque les collègues
-  renderList("star", "starList");}
-
+  if (screen === "star" && canSeeStar) renderList("star", "starList");
 }
 
 function setupEvents() {
@@ -1691,13 +1721,13 @@ function init() {
   showScreen("home");
 
   // 🔒 / 🔓 bouton
-  const btn = document.querySelector("#topbar button");
+  const btn = document.getElementById("unlockBtn");
   if (btn) {
     btn.textContent = isMe ? "🔓" : "🔒";
   }
 
-  // ✅ cacher STAR pour les collègues
-  if (!isMe) {
+  // ✅ cacher tous les boutons STAR pour les collègues
+  if (!canSeeStar) {
     document.querySelectorAll('[data-screen="star"]').forEach(el => {
       el.style.display = "none";
     });
