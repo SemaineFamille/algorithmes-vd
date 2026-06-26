@@ -1687,19 +1687,20 @@ function init() {
   registerServiceWorker();
   showScreen("home");
 
-  // ✅ MAJ bouton 🔒 / 🔓
+  // 🔒 / 🔓 bouton
   const btn = document.querySelector("#topbar button");
   if (btn) {
     btn.textContent = isMe ? "🔓" : "🔒";
   }
+
+  // ✅ cacher STAR pour les collègues
+  if (!isMe) {
+    document.querySelectorAll('[data-screen="star"]').forEach(el => {
+      el.style.display = "none";
+    });
+  }
 }
 
-// ✅ cacher STAR pour les collègues
-if (!isMe) {
-  document.querySelectorAll('[data-screen="star"]').forEach(el => {
-    el.style.display = "none";
-  });
-}
 
 document.addEventListener("DOMContentLoaded", init);
 
