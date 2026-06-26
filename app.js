@@ -137,8 +137,7 @@ const AUTRE = [
   { id: "pastel", ordre: 30, titre: "PASTEL 👶", chapitre: "Pédiatrie👶", source: "Moi", image: "images/pastel.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "calcul_pedia", ordre: 40, titre: "💉 Calcul rapide pédiatrique", chapitre: "Pédiatrie👶", source: "Moi", image: "images/calcul_pedia.png", favori: false, notesPlaceholder: "" }
 ];
-// 🔐 Mode perso (activé seulement sur TON appareil)
-const isMe = localStorage.getItem("me") === "true";
+
 
 // 👀 Filtrage des algos visibles (on supprime SAT pour les collègues)
 
