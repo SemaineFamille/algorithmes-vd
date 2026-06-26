@@ -646,22 +646,22 @@ const state = {
   selectedId: null
 };
 function unlock() {
-  const code = prompt("Code ?");
-  if (code !== "2019") return;
-
   const isMe = localStorage.getItem("me") === "true";
 
   if (isMe) {
-    // 🔒 désactiver
-    localStorage.removeItem("me");
-    alert("Mode perso désactivé");
-  } else {
-    // 🔓 activer
-    localStorage.setItem("me", "true");
-    alert("Mode perso activé");
+    const confirmOff = confirm("Désactiver le mode perso ?");
+    if (confirmOff) {
+      localStorage.removeItem("me");
+      location.reload();
+    }
+    return;
   }
 
-  location.reload();
+  const code = prompt("Code ?");
+  if (code === "2019") {
+    localStorage.setItem("me", "true");
+    location.reload();
+  }
 }
 
 
