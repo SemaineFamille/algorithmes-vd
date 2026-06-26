@@ -138,18 +138,6 @@ const AUTRE = [
   { id: "calcul_pedia", ordre: 40, titre: "💉 Calcul rapide pédiatrique", chapitre: "Pédiatrie👶", source: "Moi", image: "images/calcul_pedia.png", favori: false, notesPlaceholder: "" }
 ];
 
-
-// 👀 Filtrage des algos visibles (on supprime SAT pour les collègues)
-
-const AUTRE_FILTERED = AUTRE.filter(algo => {
-  if (algo.source === "SAT" && !isMe) {
-    return false;
-  }
-  return true;
-});
-
-AUTRE.length = 0;
-AUTRE.push(...AUTRE_FILTERED);
 // 🔐 Mode perso (stocké localement sur ton appareil)
 const isMe = localStorage.getItem("me") === "true";
 const canSeeStar = isMe;
@@ -163,8 +151,10 @@ const AUTRE_FILTERED = AUTRE.filter(algo => {
   return true;
 });
 
+// ✅ Remplacement du tableau original
 AUTRE.length = 0;
 AUTRE.push(...AUTRE_FILTERED);
+
 
 const STAR_ALGOS = [
   // Maladie
