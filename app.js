@@ -4,11 +4,13 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 29-06-2026 10h35");
+console.log("APP VERSION 29-06-2026 10h45");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
 // "pro" → CORFA
+
+let corfaTab = "algos";
 
 const CHAPTER_STYLES = {
   // 🔴 GYNÉCO / OBSTÉTRIQUE
@@ -612,9 +614,17 @@ const STAR_ALGOS = [
 ];
 
 
-const CORFA = [
-  { id: "c1", titre: "Corfa 1", chapitre: "Interne", image: "images/corfa1.png", favori: false }
+
+const CORFA_ALGOS = [
+  { id: "c1", titre: "Algo CORFA 1", chapitre: "Interne", image: "images/corfa1.png", favori: false },
+  { id: "c2", titre: "Algo CORFA 2", chapitre: "Interne", image: "images/corfa2.png", favori: false }
 ];
+
+const CORFA_PHARMA = [
+  { id: "p1", titre: "Adrénaline 💉", chapitre: "Interne", image: "images/adrenaline.png", favori: false },
+  { id: "p2", titre: "Morphine 💊", chapitre: "Interne", image: "images/morphine.png", favori: false }
+];
+
 
 
 
@@ -676,6 +686,11 @@ function unlock() {
     location.reload();
   }
 }
+function setCorfaTab(tab) {
+  corfaTab = tab;
+  renderCORFA();
+}
+
 function updateModeUI() {
   const btnBottom = document.getElementById("modeBtn");
   const btnTop = document.getElementById("modeBtnTop");
@@ -940,7 +955,23 @@ function renderList(source, containerId) {
   bindCardEvents(container);
 }
 function renderCORFA() {
-  renderList("corfa", "corfaList");
+  const container = document.getElementById("corfaList");
+  if (!container) return;
+
+  let data = [];
+
+  if (corfaTab === "algos") {
+    data = CORFA_ALGOS;
+  } else {
+    data = CORFA_PHARMA;
+  }
+
+  container.innerHTML = data
+    .sort((a, b) => (a.ordre || 0) - (b.ordre || 0))
+    .map(item => cardHTML(item, "corfa"))
+    .join("");
+
+  bindCardEvents(container);
 }
 function clearHomeSearchResults() {
   const container = document.getElementById("homeVdList");
