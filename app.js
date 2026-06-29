@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 29-06-2026 10h45");
+console.log("APP VERSION 29-06-2026 10h55");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -954,25 +954,28 @@ function renderList(source, containerId) {
   container.innerHTML = list.map(item => cardHTML(item, source)).join("");
   bindCardEvents(container);
 }
-function renderCORFA() {
-  const container = document.getElementById("corfaList");
+function renderCorfaAlgos() {
+  const container = document.getElementById("corfaAlgosList");
   if (!container) return;
 
-  let data = [];
-
-  if (corfaTab === "algos") {
-    data = CORFA_ALGOS;
-  } else {
-    data = CORFA_PHARMA;
-  }
-
-  container.innerHTML = data
-    .sort((a, b) => (a.ordre || 0) - (b.ordre || 0))
+  container.innerHTML = CORFA_ALGOS
     .map(item => cardHTML(item, "corfa"))
     .join("");
 
   bindCardEvents(container);
 }
+
+function renderCorfaPharma() {
+  const container = document.getElementById("corfaPharmaList");
+  if (!container) return;
+
+  container.innerHTML = CORFA_PHARMA
+    .map(item => cardHTML(item, "corfa"))
+    .join("");
+
+  bindCardEvents(container);
+}
+
 function clearHomeSearchResults() {
   const container = document.getElementById("homeVdList");
   if (container) {
@@ -1419,6 +1422,10 @@ function showScreen(screen) {
   if (screen === "vd") renderList("vd", "vdList");
   if (screen === "autre") renderList("autre", "autreList");
   if (screen === "corfa") renderCORFA();
+  
+if (screen === "corfa-algos") renderCorfaAlgos();
+if (screen === "corfa-pharma") renderCorfaPharma();
+
   if (screen === "detail") renderDetail();
   if (screen === "materials") renderMaterials();
   if (screen === "star" && canSeeStar) renderList("star", "starList");
