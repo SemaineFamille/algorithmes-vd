@@ -1089,7 +1089,7 @@ function renderCORFA() {
     <div class="card">
       <div class="actions-grid">
         <button class="btn btn-corfa-algos" id="corfaAlgosBtn" type="button">
-          🧠 Algorithmes
+          📝 Algorithmes
         </button>
 
         <button class="btn btn-corfa-pharma" id="corfaPharmaBtn" type="button">
