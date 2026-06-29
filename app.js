@@ -785,15 +785,15 @@ function writeStorage(key, value) {
 }
 
 function applyTheme(screen) {
-document.body.classList.remove(
-  "theme-vd",
-  "theme-star",
-  "theme-autre",
-  "theme-materials",
-  "theme-corfa",
-  "theme-corfa-algos",
-  "theme-corfa-pharma"
-);
+  document.body.classList.remove(
+    "theme-vd",
+    "theme-star",
+    "theme-autre",
+    "theme-materials",
+    "theme-corfa",
+    "theme-corfa-algos",
+    "theme-corfa-pharma"
+  );
 
   if (screen === "vd" || (screen === "detail" && state.detailSource === "vd")) {
     document.body.classList.add("theme-vd");
@@ -811,16 +811,17 @@ document.body.classList.remove(
     document.body.classList.add("theme-corfa");
   }
 
+  if (screen === "corfa-algos" || (screen === "detail" && state.detailSource === "corfa-algos")) {
+    document.body.classList.add("theme-corfa-algos");
+  }
+
+  if (screen === "corfa-pharma" || (screen === "detail" && state.detailSource === "corfa-pharma")) {
+    document.body.classList.add("theme-corfa-pharma");
+  }
+
   if (screen === "materials") {
     document.body.classList.add("theme-materials");
   }
-  if (screen === "corfa-algos") {
-  document.body.classList.add("theme-corfa-algos");
-}
-
-if (screen === "corfa-pharma") {
-  document.body.classList.add("theme-corfa-pharma");
-}
 }
 
 function chapterStyle(chapter) {
@@ -896,9 +897,9 @@ function toggleFavorite(source, id) {
   favs[key] = !current;
   writeStorage("favorites-map", favs);
 
-  // Rafraîchir l’accueil
   if (state.screen === "home") {
     const searchVal = document.getElementById("searchInput")?.value || "";
+
     if (searchVal.trim()) {
       runHomeSearch(searchVal);
     } else {
@@ -908,13 +909,13 @@ function toggleFavorite(source, id) {
     }
   }
 
-  // Rafraîchir les listes
   if (state.screen === "vd") renderList("vd", "vdList");
   if (state.screen === "star") renderList("star", "starList");
   if (state.screen === "autre") renderList("autre", "autreList");
+  if (state.screen === "corfa-algos") renderCorfaAlgos();
+  if (state.screen === "corfa-pharma") renderCorfaPharma();
   if (state.screen === "detail") renderDetail();
 }
-
 function cardHTML(item, source) {
   const style = chapterStyle(item.chapitre);
   const favorite = isFavorite(source, item);
@@ -923,9 +924,10 @@ function cardHTML(item, source) {
     <div class="algo-card" data-open-source="${source}" data-open-id="${item.id}" style="background:${style.background}; border:2px solid ${style.border};">
       <div class="algo-card-row">
         <div class="algo-card-left">
-          <span class="badge" style="${style.badge}">${escapeHtml(item.chapitre)}</span>
-          <div class="algo-title">${escapeHtml(item.titre)}</div>
+          <span class="badge" style="${style.badge}">${escapeHtml(item.chapitre || "Interne")}</span>
+          <div class="algo-title">${escapeHtml(item.titre || "")}</div>
         </div>
+
         <button class="favorite-btn ${favorite ? "active" : "inactive"}" data-fav-source="${source}" data-fav-id="${item.id}" type="button">
           ${favorite ? "⭐" : "☆"}
         </button>
@@ -955,18 +957,17 @@ function renderHomeFavorites() {
   const favoritesSection = document.getElementById("favoritesSection");
   if (!favoritesSection) return;
 
-const all = [
-  ...VD_ALGOS.map(item => ({ item, source: "vd" })),
-  ...AUTRE.map(item => ({ item, source: "autre" })),
-  ...CORFA_ALGOS.map(item => ({ item, source: "corfa-algos" })),
-  ...CORFA_PHARMA.map(item => ({ item, source: "corfa-pharma" })),
-  ...(canSeeStar ? STAR_ALGOS.map(item => ({ item, source: "star" })) : [])
-];
-
+  const all = [
+    ...VD_ALGOS.map(item => ({ item, source: "vd" })),
+    ...AUTRE.map(item => ({ item, source: "autre" })),
+    ...CORFA_ALGOS.map(item => ({ item, source: "corfa-algos" })),
+    ...CORFA_PHARMA.map(item => ({ item, source: "corfa-pharma" })),
+    ...(canSeeStar ? STAR_ALGOS.map(item => ({ item, source: "star" })) : [])
+  ];
 
   const favorites = all
     .filter(({ item, source }) => isFavorite(source, item))
-    .sort((a, b) => a.item.ordre - b.item.ordre);
+    .sort((a, b) => (a.item.ordre || 0) - (b.item.ordre || 0));
 
   if (!favorites.length) {
     favoritesSection.innerHTML = `
@@ -986,7 +987,6 @@ const all = [
 
   bindCardEvents(favoritesSection);
 }
-
 function renderHomeNotes() {
   const container = document.getElementById("homeNotesSection");
   if (!container) return;
@@ -1022,6 +1022,33 @@ function renderList(source, containerId) {
   container.innerHTML = list.map(item => cardHTML(item, source)).join("");
   bindCardEvents(container);
 }
+function renderCORFA() {
+  const container = document.getElementById("corfaList");
+  if (!container) return;
+
+  container.innerHTML = `
+    <div class="card">
+      <div class="actions-grid">
+        <button class="btn btn-corfa-algos" id="corfaAlgosBtn" type="button">
+          🧠 Algorithmes
+        </button>
+
+        <button class="btn btn-corfa-pharma" id="corfaPharmaBtn" type="button">
+          💊 Pharmacologie
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById("corfaAlgosBtn")?.addEventListener("click", () => {
+    showScreen("corfa-algos");
+  });
+
+  document.getElementById("corfaPharmaBtn")?.addEventListener("click", () => {
+    showScreen("corfa-pharma");
+  });
+}
+
 function renderCORFA() {
   const container = document.getElementById("corfaList");
   if (!container) return;
@@ -1467,17 +1494,16 @@ function updateHeaderAndNav(screen) {
       break;
 
     case "corfa":
-  pageTitle = "CORFA";
-  break;
+      pageTitle = "CORFA";
+      break;
 
-case "corfa-algos":
-  pageTitle = "Algorithmes CORFA";
-  break;
+    case "corfa-algos":
+      pageTitle = "Algorithmes CORFA";
+      break;
 
-case "corfa-pharma":
-  pageTitle = "Pharmacologie CORFA";
-  break;
-
+    case "corfa-pharma":
+      pageTitle = "Pharmacologie CORFA";
+      break;
 
     case "autre":
       pageTitle = "Autre";
@@ -1491,9 +1517,10 @@ case "corfa-pharma":
       if (state.detailSource === "star") pageTitle = "Carnet de poche";
       if (state.detailSource === "vd") pageTitle = "Algo VD";
       if (state.detailSource === "autre") pageTitle = "Autre";
-    if (state.detailSource === "corfa") pageTitle = "CORFA";
-if (state.detailSource === "corfa-algos") pageTitle = "Algorithmes CORFA";
-if (state.detailSource === "corfa-pharma") pageTitle = "Pharmacologie CORFA";
+      if (state.detailSource === "corfa") pageTitle = "CORFA";
+      if (state.detailSource === "corfa-algos") pageTitle = "Algorithmes CORFA";
+      if (state.detailSource === "corfa-pharma") pageTitle = "Pharmacologie CORFA";
+      break;
   }
 
   if (title) title.textContent = pageTitle;
@@ -1506,7 +1533,6 @@ if (state.detailSource === "corfa-pharma") pageTitle = "Pharmacologie CORFA";
 }
 
 function showScreen(screen) {
-
   if (screen === "star" && !canSeeStar) {
     screen = "home";
   }
@@ -1524,6 +1550,7 @@ function showScreen(screen) {
     } else {
       const favoritesSection = document.getElementById("favoritesSection");
       if (favoritesSection) favoritesSection.style.display = "";
+
       renderHomeFavorites();
       renderHomeNotes();
       clearHomeSearchResults();
@@ -1532,11 +1559,9 @@ function showScreen(screen) {
 
   if (screen === "vd") renderList("vd", "vdList");
   if (screen === "autre") renderList("autre", "autreList");
-
   if (screen === "corfa") renderCORFA();
   if (screen === "corfa-algos") renderCorfaAlgos();
   if (screen === "corfa-pharma") renderCorfaPharma();
-
   if (screen === "materials") renderMaterials();
   if (screen === "detail") renderDetail();
 
