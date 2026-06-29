@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 29-06-2026 11h10");
+console.log("APP VERSION 29-06-2026 12h50");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -626,6 +626,12 @@ const CORFA_PHARMA = [
 ];
 
 
+// ✅ Tableau combiné pour recherche + favoris
+const CORFA = [
+  ...CORFA_ALGOS,
+  ...CORFA_PHARMA
+];
+
 
 
 const DEFAULT_MATERIAL = [
@@ -789,11 +795,16 @@ function getListBySource(source) {
     case "corfa":
       return CORFA;
 
+    case "corfa-algos":
+      return CORFA_ALGOS;
+
+    case "corfa-pharma":
+      return CORFA_PHARMA;
+
     default:
       return [];
   }
 }
-
 
 function getAllAlgos() {
   return [
@@ -966,7 +977,22 @@ function renderCorfaAlgos() {
   if (!container) return;
 
   container.innerHTML = CORFA_ALGOS
-    .map(item => cardHTML(item, "corfa"))
+    .slice()
+    .sort((a, b) => (a.ordre || 0) - (b.ordre || 0))
+    .map(item => cardHTML(item, "corfa-algos"))
+    .join("");
+
+  bindCardEvents(container);
+}
+
+function renderCorfaPharma() {
+  const container = document.getElementById("corfaPharmaList");
+  if (!container) return;
+
+  container.innerHTML = CORFA_PHARMA
+    .slice()
+    .sort((a, b) => (a.ordre || 0) - (b.ordre || 0))
+    .map(item => cardHTML(item, "corfa-pharma"))
     .join("");
 
   bindCardEvents(container);
@@ -1438,22 +1464,17 @@ function showScreen(screen) {
     }
   }
 
-  // ✅ LISTES
-  if (screen === "vd") renderList("vd", "vdList");
-  if (screen === "autre") renderList("autre", "autreList");   // ✅ IMPORTANT
-  if (screen === "corfa") renderList("corfa", "corfaList");
-  if (screen === "corfa-algos") renderCorfaAlgos();
-  if (screen === "corfa-pharma") renderCorfaPharma();
+if (screen === "vd") renderList("vd", "vdList");
+if (screen === "autre") renderList("autre", "autreList");
+if (screen === "corfa") renderCORFA();
+if (screen === "corfa-algos") renderCorfaAlgos();
+if (screen === "corfa-pharma") renderCorfaPharma();
+if (screen === "materials") renderMaterials();
+if (screen === "detail") renderDetail();
 
-  // ✅ DETAIL
-  if (screen === "detail") renderDetail();
-
-  // ✅ MATERIEL
-  if (screen === "materials") renderMaterials();  // ✅ IMPORTANT
-
-  // ✅ STAR
-  if (screen === "star" && canSeeStar) {
-    renderList("star", "starList");
+if (screen === "star" && canSeeStar) {
+  renderList("star", "starList");
+}, "starList");
   }
 }
 
