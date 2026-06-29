@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 29-06-2026 10h15");
+console.log("APP VERSION 29-06-2026 10h25");
 
 let MODE = "perso";
 // "perso" → STAR
