@@ -678,13 +678,18 @@ function unlock() {
 }
 function updateModeUI() {
   const btn = document.getElementById("modeBtn");
+  if (!btn) return;
 
   if (MODE === "pro") {
     btn.textContent = "CORFA";
     btn.setAttribute("data-screen", "corfa");
+    btn.classList.remove("nav-btn-star");
+    btn.classList.add("nav-btn-corfa");
   } else {
     btn.textContent = "STAR";
     btn.setAttribute("data-screen", "star");
+    btn.classList.remove("nav-btn-corfa");
+    btn.classList.add("nav-btn-star");
   }
 }
 function readStorage(key, fallback) {
@@ -709,7 +714,8 @@ function applyTheme(screen) {
     "theme-vd",
     "theme-star",
     "theme-autre",
-    "theme-materials"
+    "theme-materials",
+    "theme-corfa"
   );
 
   if (screen === "vd" || (screen === "detail" && state.detailSource === "vd")) {
@@ -724,10 +730,12 @@ function applyTheme(screen) {
     document.body.classList.add("theme-autre");
   }
 
+  if (screen === "corfa" || (screen === "detail" && state.detailSource === "corfa")) {
+    document.body.classList.add("theme-corfa");
+  }
+
   if (screen === "materials") {
     document.body.classList.add("theme-materials");
-  }
-  if (screen === "corfa") renderCORFA();
   }
 }
 
@@ -740,10 +748,16 @@ function getListBySource(source) {
   switch (source) {
     case "vd":
       return VD_ALGOS;
+
     case "star":
       return canSeeStar ? STAR_ALGOS : [];
+
     case "autre":
       return AUTRE;
+
+    case "corfa":
+      return CORFA;
+
     default:
       return [];
   }
@@ -754,6 +768,7 @@ function getAllAlgos() {
   return [
     ...VD_ALGOS.map(item => ({ ...item, sourceType: "vd" })),
     ...AUTRE.map(item => ({ ...item, sourceType: "autre" })),
+    ...CORFA.map(item => ({ ...item, sourceType: "corfa" })),
     ...(canSeeStar ? STAR_ALGOS.map(item => ({ ...item, sourceType: "star" })) : [])
   ];
 }
@@ -916,9 +931,7 @@ function renderList(source, containerId) {
   bindCardEvents(container);
 }
 function renderCORFA() {
-  document.getElementById("corfaList").innerHTML =
-    CORFA.map(a => renderCard(a, "corfa")).join("");
-  bind();
+  renderList("corfa", "corfaList");
 }
 function clearHomeSearchResults() {
   const container = document.getElementById("homeVdList");
@@ -1311,6 +1324,10 @@ function updateHeaderAndNav(screen) {
       pageTitle = "Carnet de poche";
       break;
 
+    case "corfa":
+      pageTitle = "CORFA";
+      break;
+
     case "autre":
       pageTitle = "Autre";
       break;
@@ -1320,13 +1337,10 @@ function updateHeaderAndNav(screen) {
       break;
 
     case "detail":
-      if (state.detailSource === "star") {
-        pageTitle = "Carnet de poche";
-      } else if (state.detailSource === "vd") {
-        pageTitle = "Algo VD";
-      } else if (state.detailSource === "autre") {
-        pageTitle = "Autre";
-      }
+      if (state.detailSource === "star") pageTitle = "Carnet de poche";
+      if (state.detailSource === "vd") pageTitle = "Algo VD";
+      if (state.detailSource === "autre") pageTitle = "Autre";
+      if (state.detailSource === "corfa") pageTitle = "CORFA";
       break;
   }
 
@@ -1340,7 +1354,6 @@ function updateHeaderAndNav(screen) {
 }
 
 function showScreen(screen) {
-  // 🚫 Si STAR est demandé mais non autorisé, on renvoie à l'accueil
   if (screen === "star" && !canSeeStar) {
     screen = "home";
   }
@@ -1365,6 +1378,7 @@ function showScreen(screen) {
 
   if (screen === "vd") renderList("vd", "vdList");
   if (screen === "autre") renderList("autre", "autreList");
+  if (screen === "corfa") renderCORFA();
   if (screen === "detail") renderDetail();
   if (screen === "materials") renderMaterials();
   if (screen === "star" && canSeeStar) renderList("star", "starList");
@@ -1730,20 +1744,18 @@ window.calculAntalgieTCS = function () {
 function init() {
   if (!localStorage.getItem("materials-list")) {
     writeStorage("materials-list", DEFAULT_MATERIAL);
-    updateModeUI();
   }
 
+  updateModeUI();
   setupEvents();
   registerServiceWorker();
   showScreen("home");
 
-  // 🔒 / 🔓 bouton
   const btn = document.getElementById("unlockBtn");
   if (btn) {
     btn.textContent = isMe ? "🔓" : "🔒";
   }
 
-  // ✅ cacher tous les boutons STAR pour les collègues
   if (!canSeeStar) {
     document.querySelectorAll('[data-screen="star"]').forEach(el => {
       el.style.display = "none";
