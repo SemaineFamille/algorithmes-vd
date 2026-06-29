@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 29-06-2026 10h25");
+console.log("APP VERSION 29-06-2026 10h35");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -677,19 +677,28 @@ function unlock() {
   }
 }
 function updateModeUI() {
-  const btn = document.getElementById("modeBtn");
-  if (!btn) return;
+  const btnBottom = document.getElementById("modeBtn");
+  const btnTop = document.getElementById("modeBtnTop");
 
   if (MODE === "pro") {
-    btn.textContent = "CORFA";
-    btn.setAttribute("data-screen", "corfa");
-    btn.classList.remove("nav-btn-star");
-    btn.classList.add("nav-btn-corfa");
+    if (btnBottom) {
+      btnBottom.textContent = "CORFA";
+      btnBottom.setAttribute("data-screen", "corfa");
+    }
+    if (btnTop) {
+      btnTop.textContent = "CORFA";
+      btnTop.setAttribute("data-screen", "corfa");
+    }
+
   } else {
-    btn.textContent = "STAR";
-    btn.setAttribute("data-screen", "star");
-    btn.classList.remove("nav-btn-corfa");
-    btn.classList.add("nav-btn-star");
+    if (btnBottom) {
+      btnBottom.textContent = "STAR";
+      btnBottom.setAttribute("data-screen", "star");
+    }
+    if (btnTop) {
+      btnTop.textContent = "STAR";
+      btnTop.setAttribute("data-screen", "star");
+    }
   }
 }
 function readStorage(key, fallback) {
