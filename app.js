@@ -4,8 +4,11 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 26-06-2026 11h20");
+console.log("APP VERSION 29-06-2026 10h00");
 
+let MODE = "perso";
+// "perso" → STAR
+// "pro" → CORFA
 
 const CHAPTER_STYLES = {
   // 🔴 GYNÉCO / OBSTÉTRIQUE
@@ -664,6 +667,17 @@ function unlock() {
   if (code === "2019") {
     localStorage.setItem("me", "true");
     location.reload();
+  }
+}
+function updateModeUI() {
+  const btn = document.getElementById("modeBtn");
+
+  if (MODE === "pro") {
+    btn.textContent = "CORFA";
+    btn.setAttribute("data-screen", "corfa");
+  } else {
+    btn.textContent = "STAR";
+    btn.setAttribute("data-screen", "star");
   }
 }
 function readStorage(key, fallback) {
