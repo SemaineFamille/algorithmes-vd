@@ -1,6 +1,3 @@
-<footer style="text-align:center; font-size:12px; opacity:0.6; padding:10px;">
-  © 2026 Mélanie Weil – Tous droits réservés
-</footer>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,32 +6,28 @@
   <title>Algorithmes VD</title>
 
   <meta name="theme-color" content="#0f766e" />
-
   <link rel="manifest" href="app.webmanifest" />
   <link rel="apple-touch-icon" href="images/icon-192.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="app-shell">
-   <header id="topbar" class="topbar">
-  <div style="display:flex; align-items:center; justify-content:space-between;">
-    
-    <h1 id="mainTitle" style="margin:0;">Algorithmes</h1>
-    
-    <!-- 🔓 ICONE PERSO -->
 
-<button
-  id="unlockBtn"
-  onclick="unlock()"
-  type="button"
-  style="background:none; border:none; font-size:20px; cursor:pointer; opacity:0.7;"
->
-  🔒
-</button>
+    <header id="topbar" class="topbar">
+      <div style="display:flex; align-items:center; justify-content:space-between;">
+        <h1 id="mainTitle" style="margin:0;">Algorithmes</h1>
 
-
-  </div>
-</header>
+        <button
+          id="unlockBtn"
+          onclick="unlock()"
+          type="button"
+          style="background:none; border:none; font-size:20px; cursor:pointer; opacity:0.7;"
+        >
+          🔒
+        </button>
+      </div>
+    </header>
 
     <main class="content">
 
@@ -43,14 +36,12 @@
         <div class="card">
           <div class="actions-grid">
             <button class="btn btn-primary" data-screen="vd">Algo VD</button>
-         <button class="btn btn-star" id="modeBtnTop" data-screen="star">STAR</button>
-
+            <button class="btn btn-star" id="modeBtnTop" data-screen="star">STAR</button>
             <button class="btn btn-autre" data-screen="autre">Autre</button>
             <button class="btn btn-secondary" data-screen="materials">Matériel</button>
           </div>
         </div>
 
-        <!-- 🔎 RECHERCHE -->
         <div class="card">
           <div class="search-box">
             <span class="search-icon">🔎</span>
@@ -63,17 +54,16 @@
           </div>
         </div>
 
-<button onclick="unlock()" 
-  style="position:fixed;bottom:10px;right:10px;
-  opacity:0.2;z-index:999;">
-  🔓
-</button>
+        <button
+          onclick="unlock()"
+          type="button"
+          style="position:fixed; bottom:10px; right:10px; opacity:0.2; z-index:999;"
+        >
+          🔓
+        </button>
 
-        <!-- Favoris -->
         <div id="favoritesSection"></div>
         <div id="homeNotesSection"></div>
-
-        <!-- Résultats de recherche -->
         <div id="homeVdList" class="list"></div>
       </section>
 
@@ -87,50 +77,33 @@
         <div id="starList" class="list"></div>
       </section>
 
-       <!-- LISTE CORFA -->
-      
-<section id="screen-corfa" class="screen">
+      <!-- MENU CORFA -->
+      <section id="screen-corfa" class="screen">
+        <div id="corfaList" class="list"></div>
+      </section>
 
-  <div class="card">
-    <div class="actions-grid">
-      <button class="btn btn-secondary" data-screen="corfa-algos">
-        🧠 Algorithmes
-      </button>
+      <!-- ALGORITHMES CORFA -->
+      <section id="screen-corfa-algos" class="screen">
+        <div class="detail-toolbar">
+          <button class="round-btn" onclick="showScreen('corfa')" type="button">←</button>
+        </div>
 
-      <button class="btn btn-secondary" data-screen="corfa-pharma">
-        💊 Pharmacologie
-      </button>
-    </div>
-  </div>
+        <div id="corfaAlgosList" class="list"></div>
+      </section>
 
-<section id="screen-corfa-algos" class="screen">
+      <!-- PHARMACOLOGIE CORFA -->
+      <section id="screen-corfa-pharma" class="screen">
+        <div class="detail-toolbar">
+          <button class="round-btn" onclick="showScreen('corfa')" type="button">←</button>
+        </div>
 
-  <div class="detail-toolbar">
-    <button class="round-btn" onclick="showScreen('corfa')">←</button>
-  </div>
+        <div id="corfaPharmaList" class="list"></div>
+      </section>
 
-  <div id="corfaAlgosList" class="list"></div>
-
-</section>
-
-
-<section id="screen-corfa-pharma" class="screen">
-
-  <div class="detail-toolbar">
-    <button class="round-btn" onclick="showScreen('corfa')">←</button>
-  </div>
-
-  <div id="corfaPharmaList" class="list"></div>
-
-</section>
-
-
-       <!-- LISTE Autre -->
-<section id="screen-autre" class="screen">
-
-  <div id="autreList" class="list"></div>
-
-</section>
+      <!-- LISTE AUTRE -->
+      <section id="screen-autre" class="screen">
+        <div id="autreList" class="list"></div>
+      </section>
 
       <!-- DETAIL COMMUN -->
       <section id="screen-detail" class="screen">
@@ -150,7 +123,9 @@
               <p>Vérifie le nom dans <code>app.js</code> et dans le dossier <code>images/</code>.</p>
             </div>
           </div>
-<div id="specialContent"></div>
+
+          <div id="specialContent"></div>
+
           <textarea
             id="detailNotes"
             class="textarea"
@@ -159,14 +134,15 @@
         </div>
       </section>
 
-
       <!-- MATERIEL -->
       <section id="screen-materials" class="screen">
         <div id="materialsList" class="list"></div>
 
         <div class="card">
           <div class="actions-grid actions-grid-2">
-            <button id="resetMaterials" class="btn btn-secondary" type="button">⚠️Remettre à zéro</button>
+            <button id="resetMaterials" class="btn btn-secondary" type="button">
+              ⚠️ Remettre à zéro
+            </button>
           </div>
         </div>
       </section>
@@ -176,15 +152,17 @@
     <nav class="bottom-nav">
       <button class="nav-btn active" data-screen="home">Accueil</button>
       <button class="nav-btn" data-screen="vd">Algo VD</button>
-     <button class="nav-btn nav-btn-star" id="modeBtn" data-screen="star">STAR</button>
+      <button class="nav-btn nav-btn-star" id="modeBtn" data-screen="star">STAR</button>
       <button class="nav-btn nav-btn-autre" data-screen="autre">Autre</button>
       <button class="nav-btn" data-screen="materials">Matériel</button>
     </nav>
+
+    <footer style="text-align:center; font-size:12px; opacity:0.6; padding:10px 10px 90px;">
+      © 2026 Mélanie Weil – Tous droits réservés
+    </footer>
+
   </div>
 
   <script src="app.js"></script>
 </body>
 </html>
-<footer style="text-align:center; font-size:12px; opacity:0.6; padding:10px;">
-  © 2026 Mélanie Weil – Tous droits réservés
-</footer>
