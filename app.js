@@ -6,7 +6,7 @@
 
 console.log("APP VERSION 29-06-2026 10h25");
 
-let MODE = "perso";
+let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
 // "pro" → CORFA
 
@@ -1742,11 +1742,13 @@ window.calculAntalgieTCS = function () {
 
 
 function init() {
+
   if (!localStorage.getItem("materials-list")) {
     writeStorage("materials-list", DEFAULT_MATERIAL);
   }
 
-  updateModeUI();
+  updateModeUI();   // ✅ toujours exécuté
+
   setupEvents();
   registerServiceWorker();
   showScreen("home");
@@ -1762,6 +1764,7 @@ function init() {
     });
   }
 }
+
 
 
 document.addEventListener("DOMContentLoaded", init);
