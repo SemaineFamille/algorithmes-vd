@@ -37,11 +37,11 @@ code {
   border-radius: 6px;
 }
 .top-banner {
-  text-align: center;     /* ✅ centré */
-  font-size: 12px;
-  color: #6b7280;         /* ✅ gris comme avant */
-  opacity: 0.7;
-  padding: 6px 0;         /* ✅ petit espace propre */
+  text-align: center;
+  font-size: 11px;
+  color: #9ca3af;
+  opacity: 0.8;
+  padding: 4px 0;
 }
 .app-shell {
   max-width: 480px;
