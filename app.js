@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 29-06-2026 13h10");
+console.log("APP VERSION 29-06-2026 13h15");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -785,13 +785,15 @@ function writeStorage(key, value) {
 }
 
 function applyTheme(screen) {
-  document.body.classList.remove(
-    "theme-vd",
-    "theme-star",
-    "theme-autre",
-    "theme-materials",
-    "theme-corfa"
-  );
+document.body.classList.remove(
+  "theme-vd",
+  "theme-star",
+  "theme-autre",
+  "theme-materials",
+  "theme-corfa",
+  "theme-corfa-algos",
+  "theme-corfa-pharma"
+);
 
   if (screen === "vd" || (screen === "detail" && state.detailSource === "vd")) {
     document.body.classList.add("theme-vd");
@@ -855,7 +857,8 @@ function getAllAlgos() {
   return [
     ...VD_ALGOS.map(item => ({ ...item, sourceType: "vd" })),
     ...AUTRE.map(item => ({ ...item, sourceType: "autre" })),
-    ...CORFA.map(item => ({ ...item, sourceType: "corfa" })),
+    ...CORFA_ALGOS.map(item => ({ ...item, sourceType: "corfa-algos" })),
+    ...CORFA_PHARMA.map(item => ({ ...item, sourceType: "corfa-pharma" })),
     ...(canSeeStar ? STAR_ALGOS.map(item => ({ ...item, sourceType: "star" })) : [])
   ];
 }
@@ -955,6 +958,8 @@ function renderHomeFavorites() {
 const all = [
   ...VD_ALGOS.map(item => ({ item, source: "vd" })),
   ...AUTRE.map(item => ({ item, source: "autre" })),
+  ...CORFA_ALGOS.map(item => ({ item, source: "corfa-algos" })),
+  ...CORFA_PHARMA.map(item => ({ item, source: "corfa-pharma" })),
   ...(canSeeStar ? STAR_ALGOS.map(item => ({ item, source: "star" })) : [])
 ];
 
@@ -1017,6 +1022,33 @@ function renderList(source, containerId) {
   container.innerHTML = list.map(item => cardHTML(item, source)).join("");
   bindCardEvents(container);
 }
+function renderCORFA() {
+  const container = document.getElementById("corfaList");
+  if (!container) return;
+
+  container.innerHTML = `
+    <div class="card">
+      <div class="actions-grid">
+        <button class="btn btn-corfa-algos" id="corfaAlgosBtn" type="button">
+          🧠 Algorithmes
+        </button>
+
+        <button class="btn btn-corfa-pharma" id="corfaPharmaBtn" type="button">
+          💊 Pharmacologie
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById("corfaAlgosBtn")?.addEventListener("click", () => {
+    showScreen("corfa-algos");
+  });
+
+  document.getElementById("corfaPharmaBtn")?.addEventListener("click", () => {
+    showScreen("corfa-pharma");
+  });
+}
+
 function renderCorfaAlgos() {
   const container = document.getElementById("corfaAlgosList");
   if (!container) return;
@@ -1038,17 +1070,6 @@ function renderCorfaPharma() {
     .slice()
     .sort((a, b) => (a.ordre || 0) - (b.ordre || 0))
     .map(item => cardHTML(item, "corfa-pharma"))
-    .join("");
-
-  bindCardEvents(container);
-}
-
-function renderCorfaPharma() {
-  const container = document.getElementById("corfaPharmaList");
-  if (!container) return;
-
-  container.innerHTML = CORFA_PHARMA
-    .map(item => cardHTML(item, "corfa"))
     .join("");
 
   bindCardEvents(container);
@@ -1470,8 +1491,9 @@ case "corfa-pharma":
       if (state.detailSource === "star") pageTitle = "Carnet de poche";
       if (state.detailSource === "vd") pageTitle = "Algo VD";
       if (state.detailSource === "autre") pageTitle = "Autre";
-      if (state.detailSource === "corfa") pageTitle = "CORFA";
-      break;
+    if (state.detailSource === "corfa") pageTitle = "CORFA";
+if (state.detailSource === "corfa-algos") pageTitle = "Algorithmes CORFA";
+if (state.detailSource === "corfa-pharma") pageTitle = "Pharmacologie CORFA";
   }
 
   if (title) title.textContent = pageTitle;
@@ -1494,7 +1516,6 @@ function showScreen(screen) {
   applyTheme(screen);
   updateHeaderAndNav(screen);
 
-  // ✅ HOME
   if (screen === "home") {
     const searchVal = document.getElementById("searchInput")?.value || "";
 
@@ -1509,18 +1530,19 @@ function showScreen(screen) {
     }
   }
 
-if (screen === "vd") renderList("vd", "vdList");
-if (screen === "autre") renderList("autre", "autreList");
-if (screen === "corfa") renderCORFA();
-if (screen === "corfa-algos") renderCorfaAlgos();
-if (screen === "corfa-pharma") renderCorfaPharma();
-if (screen === "materials") renderMaterials();
-if (screen === "detail") renderDetail();
+  if (screen === "vd") renderList("vd", "vdList");
+  if (screen === "autre") renderList("autre", "autreList");
 
+  if (screen === "corfa") renderCORFA();
+  if (screen === "corfa-algos") renderCorfaAlgos();
+  if (screen === "corfa-pharma") renderCorfaPharma();
 
-if (screen === "star" && canSeeStar) {
-  renderList("star", "starList");
-}
+  if (screen === "materials") renderMaterials();
+  if (screen === "detail") renderDetail();
+
+  if (screen === "star" && canSeeStar) {
+    renderList("star", "starList");
+  }
 }
 
 function setupEvents() {
