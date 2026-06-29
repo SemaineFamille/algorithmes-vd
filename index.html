@@ -93,19 +93,24 @@
 
   <div class="card">
     <div class="actions-grid">
-      <button class="btn btn-secondary" onclick="setCorfaTab('algos')">
+      <button class="btn btn-secondary" data-screen="corfa-algos">
         🧠 Algorithmes
       </button>
-      <button class="btn btn-secondary" onclick="setCorfaTab('pharma')">
+
+      <button class="btn btn-secondary" data-screen="corfa-pharma">
         💊 Pharmacologie
       </button>
     </div>
   </div>
 
-  <div id="corfaList" class="list"></div>
-
+</section>
+<section id="screen-corfa-algos" class="screen">
+  <div id="corfaAlgosList" class="list"></div>
 </section>
 
+<section id="screen-corfa-pharma" class="screen">
+  <div id="corfaPharmaList" class="list"></div>
+</section>
 
        <!-- LISTE Autre -->
 <section id="screen-autre" class="screen">
