@@ -761,6 +761,13 @@ function applyTheme(screen) {
   if (screen === "materials") {
     document.body.classList.add("theme-materials");
   }
+  if (screen === "corfa-algos") {
+  document.body.classList.add("theme-corfa-algos");
+}
+
+if (screen === "corfa-pharma") {
+  document.body.classList.add("theme-corfa-pharma");
+}
 }
 
 function chapterStyle(chapter) {
