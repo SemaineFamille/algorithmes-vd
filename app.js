@@ -654,24 +654,27 @@ const CORFA_ALGOS = [
 { id: "corfa_ped_sept", ordre: 38, titre: "Etat septique pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_sept.png", favori: false, notesPlaceholder: "" },
 { id: "corfa_ped_anaphy", ordre: 39, titre: "Réaction anaphylactique pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_anaphy.png", favori: false, notesPlaceholder: "" },
 { id: "corfa_ped_conscience", ordre: 40, titre: "Trouble de la conscience", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_trble_consc.png", favori: false, notesPlaceholder: "" },
-{ id: "corfa_ped_antalgie_NT", ordre: 41, titre: "Antalgie NT", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_antalgie_nt.png", favori: false, notesPlaceholder: "" },
+{ id: "corfa_ped_antalgie_NT", ordre: 41, titre: "Antalgie NT pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_antalgie_nt.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_ped_trau", ordre: 42, titre: "Traumatisme thoracique pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_trau.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_ped_tcc", ordre: 43, titre: "Traumatisme crânio-cérébral pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_tcc.png", favori: false, notesPlaceholder: "" },
 { id: "corfa_ped_médullaire", ordre: 44, titre: "Trauma médullaire pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_traum_med.png", favori: false, notesPlaceholder: "" },
-{ id: "corfa_ped_rosc", ordre: 45, titre: "ROSC pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_rosc.png", favori: false, notesPlaceholder: "" },
+{ id: "corfa_ped_antalgie_T", ordre: 45, titre: "Antalgie T pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_antalgie_t.png", favori: false, notesPlaceholder: "" },
 
 
   // 🔴 OBSTETRIQUE
   { id: "corfa_acc", ordre: 46, titre: "Accouchement", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_acc.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_cordon", ordre: 47, titre: "Circulaire du cordon", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_cordon.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_acc_patho", ordre: 48, titre: "Accouchement pathologique", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_acc_patho.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_acc_patho1", ordre: 48, titre: "Accouchement pathologique 1", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_acc_patho1.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_acc_patho2", ordre: 49, titre: "Accouchement pathologique 2 Siège", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_acc_patho2.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_eclampsie", ordre: 50, titre: "Pré-éclampsie / éclampsie", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_eclampsie.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_réa_nn", ordre: 51, titre: "Soins et réanimation du nouveau-né", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_rea_nn.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_pph", ordre: 52, titre: "Hémorragie post-partum", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_pph.png", favori: false, notesPlaceholder: "" },
 
   // ⚪ AUTRES
   { id: "corfa_nv", ordre: 53, titre: "Nausées et vomissements", chapitre: "Autre", source: "CORFA", image: "images/corfa_nv.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_arret", ordre: 54, titre: "Arrêt de réanimation", chapitre: "Autre", source: "CORFA", image: "images/corfa_arret.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_orientation", ordre: 55, titre: "Orientation extra-hospitalière", chapitre: "Autre", source: "CORFA", image: "images/corfa_orientation.png", favori: false, notesPlaceholder: "" },
+   { id: "corfa_orientation", ordre: 56, titre: "Orientation extra-hospitalière Check-list", chapitre: "Autre", source: "CORFA", image: "images/corfa_orientation_cl.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_agitation", ordre: 57, titre: "État d’agitation", chapitre: "Autre", source: "CORFA", image: "images/corfa_agitation.png", favori: false, notesPlaceholder: "" }
 
 ];
