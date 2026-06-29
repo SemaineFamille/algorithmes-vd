@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 29-06-2026 10h55");
+console.log("APP VERSION 29-06-2026 11h05");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -1368,8 +1368,17 @@ function updateHeaderAndNav(screen) {
       break;
 
     case "corfa":
-      pageTitle = "CORFA";
-      break;
+  pageTitle = "CORFA";
+  break;
+
+case "corfa-algos":
+  pageTitle = "Algorithmes CORFA";
+  break;
+
+case "corfa-pharma":
+  pageTitle = "Pharmacologie CORFA";
+  break;
+
 
     case "autre":
       pageTitle = "Autre";
