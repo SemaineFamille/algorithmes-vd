@@ -649,7 +649,17 @@ const CORFA_ALGOS = [
   { id: "corfa_ped_obstruction", ordre: 33, titre: "Obstruction corps étranger", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_obstruction.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_ped_resp", ordre: 34, titre: "Détresse respiratoire pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_resp.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_ped_acr", ordre: 35, titre: "ACR pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_acr.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_ped_trau", ordre: 42, titre: "Traumatisme pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_trau.png", favori: false, notesPlaceholder: "" },
+   { id: "corfa_ped_rosc", ordre: 36, titre: "ROSC pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_rosc.png", favori: false, notesPlaceholder: "" },
+{ id: "corfa_ped_choc", ordre: 37, titre: "Etat de choc NT/T pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_choc.png", favori: false, notesPlaceholder: "" },
+{ id: "corfa_ped_sept", ordre: 38, titre: "Etat septique pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_sept.png", favori: false, notesPlaceholder: "" },
+{ id: "corfa_ped_anaphy", ordre: 39, titre: "Réaction anaphylactique pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_anaphy.png", favori: false, notesPlaceholder: "" },
+{ id: "corfa_ped_conscience", ordre: 40, titre: "Trouble de la conscience", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_trble_consc.png", favori: false, notesPlaceholder: "" },
+{ id: "corfa_ped_antalgie_NT", ordre: 41, titre: "Antalgie NT", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_antalgie_nt.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_ped_trau", ordre: 42, titre: "Traumatisme thoracique pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_trau.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_ped_tcc", ordre: 43, titre: "Traumatisme crânio-cérébral pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_tcc.png", favori: false, notesPlaceholder: "" },
+{ id: "corfa_ped_médullaire", ordre: 44, titre: "Trauma médullaire pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_traum_med.png", favori: false, notesPlaceholder: "" },
+{ id: "corfa_ped_rosc", ordre: 45, titre: "ROSC pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_rosc.png", favori: false, notesPlaceholder: "" },
+
 
   // 🔴 OBSTETRIQUE
   { id: "corfa_acc", ordre: 46, titre: "Accouchement", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_acc.png", favori: false, notesPlaceholder: "" },
