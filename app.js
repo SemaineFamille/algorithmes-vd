@@ -669,7 +669,7 @@ const CORFA_PHARMA = [
 
   // 🔰 INTRO / GÉNÉRALITÉS
   { id: "intro_pharma", ordre: 1, titre: "Introduction", chapitre: "Interne", source: "CORFA", image: "images/corfa_intro.png", favori: false },
-  { id: "general_analgesiques", ordre: 2, titre: "Généralités analgésiques", chapitre: "💉Antalgie", source: "CORFA", image: "images/corfa_analgesie.png", favori: false },
+  { id: "general_analgesiques", ordre: 2, titre: "Généralités analgésiques", chapitre: "Interne", source: "CORFA", image: "images/corfa_analgesie.png", favori: false },
   { id: "general_bzd", ordre: 3, titre: "Généralités benzodiazépines", chapitre: "Interne", source: "CORFA", image: "images/corfa_bzd.png", favori: false },
   { id: "serotoninergique", ordre: 4, titre: "Syndrome sérotoninergique", chapitre: "Interne", source: "CORFA", image: "images/corfa_serotonine.png", favori: false },
   { id: "qt_long", ordre: 5, titre: "Syndrome QT long", chapitre: "Interne", source: "CORFA", image: "images/corfa_qt.png", favori: false },
@@ -704,7 +704,7 @@ const CORFA_PHARMA = [
   { id: "labetalol", ordre: 114, titre: "Labétalol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_labetalol.png", favori: false },
   { id: "lidocaine", ordre: 118, titre: "Lidocaïne", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_lidocaine.png", favori: false },
   { id: "lorazepam", ordre: 122, titre: "Lorazépam", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_lorazepam.png", favori: false },
-  { id: "meopa", ordre: 126, titre: "MEOPA", chapitre: "💉Antalgie", source: "CORFA", image: "images/corfa_meopa.png", favori: false },
+  { id: "meopa", ordre: 126, titre: "MEOPA", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_meopa.png", favori: false },
   { id: "methoxy", ordre: 130, titre: "Méthoxyflurane", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_methoxy.png", favori: false },
   { id: "methylpred", ordre: 134, titre: "Méthylprednisolone", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_methylpred.png", favori: false },
   { id: "midazolam", ordre: 138, titre: "Midazolam", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_midazolam.png", favori: false },
