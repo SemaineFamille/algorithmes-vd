@@ -89,11 +89,12 @@ const CHAPTER_STYLES = {
     background: "#f0f9ff"
   },
 
-  "💊 Médicament": {
-    badge: "background:#d1d5db;color:#1f2933;border-color:#9ca3af;",
-    border: "#4b5563",
-    background: "#f3f4f6"
-  },
+ 
+"💊 Médicament": {
+  badge: "background:#c7d2fe;color:#312e81;border-color:#6366f1;",
+  border: "#4f46e5",
+  background: "#eef2ff"
+},
 
   "Particuliers/Autres 🌟": {
     badge: "background:#e5e7eb;color:#374151;border-color:#9ca3af;",
