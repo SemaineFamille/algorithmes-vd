@@ -626,9 +626,9 @@ const CORFA_ALGOS = [
   { id: "corfa_rythme", ordre: 15, titre: "Troubles du rythme", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_rythme.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_choc", ordre: 16, titre: "État de choc non traumatique", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_choc.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_anaphylaxie", ordre: 17, titre: "Réaction anaphylactique", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_anaphylaxie.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_conscience", ordre: 18, titre: "Troubles de la conscience", chapitre: "Neuro🧠", source: "CORFA", image: "images/corfa_conscience.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_neuro", ordre: 19, titre: "Déficit neurologique focal", chapitre: "Neuro🧠", source: "CORFA", image: "images/corfa_neuro.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_antalgie", ordre: 20, titre: "Antalgie non traumatique", chapitre: "💉Antalgie", source: "CORFA", image: "images/corfa_antalgie.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_conscience", ordre: 18, titre: "Troubles de la conscience", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_conscience.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_neuro", ordre: 19, titre: "Déficit neurologique focal", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_neuro.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_antalgie", ordre: 20, titre: "Antalgie non traumatique", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_antalgie.png", favori: false, notesPlaceholder: "" },
 
   // 🟢 TRAUMATIQUE ADULTE
   { id: "corfa_trau_airway", ordre: 21, titre: "Gestion voies aériennes traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_trau_airway.png", favori: false, notesPlaceholder: "" },
@@ -641,7 +641,7 @@ const CORFA_ALGOS = [
   { id: "corfa_trau_antalgie", ordre: 28, titre: "Antalgie traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_trau_antalgie.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_acideeau", ordre: 29, titre: "Accident de plongée", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_plongee.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_brulure", ordre: 30, titre: "Brûlures", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_brulure.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_hypothermie", ordre: 31, titre: "Hypothermie", chapitre: "Autre", source: "CORFA", image: "images/corfa_hypothermie.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_hypothermie", ordre: 31, titre: "Hypothermie", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_hypothermie.png", favori: false, notesPlaceholder: "" },
 
   // 🟡 PÉDIATRIQUE
   { id: "corfa_ped_airway", ordre: 32, titre: "Airway pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_airway.png", favori: false, notesPlaceholder: "" },
