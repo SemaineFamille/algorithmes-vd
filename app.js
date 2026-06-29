@@ -1472,10 +1472,10 @@ if (screen === "corfa-pharma") renderCorfaPharma();
 if (screen === "materials") renderMaterials();
 if (screen === "detail") renderDetail();
 
+
 if (screen === "star" && canSeeStar) {
   renderList("star", "starList");
-}, "starList");
-  }
+}
 }
 
 function setupEvents() {
