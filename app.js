@@ -708,7 +708,7 @@ const CORFA_PHARMA = [
   { id: "methoxy", ordre: 130, titre: "Méthoxyflurane", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_methoxy.png", favori: false },
   { id: "methylpred", ordre: 134, titre: "Méthylprednisolone", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_methylpred.png", favori: false },
   { id: "midazolam", ordre: 138, titre: "Midazolam", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_midazolam.png", favori: false },
-  { id: "morphine", ordre: 143, titre: "Morphine", chapitre: "💉Antalgie", source: "CORFA", image: "images/corfa_morphine.png", favori: false },
+  { id: "morphine", ordre: 143, titre: "Morphine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_morphine.png", favori: false },
   { id: "naloxone", ordre: 147, titre: "Naloxone", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_naloxone.png", favori: false },
   { id: "trinitrine", ordre: 151, titre: "Nitroglycérine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_trinitrine.png", favori: false },
 
@@ -723,7 +723,7 @@ const CORFA_PHARMA = [
   { id: "rocuronium", ordre: 184, titre: "Rocuronium", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_rocuronium.png", favori: false },
   { id: "salbutamol", ordre: 187, titre: "Salbutamol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_salbutamol.png", favori: false },
   { id: "salbutamol_ipra", ordre: 191, titre: "Salbutamol + Ipratropium", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_nebu.png", favori: false },
-  { id: "mgso4", ordre: 194, titre: "MgSO4", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_mgso4.png", favori: false },
+  { id: "mgso4", ordre: 194, titre: "Sulfate de Magnésium MgSO4", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_mgso4.png", favori: false },
   { id: "suxamethonium", ordre: 198, titre: "Suxaméthonium", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_suxa.png", favori: false }
 
 ];
