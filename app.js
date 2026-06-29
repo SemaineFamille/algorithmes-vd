@@ -611,6 +611,13 @@ const STAR_ALGOS = [
   }
 ];
 
+
+const CORFA = [
+  { id: "c1", titre: "Corfa 1", chapitre: "Interne", image: "images/corfa1.png", favori: false }
+];
+
+
+
 const DEFAULT_MATERIAL = [
   { category: "💉 VVP", id: "venflon", label: "Venflon", checked: false, note: "" },
   { category: "💉 VVP", id: "veca", label: "Veca C", checked: false, note: "" },
@@ -719,6 +726,8 @@ function applyTheme(screen) {
 
   if (screen === "materials") {
     document.body.classList.add("theme-materials");
+  }
+  if (screen === "corfa") renderCORFA();
   }
 }
 
@@ -906,7 +915,11 @@ function renderList(source, containerId) {
   container.innerHTML = list.map(item => cardHTML(item, source)).join("");
   bindCardEvents(container);
 }
-
+function renderCORFA() {
+  document.getElementById("corfaList").innerHTML =
+    CORFA.map(a => renderCard(a, "corfa")).join("");
+  bind();
+}
 function clearHomeSearchResults() {
   const container = document.getElementById("homeVdList");
   if (container) {
@@ -1717,6 +1730,7 @@ window.calculAntalgieTCS = function () {
 function init() {
   if (!localStorage.getItem("materials-list")) {
     writeStorage("materials-list", DEFAULT_MATERIAL);
+    updateModeUI();
   }
 
   setupEvents();
