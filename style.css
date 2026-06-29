@@ -651,4 +651,10 @@ body.theme-materials .nav-btn.active {
   background:#e0f2fe;
   border-left:5px solid #0284c7;
 }
+body.theme-corfa-algos {
+  background: linear-gradient(180deg, #fff1f5, #ffe4ec);
+}
+body.theme-corfa-pharma {
+  background: linear-gradient(180deg, #f5f3ff, #ede9fe);
+}
 
