@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 29-06-2026 18h45");
+console.log("APP VERSION 29-06-2026 18h55");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -1102,7 +1102,7 @@ function renderCORFA() {
     <div class="card">
       <div class="actions-grid">
         <button class="btn btn-corfa-algos" id="corfaAlgosBtn" type="button">
-          📝 Algorithmes
+          🪄 Algorithmes
         </button>
 
         <button class="btn btn-corfa-pharma" id="corfaPharmaBtn" type="button">
