@@ -638,8 +638,8 @@ const CORFA_ALGOS = [
   { id: "corfa_tcc", ordre: 25, titre: "Traumatisme crânio-cérébral", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_tcc.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_medullaire", ordre: 26, titre: "Traumatisme médullaire", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_medullaire.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_rachis", ordre: 27, titre: "Stabilisation du rachis", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_rachis.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_trau_antalgie", ordre: 28, titre: "Antalgie traumatique", chapitre: "💉Antalgie", source: "CORFA", image: "images/corfa_trau_antalgie.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_acideeau", ordre: 29, titre: "Accident de plongée", chapitre: "Autre", source: "CORFA", image: "images/corfa_plongee.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_trau_antalgie", ordre: 28, titre: "Antalgie traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_trau_antalgie.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_acideeau", ordre: 29, titre: "Accident de plongée", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_plongee.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_brulure", ordre: 30, titre: "Brûlures", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_brulure.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_hypothermie", ordre: 31, titre: "Hypothermie", chapitre: "Autre", source: "CORFA", image: "images/corfa_hypothermie.png", favori: false, notesPlaceholder: "" },
 
@@ -666,8 +666,66 @@ const CORFA_ALGOS = [
 ];
 
 const CORFA_PHARMA = [
-  { id: "p1", titre: "Adrénaline 💉", chapitre: "Interne", image: "images/adrenaline.png", favori: false },
-  { id: "p2", titre: "Morphine 💊", chapitre: "Interne", image: "images/morphine.png", favori: false }
+
+  // 🔰 INTRO / GÉNÉRALITÉS
+  { id: "intro_pharma", ordre: 1, titre: "Introduction", chapitre: "Interne", source: "CORFA", image: "images/corfa_intro.png", favori: false },
+  { id: "general_analgesiques", ordre: 2, titre: "Généralités analgésiques", chapitre: "💉Antalgie", source: "CORFA", image: "images/corfa_analgesie.png", favori: false },
+  { id: "general_bzd", ordre: 3, titre: "Généralités benzodiazépines", chapitre: "Interne", source: "CORFA", image: "images/corfa_bzd.png", favori: false },
+  { id: "serotoninergique", ordre: 4, titre: "Syndrome sérotoninergique", chapitre: "Interne", source: "CORFA", image: "images/corfa_serotonine.png", favori: false },
+  { id: "qt_long", ordre: 5, titre: "Syndrome QT long", chapitre: "Interne", source: "CORFA", image: "images/corfa_qt.png", favori: false },
+
+  // 💊 MÉDICAMENTS
+  { id: "aas", ordre: 17, titre: "AAS", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_aas.png", favori: false },
+  { id: "txa", ordre: 21, titre: "TXA", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_txa.png", favori: false },
+  { id: "adenosine", ordre: 25, titre: "Adénosine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_adenosine.png", favori: false },
+  { id: "adrenaline", ordre: 29, titre: "Adrénaline", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_adrenaline.png", favori: false },
+  { id: "amiodarone", ordre: 34, titre: "Amiodarone", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_amiodarone.png", favori: false },
+  { id: "atropine", ordre: 38, titre: "Atropine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_atropine.png", favori: false },
+  { id: "scopolamine", ordre: 43, titre: "Butylscopolamine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_scopolamine.png", favori: false },
+  { id: "ceftriaxone", ordre: 46, titre: "Ceftriaxone", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ceftriaxone.png", favori: false },
+  { id: "clemastine", ordre: 49, titre: "Clémastine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_clemastine.png", favori: false },
+  { id: "clonazepam", ordre: 52, titre: "Clonazépam", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_clonazepam.png", favori: false },
+  { id: "clopidogrel", ordre: 55, titre: "Clopidogrel", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_clopidogrel.png", favori: false },
+  { id: "diazepam", ordre: 58, titre: "Diazépam", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_diazepam.png", favori: false },
+  { id: "dimetindene", ordre: 62, titre: "Dimétindène", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_dimetindene.png", favori: false },
+  { id: "droperidol", ordre: 65, titre: "Dropéridol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_droperidol.png", favori: false },
+  { id: "ephedrine", ordre: 70, titre: "Éphédrine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ephedrine.png", favori: false },
+  { id: "esomeprazole", ordre: 73, titre: "Esoméprazole", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_esomeprazole.png", favori: false },
+  { id: "etomidate", ordre: 76, titre: "Etomidate", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_etomidate.png", favori: false },
+  { id: "fentanyl", ordre: 79, titre: "Fentanyl", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_fentanyl.png", favori: false },
+  { id: "flumazenil", ordre: 84, titre: "Flumazénil", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_flumazenil.png", favori: false },
+  { id: "furosemide", ordre: 87, titre: "Furosémide", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_furosemide.png", favori: false },
+  { id: "glucagon", ordre: 90, titre: "Glucagon", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_glucagon.png", favori: false },
+  { id: "glucose", ordre: 94, titre: "Glucose", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_glucose.png", favori: false },
+  { id: "haloperidol", ordre: 97, titre: "Halopéridol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_haloperidol.png", favori: false },
+  { id: "heparine", ordre: 100, titre: "Héparine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_heparine.png", favori: false },
+  { id: "ketamine", ordre: 103, titre: "Kétamine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ketamine.png", favori: false },
+  { id: "ketorolac", ordre: 110, titre: "Kétorolac", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ketorolac.png", favori: false },
+  { id: "labetalol", ordre: 114, titre: "Labétalol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_labetalol.png", favori: false },
+  { id: "lidocaine", ordre: 118, titre: "Lidocaïne", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_lidocaine.png", favori: false },
+  { id: "lorazepam", ordre: 122, titre: "Lorazépam", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_lorazepam.png", favori: false },
+  { id: "meopa", ordre: 126, titre: "MEOPA", chapitre: "💉Antalgie", source: "CORFA", image: "images/corfa_meopa.png", favori: false },
+  { id: "methoxy", ordre: 130, titre: "Méthoxyflurane", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_methoxy.png", favori: false },
+  { id: "methylpred", ordre: 134, titre: "Méthylprednisolone", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_methylpred.png", favori: false },
+  { id: "midazolam", ordre: 138, titre: "Midazolam", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_midazolam.png", favori: false },
+  { id: "morphine", ordre: 143, titre: "Morphine", chapitre: "💉Antalgie", source: "CORFA", image: "images/corfa_morphine.png", favori: false },
+  { id: "naloxone", ordre: 147, titre: "Naloxone", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_naloxone.png", favori: false },
+  { id: "trinitrine", ordre: 151, titre: "Nitroglycérine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_trinitrine.png", favori: false },
+
+  // 🔚 FIN
+  { id: "noradrenaline", ordre: 156, titre: "Noradrénaline", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_noradrenaline.png", favori: false },
+  { id: "ocytocine", ordre: 161, titre: "Ocytocine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ocytocine.png", favori: false },
+  { id: "ondansetron", ordre: 164, titre: "Ondansétron", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ondansetron.png", favori: false },
+  { id: "olanzapine", ordre: 168, titre: "Olanzapine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_olanzapine.png", favori: false },
+  { id: "paracetamol", ordre: 171, titre: "Paracétamol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_paracetamol.png", favori: false },
+  { id: "prasugrel", ordre: 177, titre: "Prasugrel", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_prasugrel.png", favori: false },
+  { id: "propofol", ordre: 181, titre: "Propofol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_propofol.png", favori: false },
+  { id: "rocuronium", ordre: 184, titre: "Rocuronium", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_rocuronium.png", favori: false },
+  { id: "salbutamol", ordre: 187, titre: "Salbutamol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_salbutamol.png", favori: false },
+  { id: "salbutamol_ipra", ordre: 191, titre: "Salbutamol + Ipratropium", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_nebu.png", favori: false },
+  { id: "mgso4", ordre: 194, titre: "MgSO4", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_mgso4.png", favori: false },
+  { id: "suxamethonium", ordre: 198, titre: "Suxaméthonium", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_suxa.png", favori: false }
+
 ];
 
 
