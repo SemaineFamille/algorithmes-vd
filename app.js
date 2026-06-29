@@ -1413,14 +1413,17 @@ case "corfa-pharma":
 }
 
 function showScreen(screen) {
+
   if (screen === "star" && !canSeeStar) {
     screen = "home";
   }
 
   state.screen = screen;
+
   applyTheme(screen);
   updateHeaderAndNav(screen);
 
+  // ✅ HOME
   if (screen === "home") {
     const searchVal = document.getElementById("searchInput")?.value || "";
 
@@ -1435,16 +1438,23 @@ function showScreen(screen) {
     }
   }
 
+  // ✅ LISTES
   if (screen === "vd") renderList("vd", "vdList");
-  if (screen === "autre") renderList("autre", "autreList");
-  if (screen === "corfa") renderCORFA();
-  
-if (screen === "corfa-algos") renderCorfaAlgos();
-if (screen === "corfa-pharma") renderCorfaPharma();
+  if (screen === "autre") renderList("autre", "autreList");   // ✅ IMPORTANT
+  if (screen === "corfa") renderList("corfa", "corfaList");
+  if (screen === "corfa-algos") renderCorfaAlgos();
+  if (screen === "corfa-pharma") renderCorfaPharma();
 
+  // ✅ DETAIL
   if (screen === "detail") renderDetail();
-  if (screen === "materials") renderMaterials();
-  if (screen === "star" && canSeeStar) renderList("star", "starList");
+
+  // ✅ MATERIEL
+  if (screen === "materials") renderMaterials();  // ✅ IMPORTANT
+
+  // ✅ STAR
+  if (screen === "star" && canSeeStar) {
+    renderList("star", "starList");
+  }
 }
 
 function setupEvents() {
