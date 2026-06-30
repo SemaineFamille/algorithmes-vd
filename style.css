@@ -671,3 +671,7 @@ body.theme-corfa-pharma {
   background: linear-gradient(180deg, #f5f3ff, #ede9fe);
 }
 
+.image-wrap img {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
