@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 29-06-2026 18h55");
+console.log("APP VERSION 30-06-2026 17h55");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -682,7 +682,7 @@ const CORFA_ALGOS = [
 const CORFA_PHARMA = [
 
   // 🔰 INTRO / GÉNÉRALITÉS
-  { id: "intro_pharma", ordre: 1, titre: "Introduction", chapitre: "Interne", source: "CORFA", image: "images/corfa_intro.png", favori: false },
+  
   { id: "general_analgesiques", ordre: 2, titre: "Généralités analgésiques", chapitre: "Interne", source: "CORFA", image: "images/corfa_analgesie.png", favori: false },
   { id: "general_bzd", ordre: 3, titre: "Généralités benzodiazépines", chapitre: "Interne", source: "CORFA", image: "images/corfa_bzd.png", favori: false },
   { id: "serotoninergique", ordre: 4, titre: "Syndrome sérotoninergique", chapitre: "Interne", source: "CORFA", image: "images/corfa_serotonine.png", favori: false },
@@ -1391,12 +1391,22 @@ function renderDetail() {
     card.style.border = `2px solid ${style.border}`;
   }
 
-  if (img && wrap) {
-    wrap.classList.remove("has-image");
-    img.onload = () => wrap.classList.add("has-image");
-    img.onerror = () => wrap.classList.remove("has-image");
-    img.src = item.image;
-  }
+ if (wrap) {
+  wrap.innerHTML = "";
+
+  const images = item.images || [item.image];
+
+  images.forEach(src => {
+    const im = document.createElement("img");
+    im.src = src;
+    im.style.width = "100%";
+    im.style.marginBottom = "10px";
+    im.style.borderRadius = "8px";
+
+    wrap.appendChild(im);
+  });
+}
+
 
   if (notes) {
     const storeKey = `notes:${state.detailSource}:${item.id}`;
