@@ -1391,7 +1391,7 @@ function renderDetail() {
     card.style.border = `2px solid ${style.border}`;
   }
 
- if (wrap) {
+if (wrap) {
   wrap.innerHTML = "";
 
   const images = item.images || [item.image];
