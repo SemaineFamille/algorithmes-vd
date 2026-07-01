@@ -1391,20 +1391,38 @@ function renderDetail() {
     card.style.border = `2px solid ${style.border}`;
   }
 
-if (wrap) {
-  wrap.innerHTML = "";
+if (img && wrap) {
 
-  const images = item.images || [item.image];
+  const images = item.images || item.image;
 
-  images.forEach(src => {
+  // ✅ CAS 1 : tableau (plusieurs images)
+  if (Array.isArray(images)) {
+    wrap.innerHTML = "";
+
+    images.forEach(src => {
+      const im = document.createElement("img");
+      im.src = src;
+      im.style.width = "100%";
+      im.style.marginBottom = "10px";
+      im.style.borderRadius = "8px";
+
+      wrap.appendChild(im);
+    });
+
+  // ✅ CAS 2 : image unique
+  } else if (images) {
+    wrap.innerHTML = "";
+    wrap.classList.add("has-image");
+
     const im = document.createElement("img");
-    im.src = src;
+    im.src = images;
     im.style.width = "100%";
-    im.style.marginBottom = "10px";
-    im.style.borderRadius = "8px";
 
     wrap.appendChild(im);
-  });
+
+  } else {
+    wrap.innerHTML = "<p style='text-align:center;'>Image non disponible</p>";
+  }
 }
 
 
