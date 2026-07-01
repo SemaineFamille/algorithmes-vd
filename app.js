@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 01-07-2026 14h25");
+console.log("APP VERSION 01-07-2026 14h30");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -1391,23 +1391,29 @@ function renderDetail() {
     card.style.border = `2px solid ${style.border}`;
   }
 
-if (img && wrap) {
+if (wrap) {
+  wrap.innerHTML = "";
 
-  const images = item.images || item.image;
+  const images = item.images ? item.images : (item.image ? [item.image] : []);
 
-  // ✅ CAS 1 : tableau (plusieurs images)
-  if (Array.isArray(images)) {
-    wrap.innerHTML = "";
+  if (!images.length) {
+    wrap.innerHTML = "<p style='text-align:center;'>Image non disponible</p>";
+    return;
+  }
 
-    images.forEach(src => {
-      const im = document.createElement("img");
-      im.src = src;
-      im.style.width = "100%";
-      im.style.marginBottom = "10px";
-      im.style.borderRadius = "8px";
+  images.forEach((src, index) => {
+    const im = document.createElement("img");
 
-      wrap.appendChild(im);
-    });
+    // ✅ TRÈS IMPORTANT : force une nouvelle image
+    im.src = src + "?v=" + index;
+
+    im.style.width = "100%";
+    im.style.marginBottom = "10px";
+    im.style.borderRadius = "8px";
+
+    wrap.appendChild(im);
+  });
+}
 
   // ✅ CAS 2 : image unique
   } else if (images) {
