@@ -1094,32 +1094,6 @@ function renderList(source, containerId) {
   container.innerHTML = list.map(item => cardHTML(item, source)).join("");
   bindCardEvents(container);
 }
-function renderCORFA() {
-  const container = document.getElementById("corfaList");
-  if (!container) return;
-
-  container.innerHTML = `
-    <div class="card">
-      <div class="actions-grid">
-        <button class="btn btn-corfa-algos" id="corfaAlgosBtn" type="button">
-          🪄 Algorithmes
-        </button>
-
-        <button class="btn btn-corfa-pharma" id="corfaPharmaBtn" type="button">
-          💊 Pharmacologie
-        </button>
-      </div>
-    </div>
-  `;
-
-  document.getElementById("corfaAlgosBtn")?.addEventListener("click", () => {
-    showScreen("corfa-algos");
-  });
-
-  document.getElementById("corfaPharmaBtn")?.addEventListener("click", () => {
-    showScreen("corfa-pharma");
-  });
-}
 
 function renderCORFA() {
   const container = document.getElementById("corfaList");
@@ -1147,7 +1121,6 @@ function renderCORFA() {
     showScreen("corfa-pharma");
   });
 }
-
 function renderCorfaAlgos() {
   const container = document.getElementById("corfaAlgosList");
   if (!container) return;
@@ -1394,19 +1367,19 @@ function renderDetail() {
 if (wrap) {
   wrap.innerHTML = "";
 
-  const images = item.images ? item.images : (item.image ? [item.image] : []);
+  const images = item.images
+    ? item.images
+    : (item.image ? [item.image] : []);
 
   if (!images.length) {
     wrap.innerHTML = "<p style='text-align:center;'>Image non disponible</p>";
     return;
   }
 
-  images.forEach((src, index) => {
+  images.forEach(src => {
     const im = document.createElement("img");
 
-    // ✅ TRÈS IMPORTANT : force une nouvelle image
-    im.src = src + "?v=" + index;
-
+    im.src = src;
     im.style.width = "100%";
     im.style.marginBottom = "10px";
     im.style.borderRadius = "8px";
@@ -1415,21 +1388,6 @@ if (wrap) {
   });
 }
 
-  // ✅ CAS 2 : image unique
-  } else if (images) {
-    wrap.innerHTML = "";
-    wrap.classList.add("has-image");
-
-    const im = document.createElement("img");
-    im.src = images;
-    im.style.width = "100%";
-
-    wrap.appendChild(im);
-
-  } else {
-    wrap.innerHTML = "<p style='text-align:center;'>Image non disponible</p>";
-  }
-}
 
 
   if (notes) {
