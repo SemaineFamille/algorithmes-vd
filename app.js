@@ -1364,17 +1364,35 @@ function renderDetail() {
     card.style.border = `2px solid ${style.border}`;
   }
 
-if (wrap) {
-  wrap.innerHTML = "";
+if (img && wrap) {
 
   const images = item.images
     ? item.images
     : (item.image ? [item.image] : []);
 
+  // ✅ aucune image
   if (!images.length) {
-    wrap.innerHTML = "<p style='text-align:center;'>Image non disponible</p>";
+    wrap.classList.remove("has-image");
+    img.src = "";
     return;
   }
+
+  // ✅ UNE seule image → mode normal (important pour ton app)
+  if (images.length === 1) {
+    wrap.classList.remove("multi-images");
+
+    img.style.display = "block";
+    img.src = images[0];
+
+    wrap.innerHTML = "";
+    wrap.appendChild(img);
+
+    return;
+  }
+
+  // ✅ PLUSIEURS images → scroll
+  wrap.classList.add("multi-images");
+  wrap.innerHTML = "";
 
   images.forEach(src => {
     const im = document.createElement("img");
@@ -1387,8 +1405,6 @@ if (wrap) {
     wrap.appendChild(im);
   });
 }
-
-
 
   if (notes) {
     const storeKey = `notes:${state.detailSource}:${item.id}`;
