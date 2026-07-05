@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 01-07-2026 15h30");
+console.log("APP VERSION 05-07-2026 17h00");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -141,7 +141,8 @@ const AUTRE = [
   { id: "befast", ordre: 13, titre: "Be FAST 😵", chapitre: "Neuro🧠", source: "Moi", image: "images/Befast.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "breathing", ordre: 23, titre: "Breathing 🫁", chapitre: "Autre", source: "Moi", image: "images/breathing.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "pastel", ordre: 30, titre: "PASTEL 👶", chapitre: "Pédiatrie👶", source: "Moi", image: "images/pastel.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  { id: "calcul_pedia", ordre: 40, titre: "💉 Calcul rapide pédiatrique", chapitre: "Pédiatrie👶", source: "Moi", image: "images/calcul_pedia.png", favori: false, notesPlaceholder: "" }
+  { id: "calcul_pedia", ordre: 40, titre: "💉 Calcul rapide pédiatrique", chapitre: "Pédiatrie👶", source: "Moi", image: "images/calcul_pedia.png", favori: false, notesPlaceholder: "" },
+  {id: "mes_resumes",ordre: 1,titre: "📚 Mes résumés",chapitre: "Autre", source: "Moi", image: "images/mes_resumes.png", favori: false, notesPlaceholder: ""}
 ];
 
 // 🔐 Mode perso (stocké localement sur ton appareil)
@@ -150,12 +151,20 @@ const canSeeStar = isMe;
 
 // 👀 Filtrage des algos visibles dans "Autre"
 // On masque SAT pour les collègues
+
 const AUTRE_FILTERED = AUTRE.filter(algo => {
+
   if (algo.source === "SAT" && !isMe) {
     return false;
   }
+
+  if (algo.source === "Moi" && !isMe) {
+    return false;
+  }
+
   return true;
 });
+
 
 // ✅ Remplacement du tableau original
 AUTRE.length = 0;
@@ -749,6 +758,48 @@ const CORFA = [
   ...CORFA_PHARMA
 ];
 
+const MES_RESUMES = [
+
+  {
+    id: "ecg_chat",
+    ordre: 1,
+    titre: "🫀 ECG",
+    chapitre: "Résumés",
+    source: "resume"
+  },
+
+  {
+    id: "etat_de_choc",
+    ordre: 2,
+    titre: "Etat de choc",
+    chapitre: "Résumés",
+    source: "resume"
+  },
+
+  {
+    id: "oxygenation",
+    ordre: 3,
+    titre: "🫁 Oxygénation",
+    chapitre: "Résumés",
+    source: "resume"
+  },
+  
+  {
+    id: "tcc",
+    ordre: 3,
+    titre: "🧠 TCC",
+    chapitre: "Résumés",
+    source: "resume"
+  },
+  {
+    id: "acr",
+    ordre: 3,
+    titre: "⚰️ ACR",
+    chapitre: "Résumés",
+    source: "resume"
+  }
+  
+];
 
 
 const DEFAULT_MATERIAL = [
@@ -912,6 +963,9 @@ function getListBySource(source) {
     case "autre":
       return AUTRE;
 
+case "resume":
+  return MES_RESUMES;
+
     case "corfa":
       return CORFA;
 
@@ -1023,6 +1077,19 @@ function bindCardEvents(container) {
       toggleFavorite(el.getAttribute("data-fav-source"), el.getAttribute("data-fav-id"));
     });
   });
+}
+
+function renderResumes() {
+
+  const container = document.getElementById("resumesList");
+
+  if (!container) return;
+
+  container.innerHTML = MES_RESUMES
+    .map(item => cardHTML(item, "resume"))
+    .join("");
+
+  bindCardEvents(container);
 }
 
 function renderHomeFavorites() {
@@ -1210,6 +1277,12 @@ function setupSearchHandler(e) {
 }
 
 function openDetail(source, id) {
+  
+if (source === "autre" && id === "mes_resumes") {
+    showScreen("resumes");
+    return;
+  }
+
   state.detailSource = source;
   state.selectedId = id;
   state.previousScreen = state.screen;
@@ -1644,6 +1717,11 @@ function showScreen(screen) {
   if (screen === "corfa-pharma") renderCorfaPharma();
   if (screen === "materials") renderMaterials();
   if (screen === "detail") renderDetail();
+  
+if (screen === "resumes") {
+  renderResumes();
+}
+
 
   if (screen === "star" && canSeeStar) {
     renderList("star", "starList");
