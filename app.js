@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 08-07-2026 10h45");
+console.log("APP VERSION 08-07-2026 10h55");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -133,7 +133,7 @@ const AUTRE = [
   { id: "labo", ordre: 21, titre: "Valeur Laboratoire 🧪", chapitre: "Autre", source: "Moi", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
   { id: "molecules", ordre: 22, titre: "💊 Molécules Antalgie", chapitre: "Autre", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
   { id: "toxidrome", ordre: 11, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", image: "images/Toxidrome.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  { id: "glasgow", ordre: 12, titre: "Glasgow 😵‍💫", chapitre: "Neuro🧠", source: "Autre", image: "images/GCS.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
+  { id: "glasgow", ordre: 12, titre: "Glasgow 😵‍💫", chapitre: "Neuro🧠", source: "Autre", images:["images/GCS.png","images/Glasgow.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "antalgie_sat", ordre: 1, titre: "Antalgie SAT", chapitre: "💉Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
   { id: "antalgie_tcs", ordre: 2, titre: "Antalgie TCS", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
   { id: "antalgie_tcs_ped", ordre: 3, titre: "Antalgie TCS Ped 👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
@@ -142,7 +142,8 @@ const AUTRE = [
   { id: "breathing", ordre: 23, titre: "Breathing 🫁", chapitre: "Autre", source: "Moi", image: "images/breathing.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "pastel", ordre: 30, titre: "PASTEL 👶", chapitre: "Pédiatrie👶", source: "Moi", image: "images/pastel.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "calcul_pedia", ordre: 40, titre: "💉 Calcul rapide pédiatrique", chapitre: "Pédiatrie👶", source: "Moi", image: "images/calcul_pedia.png", favori: false, notesPlaceholder: "" },
-  {id: "mes_resumes",ordre: 1,titre: "📚 Mes résumés",chapitre: "Autre", source: "Moi", image: "images/mes_resumes.png", favori: false, notesPlaceholder: ""}
+  {id: "mes_resumes",ordre: 1,titre: "📚 Mes résumés",chapitre: "Autre", source: "Moi", image: "images/mes_resumes.png", favori: false, notesPlaceholder: ""},
+  { id: "ecg", ordre: 12, titre: "ECG 💘", chapitre: "Autre", source: "Autre", image: "images/1.Introduction_ECG.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" }
 ];
 
 // 🔐 Mode perso (stocké localement sur ton appareil)
