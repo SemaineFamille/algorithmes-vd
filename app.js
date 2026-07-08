@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 08-07-2026 11h00");
+console.log("APP VERSION 08-07-2026 14h00");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -700,7 +700,7 @@ const CORFA_PHARMA = [
 
   // 💊 MÉDICAMENTS
   { id: "aas", ordre: 17, titre: "AAS", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_aas1.png","images/corfa_aas2.png","images/corfa_aas3.png","images/corfa_aas4.png"], favori: false },
-  { id: "txa", ordre: 21, titre: "TXA", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_txa.png", favori: false },
+  { id: "txa", ordre: 21, titre: "TXA", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_txa1.png","images/corfa_txa2.png","images/corfa_txa3.png"], favori: false },
   { id: "adenosine", ordre: 25, titre: "Adénosine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_adenosine.png", favori: false },
   { id: "adrenaline", ordre: 29, titre: "Adrénaline", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_adrenaline.png", favori: false },
   { id: "amiodarone", ordre: 34, titre: "Amiodarone", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_amiodarone.png", favori: false },
