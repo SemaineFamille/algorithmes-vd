@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 08-07-2026 18h10");
+console.log("APP VERSION 08-07-2026 18h20");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -704,7 +704,7 @@ const CORFA_PHARMA = [
   { id: "adenosine", ordre: 25, titre: "Adénosine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_adenosine1.png","images/corfa_adenosine2.png","images/corfa_adenosine3.png","images/corfa_adenosine4.png"], favori: false },
   { id: "adrenaline", ordre: 29, titre: "Adrénaline", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_adrenaline1.png","images/corfa_adrenaline2.png","images/corfa_adrenaline3.png","images/corfa_adrenaline4.png"], favori: false },
   { id: "amiodarone", ordre: 34, titre: "Amiodarone", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_amiodarone1.png","images/corfa_amiodarone2.png","images/corfa_amiodarone3.png","images/corfa_amiodarone4.png"], favori: false },
-  { id: "atropine", ordre: 38, titre: "Atropine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_atropine.png", favori: false },
+  { id: "atropine", ordre: 38, titre: "Atropine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_atropine1.png","images/corfa_atropine2.png","images/corfa_atropine3.png","images/corfa_atropine4.png"], favori: false },
   { id: "scopolamine", ordre: 43, titre: "Butylscopolamine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_scopolamine.png", favori: false },
   { id: "ceftriaxone", ordre: 46, titre: "Ceftriaxone", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ceftriaxone.png", favori: false },
   { id: "clemastine", ordre: 49, titre: "Clémastine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_clemastine.png", favori: false },
