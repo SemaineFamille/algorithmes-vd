@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 08-07-2026 09h45");
+console.log("APP VERSION 08-07-2026 10h30");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -765,7 +765,8 @@ const MES_RESUMES = [
  {id: "oxygenation", ordre: 3, titre: "🫁 Oxygénation", chapitre: "Résumés", source: "resume", image: "images/O2_CHAT.png", favori: false },
    {id: "tcc", ordre: 3, titre: "🧠 TCC", chapitre: "Résumés", source: "resume", image: "images/TCC_CHAT.png", favori: false },
   {id: "acr", ordre: 3, titre: "⚰️ ACR", chapitre: "Résumés", source: "resume", image: "images/ACR_CHAT.png", favori: false },
-  {id: "trauma-face", ordre: 4, titre: "👊🏻 Trauma Face", chapitre: "Résumés", source: "resume", image: "images/Trauma_face_CHAT.png", favori: false }
+  {id: "trauma-face", ordre: 4, titre: "👊🏻 Trauma Face", chapitre: "Résumés", source: "resume", image: "images/Trauma face CHAT.png", favori: false },
+  {id: "trauma-abdo_pelvien", ordre: 4, titre: "Trauma Abdo-pelvien", chapitre: "Résumés", source: "resume", image: "images/Trauma abdo pelvien_CHAT.png", favori: false }
   
 ];
 
