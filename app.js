@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 08-07-2026 10h30");
+console.log("APP VERSION 08-07-2026 10h40");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -1420,7 +1420,7 @@ if (wrap) {
   } else {
 
     images.forEach(src => {
-
+console.log(src);
       const im = document.createElement("img");
 
       im.src = src;
