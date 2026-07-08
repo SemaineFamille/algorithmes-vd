@@ -760,39 +760,11 @@ const CORFA = [
 
 const MES_RESUMES = [
 
-  {
-    id: "ecg_chat", ordre: 1, titre: "🫀 ECG", chapitre: "Résumés", source: "resume", image: "images/ECG_CHAT.png", favori: false },
-
-  {
-    id: "etat_de_choc",
-    ordre: 2,
-    titre: "Etat de choc",
-    chapitre: "Résumés",
-    source: "resume"
-  },
-
-  {
-    id: "oxygenation",
-    ordre: 3,
-    titre: "🫁 Oxygénation",
-    chapitre: "Résumés",
-    source: "resume"
-  },
-  
-  {
-    id: "tcc",
-    ordre: 3,
-    titre: "🧠 TCC",
-    chapitre: "Résumés",
-    source: "resume"
-  },
-  {
-    id: "acr",
-    ordre: 3,
-    titre: "⚰️ ACR",
-    chapitre: "Résumés",
-    source: "resume"
-  }
+  {id: "ecg_chat", ordre: 1, titre: "🫀 ECG", chapitre: "Résumés", source: "resume", image: "images/ECG_CHAT.png", favori: false },
+  {id: "etat_de_choc", ordre: 2, titre: "Etat de choc", chapitre: "Résumés", source: "resume", image: "images/Etat de choc_CHAT.png", favori: false },
+ {id: "oxygenation", ordre: 3, titre: "🫁 Oxygénation", chapitre: "Résumés", source: "resume", image: "images/O2_CHAT.png", favori: false },
+   {id: "tcc", ordre: 3, titre: "🧠 TCC", chapitre: "Résumés", source: "resume", image: "images/TCC_CHAT.png", favori: false },
+  {id: "acr", ordre: 3, titre: "⚰️ ACR", chapitre: "Résumés", source: "resume", image: "images/ACR_CHAT.png", favori: false }
   
 ];
 
