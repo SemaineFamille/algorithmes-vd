@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 09-07-2026 14h30");
+console.log("APP VERSION 09-07-2026 14h45");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -706,10 +706,10 @@ const CORFA_PHARMA = [
   { id: "atropine", ordre: 38, titre: "Atropine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_atropine1.png","images/corfa_atropine2.png","images/corfa_atropine3.png","images/corfa_atropine4.png"], favori: false },
   { id: "scopolamine", ordre: 43, titre: "Butylscopolamine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_butylscopolamine1.png","images/corfa_butylscopolamine2.png","images/corfa_butylscopolamine3.png"], favori: false },
   { id: "ceftriaxone", ordre: 46, titre: "Ceftriaxone", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_ceftriaxone1.png","images/corfa_ceftriaxone2.png"], favori: false },
-  { id: "clemastine", ordre: 49, titre: "Clémastine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_clemastine.png", favori: false },
-  { id: "clonazepam", ordre: 52, titre: "Clonazépam", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_clonazepam.png", favori: false },
-  { id: "clopidogrel", ordre: 55, titre: "Clopidogrel", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_clopidogrel.png", favori: false },
-  { id: "diazepam", ordre: 58, titre: "Diazépam", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_diazepam.png", favori: false },
+  { id: "clemastine", ordre: 49, titre: "Clémastine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_clemastine1.png","images/corfa_clemastine2.png"], favori: false },
+  { id: "clonazepam", ordre: 52, titre: "Clonazépam", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_clonazepam1.png","images/corfa_clonazepam2.png","images/corfa_clonazepam3.png"], favori: false },
+  { id: "clopidogrel", ordre: 55, titre: "Clopidogrel", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_clopidogrel1.png","images/corfa_clopidogrel2.png"], favori: false },
+  { id: "diazepam", ordre: 58, titre: "Diazépam", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_diazepam1.png","images/corfa_diazepam2.png","images/corfa_diazepam3.png"], favori: false },
   { id: "dimetindene", ordre: 62, titre: "Dimétindène", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_dimetindene.png", favori: false },
   { id: "droperidol", ordre: 65, titre: "Dropéridol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_droperidol.png", favori: false },
   { id: "ephedrine", ordre: 70, titre: "Éphédrine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ephedrine.png", favori: false },
