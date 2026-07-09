@@ -140,9 +140,8 @@ const AUTRE = [
   { id: "aeioutip", ordre: 24, titre: "AEIOU TIPS😴", chapitre: "Autre", source: "Moi", image: "images/AEIOUTIPS.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "befast", ordre: 13, titre: "Be FAST 😵", chapitre: "Neuro🧠", source: "Moi", image: "images/Befast.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "breathing", ordre: 23, titre: "Breathing 🫁", chapitre: "Autre", source: "Moi", image: "images/breathing.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  { id: "pastel", ordre: 30, titre: "PASTEL 👶", chapitre: "Pédiatrie👶", source: "Moi", image: "images/pastel.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  { id: "calcul_pedia", ordre: 40, titre: "💉 Calcul rapide pédiatrique", chapitre: "Pédiatrie👶", source: "Moi", image: "images/calcul_pedia.png", favori: false, notesPlaceholder: "" },
-  {id: "mes_resumes",ordre: 1,titre: "📚 Mes résumés",chapitre: "Autre", source: "Moi", image: "images/mes_resumes.png", favori: false, notesPlaceholder: ""},
+  { id: "calcul_pedia", ordre: 40, titre: "💉 Calcul rapide pédiatrique", chapitre: "Pédiatrie👶", source: "Moi", images: ["images/calcul_pedia.png","images/pastel.png"], favori: false, notesPlaceholder: "" },
+  {id: "mes_resumes",ordre: 1,titre: "📚 Mes Révisions",chapitre: "Autre", source: "Moi", image: "images/mes_resumes.png", favori: false, notesPlaceholder: ""},
   { id: "ecg", ordre: 50, titre: "ECG 💘", chapitre: "Autre", source: "Autre", images: ["images/1.Introduction_ECG.png","images/2.Definition_ECG.png","images/7.Ondes_ECG.png","images/8.Intervalles_ECG.png","images/9.Segments_ECG.png","images/10.Principe_ECG.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" }
 ];
 
