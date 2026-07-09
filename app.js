@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 09-07-2026 17h10");
+console.log("APP VERSION 09-07-2026 17h30");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -104,7 +104,7 @@ const CHAPTER_STYLES = {
 };
 
 const VD_ALGOS = [
-  { id: "acc_physio", ordre: 32, titre: "Accouchement physiologique", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/acc_physio.png", favori: false, notesPlaceholder: "Ex. matériel de naissance, points d’anticipation…" },
+  { id: "acc_physio", ordre: 32, titre: "Accouchement physiologique", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", images: ["images/acc_physio.png","images/APGAR.png"], favori: false, notesPlaceholder: "Ex. matériel de naissance, points d’anticipation…" },
   { id: "acc_patho1", ordre: 33, titre: "Accouchement pathologique 1", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/acc_patho1.png", favori: false, notesPlaceholder: "Ex. points d’attention…" },
   { id: "acc_patho2", ordre: 34, titre: "Accouchement pathologique 2", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/acc_patho2.png", favori: false, notesPlaceholder: "Ex. points d’attention…" },
   { id: "eclampsie", ordre: 35, titre: "Pré-éclampsie / éclampsie", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/eclampsie.png", favori: false, notesPlaceholder: "Ex. Labetalol, MgSO4, conduite locale…" },
