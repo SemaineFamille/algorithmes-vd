@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 09-07-2026 11h45");
+console.log("APP VERSION 09-07-2026 11h55");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -269,7 +269,7 @@ const STAR_ALGOS = [
     titre: "🧠 Suspicion d’AVC 😵",
     chapitre: "Maladie 🌟",
     source: "STAR",
-    image: "images/suspicion_avc.png",
+    images: ["images/suspicion_avc.png","images/suspicion_avc_2.png"],
     favori: false,
     notesPlaceholder: "Ex. heure de début, anticoagulants, filière AVC…"
   },
