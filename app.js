@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 10-07-2026 16h00");
+console.log("APP VERSION 10-07-2026 16h40");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -763,7 +763,7 @@ const MES_RESUMES = [
 ];
 const CARTES_THEORIE = [
 
-  {id: "ecg_chat", ordre: 1, titre: "🫀 ECG", chapitre: "Résumés", source: "theorie", image: "images/ECG_CHAT.png", favori: false },
+  {id: "bpco", ordre: 1, titre: "🫁 BPCO", chapitre: "Théorie", source: "theorie", image: "images/BPCO.png", favori: false },
  
 ];
 
