@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 10-07-2026 16h40");
+console.log("APP VERSION 10-07-2026 16h50");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -143,7 +143,7 @@ const AUTRE = [
   { id: "calcul_pedia", ordre: 40, titre: "💉 Calcul rapide pédiatrique", chapitre: "Pédiatrie👶", source: "Autre", images: ["images/calcul_pedia.png","images/pastel.png"], favori: false, notesPlaceholder: "" },
   {id: "mes_resumes",ordre: 1,titre: "📚 Mes Révisions",chapitre: "Autre", source: "Moi", image: "images/mes_resumes.png", favori: false, notesPlaceholder: ""},
    {id: "cartes_theorie",ordre: 2,titre: "📚 Cartes de théorie",chapitre: "Autre", source: "Autre", image: "images/cartes.png", favori: false, notesPlaceholder: ""},
-  { id: "ecg", ordre: 50, titre: "ECG 💘", chapitre: "Autre", source: "Autre", images: ["images/1.Introduction_ECG.png","images/2.Definition_ECG.png","images/7.Ondes_ECG.png","images/8.Intervalles_ECG.png","images/9.Segments_ECG.png","images/10.Principe_ECG.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" }
+  { id: "ecg", ordre: 50, titre: "ECG 💘", chapitre: "Autre", source: "Autre", images: ["images/1.Introduction_ECG.png","images/2.Definition_ECG.png","images/7.Ondes_ECG.png","images/8.Intervalles_ECG.png","images/9.Segments_ECG.png","images/10.Principe_ECG.png","images/11.Papier_ECG.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" }
 ];
 
 // 🔐 Mode perso (stocké localement sur ton appareil)
@@ -764,7 +764,13 @@ const MES_RESUMES = [
 const CARTES_THEORIE = [
 
   {id: "bpco", ordre: 1, titre: "🫁 BPCO", chapitre: "Théorie", source: "theorie", image: "images/BPCO.png", favori: false },
- 
+  {id: "oap", ordre: 2, titre: "🫁 OAP", chapitre: "Théorie", source: "theorie", image: "images/OAP.png", favori: false },
+  {id: "pneumonie", ordre: 3, titre: "🫁 Pneumonie", chapitre: "Théorie", source: "theorie", image: "images/Pneumonie.png", favori: false },
+  {id: "diabete", ordre: 4, titre: "🩸🍭Diabète", chapitre: "Théorie", source: "theorie", image: "images/diabète.png", favori: false },
+  {id: "diabete", ordre: 4, titre: "🩸🍭Diabète", chapitre: "Théorie", source: "theorie", image: "images/diabète.png", favori: false },
+  
+ { id: "ecg", ordre: 50, titre: "ECG 💘", chapitre: "Autre", source: "Autre", images: ["images/1.Introduction_ECG.png","images/2.Definition_ECG.png","images/7.Ondes_ECG.png","images/8.Intervalles_ECG.png","images/9.Segments_ECG.png","images/10.Principe_ECG.png","images/11.Papier_ECG.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" }
+
 ];
 
 const DEFAULT_MATERIAL = [
