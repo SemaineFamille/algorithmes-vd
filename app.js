@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 10-07-2026 08h20");
+console.log("APP VERSION 10-07-2026 16h00");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -134,14 +134,15 @@ const AUTRE = [
   { id: "molecules", ordre: 22, titre: "💊 Molécules Antalgie", chapitre: "Autre", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
   { id: "toxidrome", ordre: 11, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", images: ["images/Toxidrome.png","images/Toxidrome_anticholinergique_2.png","images/Toxidrome_cholinergique.png","images/Toxidrome_opioide.png","images/Toxidrome_simpatomimetique.png","images/Toxidrome_hypnosedatif.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "glasgow", ordre: 12, titre: "Glasgow 😵‍💫", chapitre: "Neuro🧠", source: "Autre", images:["images/GCS.png","images/Glasgow.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  { id: "antalgie_sat", ordre: 1, titre: "Antalgie SAT", chapitre: "💉Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "antalgie_tcs", ordre: 2, titre: "Antalgie TCS", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
-  { id: "antalgie_tcs_ped", ordre: 3, titre: "Antalgie TCS Ped 👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
+  { id: "antalgie_sat", ordre: 3, titre: "Antalgie SAT", chapitre: "💉Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+  { id: "antalgie_tcs", ordre: 4, titre: "Antalgie TCS", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
+  { id: "antalgie_tcs_ped", ordre: 5, titre: "Antalgie TCS Ped 👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "aeioutip", ordre: 24, titre: "AEIOU TIPS😴", chapitre: "Autre", source: "Autre", image: "images/AEIOUTIPS.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "befast", ordre: 13, titre: "Be FAST 😵", chapitre: "Neuro🧠", source: "Autre", image: "images/Befast.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "breathing", ordre: 23, titre: "Breathing 🫁", chapitre: "Autre", source: "Autre", image: "images/breathing.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "calcul_pedia", ordre: 40, titre: "💉 Calcul rapide pédiatrique", chapitre: "Pédiatrie👶", source: "Autre", images: ["images/calcul_pedia.png","images/pastel.png"], favori: false, notesPlaceholder: "" },
   {id: "mes_resumes",ordre: 1,titre: "📚 Mes Révisions",chapitre: "Autre", source: "Moi", image: "images/mes_resumes.png", favori: false, notesPlaceholder: ""},
+   {id: "cartes_theorie",ordre: 2,titre: "📚 Cartes de théorie",chapitre: "Autre", source: "Autre", image: "images/cartes.png", favori: false, notesPlaceholder: ""},
   { id: "ecg", ordre: 50, titre: "ECG 💘", chapitre: "Autre", source: "Autre", images: ["images/1.Introduction_ECG.png","images/2.Definition_ECG.png","images/7.Ondes_ECG.png","images/8.Intervalles_ECG.png","images/9.Segments_ECG.png","images/10.Principe_ECG.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" }
 ];
 
@@ -760,7 +761,11 @@ const MES_RESUMES = [
   {id: "trauma_abdo_pelvien", ordre: 4, titre: "Trauma Abdo-pelvien", chapitre: "Résumés", source: "resume", image: "images/Trauma abdo pelvien_CHAT.png", favori: false }
   
 ];
+const CARTES_THEORIE = [
 
+  {id: "ecg_chat", ordre: 1, titre: "🫀 ECG", chapitre: "Résumés", source: "resume", image: "images/ECG_CHAT.png", favori: false },
+ 
+];
 
 const DEFAULT_MATERIAL = [
   { category: "💉 VVP", id: "venflon", label: "Venflon", checked: false, note: "" },
@@ -926,6 +931,9 @@ function getListBySource(source) {
 case "resume":
   return MES_RESUMES;
 
+      case "theorie":
+  return CARTES_THEORIE;
+
     case "corfa":
       return CORFA;
 
@@ -1051,7 +1059,18 @@ function renderResumes() {
 
   bindCardEvents(container);
 }
+function renderTheorie() {
 
+  const container = document.getElementById("theorieList");
+
+  if (!container) return;
+
+  container.innerHTML = CARTES_THEORIE
+    .map(item => cardHTML(item, "theorie"))
+    .join("");
+
+  bindCardEvents(container);
+}
 function renderHomeFavorites() {
   const favoritesSection = document.getElementById("favoritesSection");
   if (!favoritesSection) return;
@@ -1240,6 +1259,10 @@ function openDetail(source, id) {
   
 if (source === "autre" && id === "mes_resumes") {
     showScreen("resumes");
+    return;
+  }
+  if (source === "autre" && id === "cartes_theorie") {
+    showScreen("theorie");
     return;
   }
 
@@ -1667,6 +1690,7 @@ function showScreen(screen) {
   if (screen === "corfa-pharma") renderCorfaPharma();
   if (screen === "materials") renderMaterials();
   if (screen === "detail") renderDetail();
+  if (screen === "theorie") renderTheorie();
   
 if (screen === "resumes") {
   renderResumes();
