@@ -763,7 +763,7 @@ const MES_RESUMES = [
 ];
 const CARTES_THEORIE = [
 
-  {id: "ecg_chat", ordre: 1, titre: "🫀 ECG", chapitre: "Résumés", source: "resume", image: "images/ECG_CHAT.png", favori: false },
+  {id: "ecg_chat", ordre: 1, titre: "🫀 ECG", chapitre: "Résumés", source: "theorie", image: "images/ECG_CHAT.png", favori: false },
  
 ];
 
