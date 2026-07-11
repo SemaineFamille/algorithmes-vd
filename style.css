@@ -110,7 +110,11 @@ body.theme-vd .topbar {
   background: #0f766e;
   color: white;
 }
-
+#theorieList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
 body.theme-star .topbar {
   background: #facc15; /* jaune plus clair */
