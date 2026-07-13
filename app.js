@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 10-07-2026 18h50");
+console.log("APP VERSION 13-07-2026 07h35");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -769,6 +769,7 @@ const CARTES_THEORIE = [
   {id: "diabete", ordre: 4, titre: "🩸🍭 Diabète", chapitre: "Autre", source: "theorie", image: "images/diabète.png", favori: false },
   {id: "ic", ordre: 5, titre: "🫀Insuffisance cardiaque", chapitre: "Autre", source: "theorie", image: "images/Insuffisance cardique.png", favori: false },
    {id: "ir", ordre: 6, titre: "Insuffisance rénale", chapitre: "Autre", source: "theorie", image: "images/Insuffisance rénale.png", favori: false },
+  {id: "ep", ordre: 7, titre: "🫁 Embolie pulmonaire", chapitre: "Autre", source: "theorie", image: "images/EP.png", favori: false },
    { id: "ecg", ordre: 50, titre: "ECG 💘", chapitre: "Autre", source: "Autre", images: ["images/1.Introduction_ECG.png","images/2.Definition_ECG.png","images/7.Ondes_ECG.png","images/8.Intervalles_ECG.png","images/9.Segments_ECG.png","images/10.Principe_ECG.png","images/11.Papier_ECG.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" }
 
 ];
