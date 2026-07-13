@@ -755,10 +755,12 @@ const MES_RESUMES = [
   {id: "ecg_chat", ordre: 1, titre: "🫀 ECG", chapitre: "Résumés", source: "resume", image: "images/ECG_CHAT.png", favori: false },
   {id: "etat_de_choc", ordre: 2, titre: "Etat de choc", chapitre: "Résumés", source: "resume", image: "images/Etat de choc_CHAT.png", favori: false },
  {id: "oxygenation", ordre: 3, titre: "🫁 Oxygénation", chapitre: "Résumés", source: "resume", image: "images/O2_CHAT.png", favori: false },
-   {id: "tcc", ordre: 3, titre: "🧠 TCC", chapitre: "Résumés", source: "resume", image: "images/TCC_CHAT.png", favori: false },
-  {id: "acr", ordre: 3, titre: "⚰️ ACR", chapitre: "Résumés", source: "resume", image: "images/ACR_CHAT.png", favori: false },
-  {id: "trauma_face", ordre: 4, titre: "👊🏻 Trauma Face", chapitre: "Résumés", source: "resume", image: "images/Trauma face_CHAT.png", favori: false },
-  {id: "trauma_abdo_pelvien", ordre: 4, titre: "Trauma Abdo-pelvien", chapitre: "Résumés", source: "resume", image: "images/Trauma abdo pelvien_CHAT.png", favori: false }
+   {id: "tcc", ordre: 4, titre: "🧠 TCC", chapitre: "Résumés", source: "resume", image: "images/TCC_CHAT.png", favori: false },
+  {id: "acr", ordre: 5, titre: "⚰️ ACR", chapitre: "Résumés", source: "resume", image: "images/ACR_CHAT.png", favori: false },
+  {id: "trauma_face", ordre: 6, titre: "👊🏻 Trauma Face", chapitre: "Résumés", source: "resume", image: "images/Trauma face_CHAT.png", favori: false },
+  {id: "convulsions", ordre: 8, titre: "😵‍💫 Convulsions", chapitre: "Résumés", source: "resume", image: "images/Convulsions_CHAT.png", favori: false },
+  {id: "douleur_abdo", ordre: 9, titre: "Douleurs Abdo", chapitre: "Résumés", source: "resume", image: "images/Douleurs abdo_CHAT.png", favori: false },
+  {id: "trauma_abdo_pelvien", ordre: 7, titre: "Trauma Abdo-pelvien", chapitre: "Résumés", source: "resume", image: "images/Trauma abdo pelvien_CHAT.png", favori: false }
   
 ];
 const CARTES_THEORIE = [
