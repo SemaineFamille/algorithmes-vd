@@ -100,7 +100,12 @@ const CHAPTER_STYLES = {
     badge: "background:#e5e7eb;color:#374151;border-color:#9ca3af;",
     border: "#6b7280",
     background: "#f9fafb"
-  }
+  },
+  "Résumés": {
+  badge: "background:#fbcfe8;color:#9d174d;border-color:#f472b6;",
+  border: "#ec4899",
+  background: "#fdf2f8"
+}
 };
 
 const VD_ALGOS = [
