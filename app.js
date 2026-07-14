@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 13-07-2026 07h35");
+console.log("APP VERSION 14-07-2026 18h35");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -774,6 +774,8 @@ const CARTES_THEORIE = [
   {id: "ep", ordre: 7, titre: "🫁 Embolie pulmonaire", chapitre: "Autre", source: "theorie", image: "images/EP.png", favori: false },
   {id: "avc", ordre: 8, titre: "🧠 AVC", chapitre: "Autre", source: "theorie", image: "images/AVC.png", favori: false },
   {id: "convulsions", ordre: 9, titre: "🧠 Convulsions", chapitre: "Autre", source: "theorie", image: "images/Convuslions adulte.png", favori: false },
+  {id: "choc", ordre: 10, titre: "🫀 Etats de choc", chapitre: "Autre", source: "theorie", image: "images/Etat de choc.png", favori: false },
+  {id: "dissection", ordre: 11, titre: "🫀 Dissection aortique", chapitre: "Autre", source: "theorie", image: "images/Dissection aortique.png", favori: false },
    { id: "ecg", ordre: 50, titre: "ECG 💘", chapitre: "Autre", source: "Autre", images: ["images/1.Introduction_ECG.png","images/2.Definition_ECG.png","images/7.Ondes_ECG.png","images/8.Intervalles_ECG.png","images/9.Segments_ECG.png","images/10.Principe_ECG.png","images/11.Papier_ECG.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" }
 
 ];
