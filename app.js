@@ -690,10 +690,10 @@ const CORFA_PHARMA = [
 
   // 🔰 INTRO / GÉNÉRALITÉS
   
-  { id: "general_analgesiques", ordre: 2, titre: "Généralités analgésiques", chapitre: "Interne", source: "CORFA", image: "images/corfa_analgesie.png", favori: false },
-  { id: "general_bzd", ordre: 3, titre: "Généralités benzodiazépines", chapitre: "Interne", source: "CORFA", image: "images/corfa_bzd.png", favori: false },
-  { id: "serotoninergique", ordre: 4, titre: "Syndrome sérotoninergique", chapitre: "Interne", source: "CORFA", image: "images/corfa_serotonine.png", favori: false },
-  { id: "qt_long", ordre: 5, titre: "Syndrome QT long", chapitre: "Interne", source: "CORFA", image: "images/corfa_qt.png", favori: false },
+  { id: "general_analgesiques", ordre: 2, titre: "Généralités analgésiques", chapitre: "Interne", source: "CORFA", images: ["images/corfa_analgesie1.png","images/corfa_analgesie2.png"], favori: false },
+  { id: "general_bzd", ordre: 3, titre: "Généralités benzodiazépines", chapitre: "Interne", source: "CORFA", images: ["images/corfa_bzd1.png","images/corfa_bzd2.png","images/corfa_bzd3.png","images/corfa_bzd4.png"], favori: false },
+  { id: "serotoninergique", ordre: 4, titre: "Syndrome sérotoninergique", chapitre: "Interne", source: "CORFA", images:[ "images/corfa_serotonine1.png","images/corfa_serotonine2.png"], favori: false },
+  { id: "qt_long", ordre: 5, titre: "Syndrome QT long", chapitre: "Interne", source: "CORFA", images: ["images/corfa_qt1.png","images/corfa_qt2.png"], favori: false },
 
   // 💊 MÉDICAMENTS
   { id: "aas", ordre: 17, titre: "AAS", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_aas1.png","images/corfa_aas2.png","images/corfa_aas3.png","images/corfa_aas4.png"], favori: false },
