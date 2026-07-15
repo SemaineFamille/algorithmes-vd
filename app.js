@@ -4,28 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 15-07-2026 16h20");
-
-if (isMe && item.privateImages?.length) {
-
-  const separator = document.createElement("div");
-
-  separator.innerHTML = `
-    <h3 style="
-      text-align:center;
-      color:#ec4899;
-      margin:15px 0;
-    ">
-      🔒 Notes personnelles
-    </h3>
-  `;
-
-  wrap.appendChild(separator);
-
-  item.privateImages.forEach(src => {
-  
-  });
-}
+console.log("APP VERSION 15-07-2026 16h30");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -1488,7 +1467,37 @@ console.log(src);
       wrap.appendChild(im);
 
     });
+if (isMe && item.privateImages?.length) {
 
+  const separator = document.createElement("div");
+
+  separator.innerHTML = `
+    <h3 style="
+      text-align:center;
+      color:#ec4899;
+      margin:20px 0 10px 0;
+    ">
+      🔒 Notes personnelles
+    </h3>
+  `;
+
+  wrap.appendChild(separator);
+
+  item.privateImages.forEach(src => {
+
+    const im = document.createElement("img");
+
+    im.src = src;
+    im.alt = "Notes personnelles";
+    im.style.width = "100%";
+    im.style.display = "block";
+    im.style.marginBottom = "10px";
+    im.style.borderRadius = "8px";
+
+    wrap.appendChild(im);
+  });
+}
+    
   }
 }
 
