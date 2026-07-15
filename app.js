@@ -720,7 +720,7 @@ const CORFA_PHARMA = [
   { id: "glucose", ordre: 94, titre: "Glucose", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_glucose.png", favori: false },
   { id: "haloperidol", ordre: 97, titre: "Halopéridol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_haloperidol.png", favori: false },
   { id: "heparine", ordre: 100, titre: "Héparine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_heparine.png", favori: false },
-  { id: "ketamine", ordre: 103, titre: "Kétamine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_ketamine1.png","images/corfa_ketamine2.png","images/corfa_ketamine3.png","images/corfa_ketamine4.png","images/corfa_ketamine5.png","images/corfa_ketamine.png"], favori: false },
+  { id: "ketamine", ordre: 103, titre: "Kétamine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_ketamine1.png","images/corfa_ketamine2.png","images/corfa_ketamine3.png","images/corfa_ketamine4.png","images/corfa_ketamine5.png","images/corfa_ketamine6.png","images/corfa_ketamine7.png"], favori: false },
   { id: "ketorolac", ordre: 110, titre: "Kétorolac", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ketorolac.png", favori: false },
   { id: "labetalol", ordre: 114, titre: "Labétalol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_labetalol.png", favori: false },
   { id: "lidocaine", ordre: 118, titre: "Lidocaïne", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_lidocaine.png", favori: false },
