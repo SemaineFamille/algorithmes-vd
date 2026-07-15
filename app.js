@@ -151,6 +151,27 @@ const AUTRE = [
  
 ];
 
+if (isMe && item.privateImages?.length) {
+
+  const separator = document.createElement("div");
+
+  separator.innerHTML = `
+    <h3 style="
+      text-align:center;
+      color:#ec4899;
+      margin:15px 0;
+    ">
+      🔒 Notes personnelles
+    </h3>
+  `;
+
+  wrap.appendChild(separator);
+
+  item.privateImages.forEach(src => {
+    ...
+  });
+}
+
 // 🔐 Mode perso (stocké localement sur ton appareil)
 const isMe = localStorage.getItem("me") === "true";
 const canSeeStar = isMe;
