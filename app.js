@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 14-07-2026 18h35");
+console.log("APP VERSION 15-07-2026 15h15");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
