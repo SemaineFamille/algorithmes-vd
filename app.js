@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 15-07-2026 15h15");
+console.log("APP VERSION 15-07-2026 16h15");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -117,7 +117,7 @@ const VD_ALGOS = [
   { id: "cordon", ordre: 37, titre: "🪢 Circulaire du cordon", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/cordon.png", favori: false, notesPlaceholder: "Ex. conduite locale…" },
   { id: "anaphylaxie", ordre: 9, titre: "Réaction anaphylactique 🥵", chapitre: "Maladie🤒", source: "VD", images: ["images/anaphylaxie.png","images/Anaphylactique.png"], favori: false, notesPlaceholder: "Ex. adrénaline, surveillance…" },
   { id: "antalgie", ordre: 1, titre: "Antalgie VD", chapitre: "💉Antalgie", source: "VD", image: "images/antalgie.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
-  { id: "acr_bls", ordre: 12, titre: "ACR adulte / BLS 🫀", chapitre: "Maladie🤒", source: "VD", image: "images/acr_bls.png", favori: false, notesPlaceholder: "Ex. checklist équipe, matériel, points de briefing…" },
+  { id: "acr_bls", ordre: 12, titre: "ACR adulte / BLS 🫀", chapitre: "Maladie🤒", source: "VD", image: "images/acr_bls.png",privateImages: ["images/ACR_CHAT.png"], favori: false, notesPlaceholder: "Ex. checklist équipe, matériel, points de briefing…" },
   { id: "acr_als", ordre: 11, titre: "ACR adulte / ALS 🫀", chapitre: "Maladie🤒", source: "VD", image: "images/acr_als.png", favori: false, notesPlaceholder: "Ex. adrénaline, amiodarone, causes réversibles…" },
   { id: "acr_stop", ordre: 10, titre: "☠️Arrêt de réanimation🪦", chapitre: "Maladie🤒", source: "VD", images: ["images/acr_arret.png"], favori: false, notesPlaceholder: "Ex. adrénaline, amiodarone, causes réversibles…" },
   { id: "acr_pedia", ordre: 25, titre: "ACR pédiatrique 🫀", chapitre: "Pédiatrie👶", source: "VD", image: "images/acr_pedia.png", favori: false, notesPlaceholder: "Ex. doses, matériel pédiatrique…" },
