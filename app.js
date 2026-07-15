@@ -638,7 +638,7 @@ const CORFA_ALGOS = [
   { id: "corfa_antalgie", ordre: 20, titre: "Antalgie non traumatique", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_antalgie.png", favori: false, notesPlaceholder: "" },
 
   // 🟢 TRAUMATIQUE ADULTE
-  { id: "corfa_trau_airway", ordre: 21, titre: "Gestion voies aériennes traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_trau_airway.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_trau_airway", ordre: 21, titre: "Gestion voies aériennes traumatique", chapitre: "Trauma 🤕", source: "CORFA", images: ["images/corfa_airway.png","images/Pneumothorax sous tension.png"], favori: false, notesPlaceholder: "" },
   { id: "corfa_trau_thorax", ordre: 22, titre: "Traumatismes thoraciques", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_trau_airway.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_acr_trau", ordre: 23, titre: "ACR traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_trau_thorax.png", favori: false, notesPlaceholder: "" },
   { id: "corfa_rosc_trau", ordre: 24, titre: "ROSC traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_acr_trau.png", favori: false, notesPlaceholder: "" },
