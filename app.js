@@ -168,7 +168,7 @@ if (isMe && item.privateImages?.length) {
   wrap.appendChild(separator);
 
   item.privateImages.forEach(src => {
-    ...
+  
   });
 }
 
