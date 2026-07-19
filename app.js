@@ -145,9 +145,9 @@ const AUTRE = [
   { id: "molecules", ordre: 22, titre: "💊 Molécules Antalgie", chapitre: "Autre", source: "STAR", image: "images/molecules2.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" , access: ["PUBLIC"]},
   { id: "toxidrome", ordre: 11, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", images: ["images/Toxidrome.png","images/Toxidrome_anticholinergique_2.png","images/Toxidrome_cholinergique.png","images/Toxidrome_opioide.png","images/Toxidrome_simpatomimetique.png","images/Toxidrome_hypnosedatif.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…", access: ["PUBLIC"] },
   { id: "glasgow", ordre: 12, titre: "Glasgow 😵‍💫", chapitre: "Neuro🧠", source: "Autre", images:["images/GCS.png","images/Glasgow.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…", access: ["PUBLIC"] },
-  { id: "antalgie_sat", ordre: 3, titre: "Antalgie SAT", chapitre: "💉Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "antalgie_tcs", ordre: 4, titre: "Antalgie TCS", chapitre: "💉Antalgie", source: "TCS", images: ["images/antalgie_tcs.png","images/molecules2.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
-  { id: "antalgie_tcs_ped", ordre: 5, titre: "Antalgie TCS Ped 👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
+  { id: "antalgie_sat", ordre: 3, titre: "Antalgie SAT", chapitre: "💉Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" , access: ["SAT"]},
+  { id: "antalgie_tcs", ordre: 4, titre: "Antalgie TCS", chapitre: "💉Antalgie", source: "TCS", images: ["images/antalgie_tcs.png","images/molecules2.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…", access: ["TCS"] },
+  { id: "antalgie_tcs_ped", ordre: 5, titre: "Antalgie TCS Ped 👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…", access: ["TCS"] },
   { id: "aeioutip", ordre: 24, titre: "AEIOU TIPS😴", chapitre: "Autre", source: "Autre", image: "images/AEIOUTIPS.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" , access: ["PUBLIC"]},
   { id: "befast", ordre: 13, titre: "Be FAST 😵", chapitre: "Neuro🧠", source: "Autre", image: "images/Befast.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" , access: ["PUBLIC"]},
   { id: "breathing", ordre: 23, titre: "Breathing 🫁", chapitre: "Autre", source: "Autre", image: "images/breathing.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" , access: ["PUBLIC"]},
@@ -197,7 +197,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/detresse_respiratoire_adulte.png",
     favori: false,
-    notesPlaceholder: "Ex. O2, bronchodilatateurs, ventilation, surveillance…"
+    notesPlaceholder: "Ex. O2, bronchodilatateurs, ventilation, surveillance…", access: ["STAR"]
   },
   {
     id: "abstention_arret_reanimation",
@@ -207,7 +207,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/abstention_arret_reanimation.png",
     favori: false,
-    notesPlaceholder: "Ex. critères, contexte, transmission, traçabilité…"
+    notesPlaceholder: "Ex. critères, contexte, transmission, traçabilité…", access: ["STAR"]
   },
   {
     id: "acr_adulte",
@@ -217,7 +217,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/acr_adulte.png",
     favori: false,
-    notesPlaceholder: "Ex. RCP, défibrillation, adrénaline, causes réversibles…"
+    notesPlaceholder: "Ex. RCP, défibrillation, adrénaline, causes réversibles…", access: ["STAR"]
   },
   {
     id: "acr_shema",
@@ -227,7 +227,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/shema_ALS.png",
     favori: false,
-    notesPlaceholder: "Ex. RCP, défibrillation, adrénaline, causes réversibles…"
+    notesPlaceholder: "Ex. RCP, défibrillation, adrénaline, causes réversibles…", access: ["STAR"]
   },
   {
     id: "intra_osseuse",
@@ -237,7 +237,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/intra_osseuse.png",
     favori: false,
-    notesPlaceholder: "Ex. indications, contre-indications, surveillance…"
+    notesPlaceholder: "Ex. indications, contre-indications, surveillance…", access: ["STAR"]
   },
   {
     id: "douleur_thoracique_sca",
@@ -247,7 +247,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/douleur_thoracique_sca.png",
     favori: false,
-    notesPlaceholder: "Ex. ECG 12 dérivations, ASA, nitrés, surveillance…"
+    notesPlaceholder: "Ex. ECG 12 dérivations, ASA, nitrés, surveillance…", access: ["STAR"]
   },
   {
     id: "etat_de_choc",
@@ -257,7 +257,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/etat_de_choc.png",
     favori: false,
-    notesPlaceholder: "Ex. remplissage, TA cible, TXA, surveillance…"
+    notesPlaceholder: "Ex. remplissage, TA cible, TXA, surveillance…", access: ["STAR"]
   },
   {
     id: "convulsion_adulte",
@@ -267,7 +267,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/conv_adulte_star.png",
     favori: false,
-    notesPlaceholder: "Ex. benzodiazépines, glycémie, durée de crise…"
+    notesPlaceholder: "Ex. benzodiazépines, glycémie, durée de crise…", access: ["STAR"]
   },
   {
     id: "trouble_conscience_adulte",
@@ -277,7 +277,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/trouble_conscience_adulte.png",
     favori: false,
-    notesPlaceholder: "Ex. glucose, GCS, naloxone, surveillance…"
+    notesPlaceholder: "Ex. glucose, GCS, naloxone, surveillance…", access: ["STAR"]
   },
   {
     id: "suspicion_avc",
@@ -287,7 +287,7 @@ const STAR_ALGOS = [
     source: "STAR",
     images: ["images/suspicion_avc.png","images/suspicion_avc_2.png"],
     favori: false,
-    notesPlaceholder: "Ex. heure de début, anticoagulants, filière AVC…"
+    notesPlaceholder: "Ex. heure de début, anticoagulants, filière AVC…", access: ["STAR"]
   },
 
   {
@@ -298,7 +298,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/reaction_anaphylactique.png",
     favori: false,
-    notesPlaceholder: "Ex. adrénaline, O2, remplissage, surveillance…"
+    notesPlaceholder: "Ex. adrénaline, O2, remplissage, surveillance…", access: ["STAR"]
   },
   {
     id: "amd_antalgie",
@@ -308,7 +308,7 @@ const STAR_ALGOS = [
     source: "STAR",
     images: ["images/amd.png","images/molecules.png"],
     favori: false,
-    notesPlaceholder: "Ex. EVA/algoplus, posologies, contre-indications…"
+    notesPlaceholder: "Ex. EVA/algoplus, posologies, contre-indications…", access: ["STAR"]
   },
 
   // Traumatique
@@ -320,7 +320,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/brulures_STAR.png",
     favori: false,
-    notesPlaceholder: "Ex. refroidissement, surface, pansement, surveillance…"
+    notesPlaceholder: "Ex. refroidissement, surface, pansement, surveillance…", access: ["STAR"]
   },
   {
     id: "brulures_degre",
@@ -330,7 +330,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/brulure.png",
     favori: false,
-    notesPlaceholder: "Ex. refroidissement, surface, pansement, surveillance…"
+    notesPlaceholder: "Ex. refroidissement, surface, pansement, surveillance…", access: ["STAR"]
   },
   {
     id: "exposition_fumees",
@@ -340,7 +340,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/exposition_fumees.png",
     favori: false,
-    notesPlaceholder: "Ex. O2, CO, contexte incendie, surveillance…"
+    notesPlaceholder: "Ex. O2, CO, contexte incendie, surveillance…", access: ["STAR"]
   },
   {
     id: "immobilisation_rachis",
@@ -350,7 +350,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/immobilisation_rachis.png",
     favori: false,
-    notesPlaceholder: "Ex. critères, extraction, collier, matelas…"
+    notesPlaceholder: "Ex. critères, extraction, collier, matelas…", access: ["STAR"]
   },
 
   // Pédiatrie
@@ -362,7 +362,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_pediatrique_parametres.png",
     favori: false,
-    notesPlaceholder: "Ex. constantes, poids estimé, tailles de matériel…"
+    notesPlaceholder: "Ex. constantes, poids estimé, tailles de matériel…", access: ["STAR"]
   },
   {
     id: "detresse_respiratoire_pediatrique",
@@ -372,7 +372,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/detresse_respiratoire_pediatrique.png",
     favori: false,
-    notesPlaceholder: "Ex. O2, nébulisation, position spontanée, surveillance…"
+    notesPlaceholder: "Ex. O2, nébulisation, position spontanée, surveillance…", access: ["STAR"]
   },
   {
     id: "acr_pediatrique",
@@ -382,7 +382,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/acr_pediatrique.png",
     favori: false,
-    notesPlaceholder: "Ex. RCP, doses, matériel pédiatrique…"
+    notesPlaceholder: "Ex. RCP, doses, matériel pédiatrique…", access: ["STAR"]
   },
   {
     id: "dilutions_acr_pediatrique",
@@ -392,7 +392,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/dilutions_acr_pediatrique.png",
     favori: false,
-    notesPlaceholder: "Ex. RCP, doses, matériel pédiatrique…"
+    notesPlaceholder: "Ex. RCP, doses, matériel pédiatrique…", access: ["STAR"]
   },
   {
     id: "soins_reanimation_nouveau_ne",
@@ -402,7 +402,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/soins_reanimation_nouveau_ne.png",
     favori: false,
-    notesPlaceholder: "Ex. température, ventilation, FC, matériel…"
+    notesPlaceholder: "Ex. température, ventilation, FC, matériel…", access: ["STAR"]
   },
   {
     id: "convulsion_trouble_conscience_pediatrique",
@@ -412,7 +412,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/convulsion_trouble_conscience_pediatrique.png",
     favori: false,
-    notesPlaceholder: "Ex. glycémie, température, causes, traitement…"
+    notesPlaceholder: "Ex. glycémie, température, causes, traitement…", access: ["STAR"]
   },
 
   // Obstétrique / Gynécologie
@@ -424,7 +424,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/accouchement_physiologique.png",
     favori: false,
-    notesPlaceholder: "Ex. matériel, surveillance, délivrance, nouveau-né…"
+    notesPlaceholder: "Ex. matériel, surveillance, délivrance, nouveau-né…", access: ["STAR"]
   },
   {
     id: "accouchement_pathologique_1",
@@ -434,7 +434,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/accouchement_pathologique_1.png",
     favori: false,
-    notesPlaceholder: "Ex. points d’anticipation, complications, conduite…"
+    notesPlaceholder: "Ex. points d’anticipation, complications, conduite…", access: ["STAR"]
   },
   {
     id: "aide_memoire_dystocie_epaules",
@@ -444,7 +444,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_dystocie_epaules.png",
     favori: false,
-    notesPlaceholder: "Ex. manœuvres, chronologie, aide demandée…"
+    notesPlaceholder: "Ex. manœuvres, chronologie, aide demandée…", access: ["STAR"]
   },
   {
     id: "aide_memoire_Mc_Roberts",
@@ -454,7 +454,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_Mc_Roberts.png",
     favori: false,
-    notesPlaceholder: "Ex. manœuvres, chronologie, aide demandée…"
+    notesPlaceholder: "Ex. manœuvres, chronologie, aide demandée…", access: ["STAR"]
   },
   {
     id: "aide_memoire_Menticoglu",
@@ -464,7 +464,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_Menticoglu.png",
     favori: false,
-    notesPlaceholder: "Ex. manœuvres, chronologie, aide demandée…"
+    notesPlaceholder: "Ex. manœuvres, chronologie, aide demandée…", access: ["STAR"]
   },
   {
     id: "accouchement_pathologique_2",
@@ -474,7 +474,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/accouchement_pathologique_2.png",
     favori: false,
-    notesPlaceholder: "Ex. complications, surveillance materno-fœtale…"
+    notesPlaceholder: "Ex. complications, surveillance materno-fœtale…", access: ["STAR"]
   },
   {
     id: "aide_memoire_accouchement_siege",
@@ -484,7 +484,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_accouchement_siege.png",
     favori: false,
-    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
+    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…", access: ["STAR"]
   },
   {
     id: "aide_memoire_accouchement_Dos",
@@ -494,7 +494,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_accouchement_dos.png",
     favori: false,
-    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
+    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…", access: ["STAR"]
   },
   {
     id: "aide_memoire_accouchement_jambes",
@@ -504,7 +504,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_accouchement_jambes.png",
     favori: false,
-    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
+    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…", access: ["STAR"]
   },
   {
     id: "aide_memoire_accouchement_bras",
@@ -514,7 +514,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_accouchement_bras.png",
     favori: false,
-    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
+    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…", access: ["STAR"]
   },
   {
     id: "aide_memoire_accouchement_tete",
@@ -524,7 +524,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_accouchement_tete.png",
     favori: false,
-    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…"
+    notesPlaceholder: "Ex. conduite, manœuvres, anticipation, matériel…", access: ["STAR"]
   },
   {
     id: "circulaire_cordon",
@@ -534,7 +534,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/circulaire_cordon.png",
     favori: false,
-    notesPlaceholder: "Ex. conduite locale, dégagement, surveillance…"
+    notesPlaceholder: "Ex. conduite locale, dégagement, surveillance…", access: ["STAR"]
   },
   {
     id: "pre_eclampsie_eclampsie",
@@ -544,7 +544,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/pre_eclampsie_eclampsie.png",
     favori: false,
-    notesPlaceholder: "Ex. TA, MgSO4, signes de gravité, conduite…"
+    notesPlaceholder: "Ex. TA, MgSO4, signes de gravité, conduite…", access: ["STAR"]
   },
   {
     id: "hemorragie_post_partum_primaire",
@@ -554,7 +554,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/hemorragie_post_partum_primaire.png",
     favori: false,
-    notesPlaceholder: "Ex. massage utérin, saignement, TXA, surveillance…"
+    notesPlaceholder: "Ex. massage utérin, saignement, TXA, surveillance…", access: ["STAR"]
   },
 
   // Particuliers / Autres
@@ -566,7 +566,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_evenement_particulier_majeur_leader.png",
     favori: false,
-    notesPlaceholder: "Ex. rôle leader, coordination, sécurité, communication…"
+    notesPlaceholder: "Ex. rôle leader, coordination, sécurité, communication…", access: ["STAR"]
   },
   {
     id: "aide_memoire_evenement_particulier_majeur",
@@ -576,7 +576,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_evenement_particulier_majeur.png",
     favori: false,
-    notesPlaceholder: "Ex. rôle leader, coordination, sécurité, communication…"
+    notesPlaceholder: "Ex. rôle leader, coordination, sécurité, communication…", access: ["STAR"]
   },
   {
     id: "aide_memoire_evenement_particulier_majeur_pre_trieur",
@@ -586,7 +586,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_evenement_particulier_majeur_pre_trieur.png",
     favori: false,
-    notesPlaceholder: "Ex. tri, flux, sécurité, priorisation…"
+    notesPlaceholder: "Ex. tri, flux, sécurité, priorisation…", access: ["STAR"]
   },
   {
     id: "aide_memoire_SAP",
@@ -596,7 +596,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_sap.png",
     favori: false,
-    notesPlaceholder: "Ex. tri, flux, sécurité, priorisation…"
+    notesPlaceholder: "Ex. tri, flux, sécurité, priorisation…", access: ["STAR"]
   },
   {
     id: "aide_memoire_renfort_psycho_social",
@@ -606,7 +606,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_renfort_psycho_social.png",
     favori: false,
-    notesPlaceholder: "Ex. ressources, critères, relais, accompagnement…"
+    notesPlaceholder: "Ex. ressources, critères, relais, accompagnement…", access: ["STAR"]
   },
   {
     id: "aide_memoire_babyrescue",
@@ -616,7 +616,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_babyrescue.png",
     favori: false,
-    notesPlaceholder: "Ex. matériel, procédure, points d’attention…"
+    notesPlaceholder: "Ex. matériel, procédure, points d’attention…", access: ["STAR"]
   },
   {
     id: "aide_memoire_debriefing_etudiantes",
@@ -626,7 +626,7 @@ const STAR_ALGOS = [
     source: "STAR",
     image: "images/aide_memoire_debriefing_etudiantes.png",
     favori: false,
-    notesPlaceholder: "Ex. points de débriefing, apprentissages, feedback…"
+    notesPlaceholder: "Ex. points de débriefing, apprentissages, feedback…", access: ["STAR"]
   }
 ];
 
@@ -635,64 +635,64 @@ const STAR_ALGOS = [
 const CORFA_ALGOS = [
 
   // 🔵 NON TRAUMATIQUE ADULTE
-  { id: "corfa_airway", ordre: 10, titre: "Gestion voies aériennes / ventilation", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_airway.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_respiratoire", ordre: 11, titre: "Troubles respiratoires", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_respiratoire.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_acr_non_trau", ordre: 12, titre: "ACR non traumatique", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_acr_non_trau.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_retour_circu", ordre: 13, titre: "Retour circulation spontanée", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_retour_circu.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_thoracique", ordre: 14, titre: "Douleurs thoraciques", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_thoracique.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_rythme", ordre: 15, titre: "Troubles du rythme", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_rythme.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_choc", ordre: 16, titre: "État de choc non traumatique", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_choc.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_anaphylaxie", ordre: 17, titre: "Réaction anaphylactique", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_anaphylaxie.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_conscience", ordre: 18, titre: "Troubles de la conscience", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_conscience.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_neuro", ordre: 19, titre: "Déficit neurologique focal", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_neuro.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_antalgie", ordre: 20, titre: "Antalgie non traumatique", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_antalgie.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_airway", ordre: 10, titre: "Gestion voies aériennes / ventilation", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_airway.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_respiratoire", ordre: 11, titre: "Troubles respiratoires", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_respiratoire.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_acr_non_trau", ordre: 12, titre: "ACR non traumatique", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_acr_non_trau.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_retour_circu", ordre: 13, titre: "Retour circulation spontanée", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_retour_circu.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_thoracique", ordre: 14, titre: "Douleurs thoraciques", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_thoracique.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_rythme", ordre: 15, titre: "Troubles du rythme", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_rythme.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_choc", ordre: 16, titre: "État de choc non traumatique", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_choc.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_anaphylaxie", ordre: 17, titre: "Réaction anaphylactique", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_anaphylaxie.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_conscience", ordre: 18, titre: "Troubles de la conscience", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_conscience.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_neuro", ordre: 19, titre: "Déficit neurologique focal", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_neuro.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_antalgie", ordre: 20, titre: "Antalgie non traumatique", chapitre: "Maladie🤒", source: "CORFA", image: "images/corfa_antalgie.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
 
   // 🟢 TRAUMATIQUE ADULTE
-  { id: "corfa_trau_airway", ordre: 21, titre: "Gestion voies aériennes traumatique", chapitre: "Trauma 🤕", source: "CORFA", images: ["images/corfa_airway.png"], favori: false, notesPlaceholder: "" },
-  { id: "corfa_trau_thorax", ordre: 22, titre: "Traumatismes thoraciques", chapitre: "Trauma 🤕", source: "CORFA", images: ["images/corfa_trau_airway.png","images/Pneumothorax sous tension.png"], favori: false, notesPlaceholder: "" },
-  { id: "corfa_acr_trau", ordre: 23, titre: "ACR traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_trau_thorax.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_rosc_trau", ordre: 24, titre: "ROSC traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_acr_trau.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_choc_trau", ordre: 25, titre: "Hémorragies et État de choc traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_choc_trau.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_tcc", ordre: 26, titre: "Traumatisme crânio-cérébral", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_tcc.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_medullaire", ordre: 27, titre: "Traumatisme médullaire", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_medullaire.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_rachis", ordre: 28, titre: "Stabilisation du rachis", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_rachis.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_trau_antalgie", ordre: 29, titre: "Antalgie traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_trau_antalgie.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_acideeau", ordre: 30, titre: "Accident de plongée", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_plongee.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_brulure", ordre: 31, titre: "Brûlures", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_brulure.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_hypothermie", ordre: 32, titre: "Hypothermie", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_hypothermie.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_trau_airway", ordre: 21, titre: "Gestion voies aériennes traumatique", chapitre: "Trauma 🤕", source: "CORFA", images: ["images/corfa_airway.png"], favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_trau_thorax", ordre: 22, titre: "Traumatismes thoraciques", chapitre: "Trauma 🤕", source: "CORFA", images: ["images/corfa_trau_airway.png","images/Pneumothorax sous tension.png"], favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_acr_trau", ordre: 23, titre: "ACR traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_trau_thorax.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_rosc_trau", ordre: 24, titre: "ROSC traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_acr_trau.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_choc_trau", ordre: 25, titre: "Hémorragies et État de choc traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_choc_trau.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_tcc", ordre: 26, titre: "Traumatisme crânio-cérébral", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_tcc.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_medullaire", ordre: 27, titre: "Traumatisme médullaire", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_medullaire.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_rachis", ordre: 28, titre: "Stabilisation du rachis", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_rachis.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_trau_antalgie", ordre: 29, titre: "Antalgie traumatique", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_trau_antalgie.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_acideeau", ordre: 30, titre: "Accident de plongée", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_plongee.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_brulure", ordre: 31, titre: "Brûlures", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_brulure.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_hypothermie", ordre: 32, titre: "Hypothermie", chapitre: "Trauma 🤕", source: "CORFA", image: "images/corfa_hypothermie.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
 
   // 🟡 PÉDIATRIQUE
-  { id: "corfa_ped_airway", ordre: 33, titre: "Airway pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_airway.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_ped_obstruction", ordre: 34, titre: "Obstruction corps étranger", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_obstruction.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_ped_resp", ordre: 35, titre: "Détresse respiratoire pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_resp.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_ped_acr", ordre: 36, titre: "ACR pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_acr.png", favori: false, notesPlaceholder: "" },
-   { id: "corfa_ped_rosc", ordre: 37, titre: "ROSC pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_rosc.png", favori: false, notesPlaceholder: "" },
-{ id: "corfa_ped_choc", ordre: 38, titre: "Etat de choc NT/T pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_choc.png", favori: false, notesPlaceholder: "" },
-{ id: "corfa_ped_sept", ordre: 39, titre: "Etat septique pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_sept.png", favori: false, notesPlaceholder: "" },
-{ id: "corfa_ped_anaphy", ordre: 40, titre: "Réaction anaphylactique pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_anaphy.png", favori: false, notesPlaceholder: "" },
-{ id: "corfa_ped_conscience", ordre: 41, titre: "Trouble de la conscience", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_trble_consc.png", favori: false, notesPlaceholder: "" },
-{ id: "corfa_ped_antalgie_NT", ordre: 42, titre: "Antalgie NT pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_antalgie_nt.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_ped_trau", ordre: 43, titre: "Traumatisme thoracique pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_trau.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_ped_tcc", ordre: 44, titre: "Traumatisme crânio-cérébral pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_tcc.png", favori: false, notesPlaceholder: "" },
-{ id: "corfa_ped_médullaire", ordre: 45, titre: "Trauma médullaire pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_traum_med.png", favori: false, notesPlaceholder: "" },
-{ id: "corfa_ped_antalgie_T", ordre: 46, titre: "Antalgie T pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_antalgie_t.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_ped_airway", ordre: 33, titre: "Airway pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_airway.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_ped_obstruction", ordre: 34, titre: "Obstruction corps étranger", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_obstruction.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_ped_resp", ordre: 35, titre: "Détresse respiratoire pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_resp.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_ped_acr", ordre: 36, titre: "ACR pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_acr.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+   { id: "corfa_ped_rosc", ordre: 37, titre: "ROSC pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_rosc.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+{ id: "corfa_ped_choc", ordre: 38, titre: "Etat de choc NT/T pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_choc.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+{ id: "corfa_ped_sept", ordre: 39, titre: "Etat septique pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_sept.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+{ id: "corfa_ped_anaphy", ordre: 40, titre: "Réaction anaphylactique pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_anaphy.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+{ id: "corfa_ped_conscience", ordre: 41, titre: "Trouble de la conscience", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_trble_consc.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+{ id: "corfa_ped_antalgie_NT", ordre: 42, titre: "Antalgie NT pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_antalgie_nt.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_ped_trau", ordre: 43, titre: "Traumatisme thoracique pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_trau.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_ped_tcc", ordre: 44, titre: "Traumatisme crânio-cérébral pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_tcc.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+{ id: "corfa_ped_médullaire", ordre: 45, titre: "Trauma médullaire pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_traum_med.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+{ id: "corfa_ped_antalgie_T", ordre: 46, titre: "Antalgie T pédiatrique", chapitre: "Pédiatrie👶", source: "CORFA", image: "images/corfa_ped_antalgie_t.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
 
 
   // 🔴 OBSTETRIQUE
-  { id: "corfa_acc", ordre: 47, titre: "Accouchement", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_acc.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_cordon", ordre: 48, titre: "Circulaire du cordon", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_cordon.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_acc_patho1", ordre: 49, titre: "Accouchement pathologique 1", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_acc_patho1.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_acc_patho2", ordre: 50, titre: "Accouchement pathologique 2 Siège", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_acc_patho2.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_eclampsie", ordre: 51, titre: "Pré-éclampsie / éclampsie", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_eclampsie.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_réa_nn", ordre: 52, titre: "Soins et réanimation du nouveau-né", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_rea_nn.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_pph", ordre: 53, titre: "Hémorragie post-partum", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_pph.png", favori: false, notesPlaceholder: "" },
+  { id: "corfa_acc", ordre: 47, titre: "Accouchement", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_acc.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_cordon", ordre: 48, titre: "Circulaire du cordon", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_cordon.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_acc_patho1", ordre: 49, titre: "Accouchement pathologique 1", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_acc_patho1.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_acc_patho2", ordre: 50, titre: "Accouchement pathologique 2 Siège", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_acc_patho2.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_eclampsie", ordre: 51, titre: "Pré-éclampsie / éclampsie", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_eclampsie.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_réa_nn", ordre: 52, titre: "Soins et réanimation du nouveau-né", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_rea_nn.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_pph", ordre: 53, titre: "Hémorragie post-partum", chapitre: "Obstétrique/Gynécologie🤰", source: "CORFA", image: "images/corfa_pph.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
 
   // ⚪ AUTRES
-  { id: "corfa_nv", ordre: 54, titre: "Nausées et vomissements", chapitre: "Autre", source: "CORFA", image: "images/corfa_nv.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_arret", ordre: 55, titre: "Arrêt de réanimation", chapitre: "Autre", source: "CORFA", image: "images/corfa_arret.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_orientation", ordre: 56, titre: "Orientation extra-hospitalière", chapitre: "Autre", source: "CORFA", image: "images/corfa_orientation.png", favori: false, notesPlaceholder: "" },
-   { id: "corfa_orientation", ordre: 57, titre: "Orientation extra-hospitalière Check-list", chapitre: "Autre", source: "CORFA", image: "images/corfa_orientation_cl.png", favori: false, notesPlaceholder: "" },
-  { id: "corfa_agitation", ordre: 58, titre: "État d’agitation", chapitre: "Autre", source: "CORFA", image: "images/corfa_agitation.png", favori: false, notesPlaceholder: "" }
+  { id: "corfa_nv", ordre: 54, titre: "Nausées et vomissements", chapitre: "Autre", source: "CORFA", image: "images/corfa_nv.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_arret", ordre: 55, titre: "Arrêt de réanimation", chapitre: "Autre", source: "CORFA", image: "images/corfa_arret.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_orientation", ordre: 56, titre: "Orientation extra-hospitalière", chapitre: "Autre", source: "CORFA", image: "images/corfa_orientation.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+   { id: "corfa_orientation", ordre: 57, titre: "Orientation extra-hospitalière Check-list", chapitre: "Autre", source: "CORFA", image: "images/corfa_orientation_cl.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]},
+  { id: "corfa_agitation", ordre: 58, titre: "État d’agitation", chapitre: "Autre", source: "CORFA", image: "images/corfa_agitation.png", favori: false, notesPlaceholder: "" , access: ["PUBLIC"]}
 
 ];
 
@@ -700,62 +700,62 @@ const CORFA_PHARMA = [
 
   // 🔰 INTRO / GÉNÉRALITÉS
   
-  { id: "general_analgesiques", ordre: 2, titre: "Généralités analgésiques", chapitre: "Interne", source: "CORFA", images: ["images/corfa_analgesie1.png","images/corfa_analgesie2.png"], favori: false },
-  { id: "general_bzd", ordre: 3, titre: "Généralités benzodiazépines", chapitre: "Interne", source: "CORFA", images: ["images/corfa_bzd1.png","images/corfa_bzd2.png","images/corfa_bzd3.png","images/corfa_bzd4.png"], favori: false },
-  { id: "serotoninergique", ordre: 4, titre: "Syndrome sérotoninergique", chapitre: "Interne", source: "CORFA", images:[ "images/corfa_serotonine1.png","images/corfa_serotonine2.png"], favori: false },
-  { id: "qt_long", ordre: 5, titre: "Syndrome QT long", chapitre: "Interne", source: "CORFA", images: ["images/corfa_qt1.png","images/corfa_qt2.png"], favori: false },
+  { id: "general_analgesiques", ordre: 2, titre: "Généralités analgésiques", chapitre: "Interne", source: "CORFA", images: ["images/corfa_analgesie1.png","images/corfa_analgesie2.png"], favori: false , access: ["PUBLIC"]},
+  { id: "general_bzd", ordre: 3, titre: "Généralités benzodiazépines", chapitre: "Interne", source: "CORFA", images: ["images/corfa_bzd1.png","images/corfa_bzd2.png","images/corfa_bzd3.png","images/corfa_bzd4.png"], favori: false , access: ["PUBLIC"]},
+  { id: "serotoninergique", ordre: 4, titre: "Syndrome sérotoninergique", chapitre: "Interne", source: "CORFA", images:[ "images/corfa_serotonine1.png","images/corfa_serotonine2.png"], favori: false , access: ["PUBLIC"]},
+  { id: "qt_long", ordre: 5, titre: "Syndrome QT long", chapitre: "Interne", source: "CORFA", images: ["images/corfa_qt1.png","images/corfa_qt2.png"], favori: false , access: ["PUBLIC"]},
 
   // 💊 MÉDICAMENTS
-  { id: "aas", ordre: 17, titre: "AAS", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_aas1.png","images/corfa_aas2.png","images/corfa_aas3.png","images/corfa_aas4.png"], favori: false },
-  { id: "txa", ordre: 21, titre: "TXA", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_txa1.png","images/corfa_txa2.png","images/corfa_txa3.png"], favori: false },
-  { id: "adenosine", ordre: 25, titre: "Adénosine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_adenosine1.png","images/corfa_adenosine2.png","images/corfa_adenosine3.png","images/corfa_adenosine4.png"], favori: false },
-  { id: "adrenaline", ordre: 29, titre: "Adrénaline", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_adrenaline1.png","images/corfa_adrenaline2.png","images/corfa_adrenaline3.png","images/corfa_adrenaline4.png"], favori: false },
-  { id: "amiodarone", ordre: 34, titre: "Amiodarone", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_amiodarone1.png","images/corfa_amiodarone2.png","images/corfa_amiodarone3.png","images/corfa_amiodarone4.png"], favori: false },
-  { id: "atropine", ordre: 38, titre: "Atropine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_atropine1.png","images/corfa_atropine2.png","images/corfa_atropine3.png","images/corfa_atropine4.png"], favori: false },
-  { id: "scopolamine", ordre: 43, titre: "Butylscopolamine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_butylscopolamine1.png","images/corfa_butylscopolamine2.png","images/corfa_butylscopolamine3.png"], favori: false },
-  { id: "ceftriaxone", ordre: 46, titre: "Ceftriaxone", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_ceftriaxone1.png","images/corfa_ceftriaxone2.png"], favori: false },
-  { id: "clemastine", ordre: 49, titre: "Clémastine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_clemastine1.png","images/corfa_clemastine2.png"], favori: false },
-  { id: "clonazepam", ordre: 52, titre: "Clonazépam", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_clonazepam1.png","images/corfa_clonazepam2.png","images/corfa_clonazepam3.png"], favori: false },
-  { id: "clopidogrel", ordre: 55, titre: "Clopidogrel", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_clopidogrel1.png","images/corfa_clopidogrel2.png"], favori: false },
-  { id: "diazepam", ordre: 58, titre: "Diazépam", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_diazepam1.png","images/corfa_diazepam2.png","images/corfa_diazepam3.png"], favori: false },
-  { id: "dimetindene", ordre: 62, titre: "Dimétindène", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_dimetindene1.png","images/corfa_dimetindene2.png"], favori: false },
-  { id: "droperidol", ordre: 65, titre: "Dropéridol", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_droperidol1.png","images/corfa_droperidol2.png","images/corfa_droperidol3.png","images/corfa_droperidol4.png"], favori: false },
-  { id: "ephedrine", ordre: 70, titre: "Éphédrine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_ephedrine1.png","images/corfa_ephedrine2.png","images/corfa_ephedrine3.png"], favori: false },
-  { id: "esomeprazole", ordre: 73, titre: "Esoméprazole", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_esomeprazole1.png","images/corfa_esomeprazole2.png"], favori: false },
-  { id: "etomidate", ordre: 76, titre: "Etomidate", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_etomidate1.png","images/corfa_etomidate2.png"], favori: false },
-  { id: "fentanyl", ordre: 79, titre: "Fentanyl", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_fentanyl1.png","images/corfa_fentanyl2.png","images/corfa_fentanyl3.png","images/corfa_fentanyl4.png",], favori: false },
-  { id: "flumazenil", ordre: 84, titre: "Flumazénil", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_flumazenil.png", favori: false },
-  { id: "furosemide", ordre: 87, titre: "Furosémide", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_furosemide.png", favori: false },
-  { id: "glucagon", ordre: 90, titre: "Glucagon", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_glucagon.png", favori: false },
-  { id: "glucose", ordre: 94, titre: "Glucose", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_glucose.png", favori: false },
-  { id: "haloperidol", ordre: 97, titre: "Halopéridol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_haloperidol.png", favori: false },
-  { id: "heparine", ordre: 100, titre: "Héparine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_heparine.png", favori: false },
-  { id: "ketamine", ordre: 103, titre: "Kétamine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_ketamine1.png","images/corfa_ketamine2.png","images/corfa_ketamine3.png","images/corfa_ketamine4.png","images/corfa_ketamine5.png","images/corfa_ketamine6.png","images/corfa_ketamine7.png"], favori: false },
-  { id: "ketorolac", ordre: 110, titre: "Kétorolac", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ketorolac.png", favori: false },
-  { id: "labetalol", ordre: 114, titre: "Labétalol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_labetalol.png", favori: false },
-  { id: "lidocaine", ordre: 118, titre: "Lidocaïne", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_lidocaine.png", favori: false },
-  { id: "lorazepam", ordre: 122, titre: "Lorazépam", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_lorazepam.png", favori: false },
-  { id: "meopa", ordre: 126, titre: "MEOPA", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_meopa.png", favori: false },
-  { id: "methoxy", ordre: 130, titre: "Méthoxyflurane", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_methoxy.png", favori: false },
-  { id: "methylpred", ordre: 134, titre: "Méthylprednisolone", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_methylpred.png", favori: false },
-  { id: "midazolam", ordre: 138, titre: "Midazolam", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_midazolam.png", favori: false },
-  { id: "morphine", ordre: 143, titre: "Morphine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_morphine.png", favori: false },
-  { id: "naloxone", ordre: 147, titre: "Naloxone", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_naloxone.png", favori: false },
-  { id: "trinitrine", ordre: 151, titre: "Nitroglycérine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_trinitrine.png", favori: false },
+  { id: "aas", ordre: 17, titre: "AAS", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_aas1.png","images/corfa_aas2.png","images/corfa_aas3.png","images/corfa_aas4.png"], favori: false , access: ["PUBLIC"]},
+  { id: "txa", ordre: 21, titre: "TXA", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_txa1.png","images/corfa_txa2.png","images/corfa_txa3.png"], favori: false , access: ["PUBLIC"]},
+  { id: "adenosine", ordre: 25, titre: "Adénosine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_adenosine1.png","images/corfa_adenosine2.png","images/corfa_adenosine3.png","images/corfa_adenosine4.png"], favori: false , access: ["PUBLIC"]},
+  { id: "adrenaline", ordre: 29, titre: "Adrénaline", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_adrenaline1.png","images/corfa_adrenaline2.png","images/corfa_adrenaline3.png","images/corfa_adrenaline4.png"], favori: false , access: ["PUBLIC"]},
+  { id: "amiodarone", ordre: 34, titre: "Amiodarone", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_amiodarone1.png","images/corfa_amiodarone2.png","images/corfa_amiodarone3.png","images/corfa_amiodarone4.png"], favori: false , access: ["PUBLIC"]},
+  { id: "atropine", ordre: 38, titre: "Atropine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_atropine1.png","images/corfa_atropine2.png","images/corfa_atropine3.png","images/corfa_atropine4.png"], favori: false , access: ["PUBLIC"]},
+  { id: "scopolamine", ordre: 43, titre: "Butylscopolamine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_butylscopolamine1.png","images/corfa_butylscopolamine2.png","images/corfa_butylscopolamine3.png"], favori: false , access: ["PUBLIC"]},
+  { id: "ceftriaxone", ordre: 46, titre: "Ceftriaxone", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_ceftriaxone1.png","images/corfa_ceftriaxone2.png"], favori: false , access: ["PUBLIC"]},
+  { id: "clemastine", ordre: 49, titre: "Clémastine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_clemastine1.png","images/corfa_clemastine2.png"], favori: false , access: ["PUBLIC"]},
+  { id: "clonazepam", ordre: 52, titre: "Clonazépam", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_clonazepam1.png","images/corfa_clonazepam2.png","images/corfa_clonazepam3.png"], favori: false , access: ["PUBLIC"]},
+  { id: "clopidogrel", ordre: 55, titre: "Clopidogrel", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_clopidogrel1.png","images/corfa_clopidogrel2.png"], favori: false , access: ["PUBLIC"]},
+  { id: "diazepam", ordre: 58, titre: "Diazépam", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_diazepam1.png","images/corfa_diazepam2.png","images/corfa_diazepam3.png"], favori: false , access: ["PUBLIC"]},
+  { id: "dimetindene", ordre: 62, titre: "Dimétindène", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_dimetindene1.png","images/corfa_dimetindene2.png"], favori: false , access: ["PUBLIC"]},
+  { id: "droperidol", ordre: 65, titre: "Dropéridol", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_droperidol1.png","images/corfa_droperidol2.png","images/corfa_droperidol3.png","images/corfa_droperidol4.png"], favori: false , access: ["PUBLIC"]},
+  { id: "ephedrine", ordre: 70, titre: "Éphédrine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_ephedrine1.png","images/corfa_ephedrine2.png","images/corfa_ephedrine3.png"], favori: false, access: ["PUBLIC"] },
+  { id: "esomeprazole", ordre: 73, titre: "Esoméprazole", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_esomeprazole1.png","images/corfa_esomeprazole2.png"], favori: false , access: ["PUBLIC"]},
+  { id: "etomidate", ordre: 76, titre: "Etomidate", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_etomidate1.png","images/corfa_etomidate2.png"], favori: false, access: ["PUBLIC"] },
+  { id: "fentanyl", ordre: 79, titre: "Fentanyl", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_fentanyl1.png","images/corfa_fentanyl2.png","images/corfa_fentanyl3.png","images/corfa_fentanyl4.png",], favori: false , access: ["PUBLIC"]},
+  { id: "flumazenil", ordre: 84, titre: "Flumazénil", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_flumazenil.png", favori: false , access: ["PUBLIC"]},
+  { id: "furosemide", ordre: 87, titre: "Furosémide", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_furosemide.png", favori: false, access: ["PUBLIC"] },
+  { id: "glucagon", ordre: 90, titre: "Glucagon", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_glucagon.png", favori: false , access: ["PUBLIC"]},
+  { id: "glucose", ordre: 94, titre: "Glucose", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_glucose.png", favori: false , access: ["PUBLIC"]},
+  { id: "haloperidol", ordre: 97, titre: "Halopéridol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_haloperidol.png", favori: false , access: ["PUBLIC"]},
+  { id: "heparine", ordre: 100, titre: "Héparine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_heparine.png", favori: false , access: ["PUBLIC"]},
+  { id: "ketamine", ordre: 103, titre: "Kétamine", chapitre: "💊 Médicament", source: "CORFA", images: ["images/corfa_ketamine1.png","images/corfa_ketamine2.png","images/corfa_ketamine3.png","images/corfa_ketamine4.png","images/corfa_ketamine5.png","images/corfa_ketamine6.png","images/corfa_ketamine7.png"], favori: false , access: ["PUBLIC"]},
+  { id: "ketorolac", ordre: 110, titre: "Kétorolac", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ketorolac.png", favori: false, access: ["PUBLIC"] },
+  { id: "labetalol", ordre: 114, titre: "Labétalol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_labetalol.png", favori: false , access: ["PUBLIC"]},
+  { id: "lidocaine", ordre: 118, titre: "Lidocaïne", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_lidocaine.png", favori: false, access: ["PUBLIC"] },
+  { id: "lorazepam", ordre: 122, titre: "Lorazépam", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_lorazepam.png", favori: false, access: ["PUBLIC"] },
+  { id: "meopa", ordre: 126, titre: "MEOPA", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_meopa.png", favori: false , access: ["PUBLIC"]},
+  { id: "methoxy", ordre: 130, titre: "Méthoxyflurane", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_methoxy.png", favori: false , access: ["PUBLIC"]},
+  { id: "methylpred", ordre: 134, titre: "Méthylprednisolone", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_methylpred.png", favori: false , access: ["PUBLIC"]},
+  { id: "midazolam", ordre: 138, titre: "Midazolam", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_midazolam.png", favori: false, access: ["PUBLIC"] },
+  { id: "morphine", ordre: 143, titre: "Morphine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_morphine.png", favori: false, access: ["PUBLIC"] },
+  { id: "naloxone", ordre: 147, titre: "Naloxone", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_naloxone.png", favori: false , access: ["PUBLIC"]},
+  { id: "trinitrine", ordre: 151, titre: "Nitroglycérine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_trinitrine.png", favori: false , access: ["PUBLIC"]},
 
   // 🔚 FIN
-  { id: "noradrenaline", ordre: 156, titre: "Noradrénaline", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_noradrenaline.png", favori: false },
-  { id: "ocytocine", ordre: 161, titre: "Ocytocine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ocytocine.png", favori: false },
-  { id: "ondansetron", ordre: 164, titre: "Ondansétron", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ondansetron.png", favori: false },
-  { id: "olanzapine", ordre: 168, titre: "Olanzapine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_olanzapine.png", favori: false },
-  { id: "paracetamol", ordre: 171, titre: "Paracétamol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_paracetamol.png", favori: false },
-  { id: "prasugrel", ordre: 177, titre: "Prasugrel", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_prasugrel.png", favori: false },
-  { id: "propofol", ordre: 181, titre: "Propofol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_propofol.png", favori: false },
-  { id: "rocuronium", ordre: 184, titre: "Rocuronium", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_rocuronium.png", favori: false },
-  { id: "salbutamol", ordre: 187, titre: "Salbutamol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_salbutamol.png", favori: false },
-  { id: "salbutamol_ipra", ordre: 191, titre: "Salbutamol + Ipratropium", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_nebu.png", favori: false },
-  { id: "mgso4", ordre: 194, titre: "Sulfate de Magnésium MgSO4", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_mgso4.png", favori: false },
-  { id: "suxamethonium", ordre: 198, titre: "Suxaméthonium", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_suxa.png", favori: false }
+  { id: "noradrenaline", ordre: 156, titre: "Noradrénaline", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_noradrenaline.png", favori: false , access: ["PUBLIC"]},
+  { id: "ocytocine", ordre: 161, titre: "Ocytocine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ocytocine.png", favori: false , access: ["PUBLIC"]},
+  { id: "ondansetron", ordre: 164, titre: "Ondansétron", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_ondansetron.png", favori: false, access: ["PUBLIC"] },
+  { id: "olanzapine", ordre: 168, titre: "Olanzapine", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_olanzapine.png", favori: false, access: ["PUBLIC"] },
+  { id: "paracetamol", ordre: 171, titre: "Paracétamol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_paracetamol.png", favori: false, access: ["PUBLIC"] },
+  { id: "prasugrel", ordre: 177, titre: "Prasugrel", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_prasugrel.png", favori: false , access: ["PUBLIC"]},
+  { id: "propofol", ordre: 181, titre: "Propofol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_propofol.png", favori: false, access: ["PUBLIC"] },
+  { id: "rocuronium", ordre: 184, titre: "Rocuronium", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_rocuronium.png", favori: false, access: ["PUBLIC"] },
+  { id: "salbutamol", ordre: 187, titre: "Salbutamol", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_salbutamol.png", favori: false , access: ["PUBLIC"]},
+  { id: "salbutamol_ipra", ordre: 191, titre: "Salbutamol + Ipratropium", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_nebu.png", favori: false , access: ["PUBLIC"]},
+  { id: "mgso4", ordre: 194, titre: "Sulfate de Magnésium MgSO4", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_mgso4.png", favori: false , access: ["PUBLIC"]},
+  { id: "suxamethonium", ordre: 198, titre: "Suxaméthonium", chapitre: "💊 Médicament", source: "CORFA", image: "images/corfa_suxa.png", favori: false, access: ["PUBLIC"] }
 
 ];
 
@@ -768,31 +768,31 @@ const CORFA = [
 
 const MES_RESUMES = [
 
-  {id: "ecg_chat", ordre: 1, titre: "🫀 ECG", chapitre: "Résumés", source: "resume", image: "images/ECG_CHAT.png", favori: false },
-  {id: "etat_de_choc", ordre: 2, titre: "Etat de choc", chapitre: "Résumés", source: "resume", image: "images/Etat de choc_CHAT.png", favori: false },
- {id: "oxygenation", ordre: 3, titre: "🫁 Oxygénation", chapitre: "Résumés", source: "resume", image: "images/O2_CHAT.png", favori: false },
-   {id: "tcc", ordre: 4, titre: "🧠 TCC", chapitre: "Résumés", source: "resume", image: "images/TCC_CHAT.png", favori: false },
-  {id: "acr", ordre: 5, titre: "⚰️ ACR", chapitre: "Résumés", source: "resume", image: "images/ACR_CHAT.png", favori: false },
-  {id: "trauma_face", ordre: 6, titre: "👊🏻 Trauma Face", chapitre: "Résumés", source: "resume", image: "images/Trauma face_CHAT.png", favori: false },
-  {id: "convulsions", ordre: 8, titre: "😵‍💫 Convulsions", chapitre: "Résumés", source: "resume", image: "images/Convulsions_CHAT.png", favori: false },
-  {id: "douleur_abdo", ordre: 9, titre: "Douleurs Abdo", chapitre: "Résumés", source: "resume", image: "images/Douleurs abdo_CHAT.png", favori: false },
-  {id: "trauma_abdo_pelvien", ordre: 7, titre: "Trauma Abdo-pelvien", chapitre: "Résumés", source: "resume", image: "images/Trauma abdo pelvien_CHAT.png", favori: false }
+  {id: "ecg_chat", ordre: 1, titre: "🫀 ECG", chapitre: "Résumés", source: "resume", image: "images/ECG_CHAT.png", favori: false , access: ["ADMIN"]},
+  {id: "etat_de_choc", ordre: 2, titre: "Etat de choc", chapitre: "Résumés", source: "resume", image: "images/Etat de choc_CHAT.png", favori: false , access: ["ADMIN"]},
+ {id: "oxygenation", ordre: 3, titre: "🫁 Oxygénation", chapitre: "Résumés", source: "resume", image: "images/O2_CHAT.png", favori: false , access: ["ADMIN"]},
+   {id: "tcc", ordre: 4, titre: "🧠 TCC", chapitre: "Résumés", source: "resume", image: "images/TCC_CHAT.png", favori: false , access: ["ADMIN"]},
+  {id: "acr", ordre: 5, titre: "⚰️ ACR", chapitre: "Résumés", source: "resume", image: "images/ACR_CHAT.png", favori: false , access: ["ADMIN"]},
+  {id: "trauma_face", ordre: 6, titre: "👊🏻 Trauma Face", chapitre: "Résumés", source: "resume", image: "images/Trauma face_CHAT.png", favori: false , access: ["ADMIN"]},
+  {id: "convulsions", ordre: 8, titre: "😵‍💫 Convulsions", chapitre: "Résumés", source: "resume", image: "images/Convulsions_CHAT.png", favori: false , access: ["ADMIN"]},
+  {id: "douleur_abdo", ordre: 9, titre: "Douleurs Abdo", chapitre: "Résumés", source: "resume", image: "images/Douleurs abdo_CHAT.png", favori: false , access: ["ADMIN"]},
+  {id: "trauma_abdo_pelvien", ordre: 7, titre: "Trauma Abdo-pelvien", chapitre: "Résumés", source: "resume", image: "images/Trauma abdo pelvien_CHAT.png", favori: false , access: ["ADMIN"]}
   
 ];
 const CARTES_THEORIE = [
 
-  {id: "bpco", ordre: 1, titre: "🫁 BPCO", chapitre: "Autre", source: "theorie", image: "images/BPCO.png", favori: false },
-  {id: "oap", ordre: 2, titre: "🫁 OAP 🫀", chapitre: "Autre", source: "theorie", image: "images/OAP.png", favori: false },
-  {id: "pneumonie", ordre: 3, titre: "🫁 Pneumonie", chapitre: "Autre", source: "theorie", image: "images/Pneumonie.png", favori: false },
-  {id: "diabete", ordre: 4, titre: "🩸🍭 Diabète", chapitre: "Autre", source: "theorie", image: "images/diabète.png", favori: false },
-  {id: "ic", ordre: 5, titre: "🫀Insuffisance cardiaque", chapitre: "Autre", source: "theorie", image: "images/Insuffisance cardique.png", favori: false },
-   {id: "ir", ordre: 6, titre: "Insuffisance rénale", chapitre: "Autre", source: "theorie", image: "images/Insuffisance rénale.png", favori: false },
-  {id: "ep", ordre: 7, titre: "🫁 Embolie pulmonaire", chapitre: "Autre", source: "theorie", image: "images/EP.png", favori: false },
-  {id: "avc", ordre: 8, titre: "🧠 AVC", chapitre: "Autre", source: "theorie", image: "images/AVC.png", favori: false },
-  {id: "convulsions", ordre: 9, titre: "🧠 Convulsions", chapitre: "Autre", source: "theorie", image: "images/Convuslions adulte.png", favori: false },
-  {id: "choc", ordre: 10, titre: "🫀 Etats de choc", chapitre: "Autre", source: "theorie", image: "images/Etat de choc.png", favori: false },
-  {id: "dissection", ordre: 11, titre: "🫀 Dissection aortique", chapitre: "Autre", source: "theorie", image: "images/Dissection aortique.png", favori: false },
-   { id: "ecg", ordre: 50, titre: "ECG 💘", chapitre: "Autre", source: "Autre", images: ["images/1.Introduction_ECG.png","images/2.Definition_ECG.png","images/7.Ondes_ECG.png","images/8.Intervalles_ECG.png","images/9.Segments_ECG.png","images/10.Principe_ECG.png","images/11.Papier_ECG.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" }
+  {id: "bpco", ordre: 1, titre: "🫁 BPCO", chapitre: "Autre", source: "theorie", image: "images/BPCO.png", favori: false , access: ["PUBLIC"]},
+  {id: "oap", ordre: 2, titre: "🫁 OAP 🫀", chapitre: "Autre", source: "theorie", image: "images/OAP.png", favori: false, access: ["PUBLIC"] },
+  {id: "pneumonie", ordre: 3, titre: "🫁 Pneumonie", chapitre: "Autre", source: "theorie", image: "images/Pneumonie.png", favori: false , access: ["PUBLIC"]},
+  {id: "diabete", ordre: 4, titre: "🩸🍭 Diabète", chapitre: "Autre", source: "theorie", image: "images/diabète.png", favori: false, access: ["PUBLIC"] },
+  {id: "ic", ordre: 5, titre: "🫀Insuffisance cardiaque", chapitre: "Autre", source: "theorie", image: "images/Insuffisance cardique.png", favori: false, access: ["PUBLIC"] },
+   {id: "ir", ordre: 6, titre: "Insuffisance rénale", chapitre: "Autre", source: "theorie", image: "images/Insuffisance rénale.png", favori: false, access: ["PUBLIC"] },
+  {id: "ep", ordre: 7, titre: "🫁 Embolie pulmonaire", chapitre: "Autre", source: "theorie", image: "images/EP.png", favori: false, access: ["PUBLIC"] },
+  {id: "avc", ordre: 8, titre: "🧠 AVC", chapitre: "Autre", source: "theorie", image: "images/AVC.png", favori: false, access: ["PUBLIC"] },
+  {id: "convulsions", ordre: 9, titre: "🧠 Convulsions", chapitre: "Autre", source: "theorie", image: "images/Convuslions adulte.png", favori: false, access: ["PUBLIC"] },
+  {id: "choc", ordre: 10, titre: "🫀 Etats de choc", chapitre: "Autre", source: "theorie", image: "images/Etat de choc.png", favori: false , access: ["PUBLIC"]},
+  {id: "dissection", ordre: 11, titre: "🫀 Dissection aortique", chapitre: "Autre", source: "theorie", image: "images/Dissection aortique.png", favori: false, access: ["PUBLIC"] },
+   { id: "ecg", ordre: 50, titre: "ECG 💘", chapitre: "Autre", source: "Autre", images: ["images/1.Introduction_ECG.png","images/2.Definition_ECG.png","images/7.Ondes_ECG.png","images/8.Intervalles_ECG.png","images/9.Segments_ECG.png","images/10.Principe_ECG.png","images/11.Papier_ECG.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…", access: ["PUBLIC"] }
 
 ];
 
