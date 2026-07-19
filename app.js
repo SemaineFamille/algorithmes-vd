@@ -165,9 +165,23 @@ const canSeeStar =
 
 function hasAccess(roles = []) {
 
-  if (USER_ROLE === "ADMIN") {
-    return true;
-  }
+if (USER_ROLE === "ADMIN") {
+
+  btnBottom.textContent = "⭐📖";
+  btnBottom.setAttribute(
+    "data-screen",
+    "admin-menu"
+  );
+
+  btnTop.textContent = "⭐📖";
+  btnTop.setAttribute(
+    "data-screen",
+    "admin-menu"
+  );
+
+  return;
+}
+
 
   if (roles.length === 0) {
     return true;
