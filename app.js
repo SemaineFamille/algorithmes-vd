@@ -165,22 +165,7 @@ const canSeeStar =
 
 function hasAccess(roles = []) {
 
-if (USER_ROLE === "ADMIN") {
-
-  btnBottom.textContent = "⭐📖";
-  btnBottom.setAttribute(
-    "data-screen",
-    "admin-menu"
-  );
-
-  btnTop.textContent = "⭐📖";
-  btnTop.setAttribute(
-    "data-screen",
-    "admin-menu"
-  );
-
-  return;
-}
+  if (USER_ROLE === "ADMIN") {return true;}
 
 
   if (roles.length === 0) {
@@ -904,7 +889,14 @@ function updateModeUI() {
 
   const btnBottom = document.getElementById("modeBtn");
   const btnTop = document.getElementById("modeBtnTop");
-
+ if (USER_ROLE === "ADMIN") {
+   btnBottom.textContent = "⭐📖";
+   btnBottom.setAttribute("data-screen", "admin-menu");
+   
+    btnTop.textContent = "⭐📖";
+    btnTop.setAttribute("data-screen", "admin-menu");
+   return;
+ }
   const hasStarAccess =
     USER_ROLE === "STAR" ||
     USER_ROLE === "ADMIN";
