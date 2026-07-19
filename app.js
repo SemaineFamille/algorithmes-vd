@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 19-07-2026 15h15");
+console.log("APP VERSION 19-07-2026 15h30");
 
 const USER_ROLE = localStorage.getItem("role") || "PUBLIC";
 
