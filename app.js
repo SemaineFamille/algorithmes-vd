@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 15-07-2026 16h30");
+console.log("APP VERSION 19-07-2026 09h30");
 
 let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
 // "perso" → STAR
@@ -297,7 +297,7 @@ const STAR_ALGOS = [
     titre: "💉 Antalgie 💊",
     chapitre: "Maladie 🌟",
     source: "STAR",
-    image: "images/amd.png",
+    images: ["images/amd.png","images/molecules.png"],
     favori: false,
     notesPlaceholder: "Ex. EVA/algoplus, posologies, contre-indications…"
   },
