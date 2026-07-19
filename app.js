@@ -4,11 +4,17 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 19-07-2026 09h30");
+console.log("APP VERSION 19-07-2026 14h30");
 
-let MODE = localStorage.getItem("me") === "true" ? "perso" : "pro";
-// "perso" → STAR
-// "pro" → CORFA
+const USER_ROLE = localStorage.getItem("role") || "PUBLIC";
+
+const isAdmin = USER_ROLE === "ADMIN";
+const isSTAR = USER_ROLE === "STAR";
+const isSAT = USER_ROLE === "SAT";
+const isTCS = USER_ROLE === "TCS";
+
+let MODE = USER_ROLE;
+
 
 let corfaTab = "algos";
 
@@ -153,27 +159,30 @@ const AUTRE = [
 
 
 // 🔐 Mode perso (stocké localement sur ton appareil)
-const isMe = localStorage.getItem("me") === "true";
-const canSeeStar = isMe;
+const canSeeStar =
+  USER_ROLE === "STAR" ||
+  USER_ROLE === "ADMIN";
 
-// 👀 Filtrage des algos visibles dans "Autre"
-// On masque SAT pour les collègues
+function hasAccess(roles = []) {
 
-const AUTRE_FILTERED = AUTRE.filter(algo => {
-
-  if (algo.source === "SAT" && !isMe) {
-    return false;
+  if (USER_ROLE === "ADMIN") {
+    return true;
   }
 
-  if (algo.source === "Moi" && !isMe) {
-    return false;
+  if (roles.length === 0) {
+    return true;
   }
 
-  return true;
-});
+  if (roles.includes("PUBLIC")) {
+    return true;
+  }
 
+  return roles.includes(USER_ROLE);
+}
+const AUTRE_FILTERED = AUTRE.filter(
+  item => hasAccess(item.access)
+);
 
-// ✅ Remplacement du tableau original
 AUTRE.length = 0;
 AUTRE.push(...AUTRE_FILTERED);
 
@@ -828,22 +837,49 @@ const state = {
   selectedId: null
 };
 function unlock() {
-  const currentlyMe = localStorage.getItem("me") === "true";
 
-  if (currentlyMe) {
-    const confirmOff = confirm("Désactiver le mode perso ?");
+  const currentRole =
+    localStorage.getItem("role") || "PUBLIC";
+
+  if (currentRole !== "PUBLIC") {
+
+    const confirmOff = confirm(
+      "Déconnexion ?"
+    );
+
     if (confirmOff) {
-      localStorage.removeItem("me");
+      localStorage.removeItem("role");
       location.reload();
     }
+
     return;
   }
 
   const code = prompt("Code ?");
-  if (code === "2019") {
-    localStorage.setItem("me", "true");
-    location.reload();
+
+  switch (code) {
+
+    case "2019":
+      localStorage.setItem("role", "ADMIN");
+      break;
+
+    case "STAR":
+      localStorage.setItem("role", "STAR");
+      break;
+
+    case "TCS":
+      localStorage.setItem("role", "TCS");
+      break;
+
+    case "SAT":
+      localStorage.setItem("role", "SAT");
+      break;
+
+    default:
+      return;
   }
+
+  location.reload();
 }
 function setCorfaTab(tab) {
   corfaTab = tab;
@@ -1000,7 +1036,9 @@ function isFavorite(source, item) {
 
 function toggleFavorite(source, id) {
   const favs = getFavMap();
-  const list = getListBySource(source);
+ const list = getListBySource(source)
+  .filter(item => hasAccess(item.access))
+  .sort((a,b)=>a.ordre-b.ordre);
   const item = list.find(x => x.id === id);
 
   const key = favKey(source, id);
@@ -1467,7 +1505,10 @@ console.log(src);
       wrap.appendChild(im);
 
     });
-if (isMe && item.privateImages?.length) {
+if (
+  hasAccess(["ADMIN"]) &&
+  item.privateImages?.length
+) {
 
   const separator = document.createElement("div");
 
@@ -2123,7 +2164,10 @@ function init() {
 
   const btn = document.getElementById("unlockBtn");
   if (btn) {
-    btn.textContent = isMe ? "🔓" : "🔒";
+   btn.textContent =
+  USER_ROLE === "PUBLIC"
+    ? "🔒"
+    : `🔓 ${USER_ROLE}`;
   }
 
   if (!canSeeStar) {
