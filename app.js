@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 19-07-2026 14h45");
+console.log("APP VERSION 19-07-2026 15h15");
 
 const USER_ROLE = localStorage.getItem("role") || "PUBLIC";
 
@@ -887,29 +887,40 @@ function setCorfaTab(tab) {
 }
 
 function updateModeUI() {
+
   const btnBottom = document.getElementById("modeBtn");
   const btnTop = document.getElementById("modeBtnTop");
 
-  if (MODE === "pro") {
+  const hasStarAccess =
+    USER_ROLE === "STAR" ||
+    USER_ROLE === "ADMIN";
+
+  if (hasStarAccess) {
+
+    if (btnBottom) {
+      btnBottom.textContent = "STAR";
+      btnBottom.setAttribute("data-screen", "star");
+    }
+
+    if (btnTop) {
+      btnTop.textContent = "STAR";
+      btnTop.setAttribute("data-screen", "star");
+    }
+
+  } else {
+
     if (btnBottom) {
       btnBottom.textContent = "CORFA";
       btnBottom.setAttribute("data-screen", "corfa");
     }
+
     if (btnTop) {
       btnTop.textContent = "CORFA";
       btnTop.setAttribute("data-screen", "corfa");
     }
 
-  } else {
-    if (btnBottom) {
-      btnBottom.textContent = "STAR";
-      btnBottom.setAttribute("data-screen", "star");
-    }
-    if (btnTop) {
-      btnTop.textContent = "STAR";
-      btnTop.setAttribute("data-screen", "star");
-    }
   }
+
 }
 function readStorage(key, fallback) {
   try {
