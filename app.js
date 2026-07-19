@@ -136,11 +136,11 @@ const VD_ALGOS = [
 
 const AUTRE = [
   { id: "labo", ordre: 21, titre: "Valeur Laboratoire 🧪", chapitre: "Autre", source: "Autre", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "molecules", ordre: 22, titre: "💊 Molécules Antalgie", chapitre: "Autre", source: "STAR", image: "images/molecules.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
+  { id: "molecules", ordre: 22, titre: "💊 Molécules Antalgie", chapitre: "Autre", source: "STAR", image: "images/molecules2.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
   { id: "toxidrome", ordre: 11, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", images: ["images/Toxidrome.png","images/Toxidrome_anticholinergique_2.png","images/Toxidrome_cholinergique.png","images/Toxidrome_opioide.png","images/Toxidrome_simpatomimetique.png","images/Toxidrome_hypnosedatif.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "glasgow", ordre: 12, titre: "Glasgow 😵‍💫", chapitre: "Neuro🧠", source: "Autre", images:["images/GCS.png","images/Glasgow.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "antalgie_sat", ordre: 3, titre: "Antalgie SAT", chapitre: "💉Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "antalgie_tcs", ordre: 4, titre: "Antalgie TCS", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
+  { id: "antalgie_tcs", ordre: 4, titre: "Antalgie TCS", chapitre: "💉Antalgie", source: "TCS", images: ["images/antalgie_tcs.png","images/molecules2.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
   { id: "antalgie_tcs_ped", ordre: 5, titre: "Antalgie TCS Ped 👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "aeioutip", ordre: 24, titre: "AEIOU TIPS😴", chapitre: "Autre", source: "Autre", image: "images/AEIOUTIPS.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
   { id: "befast", ordre: 13, titre: "Be FAST 😵", chapitre: "Neuro🧠", source: "Autre", image: "images/Befast.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
