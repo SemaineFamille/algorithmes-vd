@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 19-07-2026 14h30");
+console.log("APP VERSION 19-07-2026 14h45");
 
 const USER_ROLE = localStorage.getItem("role") || "PUBLIC";
 
@@ -115,45 +115,45 @@ const CHAPTER_STYLES = {
 };
 
 const VD_ALGOS = [
-  { id: "acc_physio", ordre: 32, titre: "Accouchement physiologique💪🏻", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", images: ["images/acc_physio.png","images/APGAR.png"], favori: false, notesPlaceholder: "Ex. matériel de naissance, points d’anticipation…" },
-  { id: "acc_patho1", ordre: 33, titre: "Accouchement pathologique 1", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/acc_patho1.png", favori: false, notesPlaceholder: "Ex. points d’attention…" },
-  { id: "acc_patho2", ordre: 34, titre: "Accouchement pathologique 2", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/acc_patho2.png", favori: false, notesPlaceholder: "Ex. points d’attention…" },
-  { id: "eclampsie", ordre: 35, titre: "Pré-éclampsie / éclampsie", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/eclampsie.png", favori: false, notesPlaceholder: "Ex. Labetalol, MgSO4, conduite locale…" },
-  { id: "pph", ordre: 36, titre: "🩸Hémorragie post-partum", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/pph.png", favori: false, notesPlaceholder: "Ex. points de surveillance…" },
-  { id: "cordon", ordre: 37, titre: "🪢 Circulaire du cordon", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/cordon.png", favori: false, notesPlaceholder: "Ex. conduite locale…" },
-  { id: "anaphylaxie", ordre: 9, titre: "Réaction anaphylactique 🥵", chapitre: "Maladie🤒", source: "VD", images: ["images/anaphylaxie.png","images/Anaphylactique.png"], favori: false, notesPlaceholder: "Ex. adrénaline, surveillance…" },
-  { id: "antalgie", ordre: 1, titre: "Antalgie VD", chapitre: "💉Antalgie", source: "VD", image: "images/antalgie.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
-  { id: "acr_bls", ordre: 12, titre: "ACR adulte / BLS 🫀", chapitre: "Maladie🤒", source: "VD", image: "images/acr_bls.png",privateImages: ["images/ACR_CHAT.png"], favori: false, notesPlaceholder: "Ex. checklist équipe, matériel, points de briefing…" },
-  { id: "acr_als", ordre: 11, titre: "ACR adulte / ALS 🫀", chapitre: "Maladie🤒", source: "VD", image: "images/acr_als.png",privateImages: ["images/ACR_CHAT.png"], favori: false, notesPlaceholder: "Ex. adrénaline, amiodarone, causes réversibles…" },
-  { id: "acr_stop", ordre: 10, titre: "☠️Arrêt de réanimation🪦", chapitre: "Maladie🤒", source: "VD", images: ["images/acr_arret.png"], favori: false, notesPlaceholder: "Ex. adrénaline, amiodarone, causes réversibles…" },
-  { id: "acr_pedia", ordre: 25, titre: "ACR pédiatrique 🫀", chapitre: "Pédiatrie👶", source: "VD", image: "images/acr_pedia.png", favori: false, notesPlaceholder: "Ex. doses, matériel pédiatrique…" },
-  { id: "nn", ordre: 26, titre: "🍼 Réanimation nouveau-né", chapitre: "Pédiatrie👶", source: "VD", image: "images/nn.png", favori: false, notesPlaceholder: "Ex. matériel, température, ventilation…" },
-  { id: "brulures", ordre: 19, titre: "🥵 Brûlures 🌡️", chapitre: "Trauma 🤕", source: "VD", image: "images/brulures.png", favori: false, notesPlaceholder: "Ex. refroidissement, pansement, surveillance…" },
-  { id: "conv_adulte", ordre: 20, titre: "😵‍💫 Convulsions adulte 🫨", chapitre: "Neuro🧠", source: "VD", image: "images/conv_adulte.png",privateImages: ["images/Convulsions_CHAT.png"], favori: false, notesPlaceholder: "Ex. midazolam, clonazépam…" },
-  { id: "conv_pedia", ordre: 27, titre: "😵‍💫 Convulsions pédiatriques 🌡️", chapitre: "Pédiatrie👶", source: "VD", image: "images/conv_ped_star.png", favori: false, notesPlaceholder: "Ex. glycémie, température, refroidissement…" },
-  { id: "sca", ordre: 13, titre: "Douleurs thoraciques 🫀 (SCA)", chapitre: "Maladie🤒", source: "VD", image: "images/sca.png", favori: false, notesPlaceholder: "Ex. ECG 12 dérivations, ASA, nitrés…" },
-  { id: "resp_adulte", ordre: 14, titre: "Détresse respiratoire adulte 🫁", chapitre: "Maladie🤒", source: "VD", image: "images/resp_adulte.png", favori: false, notesPlaceholder: "Ex. O2, salbutamol, CPAP…" },
-  { id: "resp_pedia", ordre: 28, titre: "🫁 Détresse respiratoire 👶 pédiatrique", chapitre: "Pédiatrie👶", source: "VD", image: "images/resp_pedia.png", favori: false, notesPlaceholder: "Ex. nébulisation, respect position spontanée…" },
-  { id: "choc", ordre: 15, titre: "État de choc", chapitre: "Maladie🤒", source: "VD", images: ["images/choc.png","images/types_de_choc.png"],privateImages: ["images/Etat de choc_CHAT.png"], favori: false, notesPlaceholder: "Ex. RL, TA cible, TXA…" },
-  { id: "coma", ordre: 16, titre: "😴 Trouble de la conscience adulte 😵‍💫", chapitre: "Maladie🤒", source: "VD", image: "images/coma.png", favori: false, notesPlaceholder: "Ex. glucose, naloxone, thiamine…" },
-  { id: "avc", ordre: 21, titre: "😵 AVC", chapitre: "Neuro🧠", source: "VD", images: ["images/avc.png","images/avc_annexe.png"], favori: true, notesPlaceholder: "Ex. anticoagulants, heure de début, proches à prévenir…" },
-  { id: "io", ordre: 24, titre: "🦴 Voie intra-osseuse", chapitre: "Autre", source: "VD", image: "images/io.png", favori: false, notesPlaceholder: "Ex. indications, contre-indications, surveillance…" }
+  { id: "acc_physio", ordre: 32, titre: "Accouchement physiologique💪🏻", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", images: ["images/acc_physio.png","images/APGAR.png"], favori: false, notesPlaceholder: "Ex. matériel de naissance, points d’anticipation…", access: ["PUBLIC"]},
+  { id: "acc_patho1", ordre: 33, titre: "Accouchement pathologique 1", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/acc_patho1.png", favori: false, notesPlaceholder: "Ex. points d’attention…", access: ["PUBLIC"] },
+  { id: "acc_patho2", ordre: 34, titre: "Accouchement pathologique 2", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/acc_patho2.png", favori: false, notesPlaceholder: "Ex. points d’attention…", access: ["PUBLIC"] },
+  { id: "eclampsie", ordre: 35, titre: "Pré-éclampsie / éclampsie", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/eclampsie.png", favori: false, notesPlaceholder: "Ex. Labetalol, MgSO4, conduite locale…" , access: ["PUBLIC"]},
+  { id: "pph", ordre: 36, titre: "🩸Hémorragie post-partum", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/pph.png", favori: false, notesPlaceholder: "Ex. points de surveillance…" , access: ["PUBLIC"]},
+  { id: "cordon", ordre: 37, titre: "🪢 Circulaire du cordon", chapitre: "Obstétrique/Gynécologie🤰", source: "VD", image: "images/cordon.png", favori: false, notesPlaceholder: "Ex. conduite locale…", access: ["PUBLIC"] },
+  { id: "anaphylaxie", ordre: 9, titre: "Réaction anaphylactique 🥵", chapitre: "Maladie🤒", source: "VD", images: ["images/anaphylaxie.png","images/Anaphylactique.png"], favori: false, notesPlaceholder: "Ex. adrénaline, surveillance…" , access: ["PUBLIC"]},
+  { id: "antalgie", ordre: 1, titre: "Antalgie VD", chapitre: "💉Antalgie", source: "VD", image: "images/antalgie.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" , access: ["PUBLIC"]},
+  { id: "acr_bls", ordre: 12, titre: "ACR adulte / BLS 🫀", chapitre: "Maladie🤒", source: "VD", image: "images/acr_bls.png",privateImages: ["images/ACR_CHAT.png"], favori: false, notesPlaceholder: "Ex. checklist équipe, matériel, points de briefing…", access: ["PUBLIC"] },
+  { id: "acr_als", ordre: 11, titre: "ACR adulte / ALS 🫀", chapitre: "Maladie🤒", source: "VD", image: "images/acr_als.png",privateImages: ["images/ACR_CHAT.png"], favori: false, notesPlaceholder: "Ex. adrénaline, amiodarone, causes réversibles…" , access: ["PUBLIC"]},
+  { id: "acr_stop", ordre: 10, titre: "☠️Arrêt de réanimation🪦", chapitre: "Maladie🤒", source: "VD", images: ["images/acr_arret.png"], favori: false, notesPlaceholder: "Ex. adrénaline, amiodarone, causes réversibles…" , access: ["PUBLIC"]},
+  { id: "acr_pedia", ordre: 25, titre: "ACR pédiatrique 🫀", chapitre: "Pédiatrie👶", source: "VD", image: "images/acr_pedia.png", favori: false, notesPlaceholder: "Ex. doses, matériel pédiatrique…" , access: ["PUBLIC"]},
+  { id: "nn", ordre: 26, titre: "🍼 Réanimation nouveau-né", chapitre: "Pédiatrie👶", source: "VD", image: "images/nn.png", favori: false, notesPlaceholder: "Ex. matériel, température, ventilation…" , access: ["PUBLIC"]},
+  { id: "brulures", ordre: 19, titre: "🥵 Brûlures 🌡️", chapitre: "Trauma 🤕", source: "VD", image: "images/brulures.png", favori: false, notesPlaceholder: "Ex. refroidissement, pansement, surveillance…" , access: ["PUBLIC"]},
+  { id: "conv_adulte", ordre: 20, titre: "😵‍💫 Convulsions adulte 🫨", chapitre: "Neuro🧠", source: "VD", image: "images/conv_adulte.png",privateImages: ["images/Convulsions_CHAT.png"], favori: false, notesPlaceholder: "Ex. midazolam, clonazépam…" , access: ["PUBLIC"]},
+  { id: "conv_pedia", ordre: 27, titre: "😵‍💫 Convulsions pédiatriques 🌡️", chapitre: "Pédiatrie👶", source: "VD", image: "images/conv_ped_star.png", favori: false, notesPlaceholder: "Ex. glycémie, température, refroidissement…" , access: ["PUBLIC"]},
+  { id: "sca", ordre: 13, titre: "Douleurs thoraciques 🫀 (SCA)", chapitre: "Maladie🤒", source: "VD", image: "images/sca.png", favori: false, notesPlaceholder: "Ex. ECG 12 dérivations, ASA, nitrés…", access: ["PUBLIC"] },
+  { id: "resp_adulte", ordre: 14, titre: "Détresse respiratoire adulte 🫁", chapitre: "Maladie🤒", source: "VD", image: "images/resp_adulte.png", favori: false, notesPlaceholder: "Ex. O2, salbutamol, CPAP…" , access: ["PUBLIC"]},
+  { id: "resp_pedia", ordre: 28, titre: "🫁 Détresse respiratoire 👶 pédiatrique", chapitre: "Pédiatrie👶", source: "VD", image: "images/resp_pedia.png", favori: false, notesPlaceholder: "Ex. nébulisation, respect position spontanée…" , access: ["PUBLIC"]},
+  { id: "choc", ordre: 15, titre: "État de choc", chapitre: "Maladie🤒", source: "VD", images: ["images/choc.png","images/types_de_choc.png"],privateImages: ["images/Etat de choc_CHAT.png"], favori: false, notesPlaceholder: "Ex. RL, TA cible, TXA…" , access: ["PUBLIC"]},
+  { id: "coma", ordre: 16, titre: "😴 Trouble de la conscience adulte 😵‍💫", chapitre: "Maladie🤒", source: "VD", image: "images/coma.png", favori: false, notesPlaceholder: "Ex. glucose, naloxone, thiamine…" , access: ["PUBLIC"]},
+  { id: "avc", ordre: 21, titre: "😵 AVC", chapitre: "Neuro🧠", source: "VD", images: ["images/avc.png","images/avc_annexe.png"], favori: true, notesPlaceholder: "Ex. anticoagulants, heure de début, proches à prévenir…" , access: ["PUBLIC"]},
+  { id: "io", ordre: 24, titre: "🦴 Voie intra-osseuse", chapitre: "Autre", source: "VD", image: "images/io.png", favori: false, notesPlaceholder: "Ex. indications, contre-indications, surveillance…" , access: ["PUBLIC"]}
 ];
 
 const AUTRE = [
-  { id: "labo", ordre: 21, titre: "Valeur Laboratoire 🧪", chapitre: "Autre", source: "Autre", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "molecules", ordre: 22, titre: "💊 Molécules Antalgie", chapitre: "Autre", source: "STAR", image: "images/molecules2.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
-  { id: "toxidrome", ordre: 11, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", images: ["images/Toxidrome.png","images/Toxidrome_anticholinergique_2.png","images/Toxidrome_cholinergique.png","images/Toxidrome_opioide.png","images/Toxidrome_simpatomimetique.png","images/Toxidrome_hypnosedatif.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  { id: "glasgow", ordre: 12, titre: "Glasgow 😵‍💫", chapitre: "Neuro🧠", source: "Autre", images:["images/GCS.png","images/Glasgow.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
+  { id: "labo", ordre: 21, titre: "Valeur Laboratoire 🧪", chapitre: "Autre", source: "Autre", image: "images/labo.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" , access: ["PUBLIC"]},
+  { id: "molecules", ordre: 22, titre: "💊 Molécules Antalgie", chapitre: "Autre", source: "STAR", image: "images/molecules2.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" , access: ["PUBLIC"]},
+  { id: "toxidrome", ordre: 11, titre: "Toxidrome 💊", chapitre: "Neuro🧠", source: "Autre", images: ["images/Toxidrome.png","images/Toxidrome_anticholinergique_2.png","images/Toxidrome_cholinergique.png","images/Toxidrome_opioide.png","images/Toxidrome_simpatomimetique.png","images/Toxidrome_hypnosedatif.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…", access: ["PUBLIC"] },
+  { id: "glasgow", ordre: 12, titre: "Glasgow 😵‍💫", chapitre: "Neuro🧠", source: "Autre", images:["images/GCS.png","images/Glasgow.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…", access: ["PUBLIC"] },
   { id: "antalgie_sat", ordre: 3, titre: "Antalgie SAT", chapitre: "💉Antalgie", source: "SAT", image: "images/antalgie_sat.png", favori: false, notesPlaceholder: "Ex. protocole interne SAT…" },
   { id: "antalgie_tcs", ordre: 4, titre: "Antalgie TCS", chapitre: "💉Antalgie", source: "TCS", images: ["images/antalgie_tcs.png","images/molecules2.png"], favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, précautions sujet âgé…" },
   { id: "antalgie_tcs_ped", ordre: 5, titre: "Antalgie TCS Ped 👶", chapitre: "💉Antalgie", source: "TCS", image: "images/antalgie_tcs_ped.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  { id: "aeioutip", ordre: 24, titre: "AEIOU TIPS😴", chapitre: "Autre", source: "Autre", image: "images/AEIOUTIPS.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  { id: "befast", ordre: 13, titre: "Be FAST 😵", chapitre: "Neuro🧠", source: "Autre", image: "images/Befast.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  { id: "breathing", ordre: 23, titre: "Breathing 🫁", chapitre: "Autre", source: "Autre", image: "images/breathing.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" },
-  { id: "calcul_pedia", ordre: 40, titre: "💉 Calcul rapide pédiatrique", chapitre: "Pédiatrie👶", source: "Autre", images: ["images/calcul_pedia.png","images/pastel.png"], favori: false, notesPlaceholder: "" },
-  {id: "mes_resumes",ordre: 1,titre: "📚 Mes Révisions",chapitre: "Autre", source: "Moi", image: "images/mes_resumes.png", favori: false, notesPlaceholder: ""},
-   {id: "cartes_theorie",ordre: 2,titre: "📚 Cartes de théorie",chapitre: "Autre", source: "Autre", image: "images/cartes.png", favori: false, notesPlaceholder: ""}
+  { id: "aeioutip", ordre: 24, titre: "AEIOU TIPS😴", chapitre: "Autre", source: "Autre", image: "images/AEIOUTIPS.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" , access: ["PUBLIC"]},
+  { id: "befast", ordre: 13, titre: "Be FAST 😵", chapitre: "Neuro🧠", source: "Autre", image: "images/Befast.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" , access: ["PUBLIC"]},
+  { id: "breathing", ordre: 23, titre: "Breathing 🫁", chapitre: "Autre", source: "Autre", image: "images/breathing.png", favori: false, notesPlaceholder: "Ex. posologies terrain, antiémétique, poids…" , access: ["PUBLIC"]},
+  { id: "calcul_pedia", ordre: 40, titre: "💉 Calcul rapide pédiatrique", chapitre: "Pédiatrie👶", source: "Autre", images: ["images/calcul_pedia.png","images/pastel.png"], favori: false, notesPlaceholder: "", access: ["PUBLIC"] },
+  {id: "mes_resumes",ordre: 1,titre: "📚 Mes Révisions",chapitre: "Autre", source: "Moi", image: "images/mes_resumes.png", favori: false, notesPlaceholder: "", access: ["ADMIN"]},
+   {id: "cartes_theorie",ordre: 2,titre: "📚 Cartes de théorie",chapitre: "Autre", source: "Autre", image: "images/cartes.png", favori: false, notesPlaceholder: "", access: ["PUBLIC"]}
  
 ];
 
