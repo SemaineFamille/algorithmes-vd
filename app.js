@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 20-07-2026 10h47");
+console.log("APP VERSION 20-07-2026 12h45");
 
 // ⚠️ Gestion globale des erreurs
 window.addEventListener("error", function(e) {
@@ -1473,7 +1473,7 @@ function renderSpecialContent(item, special) {
     </div>
   `;
 }
-   if (special && item.id === "antalgie_vd") {
+   if (special && item.id === "antalgie") {
   special.innerHTML = `
     <div class="card med-card">
       <h3>💉 Calculs Antalgie VD</h3>
@@ -2165,12 +2165,12 @@ const fentCharge = poids;
   
 
   resultats.innerHTML = `
-    <div class="med-box fentanyl">
-      <strong>Fentanyl</strong><br>
-      Charge : ${fentCharge.toFixed(0)} µg (${(fentCharge / 50).toFixed(2)} ml)<br>
-      Rappel : ${fentRappel.toFixed(0)} µg (${(fentRappel / 50).toFixed(2)} ml)<br>
-      Max : ${fentMax.toFixed(1)} µg (${fenthMax.toFixed(1)} ml)
-    </div>
+   <div class="med-box fentanyl">
+  <strong>Fentanyl</strong><br>
+  Charge : ${fentCharge.toFixed(0)} µg (${(fentCharge / 50).toFixed(2)} ml)<br>
+  Rappel : ${fentRappel.toFixed(0)} µg (${(fentRappel / 50).toFixed(2)} ml)<br>
+  Max : ${fentMax.toFixed(0)} µg (${(fentMax / 50).toFixed(2)} ml)
+</div>
 
     <div class="med-box morphine">
       <strong>Morphine</strong><br>
