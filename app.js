@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 20-07-2026 15h55");
+console.log("APP VERSION 20-07-2026 16h02");
 
 // ⚠️ Gestion globale des erreurs
 window.addEventListener("error", function(e) {
