@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 20-07-2026 12h45");
+console.log("APP VERSION 20-07-2026 15h50");
 
 // ⚠️ Gestion globale des erreurs
 window.addEventListener("error", function(e) {
@@ -1770,7 +1770,30 @@ function updateHeaderAndNav(screen) {
   document.getElementById(`screen-${screen}`)?.classList.add("active");
 
   document.querySelectorAll(".nav-btn").forEach(el => el.classList.remove("active"));
-  document.querySelector(`.nav-btn[data-screen="${screen}"]`)?.classList.add("active");
+// reset
+document.querySelectorAll(".nav-btn")
+  .forEach(el => el.classList.remove("active"));
+
+// cas simples
+document
+  .querySelector(`.nav-btn[data-screen="${screen}"]`)
+  ?.classList.add("active");
+
+// STAR
+if (screen === "star") {
+  document.getElementById("modeBtn")
+    ?.classList.add("active");
+}
+
+// CORFA
+if (
+  screen === "corfa" ||
+  screen === "corfa-algos" ||
+  screen === "corfa-pharma"
+) {
+  document.getElementById("modeBtn")
+    ?.classList.add("active");
+}
 
   let pageTitle = "Algorithmes";
 
