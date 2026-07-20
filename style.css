@@ -314,18 +314,23 @@ body.theme-materials .bottom-nav {
 }
 
 .btn-primary {
-  background: var(--primary);
-  color: white;
-}
-
-.btn-secondary {
-  background: #e9eff6;
-  color: var(--text);
+  background: #d1fae5;
+  color: #065f46;
 }
 
 .btn-star {
-  background: var(--star);
-  color: #111827;
+  background: #fde68a;
+  color: #78350f;
+}
+
+.btn-autre {
+  background: #e9d5ff;
+  color: #6b21a8;
+}
+
+.btn-secondary {
+  background: #dbeafe;
+  color: #1e3a8a;
 }
 
 .full-width {
@@ -630,8 +635,8 @@ body.theme-materials .bottom-nav {
 
 
 .nav-btn-autre {
-  background: #e5e7eb;
-  color: #374151;
+  background: #e9d5ff;
+  color: #6b21a8;
 }
 
 .nav-btn {
