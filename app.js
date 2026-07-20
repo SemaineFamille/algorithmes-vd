@@ -4,7 +4,49 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 20-07-2026 10h30");
+console.log("APP VERSION 20-07-2026 10h47");
+
+// ⚠️ Gestion globale des erreurs
+window.addEventListener("error", function(e) {
+
+  console.error("Erreur détectée :", e);
+
+  const role = localStorage.getItem("role") || "PUBLIC";
+
+  if (role === "ADMIN") {
+
+    alert(
+      "Erreur JavaScript\n\n" +
+      e.message +
+      "\n\nLigne : " +
+      e.lineno
+    );
+
+  } else {
+
+    document.body.innerHTML = `
+      <div style="
+        padding:40px;
+        text-align:center;
+        font-family:sans-serif;
+      ">
+        <h2>⚠️ Une mise à jour est en cours.
+Merci de réessayer dans quelques minutes ☺️.
+</h2>
+
+        <p>
+          Une erreur est survenue.
+        </p>
+
+        <button onclick="location.reload()">
+          🔄 Recharger
+        </button>
+
+      </div>
+    `;
+  }
+
+});
 
 const USER_ROLE = localStorage.getItem("role") || "PUBLIC";
 
@@ -14,7 +56,6 @@ const isSAT = USER_ROLE === "SAT";
 const isTCS = USER_ROLE === "TCS";
 
 let MODE = USER_ROLE;
-
 
 let corfaTab = "algos";
 
