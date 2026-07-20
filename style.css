@@ -121,7 +121,6 @@ body.theme-star .topbar {
   color: #1f2937; /* texte gris foncé lisible */
 }
 
-
 body.theme-autre .topbar {
   background: #9333ea;
   color: white;
@@ -133,10 +132,6 @@ body.theme-materials .topbar {
 }
 body.theme-vd .bottom-nav {
   border-top: 3px solid #0f766e;
-}
-
-body.theme-star .bottom-nav {
-  border-top: 3px solid #eab308;
 }
 
 body.theme-autre .bottom-nav {
@@ -578,11 +573,6 @@ body.theme-materials .nav-btn.active {
   white-space: nowrap;
 }
 
-
-.nav-btn.active {
-  background: var(--primary);
-  color: white;
-}
 
 .nav-btn-star {
   background: var(--star);
