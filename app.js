@@ -4,7 +4,7 @@
  * © 2026 – Tous droits réservés
  */
 
-console.log("APP VERSION 20-07-2026 10h15");
+console.log("APP VERSION 20-07-2026 10h30");
 
 const USER_ROLE = localStorage.getItem("role") || "PUBLIC";
 
@@ -1432,6 +1432,25 @@ function renderSpecialContent(item, special) {
     </div>
   `;
 }
+   if (special && item.id === "antalgie_vd") {
+  special.innerHTML = `
+    <div class="card med-card">
+      <h3>💉 Calculs Antalgie VD</h3>
+
+      <input
+        type="number"
+        id="poidsAntalgieVD"
+        class="input"
+        placeholder="Poids en kg"
+        step="0.1"
+        min="0"
+        oninput="calculAntalgieVD()"
+      >
+
+      <div id="resultatsAntalgieVD"></div>
+    </div>
+  `;
+}
   if (special && item.id === "antalgie_tcs") {
   special.innerHTML = `
     <div class="card med-card">
@@ -2073,6 +2092,50 @@ const fentCharge = poids;
     <div class="med-box metamizole">
       <strong>Métamizole</strong><br>
       ${metaMg ? `${metaMg} (${metaMl})` : "Poids < 30 kg"}
+    </div>
+
+   
+    `;
+};
+window.calculAntalgieVD = function () {
+
+  const poids = Number(
+    document.getElementById("poidsAntalgieVD")?.value
+  );
+
+  const resultats = document.getElementById(
+    "resultatsAntalgieVD"
+  );
+
+  if (!resultats) return;
+
+  if (!poids || poids <= 0) {
+    resultats.innerHTML = "";
+    return;
+  }
+const fentCharge = poids;
+  const fentRappel = poids * 0.5;
+  const fentMax = 300 
+
+  const morphCharge = poids * 0.1;
+  const morphRappel = poids * 0.05;
+  const morphMax = 20 
+  
+  
+
+  resultats.innerHTML = `
+    <div class="med-box fentanyl">
+      <strong>Fentanyl</strong><br>
+      Charge : ${fentCharge.toFixed(0)} µg (${(fentCharge / 50).toFixed(2)} ml)<br>
+      Rappel : ${fentRappel.toFixed(0)} µg (${(fentRappel / 50).toFixed(2)} ml)<br>
+      Max : ${fentMax.toFixed(1)} µg (${fenthMax.toFixed(1)} ml)
+    </div>
+
+    <div class="med-box morphine">
+      <strong>Morphine</strong><br>
+      Charge : ${morphCharge.toFixed(1)} mg (${morphCharge.toFixed(1)} ml)<br>
+      Rappel : ${morphRappel.toFixed(1)} mg (${morphRappel.toFixed(1)} ml)<br>
+      Max : ${morphMax.toFixed(1)} mg (${morphMax.toFixed(1)} ml)
     </div>
 
    
