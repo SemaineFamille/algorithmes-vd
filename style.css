@@ -548,17 +548,18 @@ body.theme-materials .nav-btn.active {
   color: white;
 }
 
-.btn-star,
-.nav-btn-star {
-  background: white;
-  color: inherit;
+.nav-btn-star,
+.btn-star {
+  background: #fef3c7; /* jaune clair */
+  color: #92400e;
 }
 
-.nav-btn.active,
-.btn.active {
+.nav-btn.active {
   background: #facc15;
   color: #000;
+  font-weight: 600;
 }
+
 
 .nav-btn-autre {
   background: #e5e7eb;
